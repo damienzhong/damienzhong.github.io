@@ -38,8 +38,6 @@
     
 
 
-    <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-
 
 <link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
 <link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
@@ -106,7 +104,7 @@
                             </li>
                         
                             <li role="presentation" class="text-center">
-                                <a href="/javase"><i class="fa "></i>Java基础</a>
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
                             </li>
                         
                     </ul>
@@ -132,8 +130,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/javse">
-            javse
+        <a href="/categories/javase">
+            javase
         </a>
     </span>
     
@@ -296,24 +294,24 @@
 
     <div id="comments">
         
-	<script type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    var gitment = new Gitment({
-        id: window.location.pathname,
-        owner:"",
-        repo:"",
-        oauth: {
-          client_id:"",
-          client_secret:""
-        },
-        perPage:"10",
-    });
-    gitment.render('comments');
-</script>
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
 
     </div>
 
-
+partial('_partial/livere')
 
 
 
