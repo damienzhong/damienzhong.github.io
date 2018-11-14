@@ -38,6 +38,8 @@
     
 
 
+    <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+
 
 <link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
 <link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
@@ -294,20 +296,20 @@
 
     <div id="comments">
         
-	
-<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
-  <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-         if (typeof LivereTower === 'function') { return; }
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-  </script>
-</div>
-
+	<script type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: window.location.pathname,
+        owner:"damienzhong",
+        repo:"git@github.com:damienzhong/damienzhong.github.io.git",
+        oauth: {
+          client_id:"5e59f8419c5267c1bf06",
+          client_secret:"35cfc5667e862c6f03a587d4b50daddaf09a8374"
+        },
+        perPage:"10",
+    });
+    gitment.render('comments');
+</script>
 
     </div>
 
