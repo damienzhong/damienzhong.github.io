@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】01.计算机基础 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+    <link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/javase"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】01.计算机基础">
+            
+	            【JavaSe必知必会】01.计算机基础
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javse">
+            javse
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/14</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>我想，来到这的朋友肯定是想学习JAVA或者想要进入IT这个行业的。考虑到大家的基础可能不一样，有些人可能还是用着新买的电脑，为了让大家在后续的学习中更加顺畅。在学习一门全新的计算机语言之前，我需要先给大家普及了解一些计算机基础知识。</p>
+<h1 id="计算机基础知识"><a href="#计算机基础知识" class="headerlink" title="计算机基础知识"></a>计算机基础知识</h1><h2 id="计算机"><a href="#计算机" class="headerlink" title="计算机"></a>计算机</h2><ul>
+<li><p>计算机（Computer）全称：电子计算机，俗称电脑。是一种能够按照程序运行，自动、高速处理海量数据的现代化智能电子设备。由硬件和软件所组成，没有安装任何软件的计算机称为裸机。常见的形式有台式计算机、笔记本计算机、大型计算机等。</p>
+</li>
+<li><p>计算机的应用已渗透到社会的各个领域，正在改变着人们的工作、学习和生活的方式，推动着社会的发展。哪些方面?<br>归纳一下，计算机的应用主要在以下几个方面：</p>
+</li>
+</ul>
+<p>1：科学计算</p>
+<p>科学计算也称数值计算。计算机最开始是为解决科学研究和工程设计中遇到的大量数学问题的数值计算而研制的计算工具。例如，人造卫星轨迹的计算，房屋抗震强度的计算，火箭、宇宙飞船的研究设计都离不开计算机的精确计算。就连我们每天收听收看的天气预报都离不开计算机的科学计算。 </p>
+<p>2、数据处理</p>
+<p>在科学研究和工程技术中，会得到大量的原始数据，其中包括大量图片、文字、声音等信息处理就是对数据进行收集、分类、排序、存储、计算、传输、制表等操作。</p>
+<p>3、自动控制</p>
+<p>自动控制是指通过计算机对某一过程进行自动操作，它不需人工干预，能按人预定的目标和预定的状态进行过程控制。例如，无人驾驶飞机、导弹、人造卫星和宇宙飞船等飞行器的控制，都是靠计算机实现的。</p>
+<p>4、计算机辅助设计<br>计算机辅助设计(Computer Aided Design，简称CAD)是指。借助计算机的帮助，人们可以自动或半自动地完成各类工程设计工作。目前CAD技术已应用于飞机设计、船舶设计、建筑设计、机械设计、大规模集成电路设计等。在京九铁路的勘测设计中，使用计算机辅助设计系统绘制一张图纸仅需几个小时，而过去人工完成同样工作则要一周甚至更长时间。可见采用计算机辅助设计，可缩短设计时间，提高工作效率，节省人力、物力和财力，更重要的是提高了设计质量。</p>
+<p>5、人工智能</p>
+<p>人工智能(Artificial Intelligence，简称AI)是指计算机模拟人类某些智力行为的理论、技术和应用。例如，用计算机模拟人脑的部分功能进行思维学习、推理、联想和决策，使计算机具有一定“思维能力”。我国已开发成功一些中医专家诊断系统，可以模拟名医给患者诊病开方。 还有就是机器人也是计算机人工智能的典型例子。</p>
+<p>6、多媒体应用</p>
+<p>随着电子技术特别是通信和计算机技术的发展，人们已经有能力把文本、音频、视频、动画、图形和图像等各种媒体综合起来，构成一种全新的概念—“多媒体”(Multimedia)。比如一些flash广告，网页游戏等。</p>
+<p>7、计算机网络</p>
+<p>计算机网络是由一些独立的和具备信息交换能力的计算机互联构成，以实现资源共享的系统。如在全国范围内的银行信用卡的使用，火车和飞机票系统的使用等。</p>
+<h2 id="计算机硬件"><a href="#计算机硬件" class="headerlink" title="计算机硬件"></a>计算机硬件</h2><p>计算机硬件（Computer Hardware）是指计算机系统中由电子，机械和光电元件等组成的各种物理装置的总称。这些物理装置按系统结构的要求构成一个有机整体为计算机软件运行提供物质基础。<br>计算机通常由CPU、主板、内存、电源、主机箱、硬盘、显卡、键盘、鼠标，显示器等多个部件组成。</p>
+<h2 id="计算机软件"><a href="#计算机软件" class="headerlink" title="计算机软件"></a>计算机软件</h2><p>计算机软件是使用计算机过程中必不可少的东西，计算机软件可以使计算机按照事先预定好的顺序完成特定的功能，计算机软件按照其功能划分为系统软件与应用软件</p>
+<ul>
+<li><strong>系统软件</strong>： DOS(Disk Operating System), Windows, Linux, Unix, Mac, Android, iOS</li>
+<li><strong>应用软件</strong>：office  QQ聊天  YY语言  扫雷</li>
+</ul>
+<h2 id="软件开发"><a href="#软件开发" class="headerlink" title="软件开发"></a>软件开发</h2><ul>
+<li><strong>软件</strong><br>按照特定顺序组织的计算机数据和指令的集合</li>
+<li><strong>开发</strong><br>软件的制作过程</li>
+<li><strong>软件开发</strong><br>借助开发工具与计算机语言制作软件</li>
+</ul>
+<h2 id="计算机语言"><a href="#计算机语言" class="headerlink" title="计算机语言"></a>计算机语言</h2><ul>
+<li><p><strong>语言</strong></p>
+<p>  人类进行沟通交流的各种表达符号，方便人与人之间进行沟通与信息交换</p>
+</li>
+<li><p><strong>计算机语言</strong></p>
+<p>  人与计算机之间进行信息交流沟通的一种特殊语言<br>计算机语言中也有字符，符号等等<br>常见的计算机语言如C,C++,C#,JAVA</p>
+</li>
+</ul>
+<h2 id="人机交互方式"><a href="#人机交互方式" class="headerlink" title="人机交互方式"></a>人机交互方式</h2><ul>
+<li>软件的出现实现了人与计算机之间更好的交互。</li>
+<li><p>交互方式</p>
+<p>  <strong>图形化界面</strong>：这种方式简单直观，使用者易于接受，容易上手操作。</p>
+<p>  <strong>命令行方式</strong>：需要有一个控制台，输入特定的指令，让计算机完成一些操作。较为麻烦，需要记录住一些命令。</p>
+</li>
+</ul>
+<h2 id="键盘功能键及快捷键介绍"><a href="#键盘功能键及快捷键介绍" class="headerlink" title="键盘功能键及快捷键介绍"></a>键盘功能键及快捷键介绍</h2><p><strong>键盘功能键介绍</strong></p>
+<ul>
+<li>Tab                    </li>
+<li>Shift    Ctrl        Alt</li>
+<li>空格    Enter</li>
+<li>Window</li>
+<li>上下左右</li>
+<li>PrtSc(PrintScreen)屏幕截图</li>
+</ul>
+<p><strong>快捷键介绍</strong></p>
+<ul>
+<li>Ctrl+A    全选</li>
+<li>Ctrl+C    复制</li>
+<li>Ctrl+V    粘贴</li>
+<li>Ctrl+X    剪切</li>
+<li>Ctrl+Z    撤销</li>
+<li>Ctrl+S    保存</li>
+</ul>
+<h2 id="常用的DOS命令"><a href="#常用的DOS命令" class="headerlink" title="常用的DOS命令"></a>常用的DOS命令</h2><p><strong>打开DOS控制台的方式</strong></p>
+<ol>
+<li>开始–程序–附件–命令提示符</li>
+<li>开始–运行—cmd—回车</li>
+<li>win+r—cmd–回车</li>
+</ol>
+<p>扩充内容：<br>目录中的exe文件可以直接使用其名称执行该命令<br>调整DOS界面显示内容数量</p>
+<p><strong>常用DOS命令</strong></p>
+<ul>
+<li>d: 回车    盘符切换</li>
+<li>dir(directory):列出当前目录下的文件以及文件夹</li>
+<li>md (make directory) : 创建目录</li>
+<li>rd (remove directory): 删除目录</li>
+<li>cd (change directory)改变指定目录(进入指定目录)</li>
+<li>cd.. : 退回到上一级目录</li>
+<li>cd\: 退回到根目录</li>
+<li>del (delete): 删除文件,删除一堆后缀名一样的文件*.txt</li>
+<li>exit : 退出dos命令行</li>
+<li>cls : (clear screen)清屏</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="../img/reward-wepay.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+	<script type="text/javascript" src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: window.location.pathname,
+        owner:"",
+        repo:"",
+        oauth: {
+          client_id:"",
+          client_secret:""
+        },
+        perPage:"10",
+    });
+    gitment.render('comments');
+</script>
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#计算机基础知识"><span class="toc-text">计算机基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机"><span class="toc-text">计算机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机硬件"><span class="toc-text">计算机硬件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机软件"><span class="toc-text">计算机软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软件开发"><span class="toc-text">软件开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机语言"><span class="toc-text">计算机语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#人机交互方式"><span class="toc-text">人机交互方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#键盘功能键及快捷键介绍"><span class="toc-text">键盘功能键及快捷键介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的DOS命令"><span class="toc-text">常用的DOS命令</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
