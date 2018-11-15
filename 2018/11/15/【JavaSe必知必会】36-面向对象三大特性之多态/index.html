@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】36-面向对象三大特性之多态 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】36-面向对象三大特性之多态">
+            
+	            【JavaSe必知必会】36-面向对象三大特性之多态
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="多态概述"><a href="#多态概述" class="headerlink" title="多态概述"></a>多态概述</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>某一个事物，在不同时刻表现出来的不同状态</li>
+<li>举例：<ul>
+<li>猫可以是猫的类型。猫 m = new 猫();</li>
+<li>同时猫也是动物的一种，也可以把猫称为动物。<ul>
+<li>动物 d = new 猫(); </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多态前提和体现"><a href="#多态前提和体现" class="headerlink" title="多态前提和体现"></a>多态前提和体现</h2><ul>
+<li>有继承关系</li>
+<li>有方法重写</li>
+<li>有父类引用指向子类对象<h1 id="多态案例及成员访问特地"><a href="#多态案例及成员访问特地" class="headerlink" title="多态案例及成员访问特地"></a>多态案例及成员访问特地</h1><h2 id="多态案例"><a href="#多态案例" class="headerlink" title="多态案例"></a>多态案例</h2><h2 id="成员访问特点"><a href="#成员访问特点" class="headerlink" title="成员访问特点"></a>成员访问特点</h2></li>
+<li>成员变量<ul>
+<li>编译看左边，运行看左边</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>编译看左边，运行看右边</li>
+</ul>
+</li>
+<li>静态方法<ul>
+<li>编译看左边，运行看左边</li>
+<li>所以前面我们说静态方法不能算方法重写</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	多态：同一个对象（事物），在不同时刻体现出来的不同状态。</span><br><span class="line">	举例：</span><br><span class="line">		猫是猫，猫是动物。</span><br><span class="line">		水（液体、固体、气体）。</span><br><span class="line">		猫 m = new 猫();</span><br><span class="line">		动物 d = new 猫();</span><br><span class="line">	多态的前提：</span><br><span class="line">		A：要有继承关系</span><br><span class="line">		B：要有方法重写</span><br><span class="line">			其实没有也是可以的，但是如果没用这个就没有意义。</span><br><span class="line">		C：要有父类引用指向子类对象。</span><br><span class="line">			父 f = new Zi();</span><br><span class="line">			</span><br><span class="line">	多态中的成员访问特点：</span><br><span class="line">		A：成员变量</span><br><span class="line">			编译看左边，运行看左边</span><br><span class="line">		B：构造方法</span><br><span class="line">			创建子类对象的时候，访问父类的构造方法，对父类的数据进行初始化。</span><br><span class="line">		C：成员方法</span><br><span class="line">			编译看左边，运行看右边</span><br><span class="line">		D：静态方法</span><br><span class="line">			编译看左边，运行看左边</span><br><span class="line">			(静态和类相关，算不上重写，所以访问还是左边的)</span><br><span class="line">			</span><br><span class="line">		由于成员方法存在方法重写，所以它运行看右边。</span><br><span class="line">*/</span><br><span class="line">class Fu&#123;</span><br><span class="line">	public int num = 100;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;show Fu&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void function()&#123;</span><br><span class="line">		System.out.println(&quot;function Fu&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Zi extends Fu&#123;</span><br><span class="line">	public int num = 1000;</span><br><span class="line">	public int num2 = 200;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;show Zi&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void method()&#123;</span><br><span class="line">		System.out.println(&quot;method Zi&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void function()&#123;</span><br><span class="line">		System.out.println(&quot;function Zi&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class DuoTaiDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//要有父类引用指向子类对象。</span><br><span class="line">		//父 f = new Zi();</span><br><span class="line">		Fu f = new Zi();</span><br><span class="line">		System.out.println(f.num);</span><br><span class="line">		//找不到符号</span><br><span class="line">		//System.out.println(f.num2);</span><br><span class="line">		f.show();</span><br><span class="line">		//找不到符号</span><br><span class="line">		//f.method();</span><br><span class="line">		f.function();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="多态的好处和弊端"><a href="#多态的好处和弊端" class="headerlink" title="多态的好处和弊端"></a>多态的好处和弊端</h1><h2 id="多态的好处"><a href="#多态的好处" class="headerlink" title="多态的好处"></a>多态的好处</h2><ul>
+<li>提供了程序的维护性（由继承保证）</li>
+<li>提供了程序的扩展性（由多态保证）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	多态的好处：</span><br><span class="line">		A：提高了代码的维护性（继承保证）</span><br><span class="line">		B：提高了代码的扩展性(由多态保证)</span><br><span class="line">		</span><br><span class="line">	猫狗案例</span><br><span class="line">*/</span><br><span class="line">class Animal&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;eat&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;sleep&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Dog extends Animal&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;狗吃肉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;狗站着睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Cat extends Animal&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;猫吃鱼&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;猫趴着睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Pig extends Animal&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;猪吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;猪侧着睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//针对动物操作的工具类</span><br><span class="line">class AnimalTool&#123;</span><br><span class="line">	private AnimalTool()&#123;&#125;</span><br><span class="line">	/*8public static void useCat(Cat c)&#123;</span><br><span class="line">		c.eat();</span><br><span class="line">		c.sleep();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void useDog(Dog d)&#123;</span><br><span class="line">		d.eat();</span><br><span class="line">		d.sleep();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void usePig(Pig p)&#123;</span><br><span class="line">		p.eat();</span><br><span class="line">		p.sleep();</span><br><span class="line">	&#125;*/</span><br><span class="line">	public static void useAnimal(Animal a)&#123;</span><br><span class="line">		a.eat();</span><br><span class="line">		a.sleep();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class DuoTaiDemo2&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//养一只猫</span><br><span class="line">		Cat c = new Cat();</span><br><span class="line">		c.eat();</span><br><span class="line">		c.sleep();</span><br><span class="line">		//我特别喜欢猫，又养了一只</span><br><span class="line">		Cat c2 = new Cat();</span><br><span class="line">		c2.eat();</span><br><span class="line">		c2.sleep();</span><br><span class="line">		//再一只猫</span><br><span class="line">		Cat c3 = new Cat();</span><br><span class="line">		c3.eat();</span><br><span class="line">		c3.sleep();</span><br><span class="line">		System.out.println(&quot;-------------------&quot;);</span><br><span class="line">		//问题来了，我养了很多只猫，每次创建对象是可以接受的，</span><br><span class="line">		//但是呢？调用方法，除了对象名不同外，其他代码冗余了。</span><br><span class="line">		//AnimalTool.useCat(c);</span><br><span class="line">		//AnimalTool.useCat(c2);</span><br><span class="line">		//AnimalTool.useCat(c3);</span><br><span class="line">		//System.out.println(&quot;-------------------&quot;);</span><br><span class="line">		//我还喜欢狗，养了只狗</span><br><span class="line">		Dog d = new Dog();</span><br><span class="line">		//再养一只狗</span><br><span class="line">		Dog d2 = new Dog();</span><br><span class="line">		/*AnimalTool.useDog(d);</span><br><span class="line">		AnimalTool.useDog(d2);</span><br><span class="line">		*/</span><br><span class="line">		System.out.println(&quot;-------------------&quot;);</span><br><span class="line">		//我喜欢宠物猪</span><br><span class="line">		//定义一个猪类，它要继承自动物，提供两个方法，并且还得再工具类中添加该类方法调用</span><br><span class="line">		Pig p = new Pig();</span><br><span class="line">		Pig p2 = new Pig();</span><br><span class="line">		Pig p3 = new Pig();</span><br><span class="line">		/*AnimalTool.usePig(p);</span><br><span class="line">		AnimalTool.usePig(p2);</span><br><span class="line">		AnimalTool.usePig(p3);*/</span><br><span class="line">		AnimalTool.useAnimal(c);</span><br><span class="line">		AnimalTool.useAnimal(c2);</span><br><span class="line">		AnimalTool.useAnimal(c3);</span><br><span class="line">		AnimalTool.useAnimal(d);</span><br><span class="line">		AnimalTool.useAnimal(d2);</span><br><span class="line">		AnimalTool.useAnimal(p);</span><br><span class="line">		AnimalTool.useAnimal(p2);</span><br><span class="line">		AnimalTool.useAnimal(p3);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="多态的弊端"><a href="#多态的弊端" class="headerlink" title="多态的弊端"></a>多态的弊端</h2><ul>
+<li>不能访问子类特有功能</li>
+<li>那么我们如何才能访问子类特有功能呢？<ul>
+<li>多态中的转型</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	多态的弊端：</span><br><span class="line">		不能使用子类特有功能。</span><br><span class="line">		</span><br><span class="line">	我就想使用子类的特有功能？行不行？</span><br><span class="line">		行</span><br><span class="line">	怎么用呢？</span><br><span class="line">		A：创建子类对象调用方法。（可以，但是很多时候不合理，而且，太占用内存）</span><br><span class="line">		B：把父类的引用强制转化为子类的引用。（向下转型）</span><br><span class="line">		</span><br><span class="line">	对象间的转型问题：</span><br><span class="line">		向上转型：</span><br><span class="line">			Fu f = new Zi();</span><br><span class="line">		向下转型：</span><br><span class="line">			Zi z = (Zi)f;//要求该f必须是能够转换为Zi</span><br><span class="line">*/</span><br><span class="line">class Fu&#123;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;show Fu&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Zi extends Fu&#123;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;show Zi&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void method()&#123;</span><br><span class="line">		System.out.println(&quot;method Zi&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class DuoTaiDemo3&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Fu f = new Zi();</span><br><span class="line">		//f.show();</span><br><span class="line">		//f.method();</span><br><span class="line">		//创建子类对象</span><br><span class="line">		//Zi zi = new Zi();</span><br><span class="line">		//zi.show();</span><br><span class="line">		//zi.method();</span><br><span class="line">		//把子的对象赋值给父亲，但是因为父的引用类型与子的不一致，所以我们需要做个强制类型转化</span><br><span class="line">		Zi z = (Zi)f;</span><br><span class="line">		z.show();</span><br><span class="line">		z.method();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="多态中的转型问题"><a href="#多态中的转型问题" class="headerlink" title="多态中的转型问题"></a>多态中的转型问题</h1><ul>
+<li>向上转型<ul>
+<li>从子到父</li>
+<li>父类引用指向子类对象</li>
+</ul>
+</li>
+<li>向下转型<ul>
+<li>从父到子</li>
+<li>父类引用转为子类对象</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】37-抽象类/" class="pre-post btn btn-default" title="【JavaSe必知必会】37-抽象类">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】37-抽象类</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】35-final关键字/" class="next-post btn btn-default" title="【JavaSe必知必会】35-final关键字">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】35-final关键字</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多态概述"><span class="toc-text">多态概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态前提和体现"><span class="toc-text">多态前提和体现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多态案例及成员访问特地"><span class="toc-text">多态案例及成员访问特地</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多态案例"><span class="toc-text">多态案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#成员访问特点"><span class="toc-text">成员访问特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多态的好处和弊端"><span class="toc-text">多态的好处和弊端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多态的好处"><span class="toc-text">多态的好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态的弊端"><span class="toc-text">多态的弊端</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多态中的转型问题"><span class="toc-text">多态中的转型问题</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

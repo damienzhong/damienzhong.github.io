@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】37-抽象类 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】37-抽象类">
+            
+	            【JavaSe必知必会】37-抽象类
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="抽象类特点"><a href="#抽象类特点" class="headerlink" title="抽象类特点"></a>抽象类特点</h1><ul>
+<li>抽象类和抽象方法必须用abstract关键字修饰<ul>
+<li>abstract class 类名{}</li>
+<li>public abstract void eat();</li>
+</ul>
+</li>
+<li>抽象类不一定有抽象方法，有抽象方法的类一定是抽象类</li>
+<li>抽象类不能实例化<ul>
+<li>那么，抽象类如何实例化呢？</li>
+<li>按照多态的方式，由具体的子类实例化。其实这也是多态的一种，抽象类多态</li>
+</ul>
+</li>
+<li>抽象类的子类<ul>
+<li>要么是抽象类</li>
+<li>要么重写抽象类中的所有抽象方法</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	抽象类的概述：</span><br><span class="line">		动物不应该定义为具体的东西，而且动物中的吃、睡等也不应该是具体。</span><br><span class="line">		我们把一个不是具体的功能称为抽象的功能，而一个类中如果由抽象的功能，该类必须是抽象类。</span><br><span class="line">		</span><br><span class="line">	抽象类的特点：</span><br><span class="line">		A：抽象类和抽象方法必须用abstract关键字修饰</span><br><span class="line">		B：抽象类中不一定有抽象方法，但是有抽象方法的类必须定义为抽象类</span><br><span class="line">		C：抽象类不能实例化</span><br><span class="line">			因为它不是具体的。</span><br><span class="line">			抽象类有构造方法，但是不能实例化。构造方法有什么用？</span><br><span class="line">			用于子类访问父类数据的初始化。</span><br><span class="line">		D：抽象的子类</span><br><span class="line">			a：如果不想重写抽象方法，该子类是一个抽象类</span><br><span class="line">			b：重写所有的抽象方法，这个时候子类是一个具体的类</span><br><span class="line">			</span><br><span class="line">		抽象类的实例化其实是靠具体的子类实现的，是多态的方式。</span><br><span class="line">*/</span><br><span class="line">abstract class Animal&#123;//抽象类的声明格式</span><br><span class="line">	//抽象方法</span><br><span class="line">	//public abstract void eat()&#123;&#125;//空方法体，这个会报错，抽象方法不能有主体</span><br><span class="line">	public abstract void eat();</span><br><span class="line">	</span><br><span class="line">	public Animal()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">//子类是抽象类</span><br><span class="line">abstract class Dog extends Animal&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">//子类是具体类，重写抽象方法</span><br><span class="line">class Cat extends Animal&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;猫吃鱼&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class AbstractDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		//Animal是抽象的; 无法实例化</span><br><span class="line">		//Animal a = new Animal();</span><br><span class="line">		//通过多态的方式</span><br><span class="line">		Animal a = new Cat();</span><br><span class="line">		a.eat();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="抽象类的成员特点"><a href="#抽象类的成员特点" class="headerlink" title="抽象类的成员特点"></a>抽象类的成员特点</h1><ul>
+<li>成员变量<ul>
+<li>可以是变量</li>
+<li>也可以是常量</li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>有构造方法，但是不能实例化</li>
+<li>那么，构造方法的作用是什么呢？<ul>
+<li>用于子类访问父类数据的初始化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>可以有抽象方法，限定子类必须完成某些动作</li>
+<li>也可以有非抽象方法，提供代码复用性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	抽象类的成员特点：</span><br><span class="line">		成员变量：既可以是变量，也可以是常量</span><br><span class="line">		构造方法：有。</span><br><span class="line">					用于子类访问父类数据的初始化</span><br><span class="line">		成员方法：既可以是抽象的，也可以是非抽象的</span><br><span class="line">		</span><br><span class="line">	抽象类的成员方法特性：</span><br><span class="line">		A：抽象方法	强制要求子类做的事情。</span><br><span class="line">		B：非抽象方法	子类继承的事情，提高代码复用性</span><br><span class="line">*/</span><br><span class="line">abstract class Animal&#123;</span><br><span class="line">	public int num = 100;</span><br><span class="line">	public final int num2 = 20;</span><br><span class="line">	</span><br><span class="line">	public Animal()&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Animal(String name)&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public abstract void show();</span><br><span class="line">	</span><br><span class="line">	public void method()&#123;</span><br><span class="line">		System.out.println(&quot;show Animal method&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Dog extends Animal&#123;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;show Dog&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class AbstractDemo2&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Animal a = new Dog();</span><br><span class="line">		a.num = 200;</span><br><span class="line">		System.out.println(a.num);</span><br><span class="line">		//a.num2 = 30;</span><br><span class="line">		System.out.println(a.num2);</span><br><span class="line">		System.out.println(&quot;------------------------&quot;);</span><br><span class="line">		a.show();</span><br><span class="line">		a.method();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="抽象类注意事项"><a href="#抽象类注意事项" class="headerlink" title="抽象类注意事项"></a>抽象类注意事项</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	一个类如果没有抽象方法，可不可以定义为抽象类？如果可以，有什么意义？</span><br><span class="line">		A:可以</span><br><span class="line">		B:不让创建对象</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	抽象类不能和哪些关键字共存</span><br><span class="line">		private 冲突</span><br><span class="line">		final 冲突</span><br><span class="line">		static 无意义</span><br><span class="line">*/</span><br><span class="line">abstract class Fu&#123;</span><br><span class="line">	//非法的修饰符组合: abstract和private</span><br><span class="line">	//private abstract void show();</span><br><span class="line">	// 非法的修饰符组合: abstract和final</span><br><span class="line">	//final abstract void show();</span><br><span class="line">	//非法的修饰符组合: abstract和static/</span><br><span class="line">	//static abstract void show();</span><br><span class="line">	</span><br><span class="line">	public static void method()&#123;</span><br><span class="line">		System.out.println(&quot;method&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Zi extends Fu&#123;</span><br><span class="line">	public void show()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class AbstractDemo3&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Fu.method();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】38-Java接口详解/" class="pre-post btn btn-default" title="【JavaSe必知必会】38-Java接口详解">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】38-Java接口详解</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】36-面向对象三大特性之多态/" class="next-post btn btn-default" title="【JavaSe必知必会】36-面向对象三大特性之多态">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】36-面向对象三大特性之多态</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类特点"><span class="toc-text">抽象类特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类的成员特点"><span class="toc-text">抽象类的成员特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类注意事项"><span class="toc-text">抽象类注意事项</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

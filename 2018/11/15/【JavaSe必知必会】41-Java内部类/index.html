@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】41-Java内部类 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】41-Java内部类">
+            
+	            【JavaSe必知必会】41-Java内部类
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="内部类概述"><a href="#内部类概述" class="headerlink" title="内部类概述"></a>内部类概述</h1><p>把类定义在其他类的内部，这个类就被称为内部类。</p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>在类A中定义了一个类B，类B就是内部类。</p>
+<h2 id="内部类的访问特点"><a href="#内部类的访问特点" class="headerlink" title="内部类的访问特点"></a>内部类的访问特点</h2><ul>
+<li>内部类可以直接访问外部类的成员，包括私有。</li>
+<li>外部类要访问内部类的成员，必须创建对象<h1 id="内部类位置"><a href="#内部类位置" class="headerlink" title="内部类位置"></a>内部类位置</h1>按照内部类在类中定义的位置不同，可以分为如下两种格式：</li>
+<li>成员位置（成员内部类）</li>
+<li>局部位置（局部内部类）<h2 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h2><h3 id="外界如何创建对象"><a href="#外界如何创建对象" class="headerlink" title="外界如何创建对象"></a>外界如何创建对象</h3>外部类名.内部类名 对象名 = 外部类对象.内部类对象;<h3 id="成员内部类的常见修饰符"><a href="#成员内部类的常见修饰符" class="headerlink" title="成员内部类的常见修饰符"></a>成员内部类的常见修饰符</h3></li>
+<li>private 为了保证数据的安全性</li>
+<li>static 为了让数据访问更方便<ul>
+<li>被静态修饰的成员内部类只能访问外部类的静态成员</li>
+<li>内部类方法被静态修饰后的方法<ul>
+<li>静态方法</li>
+<li>非静态方法<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可以直接访问外部类的成员</li>
+<li>可以创建内部类对象，通过对象调用内部类方法，来使用局部内部类功能</li>
+<li>局部内部类访问局部变量的注意事项：<ul>
+<li>必须被final修饰</li>
+<li>为什么呢？<ul>
+<li>因为局部变量会随着方法的调用完毕而消失，这个时候，局部对象并没有立马从对内存中消失，还要使用那个变量。为了让数据还能继续被使用，就用final修饰，这样，在堆内存里面存储的其实是一个常量值。通过反编译工具可以看一下。<h2 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>就是内部类的简化写法</li>
+<li>前提：存在一个类或者接口<ul>
+<li>这里的类可以是具体类也可以是抽象类</li>
+</ul>
+</li>
+<li>格式：<ul>
+<li>new 类名或者接口名(){重写方法}</li>
+</ul>
+</li>
+<li>本质：<ul>
+<li>是一个继承了类或者实现了接口的子类匿名对象</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】40-Java权限修饰符/" class="next-post btn btn-default" title="【JavaSe必知必会】40-Java权限修饰符">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】40-Java权限修饰符</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内部类概述"><span class="toc-text">内部类概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-text">举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内部类的访问特点"><span class="toc-text">内部类的访问特点</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#内部类位置"><span class="toc-text">内部类位置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#成员内部类"><span class="toc-text">成员内部类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#外界如何创建对象"><span class="toc-text">外界如何创建对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成员内部类的常见修饰符"><span class="toc-text">成员内部类的常见修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部内部类"><span class="toc-text">局部内部类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名内部类"><span class="toc-text">匿名内部类</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】38-Java接口详解 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】38-Java接口详解">
+            
+	            【JavaSe必知必会】38-Java接口详解
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="接口特点"><a href="#接口特点" class="headerlink" title="接口特点"></a>接口特点</h1><ul>
+<li>接口用关键字interface表示<ul>
+<li>格式：interface 接口名{}</li>
+</ul>
+</li>
+<li>类实现接口用implements表示<ul>
+<li>格式：class 类名 implements 接口名{}</li>
+</ul>
+</li>
+<li>接口不能实例化<ul>
+<li>那么，接口如何实例化呢？</li>
+<li>按照多态的方式，由具体的子类实例化。其实这也是多态的一种，接口多态</li>
+</ul>
+</li>
+<li>接口的子类<ul>
+<li>要么是抽象类</li>
+<li>要么重写接口中的所有抽象方法<h1 id="接口成员特点"><a href="#接口成员特点" class="headerlink" title="接口成员特点"></a>接口成员特点</h1></li>
+</ul>
+</li>
+<li>成员变量<ul>
+<li>只能是常量</li>
+<li>默认修饰符public static final</li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>没有，因为接口主要是扩展功能的，而没有具体存在</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>只能是抽象方法</li>
+<li>默认修饰符public abstract</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	接口成员特点：</span><br><span class="line">		成员变量：只能是常量,并且是静态的</span><br><span class="line">				默认修饰符：public static final</span><br><span class="line">				建议：自己手动给出。</span><br><span class="line">		构造方法：接口没有构造方法</span><br><span class="line">		成员方法：只能是抽象方法</span><br><span class="line">				默认修饰符：public abstract</span><br><span class="line">				建议：自己手动给出。</span><br><span class="line">		</span><br><span class="line">	所有的类都默认继承自一个类：Object</span><br><span class="line">	类Object是类层次结构的根类。每个类都使用Object作为超类。</span><br><span class="line">*/</span><br><span class="line">interface Inter&#123;</span><br><span class="line">	public int num = 10;</span><br><span class="line">	public final int num2 = 20;</span><br><span class="line">	public static final int num3 = 30;</span><br><span class="line">	// 需要&lt;标识符&gt;</span><br><span class="line">	//public Inter()&#123;&#125;</span><br><span class="line">	//接口抽象方法不能带有主体</span><br><span class="line">	//public void show()&#123;&#125;</span><br><span class="line">	void show();</span><br><span class="line">&#125;</span><br><span class="line">//接口名+Impl这种格式是接口的实现类格式</span><br><span class="line">/*class InterImpl implements Inter&#123;</span><br><span class="line">	public InterImpl()&#123;</span><br><span class="line">		super();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;*/</span><br><span class="line">class InterImpl extends Object implements Inter&#123;</span><br><span class="line">	public InterImpl()&#123;</span><br><span class="line">		super();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	void show()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class InterfaceDemo2&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Inter i = new InterImpl();</span><br><span class="line">		System.out.println(i.num);</span><br><span class="line">		System.out.println(i.num2);</span><br><span class="line">		System.out.println(&quot;---------------------&quot;);</span><br><span class="line">		//i.num = 100;//无法为最终变量num分配值</span><br><span class="line">		//i.num2 = 200;//无法为最终变量num2分配值</span><br><span class="line">		//System.out.println(i.num);</span><br><span class="line">		//System.out.println(i.num2);</span><br><span class="line">		System.out.println(Inter.num);</span><br><span class="line">		System.out.println(Inter.num2);</span><br><span class="line">		System.out.println(Inter.num3);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h1><ul>
+<li>成员区别<ul>
+<li>抽象类  变量，常量；又抽象方法；抽象方法；非抽象方法</li>
+<li>接口    常量；抽象方法</li>
+</ul>
+</li>
+<li>关系区别<ul>
+<li>类与类  继承，单继承</li>
+<li>类与接口    实现，单实现，多实现</li>
+<li>接口与接口  继承，单继承，多继承</li>
+</ul>
+</li>
+<li>设计理念<ul>
+<li>抽象类  呗继承体现的是：“is a”的关系。共性功能</li>
+<li>接口    被实现体现的是：“like a”的关系，扩展功能</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	类与类：</span><br><span class="line">		继承关系，只能单继承，可以多层继承</span><br><span class="line">	类与接口：</span><br><span class="line">		实现关系,可以单实现，也可以多实现</span><br><span class="line">	接口与接口：</span><br><span class="line">		继承关系，可以单继承，也可以实现多继承,可以多层继承</span><br><span class="line">*/</span><br><span class="line">interface Father&#123;</span><br><span class="line">	public abstract void show();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Mother extends NaiNai&#123;</span><br><span class="line">	public abstract void show2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface NaiNai&#123;</span><br><span class="line">	public abstract void show3();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Sister extends Father,Mother&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Son implements Father,Mother&#123;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;show Son&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void show2()&#123;</span><br><span class="line">		System.out.println(&quot;show2 Son&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	public void show3()&#123;</span><br><span class="line">		System.out.println(&quot;show3 Son&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class InterfaceDemo3&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Son s = new Son();</span><br><span class="line">		s.show();</span><br><span class="line">		s.show2();</span><br><span class="line">		s.show3();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】39-java包package详解/" class="pre-post btn btn-default" title="【JavaSe必知必会】39-java包package详解">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】39-java包package详解</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】37-抽象类/" class="next-post btn btn-default" title="【JavaSe必知必会】37-抽象类">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】37-抽象类</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#接口特点"><span class="toc-text">接口特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口成员特点"><span class="toc-text">接口成员特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类和接口的区别"><span class="toc-text">抽象类和接口的区别</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

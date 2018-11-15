@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】39-java包package详解 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】39-java包package详解">
+            
+	            【JavaSe必知必会】39-java包package详解
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="包的概述"><a href="#包的概述" class="headerlink" title="包的概述"></a>包的概述</h1><ul>
+<li>其实就是文件夹</li>
+<li>作用：对类进行分类管理</li>
+<li>包的划分:<ul>
+<li>举例<ul>
+<li>学生的增加、删除、修改、查询</li>
+<li>老师的增加、删除、修改、查询</li>
+<li>以及一会可能出现的其他的类的增加、删除、修改、查询</li>
+<li>基本的划分：按照模块和功能分<h1 id="包的定义"><a href="#包的定义" class="headerlink" title="包的定义"></a>包的定义</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>package 包名;</li>
+<li>多级包用.分开即可<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2></li>
+<li>package语句必须是程序的第一条可执行的代码</li>
+<li>package语句在一个Java文件中只能有一个</li>
+<li>如果没有package，默认表示无包名<h1 id="带包的类的编译和运行"><a href="#带包的类的编译和运行" class="headerlink" title="带包的类的编译和运行"></a>带包的类的编译和运行</h1><h2 id="手动式"><a href="#手动式" class="headerlink" title="手动式"></a>手动式</h2></li>
+<li>javac编译当前类文件</li>
+<li>手动建立包对应的文件夹</li>
+<li>把a步骤的class文件放到b步骤的最终文件夹下</li>
+<li>通过Java命令执行。</li>
+<li>需要带包名称的执行<ul>
+<li>java com.damien.PackageDemo<h2 id="自动式"><a href="#自动式" class="headerlink" title="自动式"></a>自动式</h2></li>
+</ul>
+</li>
+<li>javac编译的时候带上-d即可<ul>
+<li>javac -d .PackageDemo.java</li>
+</ul>
+</li>
+<li>通过java命令执行。和手动式一样。<h1 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2>不同包下的类之间的访问，我们发现，每次使用不同包下的类的时候，都需要加包的全路径。比较麻烦。这个时候，Java就提供了导包的功能。<h2 id="导包格式"><a href="#导包格式" class="headerlink" title="导包格式"></a>导包格式</h2>import 包名;<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3></li>
+<li>这种方式导入是到类的名称。</li>
+<li>虽然可以最后写*，但是不建议。</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】40-Java权限修饰符/" class="pre-post btn btn-default" title="【JavaSe必知必会】40-Java权限修饰符">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】40-Java权限修饰符</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】38-Java接口详解/" class="next-post btn btn-default" title="【JavaSe必知必会】38-Java接口详解">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】38-Java接口详解</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#包的概述"><span class="toc-text">包的概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#包的定义"><span class="toc-text">包的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#带包的类的编译和运行"><span class="toc-text">带包的类的编译和运行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#手动式"><span class="toc-text">手动式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动式"><span class="toc-text">自动式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导包"><span class="toc-text">导包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导包格式"><span class="toc-text">导包格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】34-面向对象三大特性之继承 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】34-面向对象三大特性之继承">
+            
+	            【JavaSe必知必会】34-面向对象三大特性之继承
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="继承概述"><a href="#继承概述" class="headerlink" title="继承概述"></a>继承概述</h1><ul>
+<li>多个类中存在相同属性和行为时，将这些内容抽取到单独一个类中，那么多个类无需再定义这些属性和行为，只要继承那个类即可。</li>
+<li>通过extends关键字可以实现类与类的继承<ul>
+<li>class 子类名 extends 父类名{}</li>
+</ul>
+</li>
+<li>单独的这个类成为父类，基类或者超类；这多个类可以称为子类或者派生类。</li>
+<li>有了继承以后，我们定义一个类的时候，可以在一个已经存在的类的基础上，还可以定义自己的新成员。<h1 id="继承的好处"><a href="#继承的好处" class="headerlink" title="继承的好处"></a>继承的好处</h1></li>
+<li>提高了代码的复用性<ul>
+<li>多个类相同的成员可以放到同一个类中</li>
+</ul>
+</li>
+<li>提高了代码的维护性<ul>
+<li>如果功能的代码需要修改，修改一处即可</li>
+</ul>
+</li>
+<li>让类与类之间产生了关系，是多态的前提<ul>
+<li>其实这也是类的一个弊端：类的耦合性很强</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	继承概述：</span><br><span class="line">		把多个类中相同的内容给提取出来定义到一个类中。</span><br><span class="line">		</span><br><span class="line">	如何实现继承？</span><br><span class="line">		Java提供了关键字：extends</span><br><span class="line">		</span><br><span class="line">	格式：</span><br><span class="line">		class 子类名 extends 父类名&#123;&#125;</span><br><span class="line">		</span><br><span class="line">	好处：</span><br><span class="line">		A：提供了代码的复用性</span><br><span class="line">		B：提供了代码的维护性</span><br><span class="line">		C：让类与类之间产生关系，是多态的前提</span><br><span class="line">		</span><br><span class="line">*/</span><br><span class="line">//继承前</span><br><span class="line">/*class Student&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Teacher&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;*/</span><br><span class="line">//使用继承后</span><br><span class="line">class Person&#123;</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student extends Person&#123;&#125;</span><br><span class="line"></span><br><span class="line">class Teacher extends Person&#123;&#125;</span><br><span class="line"></span><br><span class="line">public class ExtendsDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		s.eat();</span><br><span class="line">		s.sleep();</span><br><span class="line">		System.out.println(&quot;-------------&quot;);</span><br><span class="line">		</span><br><span class="line">		Teacher t = new Teacher();</span><br><span class="line">		t.eat();</span><br><span class="line">		t.sleep();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="继承的特点"><a href="#继承的特点" class="headerlink" title="继承的特点"></a>继承的特点</h1><ul>
+<li>java中只支持单继承，不支持多继承<ul>
+<li>一个类中只能有一个父类，不可以有多个父类</li>
+<li>class SubDemo extends Demo{} //ok</li>
+<li>class SubDemo extends Demo1,Demo2…//error</li>
+</ul>
+</li>
+<li>java支持多层继承（继承体系）<ul>
+<li>class A{}</li>
+<li>class B extends A{}</li>
+<li>class C extends B{}</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	java中继承的特点：</span><br><span class="line">		A：java中只支持单继承，不支持多继承</span><br><span class="line">			有些语言是支持多继承的，格式：extends 类1,类2,...</span><br><span class="line">		B：java支持多层继承（继承体系）</span><br><span class="line">*/</span><br><span class="line">/*</span><br><span class="line">class Father&#123;&#125;</span><br><span class="line">class Mother&#123;&#125;</span><br><span class="line">class Son extends Father,Mother&#123;&#125;</span><br><span class="line">*/</span><br><span class="line">class GrandFather&#123;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;我是你爷爷&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Father extends GrandFather&#123;</span><br><span class="line">	public void method()&#123;</span><br><span class="line">		System.out.println(&quot;我是你爸爸&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Son extends Father&#123;&#125;</span><br><span class="line"></span><br><span class="line">public class ExtendsDemo2&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Son s = new Son();</span><br><span class="line">		s.method();</span><br><span class="line">		Father f = new Father();</span><br><span class="line">		f.show();</span><br><span class="line">		s.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="继承的注意事项"><a href="#继承的注意事项" class="headerlink" title="继承的注意事项"></a>继承的注意事项</h1><ul>
+<li>子类只能继承父类所有非私有的成员（成员方法和成员变量）<ul>
+<li>其实这也体现了继承的另一个弊端：打破了封装性</li>
+</ul>
+</li>
+<li>子类不能继承父类的构造方法，但是可以通过super关键字去访问父类构造方法</li>
+<li>不要为了部分功能而去继承</li>
+<li>什么时候使用继承呢？<ul>
+<li>继承中类之间体现的是：”is a“的关系</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	继承的注意事项：</span><br><span class="line">		A：子类只能继承父类所有非私有的成员（成员方法和成员变量）</span><br><span class="line">		B：子类不能继承父类的构造方法，但是可以通过super关键字去访问父类构造方法</span><br><span class="line">		C：不要为了部分功能而去继承</span><br><span class="line">			class A&#123;</span><br><span class="line">				public void show1()&#123;&#125;</span><br><span class="line">				public void show2()&#123;&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			class B&#123;</span><br><span class="line">				public void show2()&#123;&#125;</span><br><span class="line">				public void show3()&#123;&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			//我们发现B类中出现了和A类一样的show2()方法，所以，我们就用继承体现</span><br><span class="line">			class B extends A&#123;</span><br><span class="line">				public void show3()&#123;&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			这样其实不好，因为这样你不但有了show2()方法，还多show1(),有可能这个show1()不是我们想要的。</span><br><span class="line">			</span><br><span class="line">		那么，我们什么适合考虑使用继承呢？</span><br><span class="line">			继承中类之间体现的是：”is a“的关系</span><br><span class="line">				Person</span><br><span class="line">					Student</span><br><span class="line">					Teacher</span><br><span class="line">				水果</span><br><span class="line">					苹果</span><br><span class="line">					香蕉</span><br><span class="line">					橘子</span><br><span class="line">			采用假设法：</span><br><span class="line">				如果有两个类A,B,只有她们符合A是B的一种，或者B是A的一种，就可以考虑继承</span><br><span class="line">*/</span><br><span class="line">class Father&#123;</span><br><span class="line">	private int num = 10;</span><br><span class="line">	public int num2 = 20;</span><br><span class="line">	</span><br><span class="line">	private void method()&#123;</span><br><span class="line">		System.out.println(num);</span><br><span class="line">		System.out.println(num2);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(num);</span><br><span class="line">		System.out.println(num2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">	public void function()&#123;</span><br><span class="line">		//System.out.println(num);//num 在 Father 中是 private 访问控制</span><br><span class="line">		System.out.println(num2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ExtendsDemo3&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Son s = new Son();</span><br><span class="line">		//s.method();//子类不能继承父类的私有方法</span><br><span class="line">		s.show();</span><br><span class="line">		//System.out.println(s.num);//num 在 Father 中是 private 访问控制</span><br><span class="line">		s.function();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="继承中成员变量的关系"><a href="#继承中成员变量的关系" class="headerlink" title="继承中成员变量的关系"></a>继承中成员变量的关系</h1><p>在子类方法中访问一个变量</p>
+<ul>
+<li>首先在子类局部范围找</li>
+<li>然后在子类成员范围找</li>
+<li>最后在父类成员范围找（肯定不能访问到父类局部范围）</li>
+<li>如果还是没有就报错（不考虑父亲的父亲…）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	类的组成：</span><br><span class="line">		成员变量</span><br><span class="line">		构造方法</span><br><span class="line">		成员方法</span><br><span class="line">	现在我们又讲了继承，所以，我们就应该考虑一下，类的组成部分的各自关系</span><br><span class="line">	</span><br><span class="line">	继承中的成员变量的关系：</span><br><span class="line">		A:子类中的成员变量和父类中的成员变量名称不一样</span><br><span class="line">		B:子类中的成员变量和父类中的成员变量名称一样</span><br><span class="line">			在子类中访问一个变量的查找顺序：</span><br><span class="line">				a：在子类方法的局部范围找，有就使用</span><br><span class="line">				b：在子类的成员范围找，有就使用</span><br><span class="line">				c：在父类的成员范围找，有就使用</span><br><span class="line">				d：如果还找不到，会报错</span><br><span class="line">				</span><br><span class="line">*/</span><br><span class="line">class Father&#123;</span><br><span class="line">	public int num = 10;</span><br><span class="line">	</span><br><span class="line">	public void method()&#123;</span><br><span class="line">		int num = 50;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">	public int num2 = 20;</span><br><span class="line">	public int num = 30;</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		int num = 40;</span><br><span class="line">		System.out.println(num);</span><br><span class="line">		System.out.println(num2);</span><br><span class="line">		//System.out.println(num3);//找不到符号</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ExtendsDemo4&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Son s = new Son();</span><br><span class="line">		s.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h1><ul>
+<li>super的用法和this很像<ul>
+<li>this代表本类对应的引用</li>
+<li>super代表父类存储空间的标识（可以理解为父类引用）<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2></li>
+</ul>
+</li>
+<li>访问成员变量<ul>
+<li>this.成员变量</li>
+<li>super.成员变量</li>
+</ul>
+</li>
+<li>访问构造方法<ul>
+<li>this(…)</li>
+<li>super(…)</li>
+</ul>
+</li>
+<li>访问成员方法<ul>
+<li>this.成员方法()</li>
+<li>super.成员方法()<h1 id="继承中构造方法的关系"><a href="#继承中构造方法的关系" class="headerlink" title="继承中构造方法的关系"></a>继承中构造方法的关系</h1></li>
+</ul>
+</li>
+<li>子类中所有的构造方法默认都会访问父类中空参的构造方法<ul>
+<li>因为子类会继承父类中的数据，可能还会使用父类的数据。所以，子类初始化之前，一定要完成父类数据的初始化</li>
+<li>每一个构造方法的第一条语句默认都是：super()</li>
+</ul>
+</li>
+<li>如果父类中没有构造方法，该怎么办？<ul>
+<li>子类通过super去显示调用父类其他的带参的构造方法</li>
+<li>子类通过this去调用本类的其他构造方法<ul>
+<li>本类其他构造方法也必须首先访问了父类的构造方法</li>
+</ul>
+</li>
+<li>一定要注意：<ul>
+<li>super(…)或者this(…)必须出现在第一条语句上</li>
+<li>否则，就会有父类数据的多次初始化<h1 id="继承中成员方法的关系"><a href="#继承中成员方法的关系" class="headerlink" title="继承中成员方法的关系"></a>继承中成员方法的关系</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通过子类对象去访问一个方法<ul>
+<li>首先在子类中找</li>
+<li>然后在父类中找</li>
+<li>如果还是没有就报错<h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3></li>
+</ul>
+</li>
+<li>子类中出现了和父类中一模一样的方法声明，也被称为方法覆盖，方法复写。</li>
+<li>使用特点：<ul>
+<li>如果方法名不同，有就调用对应的方法。</li>
+<li>如果方法名相同，最终使用的就是子类自己的。<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3>当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的内容。<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3></li>
+</ul>
+</li>
+<li>父类中私有方法不能被重写</li>
+<li>子类重写父类方法时，访问权限不能更低</li>
+<li>父类静态方法，子类也必须通过静态方法进行重写（其实算不上方法重写）</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】35-final关键字/" class="pre-post btn btn-default" title="【JavaSe必知必会】35-final关键字">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】35-final关键字</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】33-代码块详解/" class="next-post btn btn-default" title="【JavaSe必知必会】33-代码块详解">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】33-代码块详解</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#继承概述"><span class="toc-text">继承概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承的好处"><span class="toc-text">继承的好处</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承的特点"><span class="toc-text">继承的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承的注意事项"><span class="toc-text">继承的注意事项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承中成员变量的关系"><span class="toc-text">继承中成员变量的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#super关键字"><span class="toc-text">super关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承中构造方法的关系"><span class="toc-text">继承中构造方法的关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#继承中成员方法的关系"><span class="toc-text">继承中成员方法的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法重写"><span class="toc-text">方法重写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-text">应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】31-static关键字详解 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】31-static关键字详解">
+            
+	            【JavaSe必知必会】31-static关键字详解
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="static关键字的引入"><a href="#static关键字的引入" class="headerlink" title="static关键字的引入"></a>static关键字的引入</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	定义一个人类</span><br><span class="line">	</span><br><span class="line">	姓名和年龄都是变化的，这个我能接受，因为每个人的性别和年龄都是不同的。</span><br><span class="line">	但是，我们现在选取的几个人都是中国人，他们的国籍都是一样的。</span><br><span class="line">	一样的国籍，我每次创建对象，在堆内存中都要开辟这样的空间，</span><br><span class="line">	浪费了空间。</span><br><span class="line">	怎么办？</span><br><span class="line">	针对多个对象有共同的成员变量值的时候，java就提供了一个关键字来修饰：static</span><br><span class="line">*/</span><br><span class="line">class Person&#123;</span><br><span class="line">	//姓名</span><br><span class="line">	String name;</span><br><span class="line">	//年龄</span><br><span class="line">	int age;</span><br><span class="line">	//国籍</span><br><span class="line">	//String country;</span><br><span class="line">	static String country;</span><br><span class="line">	</span><br><span class="line">	public Person()&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Person(String name,int age)&#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Person(String name,int age,String country)&#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">		this.country = country;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;姓名：&quot;+this.name+&quot;,年龄：&quot;+this.age+&quot;,国籍&quot;+this.country);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class PersonDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象1</span><br><span class="line">		Person p1 = new Person(&quot;呆萌钟&quot;,23,&quot;中国&quot;);</span><br><span class="line">		p1.show();</span><br><span class="line">		//创建对象2</span><br><span class="line">		//Person p2 = new Person(&quot;迪丽热巴&quot;,24,&quot;中国&quot;);</span><br><span class="line">		//p2.show();</span><br><span class="line">		Person p2 = new Person(&quot;迪丽热巴&quot;,24);</span><br><span class="line">		p2.show();</span><br><span class="line">		//创建对象3</span><br><span class="line">		//Person p3 = new Person(&quot;凤姐&quot;,31,&quot;中国&quot;);</span><br><span class="line">		//p3.show();</span><br><span class="line">		Person p3 = new Person(&quot;凤姐&quot;,31);</span><br><span class="line">		p3.show();</span><br><span class="line">		</span><br><span class="line">		p3.country = &quot;美国&quot;;</span><br><span class="line">		p3.show();</span><br><span class="line">		</span><br><span class="line">		p1.sho();</span><br><span class="line">		p2.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="static内存分析"><a href="#static内存分析" class="headerlink" title="static内存分析"></a>static内存分析</h2><p><img src="http://image.damienzhong.com/static%E5%86%85%E5%AD%98%E5%9B%BE.JPG" alt="image"></p>
+<h1 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h1><p>可以修饰成员变量和成员方法</p>
+<h2 id="static关键字特点"><a href="#static关键字特点" class="headerlink" title="static关键字特点"></a>static关键字特点</h2><ul>
+<li>随着类的加载而加载</li>
+<li>优先于对象存在</li>
+<li>被类的所有对象共享<ul>
+<li>这也是我们判断是否使用静态关键字的条件</li>
+</ul>
+</li>
+<li>我们可以通过类名调用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	static的特点：（它可以修饰成员变量，也可以修饰成员方法）</span><br><span class="line">		A：随着类的加载而加载</span><br><span class="line">			回想main方法</span><br><span class="line">		B：优先于对象存在</span><br><span class="line">		C：被类的所有对象共享</span><br><span class="line">			举例：</span><br><span class="line">				一个班的学生应该共用一个班级编号。</span><br><span class="line">				什么时候该用静态？</span><br><span class="line">				如果某个成员变量是被所有对象共享的，那么它就应该定义为静态的。</span><br><span class="line">		D：可以通过类名调用</span><br><span class="line">			其实它本身也可以通过对象调用</span><br><span class="line">			推荐使用类名调用</span><br><span class="line">			静态修饰的内容一般我们称其为：与类相关的，类成员。</span><br><span class="line">*/</span><br><span class="line">class Student&#123;</span><br><span class="line">	//非静态变量</span><br><span class="line">	int num = 10;</span><br><span class="line">	//静态变量</span><br><span class="line">	static int num2 = 20;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class StudentDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		System.out.println(s.num);</span><br><span class="line">		</span><br><span class="line">		System.out.println(Student.num2);</span><br><span class="line">		System.out.println(s.num);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="static关键字注意事项"><a href="#static关键字注意事项" class="headerlink" title="static关键字注意事项"></a>static关键字注意事项</h2><ul>
+<li>在静态方法中是没有this关键字的</li>
+<li>静态方法只能访问静态的成员变量和静态的成员方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	static关键字注意事项:</span><br><span class="line">		A：在静态方法中是没有this关键字的</span><br><span class="line">			如何理解呢？</span><br><span class="line">				静态是随着类的加载而加载，this是随着对象的创建而存在。</span><br><span class="line">				静态比对象先存在。</span><br><span class="line">		B：静态方法只能访问静态成员变量和静态成员方法</span><br><span class="line">			静态方法：</span><br><span class="line">				成员变量：只能访问静态变量</span><br><span class="line">				成员方法：只能访问静态成员方法</span><br><span class="line">			非静态方法：</span><br><span class="line">				成员变量：可以是静态的，也可以是非静态的</span><br><span class="line">				成员方法：可以是静态的成员方法，也可是非静态的成员方法</span><br><span class="line">			简单记：</span><br><span class="line">				静态只能访问静态</span><br><span class="line">*/</span><br><span class="line">class Teacher&#123;</span><br><span class="line">	public int num = 10;</span><br><span class="line">	public static int num2 = 20;</span><br><span class="line">	</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(num);//隐含的告诉你访问的是成员变量</span><br><span class="line">		System.out.println(this.num);//明确的告诉你访问的是成员变量</span><br><span class="line">		</span><br><span class="line">		//function();</span><br><span class="line">		//function2();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void method()&#123;</span><br><span class="line">		//无法从静态上下文中引用非静态变量num</span><br><span class="line">		//System.out.println(num);</span><br><span class="line">		System.out.println(num2);</span><br><span class="line">		//无法从静态上下文中引用非静态方法function()</span><br><span class="line">		//function();</span><br><span class="line">		function2();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void function()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void function2()&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class TeacherDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Teacher t = new Teacher();</span><br><span class="line">		t.show();</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		t.method();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="静态变量和成员变量的区别"><a href="#静态变量和成员变量的区别" class="headerlink" title="静态变量和成员变量的区别"></a>静态变量和成员变量的区别</h1><h2 id="所属不同"><a href="#所属不同" class="headerlink" title="所属不同"></a>所属不同</h2><ul>
+<li>静态变量属于类，所以也称为类变量</li>
+<li>成员变量属于对象，所以也称为实例变量（对象变量）<h2 id="内存中位置不同"><a href="#内存中位置不同" class="headerlink" title="内存中位置不同"></a>内存中位置不同</h2></li>
+<li>静态变量存储于方法区的静态区</li>
+<li>成员变量存储于堆内存<h2 id="内存出现时间不同"><a href="#内存出现时间不同" class="headerlink" title="内存出现时间不同"></a>内存出现时间不同</h2></li>
+<li>静态变量随着类的加载而加载，随着类的消失而消失</li>
+<li>成员变量随着对象的创建而存在，随着对象的消失而消失<h2 id="调用不同"><a href="#调用不同" class="headerlink" title="调用不同"></a>调用不同</h2></li>
+<li>静态变量可以通过类名调用，也可以通过对象调用</li>
+<li>成员变量只能通过对象名调用<h1 id="main方法是静态的"><a href="#main方法是静态的" class="headerlink" title="main方法是静态的"></a>main方法是静态的</h1><strong>public static void main(String[] args){}</strong></li>
+<li>public被jvm调用，访问权限足够大</li>
+<li>static被jvm调用，不用创建对象，直接类名访问</li>
+<li>void被jvm调用，不需要给jvm返回值</li>
+<li>main一个通用的名字，虽然不是关键字，但是被jvm识别</li>
+<li>String[] args以前用于接收键盘录入的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	main方法的格式讲解：</span><br><span class="line">		public static void main(String[] args)&#123;&#125;</span><br><span class="line">		</span><br><span class="line">		public：公共的，访问权限是最大的。由于main方法是被jvm调用，所以权限要够大</span><br><span class="line">		static：静态的，不需要创建对象，通过类名就可以。方便jvm调用。</span><br><span class="line">		void：方法的返回值是返回给调用者的，而main方法是被jvm调用，返回内容给jvm没有意义。</span><br><span class="line">		main：是一个常见的方法入口，很多语言都是用main作为方法入口的。</span><br><span class="line">		String[] args：这是一个字符串数组。</span><br><span class="line">					有什么用？怎么给值？</span><br><span class="line">					这个东西早期是为了接收键盘录入的数据的。（因为jdk5之前没有Scanner）</span><br><span class="line">					格式：</span><br><span class="line">						java 类名 hello world java</span><br><span class="line">*/</span><br><span class="line">public class MainDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//System.out.println(args);//地址值</span><br><span class="line">		//System.out.println(args.length);//0</span><br><span class="line">		//System.out.println(args[0]);//ArrayIndexOutOfBoundsException</span><br><span class="line">		</span><br><span class="line">		//接收数据后</span><br><span class="line">		System.out.println(args);</span><br><span class="line">		System.out.println(args.length);</span><br><span class="line">		//System.out.println(args[0]);</span><br><span class="line">		for(int x=0;x&lt;args.length;x++)&#123;</span><br><span class="line">			System.out.println(args[x]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】32-Java文档的制作与使用/" class="pre-post btn btn-default" title="【JavaSe必知必会】32-Java文档的制作与使用">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】32-Java文档的制作与使用</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】30-面向对象三大特性之封装/" class="next-post btn btn-default" title="【JavaSe必知必会】30-面向对象三大特性之封装">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】30-面向对象三大特性之封装</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#static关键字的引入"><span class="toc-text">static关键字的引入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#static内存分析"><span class="toc-text">static内存分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#static关键字"><span class="toc-text">static关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#static关键字特点"><span class="toc-text">static关键字特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static关键字注意事项"><span class="toc-text">static关键字注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#静态变量和成员变量的区别"><span class="toc-text">静态变量和成员变量的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#所属不同"><span class="toc-text">所属不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存中位置不同"><span class="toc-text">内存中位置不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存出现时间不同"><span class="toc-text">内存出现时间不同</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调用不同"><span class="toc-text">调用不同</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#main方法是静态的"><span class="toc-text">main方法是静态的</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
