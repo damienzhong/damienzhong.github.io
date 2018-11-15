@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】03-Java开发环境配置 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(./img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】03-Java开发环境配置">
+            
+	            【JavaSe必知必会】03-Java开发环境配置
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在上一篇文章对Java做了一个简单介绍之后，我想大家都已经对她有一个初步的认识了吧！那踏入正式学习使用Java之前，我们有一步是不得不做的，它是什么呢？没有错，就是我们本篇文章的标题所说，搭建Java的开发环境配置。那我们就正式进入主题吧！</p>
+<h1 id="JDK的下载与安装"><a href="#JDK的下载与安装" class="headerlink" title="JDK的下载与安装"></a>JDK的下载与安装</h1><h2 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h2><ul>
+<li>通过官方网站获取JDK<br><a href="http://www.oracle.com" target="_blank" rel="noopener">http://www.oracle.com</a></li>
+<li>针对不同操作系统，下载不同的JDK版本<br>识别计算机的操作系统<h3 id="下载图解"><a href="#下载图解" class="headerlink" title="下载图解"></a>下载图解</h3></li>
+</ul>
+<ol>
+<li>浏览器访问==Oracle==官网：<a href="http://www.oracle.com" target="_blank" rel="noopener">http://www.oracle.com</a><br><img src="http://image.damienzhong.com/jdk%E4%B8%8B%E8%BD%BD01.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：浏览器输入==Oracle==官网地址（回车）</li>
+<li>标注2：点击==Java==选项</li>
+<li>标注3：选择==Java SE==选项（等待跳转新页面）</li>
+</ul>
+<ol start="2">
+<li>找到Java开发平台，访问链接<br><img src="http://image.damienzhong.com/jdk%E4%B8%8B%E8%BD%BD02.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：选择==Technologies==（技术）选项</li>
+<li>标注2：选择==Java SE==选项</li>
+<li>标注3：点击==Java Platform, Standard Edition==链接</li>
+</ul>
+<ol start="3">
+<li>选择自己想要的JDK版本，进入下载页面<br><img src="http://image.damienzhong.com/jdk%E4%B8%8B%E8%BD%BD03.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：选择==Download==选项</li>
+<li>标注2：点击==JDK==下的==DOWNLOAD==按钮（选择自己想要下载的JDK版本）</li>
+</ul>
+<ol start="4">
+<li>选择想要下载的版本号进行下载（这里选择==Jdk8==的==8u162==）<br><img src="http://image.damienzhong.com/jdk%E4%B8%8B%E8%BD%BD04.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：选择接受版本协议（必选）</li>
+<li>标注2：根据自己的==操作系统位数==选择对应版本进行下载<h3 id="Windows操作系统位数查看"><a href="#Windows操作系统位数查看" class="headerlink" title="Windows操作系统位数查看"></a>Windows操作系统位数查看</h3></li>
+<li>回到桌面，找到==我的电脑==–&gt;==鼠标右键==–&gt;==属性==<br><img src="http://image.damienzhong.com/jdk%E4%B8%8B%E8%BD%BD05.png" alt="image"></li>
+<li>标注1：操作系统位数（图片显示的是64位操作系统）</li>
+</ul>
+<h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><ol>
+<li>找到之前下载的JDK安装文件</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8501.png" alt="image"></p>
+<ul>
+<li>标注1：该文件即为java安装可执行文件</li>
+</ul>
+<ol start="2">
+<li>双击该文件执行安装，弹出如下图：</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8502.png" alt="image"></p>
+<ul>
+<li>标注1：点击下一步</li>
+</ul>
+<ol start="3">
+<li>定制安装弹窗：</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8503.png" alt="image"></p>
+<ul>
+<li>标注1：选择==开发工具==</li>
+<li>标注2：更改到自己想要存放的文件目录</li>
+<li>标注3：点击下一步</li>
+</ul>
+<ol start="4">
+<li>等待进度条加载完成（此过程中不要进行任何操作）</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8504.png" alt="image"> </p>
+<ol start="5">
+<li>安装==Jre==</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8505.png" alt="image"></p>
+<ul>
+<li>标注1：把Jre的安装目录更改成和之前Jdk的同级目录</li>
+<li>标注2：点击下一步</li>
+</ul>
+<ol start="6">
+<li>等待安装进度条执行完</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8506.png" alt="image"></p>
+<ol start="7">
+<li>弹出安装成功窗口</li>
+</ol>
+<p><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8507.png" alt="image"></p>
+<ul>
+<li>标注1：直接点击关闭即可<h3 id="验证安装结果"><a href="#验证安装结果" class="headerlink" title="验证安装结果"></a>验证安装结果</h3><img src="http://image.damienzhong.com/jdk%E5%AE%89%E8%A3%8508.png" alt="image"></li>
+<li>标注1：DOS窗口命令行输入：==java==，回车，展示如上图片内容则安装成功<h1 id="JDK目录介绍"><a href="#JDK目录介绍" class="headerlink" title="JDK目录介绍"></a>JDK目录介绍</h1><img src="http://image.damienzhong.com/jdk%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D01.png" alt="image"></li>
+<li>bin：JDK的各种工具命令即JDK开发工具的可执行文件其中这些可执行文件都是二进制的</li>
+<li>db：jdk自带数据库</li>
+<li>include：一些供C语言使用的标题文件</li>
+<li>jre：运行Java程序所必须的JRE环境</li>
+<li>lib：支持Java运行的核心类库</li>
+<li>src：Java所有核心类库的源代码<h1 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h1><blockquote>
+<p>环境变量（environment variables）一般是指在操作系统中用来指定操作系统运行环境的一些参数，如：临时文件夹位置和系统文件夹位置等。</p>
+<p>环境变量是在操作系统中一个具有特定名字的对象，它包含了一个或者多个应用程序所将使用到的信息。例如Windows和DOS操作系统中的path环境变量，当要求系统运行一个程序而没有告诉它程序所在的完整路径时，系统除了在当前目录下面寻找此程序外，还应到path中指定的路径去找。用户通过设置环境变量，来更好的运行进程。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>找到我的电脑，点击鼠标右键，选择属性，弹出如下窗口<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE01.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：点击==高级系统设置==</li>
+</ul>
+<ol start="2">
+<li>点击环境变量按钮<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE02.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：环境变量按钮</li>
+</ul>
+<ol start="3">
+<li>点击==环境变量==下的==新建按钮==<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE03.png" alt="image"></li>
+<li>新建==JAVA_HOME==变量<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE04.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：变量名为“JAVA_HOME”(复制我引号内的内容就可以了，不含引号）</li>
+<li>标注2：变量值，必须是自己装jdk时的路径</li>
+<li>标注3：设置完成点击确定按钮</li>
+</ul>
+<ol start="5">
+<li>找到“CLASSPATH”,没有的话就“新建”<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE05.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：变量名为“==CLASSPATH==”(复制我引号内的内容就可以了，不含引号）</li>
+<li>标注2：变量值“==.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;==”(不含引号）</li>
+<li>标注3：设置完成点击确定按钮</li>
+</ul>
+<ol start="6">
+<li>找到Path，对其进行编辑<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE06.png" alt="image"></li>
+</ol>
+<ul>
+<li>标注1：==%JAVA_HOME%\bin==</li>
+<li>标注2：==%JAVA_HOME%\jre\bin==</li>
+<li>标注3：设置完成点击确定按钮，把之前窗口的所有确定按钮都点击<h2 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h2></li>
+<li>任意窗口下打开Dos窗口，输入命令==javac==，看是否输出如下图所示内容，有则配置成功<br><img src="http://image.damienzhong.com/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE07.png" alt="image"></li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】02-Java语言概述/" class="next-post btn btn-default" title="【JavaSe必知必会】02-Java语言概述">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】02-Java语言概述</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JDK的下载与安装"><span class="toc-text">JDK的下载与安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK下载"><span class="toc-text">JDK下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载图解"><span class="toc-text">下载图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Windows操作系统位数查看"><span class="toc-text">Windows操作系统位数查看</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK安装"><span class="toc-text">JDK安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#验证安装结果"><span class="toc-text">验证安装结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JDK目录介绍"><span class="toc-text">JDK目录介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境变量配置"><span class="toc-text">环境变量配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#验证方式"><span class="toc-text">验证方式</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
