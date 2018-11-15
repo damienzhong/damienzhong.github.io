@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】09-Java数据类型划分 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(./img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】09-Java数据类型划分">
+            
+	            【JavaSe必知必会】09-Java数据类型划分
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在经历了之前章节基础数学进制相关内容的洗礼之后，是不感觉自己的逻辑思维高了一大截？那本章我们要说的数据类型，肯定对大家来说就是小case了！那我们开始新章节的学习吧！</p>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><h2 id="变量概述"><a href="#变量概述" class="headerlink" title="变量概述"></a>变量概述</h2><blockquote>
+<p>在程序执行的过程中，在某个范围内其值可以发生改变的量</p>
+</blockquote>
+<blockquote>
+<p>理解：如同数学中的未知数</p>
+</blockquote>
+<p>从本质上讲，变量其实是内存中的一小块区域，使用变量名来访问这块区域，因此，每一个变量使用前必须要先申请（声明），然后必须进行赋值（填充内容），才能使用。</p>
+<h3 id="为什么要定义变量呢"><a href="#为什么要定义变量呢" class="headerlink" title="为什么要定义变量呢"></a>为什么要定义变量呢</h3><p>用来不断的存放同一类型的常量，并可以重复使用</p>
+<h3 id="变量的组成规则："><a href="#变量的组成规则：" class="headerlink" title="变量的组成规则："></a>变量的组成规则：</h3><blockquote>
+<p>A：必须对其进行限定。<br>如何限定？用数据类型。</p>
+</blockquote>
+<blockquote>
+<p>B：我们在运算的时候，不可能拿着这个空间去运算，我们真正运算时使用的是该空间&gt;的值，我们就得给空间起一个名字：变量名</p>
+</blockquote>
+<blockquote>
+<p>C：即使你有数据类型，你有变量名，但是如果没有值，这个空间就是一个垃圾空间，&gt;没有任何意义。所有需要初始化值。</p>
+</blockquote>
+<h4 id="定义变量的格式"><a href="#定义变量的格式" class="headerlink" title="定义变量的格式"></a>定义变量的格式</h4><pre><code>数据类型 变量名 = 初始化值;
+注意：格式是固定的，记住格式，以不变应万变
+</code></pre><h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><blockquote>
+<p>Java语言是强类型语言，对于每一种数据都定义了明确的具体数据类型，在内存总分配了不同大小的内存空间</p>
+</blockquote>
+<p><img src="http://image.damienzhong.com/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%A6%82%E8%A7%88%E5%9B%BE.png" alt="image"></p>
+<blockquote>
+<p><strong>有效数字</strong>：具体地说，是指在分析工作中实际能够测量到的数字。所谓能够测量到的是包括最后一位估计的，不确定的数字。<br>对于一个近似数，从左边第一个不是0的数字起，到精确到的位数止，所有的数字都叫做这个数的有效数字。</p>
+</blockquote>
+<h2 id="数据类型的概述和分类"><a href="#数据类型的概述和分类" class="headerlink" title="数据类型的概述和分类"></a>数据类型的概述和分类</h2><p><img src="http://image.damienzhong.com/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B01.png" alt="image"></p>
+<h2 id="定义不同数据类型的变量"><a href="#定义不同数据类型的变量" class="headerlink" title="定义不同数据类型的变量"></a>定义不同数据类型的变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	数据类型：Java是一种强类型的语言，针对每一种数据都定义了明确的数据类型。</span><br><span class="line">	</span><br><span class="line">	数据类型分类：</span><br><span class="line">		A:基本数据类型</span><br><span class="line">		B:引用数据类型(类,接口,数值)</span><br><span class="line">		</span><br><span class="line">	基本数据类型:4类8种</span><br><span class="line">		A:整数			占用字节数</span><br><span class="line">			byte			1</span><br><span class="line">			short			2</span><br><span class="line">			int				4</span><br><span class="line">			long			8</span><br><span class="line">			</span><br><span class="line">		B:浮点数</span><br><span class="line">			float 			4</span><br><span class="line">			double 			8</span><br><span class="line">			</span><br><span class="line">		C:字符</span><br><span class="line">			char			2</span><br><span class="line">		D:布尔</span><br><span class="line">			boolean			1</span><br><span class="line">		</span><br><span class="line">		注意：</span><br><span class="line">			整数默认是int类型</span><br><span class="line">			浮点数默认是double类型。</span><br><span class="line">			</span><br><span class="line">			长整型后缀用L或者l标记。建议使用L。</span><br><span class="line">			单精度浮点数用F或者f标记。建议使用F。</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量的格式：</span><br><span class="line">		//数据类型 变量名 = 初始化值;</span><br><span class="line">		</span><br><span class="line">		//定义一个字节变量</span><br><span class="line">		byte b = 10;</span><br><span class="line">		System.out.println(10);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		</span><br><span class="line">		//定义一个短整型变量</span><br><span class="line">		short s = 100;</span><br><span class="line">		System.out.println(s);</span><br><span class="line">		</span><br><span class="line">		//定义一个整型变量</span><br><span class="line">		int i = 1000;</span><br><span class="line">		System.out.println(i);</span><br><span class="line">		</span><br><span class="line">		//超过了int的范围</span><br><span class="line">		//int j = 1000000000000;</span><br><span class="line">		long j = 1000000000000L;</span><br><span class="line">		//long j = 100L;</span><br><span class="line">		System.out.println(j);</span><br><span class="line">		</span><br><span class="line">		//定义浮点数据变量</span><br><span class="line">		float f = 12.345F;</span><br><span class="line">		System.out.println(f);</span><br><span class="line">		</span><br><span class="line">		double d = 12.345;</span><br><span class="line">		System.out.println(d);</span><br><span class="line">		</span><br><span class="line">		//定义字符变量</span><br><span class="line">		char ch = &apos;a&apos;;</span><br><span class="line">		System.out.println(ch);</span><br><span class="line">		</span><br><span class="line">		//定义布尔变量</span><br><span class="line">		boolean flag = true;</span><br><span class="line">		System.out.println(flag);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用变量的注意事项"><a href="#使用变量的注意事项" class="headerlink" title="使用变量的注意事项"></a>使用变量的注意事项</h2><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><blockquote>
+<p>变量定义在哪一级大括号中，哪个大括号的范围就是这个变量的作用域。相同的作用域中不能定义两个同名变量。</p>
+</blockquote>
+<h3 id="初始化值"><a href="#初始化值" class="headerlink" title="初始化值"></a>初始化值</h3><blockquote>
+<p>没有初始化值不能直接使用</p>
+</blockquote>
+<h3 id="在一行上建议只定义一个变量"><a href="#在一行上建议只定义一个变量" class="headerlink" title="在一行上建议只定义一个变量"></a>在一行上建议只定义一个变量</h3><blockquote>
+<p>可以定义多个，但是不建议</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	使用变量的时候要注意的问题：</span><br><span class="line">		A:作用域</span><br><span class="line">			变量定义在哪个大括号内，它就在这个大括号内有效。</span><br><span class="line">			并且，在同一个大括号内不能同时定义同名的变量。</span><br><span class="line">			</span><br><span class="line">		B:初始化值</span><br><span class="line">			没有初始化值的变量不能直接使用。</span><br><span class="line">			你只要在使用前给值就行，不一定非要在定义的时候立即给值。</span><br><span class="line">			推荐在定义的时候给值。</span><br><span class="line">			</span><br><span class="line">			定义变量的格式：</span><br><span class="line">				a:数据类型 变量名 = 初始化值;</span><br><span class="line">				b:数据类型 变量名;</span><br><span class="line">				  变量名 = 初始化值;</span><br><span class="line">		</span><br><span class="line">		C:在一行上建议只定义一个变量</span><br><span class="line">			可以定义多个，但是不建议</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量</span><br><span class="line">		int x = 100;</span><br><span class="line">		</span><br><span class="line">		//错误，不能有同名的</span><br><span class="line">		//int x = 200;</span><br><span class="line">		</span><br><span class="line">		//定义变量必须给值</span><br><span class="line">		//int y;</span><br><span class="line">		//System.out.println(y);</span><br><span class="line">		</span><br><span class="line">		int z;</span><br><span class="line">		z = 100;</span><br><span class="line">		System.out.println(z);</span><br><span class="line">		</span><br><span class="line">		//在一行上定义多个变量</span><br><span class="line">		//int a = 10; int b = 20; int c  = 30;</span><br><span class="line">		//上面的写法可以，但是不建议。</span><br><span class="line">		int a = 10; </span><br><span class="line">		int b = 20; </span><br><span class="line">		int c  = 30;</span><br><span class="line">		</span><br><span class="line">		//int d, e;</span><br><span class="line">		//d = 40;</span><br><span class="line">		//e = 50;</span><br><span class="line">		</span><br><span class="line">		//int f,int g; //错误</span><br><span class="line">		//int h; int i; //正确</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】10-数据类型转换与运算/" class="pre-post btn btn-default" title="【JavaSe必知必会】10-数据类型转换与运算">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】10-数据类型转换与运算</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】08-原码反码补码/" class="next-post btn btn-default" title="【JavaSe必知必会】08-原码反码补码">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】08-原码反码补码</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#变量"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量概述"><span class="toc-text">变量概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么要定义变量呢"><span class="toc-text">为什么要定义变量呢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的组成规则："><span class="toc-text">变量的组成规则：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义变量的格式"><span class="toc-text">定义变量的格式</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据类型"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型的概述和分类"><span class="toc-text">数据类型的概述和分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义不同数据类型的变量"><span class="toc-text">定义不同数据类型的变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用变量的注意事项"><span class="toc-text">使用变量的注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域"><span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化值"><span class="toc-text">初始化值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在一行上建议只定义一个变量"><span class="toc-text">在一行上建议只定义一个变量</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

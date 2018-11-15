@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】06-Java常量与进制概述 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(./img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】06-Java常量与进制概述">
+            
+	            【JavaSe必知必会】06-Java常量与进制概述
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>上一节我们介绍了注释、关键字与标识符，本章给大家介绍一下常量，准备好没有，要开车了！</p>
+<h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><h2 id="常量概述"><a href="#常量概述" class="headerlink" title="常量概述"></a>常量概述</h2><blockquote>
+<p>在程序执行的过程中其值不可以发生改变</p>
+</blockquote>
+<h2 id="Java中常量分类"><a href="#Java中常量分类" class="headerlink" title="Java中常量分类"></a>Java中常量分类</h2><ul>
+<li>字面值常量</li>
+<li>自定义常量(面向对象部分讲)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	常量：</span><br><span class="line">		在程序执行过程中，其值不发生改变的量。</span><br><span class="line">		</span><br><span class="line">	分类：</span><br><span class="line">		A:字面值常量</span><br><span class="line">		B:自定义常量(后面讲)</span><br><span class="line">		</span><br><span class="line">	字面值常量</span><br><span class="line">		A:字符串常量	用双引号括起来的内容。</span><br><span class="line">			举例：&quot;hello&quot;,&quot;world&quot;,&quot;HelloWorld&quot;</span><br><span class="line">		B:整数常量	所有的整数</span><br><span class="line">			举例：100,200</span><br><span class="line">		C:小数常量	所有的小数</span><br><span class="line">			举例：10.23,110.11</span><br><span class="line">		D:字符常量	用单引号括起来的内容</span><br><span class="line">			举例：&apos;a&apos;,&apos;A&apos;,&apos;0&apos;</span><br><span class="line">			错误的：&apos;ab&apos;</span><br><span class="line">		E:布尔常量	比较特殊</span><br><span class="line">			举例：true,false</span><br><span class="line">		F:空常量	后面讲</span><br><span class="line">			举例：null</span><br><span class="line">*/</span><br><span class="line">class ConstantDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//字符串常量的输出</span><br><span class="line">		System.out.println(&quot;hello&quot;);</span><br><span class="line">		</span><br><span class="line">		//整数常量的输出</span><br><span class="line">		System.out.println(100);</span><br><span class="line">		</span><br><span class="line">		//小数常量的输出</span><br><span class="line">		System.out.println(100.10);</span><br><span class="line">		</span><br><span class="line">		//字符常量的输出</span><br><span class="line">		System.out.println(&apos;a&apos;);</span><br><span class="line">		System.out.println(&apos;A&apos;);</span><br><span class="line">		System.out.println(&apos;0&apos;);</span><br><span class="line">		//这个是有问题的</span><br><span class="line">		//System.out.println(&apos;ab&apos;);</span><br><span class="line">		</span><br><span class="line">		//布尔常量的输出</span><br><span class="line">		System.out.println(true);</span><br><span class="line">		System.out.println(false);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h1><h2 id="进制概述与图解"><a href="#进制概述与图解" class="headerlink" title="进制概述与图解"></a>进制概述与图解</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p><strong>Java针对整数常量提供了4种表现形式</strong></p>
+<ul>
+<li>二进制</li>
+<li>八进制</li>
+<li>十进制</li>
+<li>十六进制</li>
+</ul>
+<p><strong>进制</strong>：就是进位制，是人们规定的一种进位方法。<br>对于任何一种进制–X进制，就表示某一位置上的数运算时是逢X进一位。二进制就是逢二进一，八进制是逢八进一，十进制是逢十进一，十六进制是逢十六进一。</p>
+<h4 id="二进制的由来："><a href="#二进制的由来：" class="headerlink" title="二进制的由来："></a>二进制的由来：</h4><p>任何数据在计算机中都是以二进制的形式存在的。二进制早期由电信号开关演变而来。<br>一个整数在内存中一样也是二进制的，但是使用一大串的1或者0组成的数值进行使用很麻烦。<br>所以就想把一大串缩短点，将二进制中的三位用一位表示。<br>这三位可以取到的最大值就是7.超过7就进位了，这就是八进制。<br>但是对于过长的二进制变成八进制还是较长，所以出现的用4个二进制位表示一位的情况，四个二进制位最大是15，这就是十六进制。<br>==规律，进制越大，表现形式越短。==</p>
+<h3 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h3><p><img src="http://p5gya3sfn.bkt.clouddn.com/%E8%BF%9B%E5%88%B6%E6%A6%82%E8%BF%B0%E4%BB%A5%E5%8F%8A%E4%BA%8C%E8%BF%9B%E5%88%B6,%E5%85%AB%E8%BF%9B%E5%88%B6,%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%9B%BE%E8%A7%A3.bmp" alt="image"></p>
+<h3 id="不同进制数据的表现形式"><a href="#不同进制数据的表现形式" class="headerlink" title="不同进制数据的表现形式"></a>不同进制数据的表现形式</h3><h4 id="不同进制的数据组成"><a href="#不同进制的数据组成" class="headerlink" title="不同进制的数据组成"></a>不同进制的数据组成</h4><ul>
+<li>二进制    <ul>
+<li>由0,1组成。以0b开头</li>
+</ul>
+</li>
+<li>八进制    <ul>
+<li>由0,1,…7组成。以0开头</li>
+</ul>
+</li>
+<li>十进制    <ul>
+<li>由0,1,…9组成。整数默认是十进制的</li>
+</ul>
+</li>
+<li>十六进制    <ul>
+<li>由0,1,…9,a,b,c,d,e,f(大小写均可)。以0x开头<h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	不同进制的数据表现：</span><br><span class="line">		二进制：由0，1组成。以0b开头。</span><br><span class="line">		八进制：由0,1,...7组成。以0开头。</span><br><span class="line">		十进制：由0,1,...9组成。默认整数是十进制。</span><br><span class="line">		十六进制：由0,1,...9,a,b,c,d,e,f(大小写均可)组成。以0x开头。</span><br><span class="line">*/</span><br><span class="line">class JinZhiDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(100); //十进制</span><br><span class="line">		</span><br><span class="line">		System.out.println(0b100); //二进制</span><br><span class="line">		System.out.println(0100); //八进制</span><br><span class="line">		System.out.println(0x100); //十六进制</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】07-进制的转换/" class="pre-post btn btn-default" title="【JavaSe必知必会】07-进制的转换">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】07-进制的转换</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】05-Java程序基本概念/" class="next-post btn btn-default" title="【JavaSe必知必会】05-Java程序基本概念">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】05-Java程序基本概念</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常量"><span class="toc-text">常量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常量概述"><span class="toc-text">常量概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java中常量分类"><span class="toc-text">Java中常量分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#进制"><span class="toc-text">进制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#进制概述与图解"><span class="toc-text">进制概述与图解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二进制的由来："><span class="toc-text">二进制的由来：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图解"><span class="toc-text">图解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不同进制数据的表现形式"><span class="toc-text">不同进制数据的表现形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#不同进制的数据组成"><span class="toc-text">不同进制的数据组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码演示"><span class="toc-text">代码演示</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

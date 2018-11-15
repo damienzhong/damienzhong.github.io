@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>【JavaSe必知必会】04-编写第一个Java程序 | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>【JavaSe必知必会】05-Java程序基本概念 | 呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -120,9 +120,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【JavaSe必知必会】04-编写第一个Java程序">
+        <h1 id="【JavaSe必知必会】05-Java程序基本概念">
             
-	            【JavaSe必知必会】04-编写第一个Java程序
+	            【JavaSe必知必会】05-Java程序基本概念
             
         </h1>
         <div class="post-meta">
@@ -171,52 +171,85 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在，大家应该都已经安装好jdk环境和环境变量配置好了吧！是不是已经跃跃欲试，按耐不住心中的小激动了？那我们现在就来写我们java学习生涯中的第一个java程序。</p>
-<h1 id="文件相关设置"><a href="#文件相关设置" class="headerlink" title="文件相关设置"></a>文件相关设置</h1><p>为了方便后面大家的学习呢？有一点大家还是需要提前设置一下的，就是文件的相关设置（如果已经做过相关设置，跳过这一段）<br>首先随便进入一个文件夹，我们会发现文件夹下的文件都只有文件名，却没有文件是属于那种类型的后缀名，设置成功之后应该是长这样的，先给大家看设置成功的样子</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE01.png" alt="image"></p>
-<p>如果你的已经是长这样了，那就不用设置啦，说明已经设置过了，如果不是长上面那样的同学，那你们就需要再往下看咯！</p>
-<p>首先我们看一下文件夹上方的工具栏，是不是有一个工具选项，点击它，然后选择文件夹选项</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE02.png" alt="image"></p>
-<p>选择查看，然后把显示隐藏的文件选择上，把隐藏已知文件的扩展名这个√去掉，搞定之后点击确定就大功告成了！</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE03.png" alt="image"></p>
-<h1 id="文本编辑器编写代码"><a href="#文本编辑器编写代码" class="headerlink" title="文本编辑器编写代码"></a>文本编辑器编写代码</h1><p>可能很多朋友在看别的程序员敲代码的时候都是用各种炫酷的集成IDE开发工具，好黑科技的感觉对不对？不用羡慕他们，后面我们也会变得炫酷。那如何才能以后变得炫酷呢？骚年，莫急，现在我们就要介绍炫酷coding的开山鼻祖——文本编辑器直接直接写代码。</p>
-<p>啥是文本编辑器？(⊙o⊙)…额，应该都知道吧。那我们就直接说咯！</p>
-<p>首先自己选择一个文件夹，最好新建一个专门用于存储我们自己写的代码的文件夹，进入文件夹之后点击鼠标右键，选择新建，然后选择文本文档</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE04.png" alt="image"></p>
-<p>把文件名重命名为HelloJava，把txt后缀名改为java，命名完成出现下图提示点击是</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE05.png" alt="image"></p>
-<p>创建完成之后，我们会发现文件的类型变为Java类型，我们选中该文件，点击鼠标右键，选择编辑，打开文本编辑框后输入如下内容</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE06.png" alt="image"></p>
-<p>编辑完成后关闭文件回到该文件所在目录（即文件夹），然后在当前目录打开命令行DOS窗口，输入命令javac HelloJava.java,然后回车，发现命令行DOS窗口没啥反应，但是如果你仔细一点，你会发现，当前目录下多了一个叫做HelloJava.class的文件，如下图</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE07.png" alt="image"></p>
-<p>好，我先不解释它是啥，因为后续会说到，如果出现这一步，我们继续在DOS窗口输入下一条命令：java HelloJava，回车，是不是发现此时窗口里有反应了，多出了两行文字</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE09.png" alt="image"></p>
-<p>这两行内容其实就是我们刚才在文本编辑器中的代码让其打出的，这就是用文本编辑器的方式编写运行代码的方式！</p>
-<h1 id="Java9的JShell方式编写代码"><a href="#Java9的JShell方式编写代码" class="headerlink" title="Java9的JShell方式编写代码"></a>Java9的JShell方式编写代码</h1><p>什么是jshell呢？那我就简单的先给大家介绍一下。</p>
-<blockquote>
-<p>jshell是Java 9 新增的一个脚本工具，意思是可以在命令行里直接运行java的代码，而无需创建Java文件，然后再编译，最后运行。我觉得jshell的好处就是即写即得，平常只想看看几行代码运行的结果是怎么样的，有了jshell就方便多了，直接在命令行上敲。</p>
-</blockquote>
-<p>那如何使用它呢？</p>
-<p>打开DOS命令窗口，输入命令：jshell，回车，稍等几秒钟就会看到JShell启动成功的欢迎提示语，出现下图说明启动成功！</p>
-<p><img src="http://image.damienzhong.com/jshell01.png" alt="image"></p>
-<p>然后，怎么用呢？比如，输入 1+1:</p>
-<p><img src="http://image.damienzhong.com/jshell02.png" alt="image"></p>
-<p>结果输出$1 ==&gt; 2，其中$1表示第一个临时变量。</p>
-<p>如果输出我们刚才用文本编辑器输出的内容呢？</p>
-<p><img src="http://image.damienzhong.com/jshell03.png" alt="image"></p>
-<p>我们再用它创建一个方法，方法具体是什么我们后面再详细说，现在先简单的看效果</p>
-<p><img src="http://image.damienzhong.com/jshell04.png" alt="image"></p>
-<p>如果想修改方法，怎么办？重写吗？不用这样的亲，可以输入“/edit sum”，会弹出编辑界面：</p>
-<p><img src="http://image.damienzhong.com/jshell05.png" alt="image"><br><img src="http://image.damienzhong.com/jshell06.png" alt="image"></p>
-<p>调用修改过的方法，这里的j是我们定义的变量，所以它没有”$”符号。</p>
-<p><img src="http://image.damienzhong.com/jshell07.png" alt="image"></p>
-<p>如果我们想看看之前自己所运行的所有脚本，我们可以用“/list”来查看</p>
-<p><img src="http://image.damienzhong.com/jshell08.png" alt="image"></p>
-<p>然后，我们可以通过“/import”来查看脚本的默认导入的包，至于什么是包，就是当前程序运行需要引用的一些东西</p>
-<p><img src="http://image.damienzhong.com/jshell09.png" alt="image"></p>
-<p>最后，我们输入“/exit”来退出jshell环境：</p>
-<p><img src="http://image.damienzhong.com/jshell10.png" alt="image"></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>好啦，两种方式都介绍完了，赶紧去尝试一下吧！</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在前面的内容中，我们介绍了Java的环境搭建，也敲了我们学习过程中的第一个Java程序，但是，我想很多人暂时还对之前敲的那段代码心存疑问。没有关系，接下来，我们就对其进行抽丝剥茧，深入解析，你会发现，原来Java如此简单。</p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><h2 id="注释概述及其分类"><a href="#注释概述及其分类" class="headerlink" title="注释概述及其分类"></a>注释概述及其分类</h2><ul>
+<li><p><strong>注释概述</strong></p>
+<p>用于解释说明程序的文字</p>
+</li>
+<li><strong>Java中注释分类格式</strong><ul>
+<li>单行注释<ul>
+<li>格式： //注释文字</li>
+</ul>
+</li>
+<li>多行注释<ul>
+<li>格式： /<em>  注释文字  </em>/</li>
+</ul>
+</li>
+<li>文档注释<ul>
+<li>格式：/*<em> 注释文字 </em>/<h2 id="注释用途"><a href="#注释用途" class="headerlink" title="注释用途"></a>注释用途</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>注释是一个程序员必须要具有的良好编程习惯。</li>
+<li>==初学者编写程序可以养成习惯：先写注释再写代码==。</li>
+<li>将自己的思想通过注释先整理出来，在用代码去体现。</li>
+<li>因为代码仅仅是思想的一种体现形式而已。<h2 id="注释代码整合案例演示"><a href="#注释代码整合案例演示" class="headerlink" title="注释代码整合案例演示"></a>注释代码整合案例演示</h2></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">*我们要写一个输出呆萌钟很帅的程序</span><br><span class="line">*/</span><br><span class="line">/*分析思路：</span><br><span class="line">	1、首先要定义一个类：ZhushiDemo</span><br><span class="line">	2、程序要被jvm调用，需要定义main方法</span><br><span class="line">	3、程序要想输出结果，必须要有输出语句</span><br><span class="line">*/</span><br><span class="line">public class ZhushiDemo&#123;//定义一个类，public与class都是定义类用的关键字，后面跟的是类名</span><br><span class="line">	//定义main方法</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//输出语句基本格式，双引号里面的内容就是你们想要输出的内容</span><br><span class="line">		System.out.println(&quot;呆萌钟很帅&quot;);</span><br><span class="line">		System.out.println(&quot;我们也很帅&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注释总结"><a href="#注释总结" class="headerlink" title="注释总结"></a>注释总结</h2><ul>
+<li>解释说明程序，提高程序的阅读性<br>可以帮助我们排错</li>
+<li>后面我们会讲解更高级的排错方式<h1 id="标识符与关键字"><a href="#标识符与关键字" class="headerlink" title="标识符与关键字"></a>标识符与关键字</h1><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2></li>
+<li><strong>关键字概述</strong><ul>
+<li>被Java语言赋予特定含义的单词</li>
+</ul>
+</li>
+<li><strong>关键字特点</strong><ul>
+<li>组成关键字的字母全部小写</li>
+</ul>
+</li>
+<li><strong>关键字注意事项</strong><ul>
+<li>goto和const作为保留字存在,目前并不使用</li>
+<li>类似Notepad++这样的高级记事本,针对关键字有特殊的颜色标记，非常直观<h3 id="Java中的关键字列表"><a href="#Java中的关键字列表" class="headerlink" title="Java中的关键字列表"></a>Java中的关键字列表</h3><img src="http://image.damienzhong.com/%E5%85%B3%E9%94%AE%E5%AD%97%E5%88%97%E8%A1%A801.png" alt="image"><img src="http://image.damienzhong.com/%E5%85%B3%E9%94%AE%E5%AD%97%E5%88%97%E8%A1%A802.png" alt="image"><h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2></li>
+</ul>
+</li>
+<li><strong>标识符概述</strong><ul>
+<li>就是给类,接口,方法,变量等起名字时使用的字符序列</li>
+</ul>
+</li>
+<li><strong>组成规则</strong><ul>
+<li>英文大小写字母</li>
+<li>数字字符</li>
+<li>$和_</li>
+</ul>
+</li>
+<li><strong>注意事项</strong><ul>
+<li>不能以数字开头</li>
+<li>不能是Java中的关键字</li>
+<li>区分大小写<h3 id="标识符命名示例"><a href="#标识符命名示例" class="headerlink" title="标识符命名示例"></a>标识符命名示例</h3></li>
+</ul>
+</li>
+<li><p>包(其实就是文件夹,用于解决相同类名问题)</p>
+<ul>
+<li>字母全小写,demo.biaoshifu、demo.guanjianzi</li>
+</ul>
+</li>
+<li>类或者接口<ul>
+<li>单个单词：首字母大写，Name</li>
+<li>两个或多个单词：每个单词首字母大写，ClassName、InterfaceName</li>
+</ul>
+</li>
+<li>方法和变量<ul>
+<li>单个单词：首字母大写，Name</li>
+<li>两个或多个单词：每个单词首字母大写，ClassName、InterfaceName</li>
+</ul>
+</li>
+<li>常量<br>一个单词和和多个单词分别举例<ul>
+<li>单个单词：所有字母大写</li>
+<li>多个单词：所有字母大写，单词与单词之间用下划线分割</li>
+</ul>
+</li>
+</ul>
 
     </div>
     
@@ -250,15 +283,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/15/【JavaSe必知必会】05-Java程序基本概念/" class="pre-post btn btn-default" title="【JavaSe必知必会】05-Java程序基本概念">
+        <a href="/2018/11/15/【JavaSe必知必会】06-Java常量与进制概述/" class="pre-post btn btn-default" title="【JavaSe必知必会】06-Java常量与进制概述">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【JavaSe必知必会】05-Java程序基本概念</span>
+            <span class="hidden-xs">【JavaSe必知必会】06-Java常量与进制概述</span>
         </a>
     
     
-        <a href="/2018/11/15/【JavaSe必知必会】03-Java开发环境配置/" class="next-post btn btn-default" title="【JavaSe必知必会】03-Java开发环境配置">
+        <a href="/2018/11/15/【JavaSe必知必会】04-编写第一个Java程序/" class="next-post btn btn-default" title="【JavaSe必知必会】04-编写第一个Java程序">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【JavaSe必知必会】03-Java开发环境配置</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">【JavaSe必知必会】04-编写第一个Java程序</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -293,7 +326,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件相关设置"><span class="toc-text">文件相关设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文本编辑器编写代码"><span class="toc-text">文本编辑器编写代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java9的JShell方式编写代码"><span class="toc-text">Java9的JShell方式编写代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注释概述及其分类"><span class="toc-text">注释概述及其分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释用途"><span class="toc-text">注释用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释代码整合案例演示"><span class="toc-text">注释代码整合案例演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释总结"><span class="toc-text">注释总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标识符与关键字"><span class="toc-text">标识符与关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关键字"><span class="toc-text">关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java中的关键字列表"><span class="toc-text">Java中的关键字列表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标识符"><span class="toc-text">标识符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标识符命名示例"><span class="toc-text">标识符命名示例</span></a></li></ol></li></ol></li></ol>
         
     </div>
 </aside>

@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】10-数据类型转换与运算 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(./img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】10-数据类型转换与运算">
+            
+	            【JavaSe必知必会】10-数据类型转换与运算
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="数据类型转换默认转换"><a href="#数据类型转换默认转换" class="headerlink" title="数据类型转换默认转换"></a>数据类型转换默认转换</h2><ul>
+<li>+是一个运算符, 我们应该能够看懂，做数据的加法。</li>
+<li>boolean类型不能转换为其他的数据类型</li>
+<li>默认转换<ul>
+<li>byte,short,char—int—long—float—double</li>
+<li>byte,short,char相互之间补转换，他们参与运算首先转换为int类型</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	+是一个运算符(我们等会讲解)。做加法运算的。</span><br><span class="line">	</span><br><span class="line">	一般来说，我们在运算的时候，要求参与运算的数据类型必须一致。</span><br><span class="line">	</span><br><span class="line">	注意：</span><br><span class="line">		boolean类型不能转换为其他的数据类型</span><br><span class="line"></span><br><span class="line">	默认转换(从小到大的转换)</span><br><span class="line">		A:byte,short,char—int—long—float—double</span><br><span class="line">		B:byte,short,char相互之间不转换，他们参与运算首先转换为int类型</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//直接输出的方式做加法</span><br><span class="line">		//System.out.println(3 + 4);</span><br><span class="line">	</span><br><span class="line">		//两个int类型做加法</span><br><span class="line">		int x = 3;</span><br><span class="line">		int y = 4;</span><br><span class="line">		int z = x + y;</span><br><span class="line">		System.out.println(z);</span><br><span class="line">		</span><br><span class="line">		//定义一个byte类型，一个int类型，做加法</span><br><span class="line">		byte a = 3;</span><br><span class="line">		int b = 4;</span><br><span class="line">		System.out.println(a + b);</span><br><span class="line">		</span><br><span class="line">		//可能损失精度</span><br><span class="line">		//byte c =  a + b;</span><br><span class="line">		int c = a + b;</span><br><span class="line">		System.out.println(c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="不同数据类型变量参与运算图解"><a href="#不同数据类型变量参与运算图解" class="headerlink" title="不同数据类型变量参与运算图解"></a>不同数据类型变量参与运算图解</h2><p><img src="http://image.damienzhong.com/%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F%E5%8F%82%E4%B8%8E%E8%BF%90%E7%AE%97%E5%9B%BE%E8%A7%A3.png" alt="image"></p>
+<h2 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h2><ul>
+<li>目标类型 变量名=(目标类型)(被转换的数据);</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	强制转换：</span><br><span class="line">		从大的数据类型到小的数据类型。</span><br><span class="line">		</span><br><span class="line">		格式：</span><br><span class="line">			目标数据类型 变量 = (目标数据类型) (被转换的数据);</span><br><span class="line">			</span><br><span class="line">		注意：</span><br><span class="line">			不要随意的去使用强制转换，因为它隐含了精度损失问题。</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		byte a = 3;</span><br><span class="line">		int b = 4;</span><br><span class="line">		</span><br><span class="line">		//这个肯定没有问题</span><br><span class="line">		//int c = a + b;</span><br><span class="line">		</span><br><span class="line">		//byte c = 7;</span><br><span class="line">		//这个是有问题的</span><br><span class="line">		//byte c = a + b; </span><br><span class="line">		//用强制类型转换改进</span><br><span class="line">		byte c = (byte) (a + b);</span><br><span class="line">		System.out.println(c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	思考题1：请问下面这个有没有问题</span><br><span class="line">		double d = 12.345;</span><br><span class="line">		float f = d;</span><br><span class="line">		</span><br><span class="line">	思考题2：看看下面两个定义有没有区别呢?</span><br><span class="line">		float f1 = (float)12.345;</span><br><span class="line">		float f2 = 12.345f;</span><br><span class="line">		</span><br><span class="line">		f1其实是通过一个double类型转换过来的。</span><br><span class="line">		而f2本身就是一个float类型。</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo5 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//把double赋值给float，加了强制类型转换</span><br><span class="line">		double d = 12.345;</span><br><span class="line">		float f = (float)d;</span><br><span class="line">		</span><br><span class="line">		//看看下面两个定义有没有区别呢?</span><br><span class="line">		float f1 = (float)12.345;</span><br><span class="line">		float f2 = 12.345F;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="常量运算与变量运算的区别"><a href="#常量运算与变量运算的区别" class="headerlink" title="常量运算与变量运算的区别"></a>常量运算与变量运算的区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	面试题：</span><br><span class="line">		byte b1=3,b2=4,b;</span><br><span class="line">		b=b1+b2;</span><br><span class="line">		b=3+4;</span><br><span class="line">		哪句是编译失败的呢？为什么呢？</span><br><span class="line">		b = b1 + b2;是有问题的。</span><br><span class="line">		因为变量相加，会首先看类型问题，最终把结果赋值的也会考虑类型问题。</span><br><span class="line">		常量相加，首先做加法，然后看结果是否在赋值的数据类型范围内，如果不是，才报错。</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo6 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义了三个byte类型的变量，b1，b2，b3</span><br><span class="line">		//b1的值是3，b2的值是4，b没有值</span><br><span class="line">		byte b1 = 3,b2 = 4,b;</span><br><span class="line">		</span><br><span class="line">		//b = b1 + b2; //这个是类型提升，所有有问题</span><br><span class="line">		</span><br><span class="line">		b = 3 + 4; //常量，先把结果计算出来，然后看是否在byte的范围内，如果在就不报错。</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数据溢出原理解析"><a href="#数据溢出原理解析" class="headerlink" title="数据溢出原理解析"></a>数据溢出原理解析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	byte b = 130;有没有问题?如果我想让赋值正确，可以怎么做?结果是多少呢?</span><br><span class="line">	</span><br><span class="line">	练习：byte b = (byte)300;</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo7 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//因为byte的范围是：-128到127。</span><br><span class="line">		//而130不在此范围内，所以报错。</span><br><span class="line">		//byte b = 130; </span><br><span class="line">		</span><br><span class="line">		//我们可以使用强制类型转换</span><br><span class="line">		byte b = (byte) 130;</span><br><span class="line">		</span><br><span class="line">		//结果是多少呢?</span><br><span class="line">		System.out.println(b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">	分析过程：</span><br><span class="line">		我们要想知道结果是什么，就应该知道是如何进行计算的。</span><br><span class="line">		而我们又知道计算机中数据的运算都是补码进行的。</span><br><span class="line">		而要得到补码，首先要计算出数据的二进制。</span><br><span class="line">		</span><br><span class="line">		A:获取130这个数据的二进制。</span><br><span class="line">			00000000 00000000 00000000 10000010</span><br><span class="line">			这是130的原码，也是反码，还是补码。</span><br><span class="line">		B:做截取操作，截成byte类型的了。</span><br><span class="line">			10000010 </span><br><span class="line">			这个结果是补码。</span><br><span class="line">		C:已知补码求原码。</span><br><span class="line">					符号位		数值位</span><br><span class="line">			补码：	1			0000010</span><br><span class="line">			</span><br><span class="line">			反码：	1			0000001</span><br><span class="line">			</span><br><span class="line">			原码：	1			1111110</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h3 id="常用字符与ASCII代码对照表"><a href="#常用字符与ASCII代码对照表" class="headerlink" title="常用字符与ASCII代码对照表"></a>常用字符与ASCII代码对照表</h3><p><img src="http://image.damienzhong.com/ASCII%E7%A0%81%E8%A1%A8.png" alt="image"></p>
+<h3 id="字符参与运算"><a href="#字符参与运算" class="headerlink" title="字符参与运算"></a>字符参与运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	看程序写结果</span><br><span class="line">	</span><br><span class="line">	通过字符和一个整数相加，我们给出一张表：ASCII码表。</span><br><span class="line">		通过看完这张表以后，我们要记住三个值：</span><br><span class="line">			&apos;a&apos;		97</span><br><span class="line">			&apos;A&apos;		65</span><br><span class="line">			&apos;0&apos;		48</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo8 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//直接输出一个字符</span><br><span class="line">		System.out.println(&apos;a&apos;); //a</span><br><span class="line">		//输出一个字符和一个整数做加法</span><br><span class="line">		System.out.println(&apos;a&apos;+1); //98</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字符串参与运算"><a href="#字符串参与运算" class="headerlink" title="字符串参与运算"></a>字符串参与运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	看程序写结果</span><br><span class="line">		字符串数据和其他数据做+，结果是字符串类型。</span><br><span class="line">		这里的+不是加法运算，而是字符串连接符。</span><br><span class="line">*/</span><br><span class="line">class DataTypeDemo9 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;hello&quot;+&apos;a&apos;+1); //helloa1</span><br><span class="line">		System.out.println(&apos;a&apos;+1+&quot;hello&quot;); //98hello</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;5+5=&quot;+5+5); //5+5=55</span><br><span class="line">		System.out.println(5+5+&quot;=5+5&quot;); //10=5+5</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】09-Java数据类型划分/" class="next-post btn btn-default" title="【JavaSe必知必会】09-Java数据类型划分">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】09-Java数据类型划分</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型转换默认转换"><span class="toc-text">数据类型转换默认转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不同数据类型变量参与运算图解"><span class="toc-text">不同数据类型变量参与运算图解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强制转换"><span class="toc-text">强制转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思考题"><span class="toc-text">思考题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量运算与变量运算的区别"><span class="toc-text">常量运算与变量运算的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据溢出原理解析"><span class="toc-text">数据溢出原理解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用字符与ASCII代码对照表"><span class="toc-text">常用字符与ASCII代码对照表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符参与运算"><span class="toc-text">字符参与运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串参与运算"><span class="toc-text">字符串参与运算</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

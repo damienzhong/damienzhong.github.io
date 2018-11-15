@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>【JavaSe必知必会】04-编写第一个Java程序 | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>【JavaSe必知必会】08-原码反码补码 | 呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -120,9 +120,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【JavaSe必知必会】04-编写第一个Java程序">
+        <h1 id="【JavaSe必知必会】08-原码反码补码">
             
-	            【JavaSe必知必会】04-编写第一个Java程序
+	            【JavaSe必知必会】08-原码反码补码
             
         </h1>
         <div class="post-meta">
@@ -171,52 +171,16 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在，大家应该都已经安装好jdk环境和环境变量配置好了吧！是不是已经跃跃欲试，按耐不住心中的小激动了？那我们现在就来写我们java学习生涯中的第一个java程序。</p>
-<h1 id="文件相关设置"><a href="#文件相关设置" class="headerlink" title="文件相关设置"></a>文件相关设置</h1><p>为了方便后面大家的学习呢？有一点大家还是需要提前设置一下的，就是文件的相关设置（如果已经做过相关设置，跳过这一段）<br>首先随便进入一个文件夹，我们会发现文件夹下的文件都只有文件名，却没有文件是属于那种类型的后缀名，设置成功之后应该是长这样的，先给大家看设置成功的样子</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE01.png" alt="image"></p>
-<p>如果你的已经是长这样了，那就不用设置啦，说明已经设置过了，如果不是长上面那样的同学，那你们就需要再往下看咯！</p>
-<p>首先我们看一下文件夹上方的工具栏，是不是有一个工具选项，点击它，然后选择文件夹选项</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE02.png" alt="image"></p>
-<p>选择查看，然后把显示隐藏的文件选择上，把隐藏已知文件的扩展名这个√去掉，搞定之后点击确定就大功告成了！</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE03.png" alt="image"></p>
-<h1 id="文本编辑器编写代码"><a href="#文本编辑器编写代码" class="headerlink" title="文本编辑器编写代码"></a>文本编辑器编写代码</h1><p>可能很多朋友在看别的程序员敲代码的时候都是用各种炫酷的集成IDE开发工具，好黑科技的感觉对不对？不用羡慕他们，后面我们也会变得炫酷。那如何才能以后变得炫酷呢？骚年，莫急，现在我们就要介绍炫酷coding的开山鼻祖——文本编辑器直接直接写代码。</p>
-<p>啥是文本编辑器？(⊙o⊙)…额，应该都知道吧。那我们就直接说咯！</p>
-<p>首先自己选择一个文件夹，最好新建一个专门用于存储我们自己写的代码的文件夹，进入文件夹之后点击鼠标右键，选择新建，然后选择文本文档</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE04.png" alt="image"></p>
-<p>把文件名重命名为HelloJava，把txt后缀名改为java，命名完成出现下图提示点击是</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE05.png" alt="image"></p>
-<p>创建完成之后，我们会发现文件的类型变为Java类型，我们选中该文件，点击鼠标右键，选择编辑，打开文本编辑框后输入如下内容</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE06.png" alt="image"></p>
-<p>编辑完成后关闭文件回到该文件所在目录（即文件夹），然后在当前目录打开命令行DOS窗口，输入命令javac HelloJava.java,然后回车，发现命令行DOS窗口没啥反应，但是如果你仔细一点，你会发现，当前目录下多了一个叫做HelloJava.class的文件，如下图</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE07.png" alt="image"></p>
-<p>好，我先不解释它是啥，因为后续会说到，如果出现这一步，我们继续在DOS窗口输入下一条命令：java HelloJava，回车，是不是发现此时窗口里有反应了，多出了两行文字</p>
-<p><img src="http://image.damienzhong.com/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE09.png" alt="image"></p>
-<p>这两行内容其实就是我们刚才在文本编辑器中的代码让其打出的，这就是用文本编辑器的方式编写运行代码的方式！</p>
-<h1 id="Java9的JShell方式编写代码"><a href="#Java9的JShell方式编写代码" class="headerlink" title="Java9的JShell方式编写代码"></a>Java9的JShell方式编写代码</h1><p>什么是jshell呢？那我就简单的先给大家介绍一下。</p>
-<blockquote>
-<p>jshell是Java 9 新增的一个脚本工具，意思是可以在命令行里直接运行java的代码，而无需创建Java文件，然后再编译，最后运行。我觉得jshell的好处就是即写即得，平常只想看看几行代码运行的结果是怎么样的，有了jshell就方便多了，直接在命令行上敲。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>通过上一章节的内容我们已经掌握了不同进制间的转化，但是我们可以发现，我们做的都是一些正数的转化，那在计算机中，负数如何表示与运算呢？这就不得不提一下我们计算机的“码三少“：原码反码补码了。</p>
+<h1 id="有符号数据表示法"><a href="#有符号数据表示法" class="headerlink" title="有符号数据表示法"></a>有符号数据表示法</h1><blockquote>
+<p>在计算机内，有符号数有3种表示法：原码、反码和补码。所有数据的运算都是采用补码进行的。</p>
+<ul>
+<li><strong>原码</strong><br>就是二进制定点表示法，即最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小。</li>
+<li><strong>反码</strong><br>正数的反码与其原码相同；负数的反码是对其原码逐位取反，但符号位除外。</li>
+<li><strong>补码</strong><br>正数的补码与其原码相同；负数的补码是在其反码的末位加1。</li>
+</ul>
 </blockquote>
-<p>那如何使用它呢？</p>
-<p>打开DOS命令窗口，输入命令：jshell，回车，稍等几秒钟就会看到JShell启动成功的欢迎提示语，出现下图说明启动成功！</p>
-<p><img src="http://image.damienzhong.com/jshell01.png" alt="image"></p>
-<p>然后，怎么用呢？比如，输入 1+1:</p>
-<p><img src="http://image.damienzhong.com/jshell02.png" alt="image"></p>
-<p>结果输出$1 ==&gt; 2，其中$1表示第一个临时变量。</p>
-<p>如果输出我们刚才用文本编辑器输出的内容呢？</p>
-<p><img src="http://image.damienzhong.com/jshell03.png" alt="image"></p>
-<p>我们再用它创建一个方法，方法具体是什么我们后面再详细说，现在先简单的看效果</p>
-<p><img src="http://image.damienzhong.com/jshell04.png" alt="image"></p>
-<p>如果想修改方法，怎么办？重写吗？不用这样的亲，可以输入“/edit sum”，会弹出编辑界面：</p>
-<p><img src="http://image.damienzhong.com/jshell05.png" alt="image"><br><img src="http://image.damienzhong.com/jshell06.png" alt="image"></p>
-<p>调用修改过的方法，这里的j是我们定义的变量，所以它没有”$”符号。</p>
-<p><img src="http://image.damienzhong.com/jshell07.png" alt="image"></p>
-<p>如果我们想看看之前自己所运行的所有脚本，我们可以用“/list”来查看</p>
-<p><img src="http://image.damienzhong.com/jshell08.png" alt="image"></p>
-<p>然后，我们可以通过“/import”来查看脚本的默认导入的包，至于什么是包，就是当前程序运行需要引用的一些东西</p>
-<p><img src="http://image.damienzhong.com/jshell09.png" alt="image"></p>
-<p>最后，我们输入“/exit”来退出jshell环境：</p>
-<p><img src="http://image.damienzhong.com/jshell10.png" alt="image"></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>好啦，两种方式都介绍完了，赶紧去尝试一下吧！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">有符号数据表示法</span><br><span class="line">	在技术算计内，有符号数据有3种表示法：原码、反码、补码。</span><br><span class="line">	</span><br><span class="line">	原码 就是二进制定点表示法，即最高位为符号位，“0”表示正，“1”表示负，其余位表示数值的大小。</span><br><span class="line">	反码 正数的反码与其原码相同；负数的反码是对其原码逐位取反，但符号位除外。</span><br><span class="line">	补码 正数的补码与其原码相同；负数的补码是在其反码的末位加1。</span><br><span class="line">	</span><br><span class="line">	我准备用原码、反码、补码分别来表示+7，-7.</span><br><span class="line">	首先我们要得到7的二进制：111</span><br><span class="line">	原码：</span><br><span class="line">			正数的原码最高位是0.</span><br><span class="line">			负数的原码最高位为1.</span><br><span class="line">			其他的数值位.</span><br><span class="line">			</span><br><span class="line">			符号位				数值位</span><br><span class="line">	+7		0					0000111</span><br><span class="line">	-7		1					0000111</span><br><span class="line">	</span><br><span class="line">	反码：</span><br><span class="line">			正数的反码与其原码相同。</span><br><span class="line">			负数的反码与原码符号位相同，数值位要取反，就是0变1，1变0.</span><br><span class="line">			</span><br><span class="line">			符号位				数值位</span><br><span class="line">	+7		0					0000111</span><br><span class="line">	-7		1					1111000</span><br><span class="line">	</span><br><span class="line">	补码：</span><br><span class="line">			正数的补码与原码相同。</span><br><span class="line">			负数的补码是在反码的基础上加1.</span><br><span class="line">			符号位				数值位</span><br><span class="line">	+7		0					0000111</span><br><span class="line">	-7		1					1111001</span><br></pre></td></tr></table></figure>
 
     </div>
     
@@ -250,15 +214,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/15/【JavaSe必知必会】05-Java程序基本概念/" class="pre-post btn btn-default" title="【JavaSe必知必会】05-Java程序基本概念">
+        <a href="/2018/11/15/【JavaSe必知必会】09-Java数据类型划分/" class="pre-post btn btn-default" title="【JavaSe必知必会】09-Java数据类型划分">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【JavaSe必知必会】05-Java程序基本概念</span>
+            <span class="hidden-xs">【JavaSe必知必会】09-Java数据类型划分</span>
         </a>
     
     
-        <a href="/2018/11/15/【JavaSe必知必会】03-Java开发环境配置/" class="next-post btn btn-default" title="【JavaSe必知必会】03-Java开发环境配置">
+        <a href="/2018/11/15/【JavaSe必知必会】07-进制的转换/" class="next-post btn btn-default" title="【JavaSe必知必会】07-进制的转换">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【JavaSe必知必会】03-Java开发环境配置</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">【JavaSe必知必会】07-进制的转换</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -293,7 +257,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件相关设置"><span class="toc-text">文件相关设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文本编辑器编写代码"><span class="toc-text">文本编辑器编写代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java9的JShell方式编写代码"><span class="toc-text">Java9的JShell方式编写代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结语"><span class="toc-text">结语</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#有符号数据表示法"><span class="toc-text">有符号数据表示法</span></a></li></ol>
         
     </div>
 </aside>
