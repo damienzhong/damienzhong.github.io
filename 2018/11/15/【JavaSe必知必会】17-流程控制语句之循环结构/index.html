@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】17-流程控制语句之循环结构 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】17-流程控制语句之循环结构">
+            
+	            【JavaSe必知必会】17-流程控制语句之循环结构
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+<p>循环语句可以在满足循环条件的情况下，反复执行某一段代码，这段被重复执行的代码被称为循环体语句，当反复执行这个循环体时，需要在合适的时候把循环判断条件修改为false，从而结束循环，否则循环将一直执行下去，形成死循环。</p>
+</blockquote>
+<h1 id="循环语句的组成"><a href="#循环语句的组成" class="headerlink" title="循环语句的组成"></a>循环语句的组成</h1><ul>
+<li>初始化语句：<ul>
+<li>一条或者多条语句，这些语句完成一些初始化操作。</li>
+</ul>
+</li>
+<li>判断条件语句：<ul>
+<li>这是一个boolean 表达式，这个表达式能决定是否执行循环体。</li>
+</ul>
+</li>
+<li>循环体语句：<ul>
+<li>这个部分是循环体语句，也就是我们要多次做的事情。</li>
+</ul>
+</li>
+<li>控制条件语句：<ul>
+<li>这个部分在一次循环体结束后，下一次循环判断条件执行前执行。通过用于控制循环条件中的变量，使得循环在合适的时候结束。<h1 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h1><h2 id="for循环语句格式"><a href="#for循环语句格式" class="headerlink" title="for循环语句格式"></a>for循环语句格式</h2></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(初始化语句;判断条件语句;控制条件语句) &#123;</span><br><span class="line">         循环体语句;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h2><ul>
+<li>A:执行初始化语句</li>
+<li>B:执行判断条件语句，看其结果是true还是false<ul>
+<li>如果是false，循环结束。</li>
+<li>如果是true，继续执行。</li>
+</ul>
+</li>
+<li>C:执行循环体语句</li>
+<li>D:执行控制条件语句</li>
+<li>E:回到B继续</li>
+</ul>
+<p><img src="http://image.damienzhong.com/for%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="image"></p>
+<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	循环语句：for循环,while循环,do...while循环。</span><br><span class="line">	</span><br><span class="line">	for循环格式：</span><br><span class="line">		for(初始化语句;判断条件语句;控制条件语句) &#123;</span><br><span class="line">			循环体语句;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		执行流程：</span><br><span class="line">			A:执行初始化语句</span><br><span class="line">			B:执行判断条件语句,看其返回值是true还是false</span><br><span class="line">				如果是true，就继续执行</span><br><span class="line">				如果是false，就结束循环</span><br><span class="line">			C:执行循环体语句;</span><br><span class="line">			D:执行控制条件语句</span><br><span class="line">			E:回到B继续。</span><br><span class="line">			</span><br><span class="line">	注意事项：</span><br><span class="line">		A:判断条件语句无论简单还是复杂结果是boolean类型。</span><br><span class="line">		B:循环体语句如果是一条语句，大括号可以省略；如果是多条语句，大括号不能省略。建议永远不要省略。</span><br><span class="line">		C:一般来说：有左大括号就没有分号，有分号就没有左大括号</span><br><span class="line">			</span><br><span class="line">	需求：请在控制台输出10次&quot;HelloWorld&quot;</span><br><span class="line">*/</span><br><span class="line">class ForDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//最原始的做法</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		System.out.println(&quot;----------&quot;);</span><br><span class="line">		</span><br><span class="line">		//这种做法不好,代码的重复度太高。</span><br><span class="line">		//所以呢，我们用循环改进</span><br><span class="line">		for(int x=1;x&lt;=10;x++) &#123;</span><br><span class="line">			System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>判断条件语句的结果是一个boolean类型</li>
+<li>循环体语句如果是一条语句，大括号可以省略；如果是多条语句，大括号不能省略。建议永远不要省略。</li>
+<li>一般来说：有左大括号就没有分号，有分号就没有左大括号<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><h4 id="请在控制台输出数据1-10"><a href="#请在控制台输出数据1-10" class="headerlink" title="请在控制台输出数据1-10"></a>请在控制台输出数据1-10</h4></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：请在控制台输出数据1-10</span><br><span class="line">*/</span><br><span class="line">class ForDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//原始做法</span><br><span class="line">		System.out.println(1);</span><br><span class="line">		System.out.println(2);</span><br><span class="line">		System.out.println(3);</span><br><span class="line">		System.out.println(4);</span><br><span class="line">		System.out.println(5);</span><br><span class="line">		System.out.println(6);</span><br><span class="line">		System.out.println(7);</span><br><span class="line">		System.out.println(8);</span><br><span class="line">		System.out.println(9);</span><br><span class="line">		System.out.println(10);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;-------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//如何改进呢?用循环改进</span><br><span class="line">		for(int x=1; x&lt;=10; x++) &#123;</span><br><span class="line">			System.out.println(x);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;-------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//从0开始</span><br><span class="line">		for(int x=0; x&lt;10; x++) &#123;</span><br><span class="line">			System.out.println(x+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><h4 id="求出1-10之间数据之和"><a href="#求出1-10之间数据之和" class="headerlink" title="求出1-10之间数据之和"></a>求出1-10之间数据之和</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：求出1-10之间数据之和</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		0+1=1</span><br><span class="line">			1+2=3</span><br><span class="line">				3+3=6</span><br><span class="line">					6+4=10</span><br><span class="line">						10+5=15</span><br><span class="line">							 ...</span><br><span class="line">							 </span><br><span class="line">		由此可见我们要定义两个变量：</span><br><span class="line">			一个变量用于存储第一个加数，第一个加数其实保存的是以前的所有数据和。默认初始化值应该是0。</span><br><span class="line">			一个变量用于存储第二个加数，第二个加数其实就是每次的数据变化的值。</span><br><span class="line">			</span><br><span class="line">	求和思想。		</span><br><span class="line">*/</span><br><span class="line">class ForDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//原始做法</span><br><span class="line">		System.out.println(1+2+3+4+5+6+7+8+9+10);</span><br><span class="line">		</span><br><span class="line">		//定义第一个加数</span><br><span class="line">		int sum = 0;</span><br><span class="line">		</span><br><span class="line">		for(int x=1; x&lt;=10; x++) &#123;</span><br><span class="line">			//这里的x其实是第二个加数</span><br><span class="line">			sum = sum + x;</span><br><span class="line">			/*</span><br><span class="line">				0 + 1 = 1</span><br><span class="line">						1 + 2 = 3</span><br><span class="line">								3 + 3 = 6</span><br><span class="line">								...</span><br><span class="line">			*/</span><br><span class="line">			</span><br><span class="line">			//sum += x;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;sum:&quot;+sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><h4 id="A-求1-100之和。"><a href="#A-求1-100之和。" class="headerlink" title="A:求1-100之和。"></a>A:求1-100之和。</h4><h4 id="B-求出1-100之间偶数和"><a href="#B-求出1-100之间偶数和" class="headerlink" title="B:求出1-100之间偶数和"></a>B:求出1-100之间偶数和</h4><h4 id="C-求出1-100之间奇数和-自己做"><a href="#C-求出1-100之间奇数和-自己做" class="headerlink" title="C:求出1-100之间奇数和(自己做)"></a>C:求出1-100之间奇数和(自己做)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：</span><br><span class="line">		A:求1-100之和。</span><br><span class="line">		B:求出1-100之间偶数和</span><br><span class="line">		C:求出1-100之间奇数和(自己做)</span><br><span class="line">*/</span><br><span class="line">class ForDemo4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//求1-100之和。</span><br><span class="line">		int sum1 = 0;</span><br><span class="line">		</span><br><span class="line">		for(int x=1; x&lt;=100; x++) &#123;</span><br><span class="line">			sum1 +=x;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;1-100之和是：&quot;+sum1);</span><br><span class="line">		System.out.println(&quot;------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//求出1-100之间偶数和</span><br><span class="line">		//方式1</span><br><span class="line">		int sum2 = 0;</span><br><span class="line">		</span><br><span class="line">		for(int x=1; x&lt;=100; x++) &#123;</span><br><span class="line">			if(x%2 == 0) &#123;</span><br><span class="line">				sum2 += x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;1-100偶数之和是：&quot;+sum2);</span><br><span class="line">		System.out.println(&quot;------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//方式2</span><br><span class="line">		int sum3 = 0;</span><br><span class="line">		</span><br><span class="line">		for(int x=0; x&lt;=100; x+=2) &#123;</span><br><span class="line">				sum3 += x;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;1-100偶数之和是：&quot;+sum3);</span><br><span class="line">		System.out.println(&quot;------------------&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><h4 id="在控制台输出所有的”水仙花数”"><a href="#在控制台输出所有的”水仙花数”" class="headerlink" title="在控制台输出所有的”水仙花数”"></a>在控制台输出所有的”水仙花数”</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：在控制台输出所有的”水仙花数”</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		我们都不知道什么叫&quot;水仙花数&quot;，你让我怎么做呢?</span><br><span class="line">		</span><br><span class="line">		所谓的水仙花数是指一个三位数，其各位数字的立方和等于该数本身。</span><br><span class="line">		举例：153就是一个水仙花数。</span><br><span class="line">		153 = 1*1*1 + 5*5*5 + 3*3*3 = 1 + 125 + 27 = 153</span><br><span class="line"></span><br><span class="line">		A:三位数其实是告诉了我们范围。</span><br><span class="line">		B:通过for循环我们就可以实现获取每一个三位数</span><br><span class="line">		  但是麻烦是如何获取这个三位数的个,十,百位上的数据</span><br><span class="line">		  </span><br><span class="line">		  我们如何获取一个数据的个,十,百呢?</span><br><span class="line">			假设有个一个数据:153</span><br><span class="line">			ge:	153%10 = 3</span><br><span class="line">			shi: 153/10%10 = 5</span><br><span class="line">			bai：153/10/10%10 = 1</span><br><span class="line">			qian：x/10/10/10%10</span><br><span class="line">			wan:  x/10/10/10/10%10</span><br><span class="line">			...</span><br><span class="line"></span><br><span class="line">		C:让ge*ge*ge+shi*shi*shi+bai*bai*bai和该数据比较</span><br><span class="line">		  如果相同，就把该数据在控制台输出。</span><br><span class="line">*/</span><br><span class="line">class ForDemo6 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//三位数其实是告诉了我们范围。</span><br><span class="line">		for(int x=100; x&lt;1000; x++) &#123;</span><br><span class="line">			int ge = x%10;</span><br><span class="line">			int shi = x/10%10;</span><br><span class="line">			int bai = x/10/10%10;</span><br><span class="line">			</span><br><span class="line">			//让ge*ge*ge+shi*shi*shi+bai*bai*bai和该数据比较</span><br><span class="line">			if(x == (ge*ge*ge+shi*shi*shi+bai*bai*bai)) &#123;</span><br><span class="line">				//如果相同，就把该数据在控制台输出。</span><br><span class="line">				System.out.println(x);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h1><h2 id="while循环语句格式"><a href="#while循环语句格式" class="headerlink" title="while循环语句格式"></a>while循环语句格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">基本格式</span><br><span class="line">   while(判断条件语句) &#123;</span><br><span class="line">         循环体语句;</span><br><span class="line">   &#125;</span><br><span class="line">扩展格式</span><br><span class="line">   初始化语句;</span><br><span class="line">   while(判断条件语句) &#123;</span><br><span class="line">         循环体语句;</span><br><span class="line">         控制条件语句;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="http://image.damienzhong.com/while%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B%E5%9B%BE.png" alt="image"></p>
+<h2 id="代码演示-1"><a href="#代码演示-1" class="headerlink" title="代码演示"></a>代码演示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	while循环语句格式:</span><br><span class="line">		基本格式</span><br><span class="line">		   while(判断条件语句) &#123;</span><br><span class="line">				 循环体语句;</span><br><span class="line">		   &#125;</span><br><span class="line">		扩展格式</span><br><span class="line">		   初始化语句;</span><br><span class="line">		   while(判断条件语句) &#123;</span><br><span class="line">				 循环体语句;</span><br><span class="line">				 控制条件语句;</span><br><span class="line">			&#125;</span><br><span class="line">		通过这个格式，我们就可以看到其实和for循环是差不多的</span><br><span class="line">		for(初始化语句;判断条件语句;控制条件语句)&#123;</span><br><span class="line">			循环体语句;</span><br><span class="line">		&#125;</span><br><span class="line">*/</span><br><span class="line">public class WhileDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//输出10次我的淘宝店铺名：DM潮人社区</span><br><span class="line">		for(int x=0;x&lt;10;x++)&#123;</span><br><span class="line">			System.out.println(&quot;我的淘宝店铺名：DM潮人社区&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;===========================&quot;);</span><br><span class="line">		int x=0;</span><br><span class="line">		while(x&lt;10)&#123;</span><br><span class="line">			System.out.println(&quot;我的淘宝店铺名：DM潮人社区&quot;);</span><br><span class="line">			x++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="for循环和while循环的区别"><a href="#for循环和while循环的区别" class="headerlink" title="for循环和while循环的区别"></a>for循环和while循环的区别</h2><p><strong>for循环语句和while循环语句可以等价转换，但还是有些小区别的</strong></p>
+<ul>
+<li>使用区别：<br>控制条件语句所控制的那个变量，在for循环结束后，就不能再被访问到了，而while循环结束还可以继续使用，如果你想继续使用，就用while，否则推荐使用for。原因是for循环结束，该变量就从内存中消失，能够提高内存的使用效率。</li>
+<li>场景区别：<br>for循环适合针对一个范围判断进行操作<br>while循环适合判断次数不明确操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	while循环和for循环的区别?</span><br><span class="line">		使用区别：如果你想在循环结束后，继续使用控制条件的那个变量，用while循环，否则用for循环。不知道用for循环。</span><br><span class="line">		          因为变量及早的从内存中消失，可以提高内存的使用效率。</span><br><span class="line">				  </span><br><span class="line">		其实还有一种场景的理解:</span><br><span class="line">			如果是一个范围的，用for循环非常明确。</span><br><span class="line">			如果是不明确要做多少次，用while循环较为合适。</span><br><span class="line">				举例：吃葡萄。</span><br><span class="line">*/</span><br><span class="line">class WhileDemo4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	    for(int i=0;i&lt;10;i++)&#123;</span><br><span class="line">			System.out.println(&quot;祝大家端午节快乐，代码越敲越溜！&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		//这里不能再继续访问了</span><br><span class="line">		//System.out.println(i);</span><br><span class="line">		System.out.println(&quot;=============================&quot;);</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		int j = sc.nextInt();</span><br><span class="line">		while(j&lt;10)&#123;</span><br><span class="line">			System.out.println(&quot;祝大家端午节快乐，代码越敲越溜！&quot;);</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(j);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	我国最高山峰是珠穆朗玛峰：8848m，我现在有一张足够大的纸张，厚度为：0.01m。</span><br><span class="line">	请问，我折叠多少次，就可以保证厚度不低于珠穆朗玛峰的高度?</span><br><span class="line"></span><br><span class="line">	分析：</span><br><span class="line">		A:定义一个统计变量，默认值是0</span><br><span class="line">		B:最高山峰是珠穆朗玛峰：8848m这是最终的厚度</span><br><span class="line">		  我现在有一张足够大的纸张，厚度为：0.01m这是初始厚度</span><br><span class="line">		C:我折叠多少次，就可以保证厚度不低于珠穆朗玛峰的高度?</span><br><span class="line">		  折叠一次有什么变化呢?就是厚度是以前的2倍。</span><br><span class="line">		D:只要每次变化的厚度没有超过珠穆朗玛峰的高度，就折叠，统计变量++</span><br><span class="line">		E:输出统计变量。</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">class WhileDemo5 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义一个统计变量，默认值是0</span><br><span class="line">		int count = 0;</span><br><span class="line">		</span><br><span class="line">		//最高山峰是珠穆朗玛峰：8848m这是最终的厚度</span><br><span class="line">		//我现在有一张足够大的纸张，厚度为：0.01m这是初始厚度</span><br><span class="line">		//为了简单，我把0.01变成1，同理8848就变成了884800</span><br><span class="line">		int end = 884800;</span><br><span class="line">		int start = 1;</span><br><span class="line">		</span><br><span class="line">		while(start&lt;end) &#123;</span><br><span class="line">			//只要每次变化的厚度没有超过珠穆朗玛峰的高度，就折叠，统计变量++</span><br><span class="line">			count++;</span><br><span class="line">			</span><br><span class="line">			//折叠一次有什么变化呢?就是厚度是以前的2倍。</span><br><span class="line">			start *= 2;</span><br><span class="line">			</span><br><span class="line">			System.out.println(&quot;第&quot;+count+&quot;次厚度是&quot;+start);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//输出统计变量。</span><br><span class="line">		System.out.println(&quot;要叠&quot;+count+&quot;次&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="do…while循环语句"><a href="#do…while循环语句" class="headerlink" title="do…while循环语句"></a>do…while循环语句</h2><h4 id="do…while循环语句格式"><a href="#do…while循环语句格式" class="headerlink" title="do…while循环语句格式"></a>do…while循环语句格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">基本格式</span><br><span class="line">   do &#123;</span><br><span class="line">         循环体语句;</span><br><span class="line">   &#125;while((判断条件语句);</span><br><span class="line">扩展格式</span><br><span class="line">   初始化语句;</span><br><span class="line">   do &#123;</span><br><span class="line">         循环体语句;</span><br><span class="line">         控制条件语句;</span><br><span class="line">    &#125; while((判断条件语句);</span><br></pre></td></tr></table></figure>
+<h3 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://image.damienzhong.com/dowhile.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	do...while循环的基本格式：</span><br><span class="line">		do &#123;</span><br><span class="line">			循环体语句;</span><br><span class="line">		&#125;while(判断条件语句);</span><br><span class="line">		</span><br><span class="line">		扩展格式；</span><br><span class="line">		初始化语句;</span><br><span class="line">		do &#123;</span><br><span class="line">			循环体语句;</span><br><span class="line">			控制条件语句;</span><br><span class="line">		&#125;while(判断条件语句);</span><br><span class="line">*/</span><br><span class="line">class DoWhileDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//输出10次HelloWorld。</span><br><span class="line">		int x = 0;</span><br><span class="line">		do &#123;</span><br><span class="line">			System.out.println(&quot;HelloWorld&quot;);</span><br><span class="line">			x++;</span><br><span class="line">		&#125;while(x&lt;10);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//求和1-100</span><br><span class="line">		int sum = 0;</span><br><span class="line">		int a = 1;</span><br><span class="line">		do &#123;</span><br><span class="line">			sum += a;</span><br><span class="line">			a++;</span><br><span class="line">		&#125;while(a&lt;=100);</span><br><span class="line">		</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="区别及注意事项"><a href="#区别及注意事项" class="headerlink" title="区别及注意事项"></a>区别及注意事项</h1><p><strong>三种循环语句其实都可以完成一样的功能，也就是说可以等价转换，但还是有小区别的:</strong></p>
+<ul>
+<li>do…while循环至少会执行一次循环体。</li>
+<li>for循环和while循环只有在条件成立的时候才会去执行循环体<h3 id="代码演示-2"><a href="#代码演示-2" class="headerlink" title="代码演示"></a>代码演示</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	循环语句的区别:</span><br><span class="line">		do...while循环至少执行一次循环体。</span><br><span class="line">		而for,while循环必须先判断条件是否成立，然后决定是否执行循环体语句。</span><br><span class="line">		</span><br><span class="line">	那么，我们一般使用哪种循环呢?</span><br><span class="line">		优先考虑for，其次考虑while，最后考虑do...while</span><br><span class="line">*/</span><br><span class="line">class DoWhileDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int x = 3;</span><br><span class="line">		while(x &lt; 3) &#123;</span><br><span class="line">			System.out.println(&quot;DM潮人社区的衣服超酷的哟~&quot;);</span><br><span class="line">			x++;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		int y = 3;</span><br><span class="line">		do &#123;</span><br><span class="line">			System.out.println(&quot;DM潮人社区的衣服超酷的哟~&quot;);</span><br><span class="line">			y++;</span><br><span class="line">		&#125;while(y &lt; 3);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>写程序优先考虑for循环，再考虑while循环，最后考虑do…while循环。</li>
+<li>如下代码是死循环</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while(true)&#123;&#125;</span><br><span class="line"> for(;;)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码演示-3"><a href="#代码演示-3" class="headerlink" title="代码演示"></a>代码演示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	注意死循环：</span><br><span class="line">		A:一定要注意控制条件语句控制的那个变量的问题，不要弄丢了，否则就容易死循环。</span><br><span class="line">		B:两种最简单的死循环格式</span><br><span class="line">			while(true)&#123;...&#125;</span><br><span class="line">			for(;;)&#123;...&#125;</span><br><span class="line">			</span><br><span class="line">*/</span><br><span class="line">class DoWhileDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int x = 0;</span><br><span class="line">		while(x &lt; 10) &#123;</span><br><span class="line">			System.out.println(x);</span><br><span class="line">			x++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		/*</span><br><span class="line">		while(true) &#123;</span><br><span class="line">			System.out.println(&quot;今天我很高兴，学会了把循环弄死&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		for(;;)&#123;</span><br><span class="line">			System.out.println(&quot;今天我很高兴，学会了把循环弄死&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//System.out.println(&quot;--------------&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="经典练习"><a href="#经典练习" class="headerlink" title="经典练习"></a>经典练习</h1><h3 id="第一题-1"><a href="#第一题-1" class="headerlink" title="第一题"></a>第一题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	在控制台输出一个四行五列的*图案</span><br><span class="line">		*****</span><br><span class="line">		*****</span><br><span class="line">		*****</span><br><span class="line">		*****</span><br><span class="line">	总结：内层循环控制列数，外层循环控制行数</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class ForForTest&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//最傻最傻的办法，不合适</span><br><span class="line">		System.out.println(&quot;*****&quot;);</span><br><span class="line">		System.out.println(&quot;*****&quot;);</span><br><span class="line">		System.out.println(&quot;*****&quot;);</span><br><span class="line">		System.out.println(&quot;*****&quot;);</span><br><span class="line">		System.out.println(&quot;------------------------&quot;);</span><br><span class="line">		//单for循环，不合适</span><br><span class="line">		for(int i = 0;i&lt;4;i++)&#123;</span><br><span class="line">			System.out.println(&quot;*****&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;------------------------&quot;);</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		System.out.println(&quot;请输入要输出的列数：&quot;);</span><br><span class="line">		int n = sc.nextInt();</span><br><span class="line">		System.out.println(&quot;请输入要输出的行数：&quot;);</span><br><span class="line">		int m = sc.nextInt();</span><br><span class="line">		//控制行数</span><br><span class="line">		for(int j = 0;j&lt;m;j++)&#123;</span><br><span class="line">			//控制每行的列数</span><br><span class="line">			for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二题-1"><a href="#第二题-1" class="headerlink" title="第二题"></a>第二题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	用*符号输出一个正三角形</span><br><span class="line">		*</span><br><span class="line">		**</span><br><span class="line">		***</span><br><span class="line">		****</span><br><span class="line">		*****</span><br><span class="line">*/</span><br><span class="line">public class ForForTest2&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//5行5列</span><br><span class="line">		for(int i = 0;i&lt;5;i++)&#123;</span><br><span class="line">			for(int j = 0;j&lt;5;j++)&#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		/*</span><br><span class="line">			第1行1个</span><br><span class="line">			第2行2个</span><br><span class="line">			第3行3个</span><br><span class="line">			第4行4个</span><br><span class="line">			第5行5个</span><br><span class="line">			*/</span><br><span class="line">		for(int i = 0;i&lt;5;i++)&#123;</span><br><span class="line">			for(int j=0;j&lt;=i;j++)&#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第三题-1"><a href="#第三题-1" class="headerlink" title="第三题"></a>第三题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：在控制台输出九九乘法表。</span><br><span class="line">	</span><br><span class="line">	首先我们写出九九乘法表：</span><br><span class="line">		1*1=1</span><br><span class="line">		1*2=2	2*2=4</span><br><span class="line">		1*3=3	2*3=6	3*3=9</span><br><span class="line">		1*4=4	2*4=8	3*4=12	4*4=16</span><br><span class="line">		...</span><br><span class="line">		1*9=9	2*9=18	3*9=27	...</span><br><span class="line">		</span><br><span class="line">	我们先把这个九九乘法表看出是这样的一个形状：</span><br><span class="line">		*</span><br><span class="line">		**</span><br><span class="line">		***</span><br><span class="line">		****</span><br><span class="line">		*****</span><br><span class="line">		******</span><br><span class="line">		*******</span><br><span class="line">		********</span><br><span class="line">		*********</span><br><span class="line">		</span><br><span class="line">	注意：</span><br><span class="line">		&apos;\x&apos; x表示任意，这种做法叫转移字符。</span><br><span class="line">		</span><br><span class="line">		&apos;\t&apos;	tab键的位置</span><br><span class="line">		&apos;\r&apos;	回车</span><br><span class="line">		&apos;\n&apos;	换行</span><br><span class="line">*/</span><br><span class="line">class ForForDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		for(int x=0; x&lt;9; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;=x; y++) &#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		//为了使用数据，我们从1开始</span><br><span class="line">		for(int x=1; x&lt;=9; x++) &#123;</span><br><span class="line">			for(int y=1; y&lt;=x; y++) &#123;</span><br><span class="line">				System.out.print(y+&quot;*&quot;+x+&quot;=&quot;+y*x+&quot;\t&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】18-流程控制语句之跳转控制语句/" class="pre-post btn btn-default" title="【JavaSe必知必会】18-流程控制语句之跳转控制语句">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】18-流程控制语句之跳转控制语句</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】16-流程控制语句之选择结构/" class="next-post btn btn-default" title="【JavaSe必知必会】16-流程控制语句之选择结构">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】16-流程控制语句之选择结构</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#循环语句的组成"><span class="toc-text">循环语句的组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for循环语句"><span class="toc-text">for循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环语句格式"><span class="toc-text">for循环语句格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行流程"><span class="toc-text">执行流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码演示"><span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一题"><span class="toc-text">第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请在控制台输出数据1-10"><span class="toc-text">请在控制台输出数据1-10</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二题"><span class="toc-text">第二题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#求出1-10之间数据之和"><span class="toc-text">求出1-10之间数据之和</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三题"><span class="toc-text">第三题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-求1-100之和。"><span class="toc-text">A:求1-100之和。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-求出1-100之间偶数和"><span class="toc-text">B:求出1-100之间偶数和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-求出1-100之间奇数和-自己做"><span class="toc-text">C:求出1-100之间奇数和(自己做)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四题"><span class="toc-text">第四题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在控制台输出所有的”水仙花数”"><span class="toc-text">在控制台输出所有的”水仙花数”</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#while循环语句"><span class="toc-text">while循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#while循环语句格式"><span class="toc-text">while循环语句格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程图"><span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码演示-1"><span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环和while循环的区别"><span class="toc-text">for循环和while循环的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#练习-1"><span class="toc-text">练习</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#do…while循环语句"><span class="toc-text">do…while循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#do…while循环语句格式"><span class="toc-text">do…while循环语句格式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#流程图-1"><span class="toc-text">流程图</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#区别及注意事项"><span class="toc-text">区别及注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示-2"><span class="toc-text">代码演示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码演示-3"><span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#经典练习"><span class="toc-text">经典练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一题-1"><span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二题-1"><span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三题-1"><span class="toc-text">第三题</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

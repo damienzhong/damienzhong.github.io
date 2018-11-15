@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】11-Java运算符之算术运算符 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】11-Java运算符之算术运算符">
+            
+	            【JavaSe必知必会】11-Java运算符之算术运算符
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><ul>
+<li>运算<ul>
+<li>对常量和变量进行操作的过程称为运算。</li>
+</ul>
+</li>
+<li>运算符<ul>
+<li>对常量和变量进行操作的符号称为运算符</li>
+</ul>
+</li>
+<li>操作数<ul>
+<li>参与运算的数据称为操作数</li>
+</ul>
+</li>
+<li>用运算符把常量或者变量连接起来符号java语法的式子就可以称为表达式。</li>
+<li>不同运算符连接的式子体现的是不同类型的表达式。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">举例：</span><br><span class="line">	int a = 3 + 4;</span><br><span class="line">	</span><br><span class="line">	这是做了一个加法运算</span><br><span class="line">	+就是运算符，是算术运算符，我们还有其他很多的运算符</span><br><span class="line">	3，4就是参与运算的操作数据</span><br><span class="line">	3 + 4整体其实就是一个算数表达式</span><br></pre></td></tr></table></figure>
+<h2 id="运算符类别"><a href="#运算符类别" class="headerlink" title="运算符类别"></a>运算符类别</h2><ul>
+<li>算术运算符</li>
+<li>赋值运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>位运算符</li>
+<li>三目运算符<h1 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h1><img src="http://image.damienzhong.com/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="image"><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	运算符：</span><br><span class="line">		就是对常量和变量进行操作的符号。</span><br><span class="line">		</span><br><span class="line">	分类：算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符，三目运算符</span><br><span class="line"></span><br><span class="line">	算术运算符：</span><br><span class="line">		+,-,*,/,%,++,--</span><br><span class="line">		</span><br><span class="line">	注意事项：</span><br><span class="line">		A:整数相除只能得到整数。如果想得到小数，必须把数据变化为浮点数类型</span><br><span class="line">		B:/获取的是除法操作的商，%获取的是除法操作的余数</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">class OperatorDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义变量</span><br><span class="line">		int x = 3;  //把3赋值给int类型的变量x</span><br><span class="line">		int y = 4;</span><br><span class="line">		</span><br><span class="line">		System.out.println(x+y);</span><br><span class="line">		System.out.println(x-y);</span><br><span class="line">		System.out.println(x*y);</span><br><span class="line">		System.out.println(x/y); //整数相除只能得到整数</span><br><span class="line">		</span><br><span class="line">		//我就想得到小数，该肿么办呢?</span><br><span class="line">		//只需要把操作的数据中任意的一个数据变为浮点数</span><br><span class="line">		System.out.println(x*1.0/y);</span><br><span class="line">		</span><br><span class="line">		//%的应用</span><br><span class="line">		System.out.println(x%y); //得到的是余数</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="和–的应用"><a href="#和–的应用" class="headerlink" title="++和–的应用"></a>++和–的应用</h3><ul>
+<li>单独使用效果相同</li>
+<li>参与运算使用,在操作数的前后效果不同</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	++,--运算符的使用：</span><br><span class="line">		单独使用：</span><br><span class="line">			放在操作数的前面和后面效果一样。(这种用法是我们比较常见的)</span><br><span class="line">		参与运算使用：</span><br><span class="line">			放在操作数的前面，先自增或者自减，然后再参与运算。</span><br><span class="line">			放在操作数的后面，先参与运算，再自增或者自减。</span><br><span class="line">			</span><br><span class="line">	作用：就是对变量进行自增1或者自减1。</span><br><span class="line">*/</span><br><span class="line">public class OperatorDemo2 &#123;</span><br><span class="line">		public static void main(String[] args) &#123;</span><br><span class="line">			//定义两个变量</span><br><span class="line">			int x = 3;</span><br><span class="line">			int y = 4;</span><br><span class="line">			</span><br><span class="line">			//字符串的拼接</span><br><span class="line">			//System.out.println(&quot;x:&quot;+x);</span><br><span class="line">			//System.out.println(&quot;y:&quot;+y);</span><br><span class="line">			</span><br><span class="line">			System.out.println(&quot;x:&quot;+x+&quot;,y:&quot;+y);</span><br><span class="line">			</span><br><span class="line">			//单独使用</span><br><span class="line">			//x++;</span><br><span class="line">			//y--;</span><br><span class="line">			++x;</span><br><span class="line">			--y;</span><br><span class="line">			//System.out.println(x);</span><br><span class="line">			System.out.println(&quot;x:&quot;+x+&quot;,y:&quot;+y);</span><br><span class="line">			</span><br><span class="line">			//意外的类型,常量是不可以这样做的</span><br><span class="line">			//System.out.println(10++);</span><br><span class="line">			</span><br><span class="line">			System.out.println(&quot;-------------------&quot;);</span><br><span class="line">			//参与运算使用</span><br><span class="line">			int a = 3;</span><br><span class="line">			int b = 4;</span><br><span class="line">			</span><br><span class="line">			//int c = a++;</span><br><span class="line">			//int d = b--;</span><br><span class="line">			</span><br><span class="line">			int c = ++a;</span><br><span class="line">			int d = --b;</span><br><span class="line">			</span><br><span class="line">			System.out.println(&quot;a:&quot;+a); //4, 4</span><br><span class="line">			System.out.println(&quot;b:&quot;+b); //3, 3</span><br><span class="line">			System.out.println(&quot;c:&quot;+c); //3, 4</span><br><span class="line">			System.out.println(&quot;d:&quot;+d); //4, 3</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	++,--的练习题</span><br><span class="line">	</span><br><span class="line">	第一题：</span><br><span class="line">	int a = 10;</span><br><span class="line">	int b = 10;</span><br><span class="line">	int c = 10;</span><br><span class="line"></span><br><span class="line">	a = b++;</span><br><span class="line">	c = --a;</span><br><span class="line">	b = ++a;</span><br><span class="line">	a = c--;</span><br><span class="line">	请分别计算出a,b,c的值</span><br><span class="line">	</span><br><span class="line">	第二题：</span><br><span class="line">	int x = 4;</span><br><span class="line">	int y = (x++)+(++x)+(x*10);</span><br><span class="line">	请分别计算出x,y的值</span><br><span class="line">*/</span><br><span class="line">public class OperatorTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 10;</span><br><span class="line">		int b = 10;</span><br><span class="line">		int c = 10;</span><br><span class="line"></span><br><span class="line">		a = b++; //a=10,b=11,c=10</span><br><span class="line">		c = --a; //a=9,b=11,c=9</span><br><span class="line">		b = ++a; //a=10,b=10,c=9</span><br><span class="line">		a = c--; //a=9,b=10,c=8</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;a:&quot;+a);</span><br><span class="line">		System.out.println(&quot;b:&quot;+b);</span><br><span class="line">		System.out.println(&quot;c:&quot;+c);</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		int x = 4;</span><br><span class="line">		int y = (x++)+(++x)+(x*10);</span><br><span class="line">		//4+6+60</span><br><span class="line">		//x=5,6</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;x:&quot;+x);</span><br><span class="line">		System.out.println(&quot;y:&quot;+y);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h3><p><img src="http://image.damienzhong.com/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7.png" alt="image"></p>
+<p>==<strong>如果在程序中，要改变运算顺序，可以使用()</strong>。==</p>
+<h3 id="运算符的用法"><a href="#运算符的用法" class="headerlink" title="+运算符的用法"></a>+运算符的用法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	+的用法：</span><br><span class="line">		A:加法</span><br><span class="line">		B:正号</span><br><span class="line">		C:字符串连接符</span><br><span class="line">*/</span><br><span class="line">class OperatorDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//加法</span><br><span class="line">		System.out.println(3+4);</span><br><span class="line">		</span><br><span class="line">		//正号</span><br><span class="line">		System.out.println(+4);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&apos;a&apos;);</span><br><span class="line">		System.out.println(&apos;a&apos;+1); //这里是加法</span><br><span class="line">		</span><br><span class="line">		//字符串连接符</span><br><span class="line">		System.out.println(&quot;hello&quot;+&apos;a&apos;+1);</span><br><span class="line">		System.out.println(&apos;a&apos;+1+&quot;hello&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><blockquote>
+<p>符号：<br>= , +=, -=, *=, /=, %=</p>
+<p>=为基本的赋值运算符，其他的为扩展的赋值运算符</p>
+</blockquote>
+<ul>
+<li><p>= 赋值号</p>
+</li>
+<li><p>+=加赋值</p>
+<ul>
+<li>把左边和右边的结果赋值给左边。</li>
+<li>注意：====左边不能是常量====</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	赋值运算符：</span><br><span class="line">		基本赋值运算符：=</span><br><span class="line">			把=右边的数据赋值给左边。</span><br><span class="line">		扩展的赋值运算符：+=，-=，/=，%=</span><br><span class="line">*/</span><br><span class="line">public class OperatorDemo4&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//定义一个变量</span><br><span class="line">		int x = 10;</span><br><span class="line">		</span><br><span class="line">		//其他用法</span><br><span class="line">		int a,b;</span><br><span class="line">		a = b = 10;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		System.out.println(&quot;-------------------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//定义一个变量</span><br><span class="line">		int y = 10;</span><br><span class="line">		</span><br><span class="line">		y += 10;//等价于y = y + 10;</span><br><span class="line">		</span><br><span class="line">		System.out.println(y);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="面试题解析"><a href="#面试题解析" class="headerlink" title="面试题解析"></a>面试题解析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	面试题：</span><br><span class="line">		short s=1;s = s+1; </span><br><span class="line">		</span><br><span class="line">		short s=1;s+=1;</span><br><span class="line">		上面两个代码有没有问题，如果有，那里有问题。</span><br><span class="line">		</span><br><span class="line">		为什么第二个木有问题呢?</span><br><span class="line">			扩展的赋值运算符其实隐含了一个强制类型转换。</span><br><span class="line">			</span><br><span class="line">			s += 1;</span><br><span class="line">			不是等价于 s = s + 1;</span><br><span class="line">			而是等价于 s = (s的数据类型)(s + 1);</span><br><span class="line">*/</span><br><span class="line">class OperatorTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//short s = 1;</span><br><span class="line">		//s = s + 1;</span><br><span class="line">		//System.out.println(s);</span><br><span class="line">		</span><br><span class="line">		short s = 1;</span><br><span class="line">		s += 1; //好像是 s = s + 1;</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】12-关系运算符与逻辑运算符/" class="pre-post btn btn-default" title="【JavaSe必知必会】12-关系运算符与逻辑运算符">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】12-关系运算符与逻辑运算符</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】10-数据类型转换与运算/" class="next-post btn btn-default" title="【JavaSe必知必会】10-数据类型转换与运算">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】10-数据类型转换与运算</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#运算符"><span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#运算符类别"><span class="toc-text">运算符类别</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算术运算符"><span class="toc-text">算术运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#和–的应用"><span class="toc-text">++和–的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符的优先级"><span class="toc-text">运算符的优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符的用法"><span class="toc-text">+运算符的用法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#赋值运算符"><span class="toc-text">赋值运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题解析"><span class="toc-text">面试题解析</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

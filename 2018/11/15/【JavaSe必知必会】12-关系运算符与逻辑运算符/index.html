@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】12-关系运算符与逻辑运算符 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】12-关系运算符与逻辑运算符">
+            
+	            【JavaSe必知必会】12-关系运算符与逻辑运算符
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><img src="http://image.damienzhong.com/%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6.jpg" alt="image"></p>
+<ul>
+<li>注1：比较运算符的结果都是boolean型，也就是要么是true，要么是false。</li>
+<li>注2：比较运算符“==”不能误写成“=” 。<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	比较运算符：</span><br><span class="line">		==,!=,&gt;,&gt;=,&lt;,&lt;=</span><br><span class="line">		</span><br><span class="line">	特点：</span><br><span class="line">		无论你的操作是简单还是复杂，结果是boolean类型。</span><br><span class="line">		</span><br><span class="line">	注意事项：</span><br><span class="line">		&quot;==&quot;不能写成&quot;=&quot;。</span><br><span class="line">*/</span><br><span class="line">class OperatorDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int x = 3;</span><br><span class="line">		int y = 4;</span><br><span class="line">		int z = 3;</span><br><span class="line">	</span><br><span class="line">		System.out.println(x == y);</span><br><span class="line">		System.out.println(x == z);</span><br><span class="line">		System.out.println((x+y) == (x+z));</span><br><span class="line">		System.out.println(&quot;------------&quot;);</span><br><span class="line">		</span><br><span class="line">		System.out.println(x != y);</span><br><span class="line">		System.out.println(x &gt; y);</span><br><span class="line">		System.out.println(x &gt;= y);</span><br><span class="line">		System.out.println(x &lt; y);</span><br><span class="line">		System.out.println(x &lt;= y);</span><br><span class="line">		System.out.println(&quot;------------&quot;);</span><br><span class="line">		</span><br><span class="line">		int a = 10;</span><br><span class="line">		int b = 20;</span><br><span class="line">		</span><br><span class="line">		//boolean flag = (a == b);</span><br><span class="line">		//boolean flag = (a = b); //这个是有问题的，不兼容的类型</span><br><span class="line">		//System.out.println(flag);</span><br><span class="line">		</span><br><span class="line">		int c = (a = b); //把b赋值给a，然后把a留下来</span><br><span class="line">		System.out.println(c);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><p><img src="http://image.damienzhong.com/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt="image"></p>
+<ul>
+<li>逻辑运算符用于连接布尔型表达式，在Java中不可以写成3&lt;x&lt;6，应该写成x&gt;3 &amp; x&lt;6 。</li>
+<li>“&amp;”和“&amp;&amp;”的区别：<ul>
+<li>单&amp;时，左边无论真假，右边都进行运算；</li>
+<li>双&amp;时，如果左边为真，右边参与运算，如果左边为假，那么右边不参与运算。</li>
+<li>“|”和“||”的区别同理，双或时，左边为真，右边不参与运算。</li>
+</ul>
+</li>
+<li>异或( ^ )与或( | )的不同之处是：当左右都为true时，结果为false。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	逻辑运算符：</span><br><span class="line">		&amp;,|,^,!</span><br><span class="line">		&amp;&amp;,||</span><br><span class="line">		</span><br><span class="line">	特点：</span><br><span class="line">		逻辑运算符一般用于连接boolean类型的表达式或者值。</span><br><span class="line">			</span><br><span class="line">		表达式：就是用运算符把常量或者变量连接起来的符合java语法的式子。</span><br><span class="line">			算术表达式：a + b</span><br><span class="line">			比较表达式：a == b</span><br><span class="line">			</span><br><span class="line">	结论：</span><br><span class="line">		&amp;逻辑与:有false则false。</span><br><span class="line">		|逻辑或:有true则true。</span><br><span class="line">		^逻辑异或:相同为false，不同为true。</span><br><span class="line">			举例：情侣关系。男男,男女,女男,女女</span><br><span class="line">		!逻辑非:非false则true，非true则false。</span><br><span class="line">			特点：偶数个不改变本身。</span><br><span class="line">*/</span><br><span class="line">class OperatorDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 3;</span><br><span class="line">		int b = 4;</span><br><span class="line">		int c = 5;</span><br><span class="line">		</span><br><span class="line">		//&amp;逻辑与</span><br><span class="line">		System.out.println((a &gt; b) &amp; (a &gt; c)); //false &amp; false = false</span><br><span class="line">		System.out.println((a &gt; b) &amp; (a &lt; c)); //false &amp; true = false</span><br><span class="line">		System.out.println((a &lt; b) &amp; (a &gt; c)); //true &amp; false = false</span><br><span class="line">		System.out.println((a &lt; b) &amp; (a &lt; c)); //true &amp; true = true</span><br><span class="line">		System.out.println(&quot;---------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//|逻辑或</span><br><span class="line">		System.out.println((a &gt; b) | (a &gt; c)); //false | false = false</span><br><span class="line">		System.out.println((a &gt; b) | (a &lt; c)); //false | true = true</span><br><span class="line">		System.out.println((a &lt; b) | (a &gt; c)); //true | false = true</span><br><span class="line">		System.out.println((a &lt; b) | (a &lt; c)); //true | true = true</span><br><span class="line">		System.out.println(&quot;---------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//^逻辑异或</span><br><span class="line">		System.out.println((a &gt; b) ^ (a &gt; c)); //false ^ false = false</span><br><span class="line">		System.out.println((a &gt; b) ^ (a &lt; c)); //false ^ true = true</span><br><span class="line">		System.out.println((a &lt; b) ^ (a &gt; c)); //true ^ false = true</span><br><span class="line">		System.out.println((a &lt; b) ^ (a &lt; c)); //true ^ true = false</span><br><span class="line">		System.out.println(&quot;---------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//!逻辑非</span><br><span class="line">		System.out.println(!(a &gt; b)); //!false = true</span><br><span class="line">		System.out.println(!(a &lt; b)); //!true = false</span><br><span class="line">		System.out.println(!!(a &gt; b)); //!!false = false</span><br><span class="line">		System.out.println(!!!(a &gt; b)); //!!false = true</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	&amp;&amp;和&amp;的区别? 同理||和|的区别?</span><br><span class="line">		A:最终结果一样。</span><br><span class="line">		B:&amp;&amp;具有短路效果。左边是false，右边不执行。</span><br><span class="line">		</span><br><span class="line">	开发中常用的逻辑运算符：</span><br><span class="line">		&amp;&amp;,||,!</span><br><span class="line">*/</span><br><span class="line">class OperatorDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 3;</span><br><span class="line">		int b = 4;</span><br><span class="line">		int c = 5;</span><br><span class="line">		</span><br><span class="line">		//&amp;&amp;双与</span><br><span class="line">		System.out.println((a &gt; b) &amp;&amp; (a &gt; c)); //false &amp;&amp; false = false</span><br><span class="line">		System.out.println((a &gt; b) &amp;&amp; (a &lt; c)); //false &amp;&amp; true = false</span><br><span class="line">		System.out.println((a &lt; b) &amp;&amp; (a &gt; c)); //true &amp;&amp; false = false</span><br><span class="line">		System.out.println((a &lt; b) &amp;&amp; (a &lt; c)); //true &amp;&amp; true = true</span><br><span class="line">		System.out.println(&quot;----------------&quot;);</span><br><span class="line">		</span><br><span class="line">		int x = 3;</span><br><span class="line">		int y = 4;</span><br><span class="line">		</span><br><span class="line">		//boolean b1 = ((x++ == 3) &amp; (y++ == 4));</span><br><span class="line">		//boolean b1 = ((x++ == 3) &amp;&amp; (y++ == 4));</span><br><span class="line">		//boolean b1 = ((++x == 3) &amp; (y++ == 4));</span><br><span class="line">		boolean b1 = ((++x == 3) &amp;&amp; (y++ == 4));</span><br><span class="line">		System.out.println(&quot;x:&quot;+x);</span><br><span class="line">		System.out.println(&quot;y:&quot;+y);</span><br><span class="line">		System.out.println(b1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】13-Java运算符之三目运算符/" class="pre-post btn btn-default" title="【JavaSe必知必会】13-Java运算符之三目运算符">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】13-Java运算符之三目运算符</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】11-Java运算符之算术运算符/" class="next-post btn btn-default" title="【JavaSe必知必会】11-Java运算符之算术运算符">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】11-Java运算符之算术运算符</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关系运算符"><span class="toc-text">关系运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码演示"><span class="toc-text">代码演示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#逻辑运算符"><span class="toc-text">逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述-1"><span class="toc-text">概述</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

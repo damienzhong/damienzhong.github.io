@@ -1,0 +1,342 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】19-方法的定义与使用 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】19-方法的定义与使用">
+            
+	            【JavaSe必知必会】19-方法的定义与使用
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="方法的基本定义"><a href="#方法的基本定义" class="headerlink" title="方法的基本定义"></a>方法的基本定义</h1><h2 id="方法定义及格式"><a href="#方法定义及格式" class="headerlink" title="方法定义及格式"></a>方法定义及格式</h2><ul>
+<li>简单的说：方法就是完成特定功能的代码块<br>在很多语言里面都有函数的定义<br>函数在Java中被称为方法</li>
+<li>格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名(参数类型 参数名1，参数类型 参数名2…) &#123;</span><br><span class="line">			函数体;</span><br><span class="line">			return 返回值;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="方法格式的解释说明"><a href="#方法格式的解释说明" class="headerlink" title="方法格式的解释说明"></a>方法格式的解释说明</h2><h3 id="方法格式解释"><a href="#方法格式解释" class="headerlink" title="方法格式解释"></a>方法格式解释</h3><ul>
+<li><strong>修饰符</strong> 比较多，后面会详细介绍。目前public static</li>
+<li><strong>返回值类型</strong> 用于限定返回值的数据类型</li>
+<li><strong>方法名</strong> 一个名称，为了方便我们调用方法</li>
+<li><strong>参数类型</strong> 限定调用方法时传入参数的数据类型</li>
+<li><strong>参数名</strong> 是一个变量，接收调用方法时传入的参数</li>
+<li><strong>方法体</strong> 完成功能的代码</li>
+<li><strong>return</strong> 结束方法以及返回方法指定类型的值 </li>
+<li><strong>返回值</strong> 程序被return带回的结果，返回给调用者<h2 id="有返回值的方法调用"><a href="#有返回值的方法调用" class="headerlink" title="有返回值的方法调用"></a>有返回值的方法调用</h2><h3 id="案例演示"><a href="#案例演示" class="headerlink" title="案例演示"></a>案例演示</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	方法：完成特定功能的代码块。</span><br><span class="line">	</span><br><span class="line">	注意：在很多语言里面有函数的定义，而在Java中函数被称为方法。</span><br><span class="line"></span><br><span class="line">	方法格式：</span><br><span class="line">		修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) &#123;</span><br><span class="line">			方法体语句;</span><br><span class="line">			return 返回值; </span><br><span class="line">		&#125;</span><br><span class="line">	详细解释：</span><br><span class="line">		修饰符：目前就用 public static。后面我们再详细的讲解其他的修饰符。</span><br><span class="line">		返回值类型：就是功能结果的数据类型。</span><br><span class="line">		方法名：符合命名规则即可。方便我们的调用。</span><br><span class="line">		参数：</span><br><span class="line">			实际参数：就是实际参与运算的。</span><br><span class="line">			形式参数；就是方法定义上的，用于接收实际参数的。</span><br><span class="line">		参数类型：就是参数的数据类型</span><br><span class="line">		参数名：就是变量名</span><br><span class="line">		方法体语句：就是完成功能的代码。</span><br><span class="line">		return：结束方法的。</span><br><span class="line">		返回值：就是功能的结果，由return带给调用者。</span><br><span class="line">		</span><br><span class="line">	要想写好一个方法，就必须明确两个东西：</span><br><span class="line">		A:返回值类型</span><br><span class="line">			结果的数据类型</span><br><span class="line">		B:参数列表</span><br><span class="line">			你要传递几个参数，以及每个参数的数据类型</span><br><span class="line">			</span><br><span class="line">	需求：求两个数据之和的案例</span><br><span class="line">	</span><br><span class="line">	方法的执行特点：</span><br><span class="line">		不调用，不执行。</span><br><span class="line">		</span><br><span class="line">	如何调用呢?(有明确返回值的调用)</span><br><span class="line">		A:单独调用,一般来说没有意义，所以不推荐。</span><br><span class="line">		B:输出调用,但是不够好。因为我们可能需要针对结果进行进一步的操作。</span><br><span class="line">		C:赋值调用,推荐方案。</span><br><span class="line">		</span><br><span class="line">*/</span><br><span class="line">class FunctionDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int x = 10;</span><br><span class="line">		int y = 20;</span><br><span class="line">		</span><br><span class="line">		//方式1：单独调用</span><br><span class="line">		//sum(x,y);</span><br><span class="line">	</span><br><span class="line">		//方式2：输出调用</span><br><span class="line">		//System.out.println(sum(x,y));</span><br><span class="line">		//System.out.println(30);</span><br><span class="line">	</span><br><span class="line">		//方式3：赋值调用</span><br><span class="line">		int result = sum(x,y);</span><br><span class="line">		//result在这里可以进行操作</span><br><span class="line">		System.out.println(result);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：求两个数据之和的案例</span><br><span class="line">		</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：int</span><br><span class="line">			参数列表：2个，都是int类型。</span><br><span class="line">	*/</span><br><span class="line">	public static int sum(int a,int b) &#123;</span><br><span class="line">			//如何实现呢?</span><br><span class="line">			//int c = a + b;</span><br><span class="line">			//return c;</span><br><span class="line">			</span><br><span class="line">			//c就是a+b,所以，我可以直接返回a+b</span><br><span class="line">			return a + b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h2><h3 id="练习1"><a href="#练习1" class="headerlink" title="练习1"></a>练习1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	键盘录入两个数据，返回两个数中的较大值</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class FunctionTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第一个数据:&quot;);</span><br><span class="line">		int a = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第二个数据:&quot;);</span><br><span class="line">		int b = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		int result = getMax(a,b);</span><br><span class="line">		System.out.println(&quot;较大值是：&quot;+result);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：两个数中的较大值</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：int</span><br><span class="line">			参数列表：int a,int b			</span><br><span class="line">	*/</span><br><span class="line">	public static int getMax(int a,int b) &#123;</span><br><span class="line">		//if语句</span><br><span class="line">		/*</span><br><span class="line">		if(a &gt; b) &#123;</span><br><span class="line">			//System.out.println(a);</span><br><span class="line">			return a;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			//System.out.println(b);</span><br><span class="line">			return b;</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//用三元改进</span><br><span class="line">		//int c = ((a &gt; b)? a: b);</span><br><span class="line">		//return c;</span><br><span class="line">		</span><br><span class="line">		//由于c就是后面的式子</span><br><span class="line">		return ((a&gt;b)? a : b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习2"><a href="#练习2" class="headerlink" title="练习2"></a>练习2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	键盘录入两个数据，比较两个数是否相等</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		比较两个数是否相等结果是一个boolean类型。</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class FunctionTest2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第一个数据:&quot;);</span><br><span class="line">		int a = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第二个数据:&quot;);</span><br><span class="line">		int b = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		boolean flag = compare(a,b);</span><br><span class="line">		System.out.println(flag);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：比较两个数是否相等</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：boolean</span><br><span class="line">			参数列表：int a,int b</span><br><span class="line">	*/</span><br><span class="line">	public static boolean compare(int a,int b) &#123;</span><br><span class="line">		//if语句的格式2实现</span><br><span class="line">		/*</span><br><span class="line">		if(a == b) &#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//三元改进</span><br><span class="line">		//boolean flag = ((a==b)? true: false);</span><br><span class="line">		//return flag;</span><br><span class="line">		</span><br><span class="line">		//继续改进</span><br><span class="line">		//return ((a==b)? true: false);</span><br><span class="line">		</span><br><span class="line">		//最终版</span><br><span class="line">		return a == b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习3"><a href="#练习3" class="headerlink" title="练习3"></a>练习3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	键盘录入三个数据，返回三个数中的最大值</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class FunctionTest3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第一个数据:&quot;);</span><br><span class="line">		int a = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第二个数据:&quot;);</span><br><span class="line">		int b = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第三个数据:&quot;);</span><br><span class="line">		int c = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		int max = getMax(a,b,c);</span><br><span class="line">		System.out.println(&quot;三个数据中的最大值是：&quot;+max);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求；返回三个数中的最大值</span><br><span class="line">		</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：int</span><br><span class="line">			参数列表：int a,int b,int c</span><br><span class="line">	*/</span><br><span class="line">	public static int getMax(int a,int b,int c) &#123;</span><br><span class="line">		//if嵌套</span><br><span class="line">		/*</span><br><span class="line">		if(a &gt; b) &#123;</span><br><span class="line">			if(a &gt; c) &#123;</span><br><span class="line">				return a;</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				return c;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			if(b &gt; c) &#123;</span><br><span class="line">				return b;</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				return c;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//用三元改</span><br><span class="line">		/*</span><br><span class="line">		if(a &gt; b) &#123;</span><br><span class="line">			return (a&gt;c? a: c);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			return (b&gt;c? b: c);</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//继续改进</span><br><span class="line">		//return (a&gt;b)? (a&gt;c? a: c): (b&gt;c? b: c);</span><br><span class="line">		//不建议，写代码一定要注意阅读性强</span><br><span class="line">		int temp = ((a&gt;b)? a: b);</span><br><span class="line">		int max = ((temp&gt;c)? temp: c);</span><br><span class="line">		return max;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	方法的注意事项：</span><br><span class="line">		A:方法不调用不执行</span><br><span class="line">		B:方法与方法是平级关系，不能嵌套定义</span><br><span class="line">		C:方法定义的时候参数之间用逗号隔开</span><br><span class="line">		D:方法调用的时候不用在传递数据类型</span><br><span class="line">		E:如果方法有明确的返回值，一定要有return带回一个值</span><br><span class="line">*/</span><br><span class="line">class FunctionDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		/*</span><br><span class="line">		错误的</span><br><span class="line">		public static int sum(int a,int b)&#123;</span><br><span class="line">			return a + b;</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//sum(10,20);</span><br><span class="line">		</span><br><span class="line">		//int x = 10;</span><br><span class="line">		//int y = 20;</span><br><span class="line">		//错误</span><br><span class="line">		//sum(int x,int y);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static int sum(int a,int b)&#123;</span><br><span class="line">		return a + b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="void类型的方法调用"><a href="#void类型的方法调用" class="headerlink" title="void类型的方法调用"></a>void类型的方法调用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：在控制台输出如下的形状</span><br><span class="line">		*****</span><br><span class="line">		*****</span><br><span class="line">		*****</span><br><span class="line">		*****</span><br><span class="line">		</span><br><span class="line">	void类型返回值的方法调用：</span><br><span class="line">		单独调用</span><br><span class="line">		输出调用(错误)</span><br><span class="line">		赋值调用(错误)</span><br><span class="line">*/</span><br><span class="line">class FunctionDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//for循环嵌套输出图形</span><br><span class="line">		for(int x=0; x&lt;4; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;5; y++) &#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//需求：我要在控制台输出一个6行7列的星形图形</span><br><span class="line">		for(int x=0; x&lt;6; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;7; y++) &#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//如果需要继续改变，我们就应该考虑使用方法改进。</span><br><span class="line">		//单独调用</span><br><span class="line">		pringXing(3,4);</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		pringXing(6,7);</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		pringXing(8,9);</span><br><span class="line">		</span><br><span class="line">		//输出调用</span><br><span class="line">		//此处不允许使用 &apos;空&apos; 类型</span><br><span class="line">		//System.out.println(pringXing(3,4));</span><br><span class="line">		</span><br><span class="line">		//赋值调用</span><br><span class="line">		//非法的表达式开始</span><br><span class="line">		//void v = pringXing(3,4);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		写一个什么样子的方法呢?写一个m行n列的代码</span><br><span class="line">		</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：这个时候没有明确的返回值，不写东西还不行，所以，这里记住是void</span><br><span class="line">			参数列表：int m,int n</span><br><span class="line">	*/</span><br><span class="line">	public static void pringXing(int m,int n) &#123;</span><br><span class="line">		for(int x=0; x&lt;m; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;n; y++) &#123;</span><br><span class="line">				System.out.print(&quot;*&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	键盘录入一个数据n(1&lt;=n&lt;=9)，输出对应的nn乘法表</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class FunctionTest3&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		System.out.print(&quot;请输入n的值（1~9）:&quot;);</span><br><span class="line">		int n = sc.nextInt();</span><br><span class="line">		while(n&lt;1||n&gt;9)&#123;</span><br><span class="line">			System.out.print(&quot;您输入的数据不再有效范围内，请重新输入：&quot;);</span><br><span class="line">			n = sc.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">		//调用</span><br><span class="line">		printNN(n);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：void</span><br><span class="line">			参数列表：int n</span><br><span class="line">	*/</span><br><span class="line">	public static void printNN(int n)&#123;</span><br><span class="line">		for(int x=1;x&lt;=n;x++)&#123;</span><br><span class="line">			for(int y=1;y&lt;=x;y++)&#123;</span><br><span class="line">				System.out.print(y+&quot;*&quot;+x+&quot;=&quot;+y*x+&quot;\t&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h1><h3 id="方法重载概述"><a href="#方法重载概述" class="headerlink" title="方法重载概述"></a>方法重载概述</h3><p>在同一个类中，允许存在一个以上的同名方法，只要它们的参数个数或者参数类型不同即可。</p>
+<h3 id="方法重载特点"><a href="#方法重载特点" class="headerlink" title="方法重载特点"></a>方法重载特点</h3><p>与返回值类型无关，只看方法名和参数列表<br>在调用时，虚拟机通过参数列表的不同来区分同名方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：我要求数的和</span><br><span class="line">	</span><br><span class="line">	我们的需求不断的发生改变，我们就对应的提供了多个求和的方法。</span><br><span class="line">	但是呢，他们的名字是不一样的。</span><br><span class="line">	而我们又要求方法命名做到：见名知意。</span><br><span class="line">	但是，很明显，现在没有做到。</span><br><span class="line">	那么，肿么办呢?</span><br><span class="line">	针对这种情况：方法的功能相同，参数列表不同的情况，为了见名知意，Java允许它们起一样的名字。</span><br><span class="line">	</span><br><span class="line">	其实，这种情况有一个专业名词：方法重载。</span><br><span class="line">	</span><br><span class="line">	方法重载：</span><br><span class="line">		在同一个类中，方法名相同，参数列表不同。与返回值类型无关。</span><br><span class="line">		</span><br><span class="line">		参数列表不同：</span><br><span class="line">			A:参数个数不同</span><br><span class="line">			B:参数类型不同</span><br><span class="line">*/</span><br><span class="line">class FunctionDemo4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//jvm会根据不同的参数去调用不同的功能</span><br><span class="line">		System.out.println(sum(10,20));</span><br><span class="line">		System.out.println(sum(10,20,30));</span><br><span class="line">		System.out.println(sum(10,20,30,40));</span><br><span class="line">		</span><br><span class="line">		System.out.println(sum(10.5f,20f));</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//需求1:求两个数的和</span><br><span class="line">	public static int sum(int a,int b) &#123;</span><br><span class="line">		System.out.println(&quot;int&quot;);</span><br><span class="line">		return a + b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//需求2:求三数的和</span><br><span class="line">	/*</span><br><span class="line">	public static int sum1(int a,int b,int c) &#123;</span><br><span class="line">		return a + b + c;</span><br><span class="line">	&#125;</span><br><span class="line">	*/</span><br><span class="line">	</span><br><span class="line">	public static int sum(int a,int b,int c) &#123;</span><br><span class="line">		return a + b + c;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//需求3:求四个数的和</span><br><span class="line">	/*</span><br><span class="line">	public static int sum2(int a,int b,int c,int d) &#123;</span><br><span class="line">		return a + b + c + d;</span><br><span class="line">	&#125;</span><br><span class="line">	*/</span><br><span class="line">	public static int sum(int a,int b,int c,int d) &#123;</span><br><span class="line">		return a + b + c + d;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static float sum(float a,float b) &#123;</span><br><span class="line">		System.out.println(&quot;float&quot;);</span><br><span class="line">		return a + b;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】20-面向对象简介/" class="pre-post btn btn-default" title="【JavaSe必知必会】20-面向对象简介">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】20-面向对象简介</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】18-流程控制语句之跳转控制语句/" class="next-post btn btn-default" title="【JavaSe必知必会】18-流程控制语句之跳转控制语句">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】18-流程控制语句之跳转控制语句</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#方法的基本定义"><span class="toc-text">方法的基本定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法定义及格式"><span class="toc-text">方法定义及格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法格式的解释说明"><span class="toc-text">方法格式的解释说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法格式解释"><span class="toc-text">方法格式解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有返回值的方法调用"><span class="toc-text">有返回值的方法调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#案例演示"><span class="toc-text">案例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#练习题"><span class="toc-text">练习题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#练习1"><span class="toc-text">练习1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习2"><span class="toc-text">练习2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习3"><span class="toc-text">练习3</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#void类型的方法调用"><span class="toc-text">void类型的方法调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#方法重载"><span class="toc-text">方法重载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法重载概述"><span class="toc-text">方法重载概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法重载特点"><span class="toc-text">方法重载特点</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

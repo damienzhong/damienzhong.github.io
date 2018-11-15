@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】16-流程控制语句之选择结构 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】16-流程控制语句之选择结构">
+            
+	            【JavaSe必知必会】16-流程控制语句之选择结构
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><blockquote>
+<p>在一个程序执行的过程中，各条语句的执行顺序对程序的结果是有直接影响的。也就是说程序的流程对运行结果有直接的影响。所以，我们必须清楚每条语句的执行流程。而且，很多时候我们要通过控制语句的执行顺序来实现我们要完成的功能。</p>
+</blockquote>
+<h2 id="流程控制语句分类"><a href="#流程控制语句分类" class="headerlink" title="流程控制语句分类"></a>流程控制语句分类</h2><ul>
+<li>顺序结构</li>
+<li>选择结构</li>
+<li>循环结构<h1 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h1><h2 id="顺序结构概述"><a href="#顺序结构概述" class="headerlink" title="顺序结构概述"></a>顺序结构概述</h2></li>
+<li>是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</li>
+<li>总的来说：写在前面的先执行，写在后面的后执行<h2 id="顺序结构图"><a href="#顺序结构图" class="headerlink" title="顺序结构图"></a>顺序结构图</h2><img src="http://image.damienzhong.com/%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84.png" alt="image"></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	流程控制语句：可以控制程序的执行流程。</span><br><span class="line">	</span><br><span class="line">	分类：</span><br><span class="line">		顺序结构</span><br><span class="line">		选择结构</span><br><span class="line">		循环结构</span><br><span class="line">		</span><br><span class="line">	顺序结构：</span><br><span class="line">		从上往下，依次执行。</span><br><span class="line">*/</span><br><span class="line">class ShunXuJieGouDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(&quot;程序开始了&quot;);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;我爱Java&quot;);</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;程序结束了&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h1><ul>
+<li>也被称为分支结构。</li>
+<li>选择结构有特定的语法规则，代码要执行具体的逻辑运算进行判断，逻辑运算的结果有两个，所以产生选择，按照不同的选择执行不同的代码。</li>
+<li>Java语言提供了两种选择结构语句<ul>
+<li>if语句</li>
+<li>switch语句<h2 id="选择结构-if语句"><a href="#选择结构-if语句" class="headerlink" title="选择结构(if语句)"></a>选择结构(if语句)</h2><h3 id="if语句有三种格式"><a href="#if语句有三种格式" class="headerlink" title="if语句有三种格式"></a>if语句有三种格式</h3><h4 id="if语句第一种格式："><a href="#if语句第一种格式：" class="headerlink" title="if语句第一种格式："></a>if语句第一种格式：</h4></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(关系表达式) &#123;</span><br><span class="line">		     语句体</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="执行流程"><a href="#执行流程" class="headerlink" title="执行流程"></a>执行流程</h4><ul>
+<li>首先判断关系表达式看其结果是true还是false</li>
+<li>如果是true就执行语句体</li>
+<li>如果是false就不执行语句体</li>
+</ul>
+<p><img src="http://image.damienzhong.com/if1.png" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	选择结构：</span><br><span class="line">		if语句</span><br><span class="line">		switch语句</span><br><span class="line">		</span><br><span class="line">	if语句：</span><br><span class="line">		格式1</span><br><span class="line">		格式2</span><br><span class="line">		格式3</span><br><span class="line">		</span><br><span class="line">	if语句的格式：</span><br><span class="line">		if(比较表达式) &#123;</span><br><span class="line">			语句体;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		执行流程：</span><br><span class="line">			先计算比较表达式的值，看其返回值是true还是false。</span><br><span class="line">			如果是true，就执行语句体；</span><br><span class="line">			如果是false，就不执行语句体；</span><br><span class="line">*/</span><br><span class="line">class IfDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int x = 10;</span><br><span class="line">		</span><br><span class="line">		if(x == 10) &#123;</span><br><span class="line">			System.out.println(&quot;x等于10&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		if(x == 20) &#123;</span><br><span class="line">			System.out.println(&quot;x等于20&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;over&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>关系表达式无论简单还是复杂，结果必须是boolean类型</li>
+<li>if语句控制的语句体如果是一条语句，大括号可以省略；如果是多条语句，就不能省略。建议永远不要省略。</li>
+<li>一般来说：有左大括号就没有分号，有分号就没有左大括号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	if语句的注意事项：</span><br><span class="line">		A:比较表达式无论简单还是复杂，结果必须是boolean类型</span><br><span class="line">		B:if语句控制的语句体如果是一条语句，大括号可以省略；</span><br><span class="line">		  如果是多条语句，就不能省略。建议永远不要省略。</span><br><span class="line">		C:一般来说：有左大括号就没有分号，有分号就没有左大括号</span><br><span class="line">*/</span><br><span class="line">class IfDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int x = 10;</span><br><span class="line">		</span><br><span class="line">		if(x == 10) &#123;</span><br><span class="line">			System.out.println(&quot;x等于10&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		if((x &gt; 5) || (x == 10)) &#123;</span><br><span class="line">			System.out.println(&quot;x大于或者等于10&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		int a = 100;</span><br><span class="line">		</span><br><span class="line">		/*</span><br><span class="line">		if(a == 100) &#123;</span><br><span class="line">			System.out.println(&quot;a的值是100&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		if(a != 100) &#123;</span><br><span class="line">			System.out.println(&quot;a的值是100&quot;);</span><br><span class="line">			System.out.println(&quot;over&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;-------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		int b = 100;</span><br><span class="line">		if(b != 100);  //这里其实是有语句体的，只不过是空语句体。</span><br><span class="line">		</span><br><span class="line">		//代码块</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(&quot;b的值是100&quot;);</span><br><span class="line">			System.out.println(&quot;over&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="if语句第二种格式"><a href="#if语句第二种格式" class="headerlink" title="if语句第二种格式"></a>if语句第二种格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(关系表达式) &#123;</span><br><span class="line">		     语句体1;</span><br><span class="line">	&#125;else &#123;</span><br><span class="line">		     语句体2;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="执行流程-1"><a href="#执行流程-1" class="headerlink" title="执行流程"></a>执行流程</h4><ul>
+<li>首先判断关系表达式看其结果是true还是false</li>
+<li>如果是true就执行语句体1</li>
+<li>如果是false就执行语句体2</li>
+</ul>
+<p><img src="http://image.damienzhong.com/if2.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	if语句格式2：</span><br><span class="line">		if(比较表达式) &#123;</span><br><span class="line">			语句体1;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			语句体2;</span><br><span class="line">		&#125;</span><br><span class="line">	执行流程：</span><br><span class="line">		首先计算比较表达式的值，看其返回值是true还是false。</span><br><span class="line">		如果是true，就执行语句体1；</span><br><span class="line">		如果是false，就执行语句体2；</span><br><span class="line">		</span><br><span class="line">	注意：else后面是没有比较表达式的，只有if后面有。</span><br><span class="line">*/</span><br><span class="line">class IfDemo3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//判断两个数据是否相等</span><br><span class="line">		</span><br><span class="line">		int a = 10;</span><br><span class="line">		int b = 20;</span><br><span class="line">		</span><br><span class="line">		if(a == b) &#123;</span><br><span class="line">			System.out.println(&quot;a等于b&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;a不等于b&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	if语句格式2的练习：</span><br><span class="line">		A:获取两个数据中较大的值</span><br><span class="line">		B:判断一个数据是奇数还是偶数,并输出是奇数还是偶数</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class IfTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//获取两个数据中较大的值</span><br><span class="line">		System.out.println(&quot;请输入第一个数据：&quot;);</span><br><span class="line">		int a = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;请输入第二个数据：&quot;);</span><br><span class="line">		int b = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		//定义一个变量接收最大值</span><br><span class="line">		int max;</span><br><span class="line">		</span><br><span class="line">		if(a &gt; b) &#123;</span><br><span class="line">			max = a;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			max = b;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;max:&quot;+max);</span><br><span class="line">		System.out.println(&quot;----------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//判断一个数据是奇数还是偶数</span><br><span class="line">		System.out.println(&quot;请输入你要判断的数据：&quot;);</span><br><span class="line">		int x = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		if(x%2 == 0) &#123;</span><br><span class="line">			System.out.println(x+&quot;这个数据是偶数&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(x+&quot;这个数据是奇数&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们前面讲解过三元运算符，它根据比较判断后，给出的也是两个结果，所以，这种情况和if语句的第二种格式很相似，他们在某些情况下应该是可以相互转换的。</li>
+<li>if语句第二种格式和三元运算符<ul>
+<li>三元运算符的操作都可以使用if语句改进，反之不成立</li>
+<li>什么时候不成立呢?<ul>
+<li>当if语句控制的语句体是一条输出语句的时候，就不成立。因为三元运算符是一个运算符，必须要求有一个结果返回<br>而输出语句却不能作为一个返回结果。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	由于if语句的第二种格式刚才也完成了三元运算符可以完成的效果。</span><br><span class="line">	所以，我们就认为他们可以完成一样的操作。</span><br><span class="line">	但是，他们就一点区别没有吗?肯定不是。</span><br><span class="line">	</span><br><span class="line">	区别：</span><br><span class="line">		三元运算符实现的，都可以采用if语句实现。反之不成立。</span><br><span class="line">		</span><br><span class="line">		什么时候if语句实现不能用三元改进呢?</span><br><span class="line">			当if语句控制的操作是一个输出语句的时候就不能。</span><br><span class="line">			为什么呢?因为三元运算符是一个运算符，运算符操作完毕就应该有一个结果，而不是一个输出。</span><br><span class="line">*/</span><br><span class="line">class IfDemo4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//获取两个数据的最大值</span><br><span class="line">		int a = 10;</span><br><span class="line">		int b = 20;</span><br><span class="line">		</span><br><span class="line">		//用if语句实现</span><br><span class="line">		int max1;</span><br><span class="line">		if(a &gt; b) &#123;</span><br><span class="line">			max1 = a;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			max1 = b;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;max1:&quot;+max1);</span><br><span class="line">		</span><br><span class="line">		//用三元改进</span><br><span class="line">		int max2 = (a &gt; b)? a: b;</span><br><span class="line">		System.out.println(&quot;max2:&quot;+max2);</span><br><span class="line">		System.out.println(&quot;----------&quot;);</span><br><span class="line">		</span><br><span class="line">		//判断一个数据是奇数还是偶数,并输出是奇数还是偶数</span><br><span class="line">		int x = 100;</span><br><span class="line">		</span><br><span class="line">		if(x%2 == 0) &#123;</span><br><span class="line">			System.out.println(&quot;100是一个偶数&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;100是一个奇数&quot;);</span><br><span class="line">		&#125; </span><br><span class="line">		</span><br><span class="line">		//用三元改进</span><br><span class="line">		//这种改进是错误的。</span><br><span class="line">		//String s = (x%2 == 0)?System.out.println(&quot;100是一个偶数&quot;);:System.out.println(&quot;100是一个奇数&quot;);;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="if语句第三种格式"><a href="#if语句第三种格式" class="headerlink" title="if语句第三种格式"></a>if语句第三种格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if(关系表达式1) &#123;</span><br><span class="line">		     语句体1;</span><br><span class="line">	&#125;else  if (关系表达式2) &#123;</span><br><span class="line">		     语句体2;</span><br><span class="line">	&#125;</span><br><span class="line">    …</span><br><span class="line">	else &#123;</span><br><span class="line">		     语句体n+1;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="执行流程-2"><a href="#执行流程-2" class="headerlink" title="执行流程"></a>执行流程</h4><ul>
+<li>首先判断关系表达式1看其结果是true还是false</li>
+<li>如果是true就执行语句体1</li>
+<li>如果是false就继续判断关系表达式2看其结果是true还是false</li>
+<li>如果是true就执行语句体2</li>
+<li>如果是false就继续判断关系表达式…看其结果是true还是false</li>
+<li>…</li>
+<li>如果没有任何关系表达式为true，就执行语句体n+1。</li>
+</ul>
+<p><img src="http://image.damienzhong.com/if3.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	if语句的格式3：</span><br><span class="line">		if(比较表达式1) &#123;</span><br><span class="line">			语句体1;</span><br><span class="line">		&#125;else if(比较表达式2) &#123;</span><br><span class="line">			语句体2;</span><br><span class="line">		&#125;else if(比较表达式3) &#123;</span><br><span class="line">			语句体3;</span><br><span class="line">		&#125;</span><br><span class="line">		...</span><br><span class="line">		else &#123;</span><br><span class="line">			语句体n+1;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	执行流程：</span><br><span class="line">		首先计算比较表达式1看其返回值是true还是false，</span><br><span class="line">		如果是true，就执行语句体1，if语句结束。</span><br><span class="line">		如果是false，接着计算比较表达式2看其返回值是true还是false，</span><br><span class="line">		</span><br><span class="line">		如果是true，就执行语句体2，if语句结束。</span><br><span class="line">		如果是false，接着计算比较表达式3看其返回值是true还是false，</span><br><span class="line">		...</span><br><span class="line">		</span><br><span class="line">		如果都是false，就执行语句体n+1。</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class IfDemo5 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//需求：键盘录入一个成绩，判断并输出成绩的等级。</span><br><span class="line">		/*</span><br><span class="line">			90-100 优秀</span><br><span class="line">			80-90  好</span><br><span class="line">			70-80  良</span><br><span class="line">			60-70  及格</span><br><span class="line">			0-60   不及格</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//录入数据</span><br><span class="line">		System.out.println(&quot;请输入你的考试成绩：&quot;);</span><br><span class="line">		int score = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		/*</span><br><span class="line">		if(score&gt;=90 &amp;&amp; score&lt;=100) &#123;</span><br><span class="line">			System.out.println(&quot;优秀&quot;);</span><br><span class="line">		&#125;else if(score&gt;=80 &amp;&amp; score&lt;90) &#123;</span><br><span class="line">			System.out.println(&quot;好&quot;);</span><br><span class="line">		&#125;else if(score&gt;=70 &amp;&amp; score&lt;80) &#123;</span><br><span class="line">			System.out.println(&quot;良&quot;);</span><br><span class="line">		&#125;else if(score&gt;=60 &amp;&amp; score&lt;70) &#123;</span><br><span class="line">			System.out.println(&quot;及格&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;不及格&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		//这样写已经满足我的基本要求，但是可能别人在使用的时候，不会按照你要求的数据给出了。</span><br><span class="line">		//在做一个程序的基本测试的时候，一定要考虑这样的几个问题：</span><br><span class="line">		//正确数据，错误数据，边界数据。</span><br><span class="line">		//而我们刚才写的程序并没有处理错误数据，所以这个程序不是很好，要改进</span><br><span class="line">		/*</span><br><span class="line">		if(score&gt;=90 &amp;&amp; score&lt;=100) &#123;</span><br><span class="line">			System.out.println(&quot;优秀&quot;);</span><br><span class="line">		&#125;else if(score&gt;=80 &amp;&amp; score&lt;90) &#123;</span><br><span class="line">			System.out.println(&quot;好&quot;);</span><br><span class="line">		&#125;else if(score&gt;=70 &amp;&amp; score&lt;80) &#123;</span><br><span class="line">			System.out.println(&quot;良&quot;);</span><br><span class="line">		&#125;else if(score&gt;=60 &amp;&amp; score&lt;70) &#123;</span><br><span class="line">			System.out.println(&quot;及格&quot;);</span><br><span class="line">		&#125;else if(score&gt;=0 &amp;&amp; score&lt;60)&#123;</span><br><span class="line">			System.out.println(&quot;不及格&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;你输入的成绩有误&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//另一种判断改进</span><br><span class="line">		if(score&lt;0 || score&gt;100) &#123;</span><br><span class="line">			System.out.println(&quot;你输入的成绩有误&quot;);</span><br><span class="line">		&#125;else if(score&gt;=90 &amp;&amp; score&lt;=100) &#123;</span><br><span class="line">			System.out.println(&quot;优秀&quot;);</span><br><span class="line">		&#125;else if(score&gt;=80 &amp;&amp; score&lt;90) &#123;</span><br><span class="line">			System.out.println(&quot;好&quot;);</span><br><span class="line">		&#125;else if(score&gt;=70 &amp;&amp; score&lt;80) &#123;</span><br><span class="line">			System.out.println(&quot;良&quot;);</span><br><span class="line">		&#125;else if(score&gt;=60 &amp;&amp; score&lt;70) &#123;</span><br><span class="line">			System.out.println(&quot;及格&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;不及格&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	键盘录入月份的值，输出对应的季节。</span><br><span class="line">	</span><br><span class="line">	春	3,4,5</span><br><span class="line">	夏	6,7,8</span><br><span class="line">	秋	9,10,11</span><br><span class="line">	冬	12,1,2</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		A:键盘录入月份的值，所以我们要使用Scanner。</span><br><span class="line">		B:我们应该判断这个月份在那个季节，而这个判断情况较多，所以，用if语句格式3。</span><br><span class="line">		</span><br><span class="line">	if语句的使用场景：</span><br><span class="line">		A:针对表达式是一个boolean类型的判断</span><br><span class="line">		B:针对一个范围的判断</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class IfTest3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//录入数据</span><br><span class="line">		System.out.println(&quot;请你输入一个月份:&quot;);</span><br><span class="line">		int month = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		//第三种格式实现即可</span><br><span class="line">		if(month&lt;1 || month&gt;12) &#123;</span><br><span class="line">			System.out.println(&quot;你输入的月份有误&quot;);</span><br><span class="line">		&#125;else if(month == 1) &#123;</span><br><span class="line">			System.out.println(&quot;冬季&quot;);</span><br><span class="line">		&#125;else if(month == 2) &#123;</span><br><span class="line">			System.out.println(&quot;冬季&quot;);</span><br><span class="line">		&#125;else if(month == 3) &#123;</span><br><span class="line">			System.out.println(&quot;春季&quot;);</span><br><span class="line">		&#125;else if(month == 4) &#123;</span><br><span class="line">			System.out.println(&quot;春季&quot;);</span><br><span class="line">		&#125;else if(month == 5) &#123;</span><br><span class="line">			System.out.println(&quot;春季&quot;);</span><br><span class="line">		&#125;else if(month == 6) &#123;</span><br><span class="line">			System.out.println(&quot;夏季&quot;);</span><br><span class="line">		&#125;else if(month == 7) &#123;</span><br><span class="line">			System.out.println(&quot;夏季&quot;);</span><br><span class="line">		&#125;else if(month == 8) &#123;</span><br><span class="line">			System.out.println(&quot;夏季&quot;);</span><br><span class="line">		&#125;else if(month == 9) &#123;</span><br><span class="line">			System.out.println(&quot;秋季&quot;);</span><br><span class="line">		&#125;else if(month == 10) &#123;</span><br><span class="line">			System.out.println(&quot;秋季&quot;);</span><br><span class="line">		&#125;else if(month == 11) &#123;</span><br><span class="line">			System.out.println(&quot;秋季&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;冬季&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//这个程序确实是符合了我们的需求，但是就是看起来比较麻烦</span><br><span class="line">		//那么，我们能不能改进一下呢?</span><br><span class="line">		//month == 3</span><br><span class="line">		//month == 4</span><br><span class="line">		//month == 5</span><br><span class="line">		//我们发现，上面三个都是春季。</span><br><span class="line">		//而他们本身每一个都是一个boolean表达式</span><br><span class="line">		//所以，我们就可以考虑使用逻辑运算符给他们连接起来改进</span><br><span class="line">		if(month&lt;1 || month&gt;12) &#123;</span><br><span class="line">			System.out.println(&quot;你输入的月份有误&quot;);</span><br><span class="line">		&#125;else if(month==3 || month==4 || month==5) &#123;</span><br><span class="line">			System.out.println(&quot;春季&quot;);</span><br><span class="line">		&#125;else if(month==6 || month==7 || month==8) &#123;</span><br><span class="line">			System.out.println(&quot;夏季&quot;);</span><br><span class="line">		&#125;else if(month==9 || month==10 || month==11) &#123;</span><br><span class="line">			System.out.println(&quot;秋季&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;冬季&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//这个时候，程序代码以及可以了。</span><br><span class="line">		//但是呢，假如我要求你输入一个月份，判断是上半年还是下半年。</span><br><span class="line">		//这个时候，我们的判断条件连接就是6个boolean表达式</span><br><span class="line">		//我们可能还有更多的连接</span><br><span class="line">		//这个时候，其实我们还有另外的一种改进方案：</span><br><span class="line">		//month == 3</span><br><span class="line">		//month == 4</span><br><span class="line">		//month == 5</span><br><span class="line">		//month&gt;=3 &amp;&amp; month&lt;=5</span><br><span class="line">		//用范围也是可以改进的。</span><br><span class="line">		if(month&lt;1 || month&gt;12) &#123;</span><br><span class="line">			System.out.println(&quot;你输入的月份有误&quot;);</span><br><span class="line">		&#125;else if(month&gt;=3 &amp;&amp; month&lt;=5) &#123;</span><br><span class="line">			System.out.println(&quot;春季&quot;);</span><br><span class="line">		&#125;else if(month&gt;=6 &amp;&amp; month&lt;=8) &#123;</span><br><span class="line">			System.out.println(&quot;夏季&quot;);</span><br><span class="line">		&#125;else if(month&gt;=9 &amp;&amp; month&lt;=11) &#123;</span><br><span class="line">			System.out.println(&quot;秋季&quot;);</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			System.out.println(&quot;冬季&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	获取三个数据中的最大值</span><br><span class="line">	</span><br><span class="line">	由此案例主要是为了讲解if语句是可以嵌套使用的。而且是可以任意的嵌套。</span><br><span class="line">*/</span><br><span class="line">class IfTest4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 10;</span><br><span class="line">		int b = 30;</span><br><span class="line">		int c = 20;</span><br><span class="line">		</span><br><span class="line">		//三元实现</span><br><span class="line">		//int temp = (a&gt;b)? a: b;</span><br><span class="line">		//int max = (temp&gt;c)? temp: c;</span><br><span class="line">		//System.out.println(&quot;max:&quot;+max);</span><br><span class="line">		//System.out.println(&quot;--------&quot;);</span><br><span class="line">		</span><br><span class="line">		//用if语句实现</span><br><span class="line">		int max;</span><br><span class="line">		if(a &gt; b) &#123;</span><br><span class="line">			if(a &gt; c) &#123;</span><br><span class="line">				max = a;</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				max = c;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;else &#123;</span><br><span class="line">			if(b &gt; c) &#123;</span><br><span class="line">				max = b;</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				max = c;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;max:&quot;+max);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="选择结构-switch语句"><a href="#选择结构-switch语句" class="headerlink" title="选择结构(switch语句)"></a>选择结构(switch语句)</h2><p><strong>switch语句格式</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">switch(表达式) &#123;</span><br><span class="line">	      case 值1：</span><br><span class="line">			语句体1;</span><br><span class="line">			break;</span><br><span class="line">		    case 值2：</span><br><span class="line">			语句体2;</span><br><span class="line">			break;</span><br><span class="line">		    …</span><br><span class="line">		    default：	</span><br><span class="line">			语句体n+1;</span><br><span class="line">			break;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>执行流程</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">首先计算出表达式的值</span><br><span class="line">其次，和case依次比较，一旦有对应的值，就会执行相应的语句，在执行的过程中，遇到break就会结束。</span><br><span class="line">最后，如果所有的case都和表达式的值不匹配，就会执行default语句体部分，然后程序结束掉。</span><br></pre></td></tr></table></figure>
+<p><strong>Switch语句流程图</strong><br><img src="http://image.damienzhong.com//switch.png" alt="image"><br><strong>代码演示</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	switch语句格式：</span><br><span class="line">		switch(表达式) &#123;</span><br><span class="line">			case 值1:</span><br><span class="line">				语句体1;</span><br><span class="line">				break;</span><br><span class="line">			case 值2:</span><br><span class="line">				语句体2;</span><br><span class="line">				break;</span><br><span class="line">			...</span><br><span class="line">			default:</span><br><span class="line">				语句体n+1;</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	格式的解释：</span><br><span class="line">		switch:表示这是switch选择结构</span><br><span class="line">		表达式:这个地方的取值是有限定的</span><br><span class="line">			byte,short,int,char</span><br><span class="line">			JDK5以后可以是枚举</span><br><span class="line">			JDK7以后可以是字符串</span><br><span class="line">		case:后面跟的是要和表达式进行比较的值</span><br><span class="line">		语句体:要执行的代码</span><br><span class="line">		break:表示中断，结束的意思，可以控制switch语句的结束。</span><br><span class="line">		default:当所有的值都和表达式不匹配的时候，就执行default控制的语句。其实它就相当于if语句的else。</span><br><span class="line">	</span><br><span class="line">	面试题：</span><br><span class="line">		byte可以作为switch的表达式吗?</span><br><span class="line">		long可以作为switch的表达式吗?</span><br><span class="line">		String可以作为switch的表达式吗?</span><br><span class="line">		</span><br><span class="line">	案例：</span><br><span class="line">		键盘录入一个数据，根据这个数据，我们输出对应的星期?</span><br><span class="line">			键盘录入1,对应输出星期一</span><br><span class="line">			键盘录入2,对应输出星期二</span><br><span class="line">			...</span><br><span class="line">			键盘录入7,对应输出星期日</span><br><span class="line">			</span><br><span class="line">	分析：</span><br><span class="line">		1:键盘录入，用Scanner实现</span><br><span class="line">		2:判断我们既可以使用if语句，也可以使用我们要讲解的switch语句</span><br><span class="line">		</span><br><span class="line">	注意：</span><br><span class="line">		A:遇到左大括号缩进一个tab的位置。</span><br><span class="line">		B:关联不是很大的语句间空行</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class SwitchDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//控制键盘录入数据</span><br><span class="line">		System.out.println(&quot;请输入一个数据(1-7):&quot;);</span><br><span class="line">		int week = sc.nextInt(); //3</span><br><span class="line">		</span><br><span class="line">		//switch判断语句</span><br><span class="line">		switch(week) &#123;</span><br><span class="line">			case 1:</span><br><span class="line">				System.out.println(&quot;星期一&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 2:</span><br><span class="line">				System.out.println(&quot;星期二&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 3:</span><br><span class="line">				System.out.println(&quot;星期三&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 4:</span><br><span class="line">				System.out.println(&quot;星期四&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 5:</span><br><span class="line">				System.out.println(&quot;星期五&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 6:</span><br><span class="line">				System.out.println(&quot;星期六&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 7:</span><br><span class="line">				System.out.println(&quot;星期日&quot;);</span><br><span class="line">				break;</span><br><span class="line">			default:</span><br><span class="line">				System.out.println(&quot;你输入的数据有误&quot;);</span><br><span class="line">				break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意事项</strong></p>
+<ul>
+<li>case后面只能是常量，不能是变量，而且，多个case后面的值不能出现相同的</li>
+<li>default可以省略吗?<ul>
+<li>可以省略。一般不建议。除非判断的值是固定的。(单选题)</li>
+</ul>
+</li>
+<li>break可以省略吗?<ul>
+<li>可以省略，一般不建议。否则结果可能不是你想要的</li>
+</ul>
+</li>
+<li>default的位置一定要在最后吗?<ul>
+<li>可以出现在switch语句任意位置。</li>
+</ul>
+</li>
+<li>switch语句的结束条件<ul>
+<li>遇到break</li>
+<li>执行到程序的末尾</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	switch语句的注意事项：</span><br><span class="line">		A:case后面只能是常量，不能是变量，而且，多个case后面的值不能出现相同的</span><br><span class="line">		B:default可以省略吗?</span><br><span class="line">			可以省略，但是不建议，因为它的作用是对不正确的情况给出提示。</span><br><span class="line">			特殊情况：</span><br><span class="line">				case就可以把值固定。</span><br><span class="line">				A,B,C,D</span><br><span class="line">		C:break可以省略吗?</span><br><span class="line">			可以省略，但是结果可能不是我们想要的。</span><br><span class="line">			会出现一个现象：case穿透。</span><br><span class="line">			最终我们建议不要省略</span><br><span class="line">		D:default一定要在最后吗?</span><br><span class="line">			不是，可以在任意位置。但是建议在最后。</span><br><span class="line">		E:switch语句的结束条件</span><br><span class="line">			a:遇到break就结束了</span><br><span class="line">			b:执行到末尾就结束了</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class SwitchDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//控制键盘录入数据</span><br><span class="line">		System.out.println(&quot;请输入一个数据(1-7):&quot;);</span><br><span class="line">		int week = sc.nextInt(); //3</span><br><span class="line">		</span><br><span class="line">		//定义常量</span><br><span class="line">		//int number = 3;</span><br><span class="line">		//然后把case后面的值改为number，就会报错</span><br><span class="line">		</span><br><span class="line">		//switch判断语句</span><br><span class="line">		switch(week) &#123;</span><br><span class="line">			case 1:</span><br><span class="line">				System.out.println(&quot;星期一&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 2:</span><br><span class="line">				System.out.println(&quot;星期二&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 3:</span><br><span class="line">				System.out.println(&quot;星期三&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 4:</span><br><span class="line">				System.out.println(&quot;星期四&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 5:</span><br><span class="line">				System.out.println(&quot;星期五&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 6:</span><br><span class="line">				System.out.println(&quot;星期六&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 7:</span><br><span class="line">				System.out.println(&quot;星期日&quot;);</span><br><span class="line">				break;</span><br><span class="line">			default:</span><br><span class="line">				System.out.println(&quot;你输入的数据有误&quot;);</span><br><span class="line">				//break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="选择结构-各自使用场景"><a href="#选择结构-各自使用场景" class="headerlink" title="选择结构(各自使用场景)"></a>选择结构(各自使用场景)</h1><ul>
+<li>在做判断的时候，我们有两种选择，if语句和switch语句，那么，我们到底该如何选择使用那种语句呢?</li>
+<li>if语句使用场景：<ul>
+<li>针对结果是boolean类型的判断</li>
+<li>针对一个范围的判断</li>
+<li>针对几个常量值的判断</li>
+</ul>
+</li>
+<li>switch语句使用场景：<ul>
+<li>针对几个常量值的判断</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	用switch语句实现键盘录入月份，输出对应的季节</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		A:键盘录入一个月份，用Scanner实现</span><br><span class="line">		B:用switch语句实现即可</span><br><span class="line">		</span><br><span class="line">	if语句和switch语句的区别?</span><br><span class="line">		if语句：</span><br><span class="line">			A:针对结果是boolean类型的判断</span><br><span class="line">			B:针对一个范围的判断</span><br><span class="line">			C:针对几个常量值的判断</span><br><span class="line">		</span><br><span class="line">		switch语句：</span><br><span class="line">			针对几个常量值的判断</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class SwitchTest4 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//录入数据</span><br><span class="line">		System.out.println(&quot;请输入月份(1-12)：&quot;);</span><br><span class="line">		int month = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		/*</span><br><span class="line">		switch(month) &#123;</span><br><span class="line">			case 1:</span><br><span class="line">				System.out.println(&quot;冬季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 2:</span><br><span class="line">				System.out.println(&quot;冬季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 3:</span><br><span class="line">				System.out.println(&quot;春季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 4:</span><br><span class="line">				System.out.println(&quot;春季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 5:</span><br><span class="line">				System.out.println(&quot;春季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 6:</span><br><span class="line">				System.out.println(&quot;夏季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 7:</span><br><span class="line">				System.out.println(&quot;夏季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 8:</span><br><span class="line">				System.out.println(&quot;夏季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 9:</span><br><span class="line">				System.out.println(&quot;秋季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 10:</span><br><span class="line">				System.out.println(&quot;秋季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 11:</span><br><span class="line">				System.out.println(&quot;秋季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 12:</span><br><span class="line">				System.out.println(&quot;冬季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			default:</span><br><span class="line">				System.out.println(&quot;你输入的月份有误&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//这样写太麻烦了，我们使用一个我们不想使用的东西：case穿透</span><br><span class="line">		switch(month) &#123;</span><br><span class="line">			case 1:</span><br><span class="line">			case 2:</span><br><span class="line">			case 12:</span><br><span class="line">				System.out.println(&quot;冬季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 3:</span><br><span class="line">			case 4:</span><br><span class="line">			case 5:</span><br><span class="line">				System.out.println(&quot;春季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 6:</span><br><span class="line">			case 7:</span><br><span class="line">			case 8:</span><br><span class="line">				System.out.println(&quot;夏季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			case 9:</span><br><span class="line">			case 10:</span><br><span class="line">			case 11:</span><br><span class="line">				System.out.println(&quot;秋季&quot;);</span><br><span class="line">				break;</span><br><span class="line">			default:</span><br><span class="line">				System.out.println(&quot;你输入的月份有误&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】17-流程控制语句之循环结构/" class="pre-post btn btn-default" title="【JavaSe必知必会】17-流程控制语句之循环结构">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】17-流程控制语句之循环结构</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】15-Java键盘录入/" class="next-post btn btn-default" title="【JavaSe必知必会】15-Java键盘录入">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】15-Java键盘录入</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制语句分类"><span class="toc-text">流程控制语句分类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#顺序结构"><span class="toc-text">顺序结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序结构概述"><span class="toc-text">顺序结构概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顺序结构图"><span class="toc-text">顺序结构图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择结构"><span class="toc-text">选择结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择结构-if语句"><span class="toc-text">选择结构(if语句)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if语句有三种格式"><span class="toc-text">if语句有三种格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if语句第一种格式："><span class="toc-text">if语句第一种格式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#执行流程"><span class="toc-text">执行流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#if语句第二种格式"><span class="toc-text">if语句第二种格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#执行流程-1"><span class="toc-text">执行流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习"><span class="toc-text">练习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#if语句第三种格式"><span class="toc-text">if语句第三种格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#执行流程-2"><span class="toc-text">执行流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习题"><span class="toc-text">练习题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择结构-switch语句"><span class="toc-text">选择结构(switch语句)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择结构-各自使用场景"><span class="toc-text">选择结构(各自使用场景)</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
