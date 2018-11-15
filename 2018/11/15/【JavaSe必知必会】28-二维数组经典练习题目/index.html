@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】28-二维数组经典练习题目 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】28-二维数组经典练习题目">
+            
+	            【JavaSe必知必会】28-二维数组经典练习题目
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="二维数组遍历"><a href="#二维数组遍历" class="headerlink" title="二维数组遍历"></a>二维数组遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：二维数组遍历</span><br><span class="line">	</span><br><span class="line">	外循环控制的是二维数组的长度，其实就是一维数组的个数。</span><br><span class="line">	内循环控制的是一维数组的长度。</span><br><span class="line">*/</span><br><span class="line">class Array2Test &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义一个二维数组</span><br><span class="line">		int[][] arr = &#123;&#123;1,2,3&#125;,&#123;4,5,6&#125;,&#123;7,8,9&#125;&#125;;</span><br><span class="line">		</span><br><span class="line">		//请问谁代表&#123;1,2,3&#125;</span><br><span class="line">		//arr[0]就是第一个数组</span><br><span class="line">		//arr[0] = &#123;1,2,3&#125;;</span><br><span class="line">		for(int x=0; x&lt;arr[0].length; x++) &#123;</span><br><span class="line">			System.out.println(arr[0][x]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		for(int x=0; x&lt;arr[1].length; x++) &#123;</span><br><span class="line">			System.out.println(arr[1][x]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		for(int x=0; x&lt;arr[2].length; x++) &#123;</span><br><span class="line">			System.out.println(arr[2][x]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//用循环改进</span><br><span class="line">		for(int x=0; x&lt;3; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;arr[x].length; y++) &#123;</span><br><span class="line">				System.out.print(arr[x][y]+&quot; &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//这个时候，注意了，3是我们根据上面的代码得出来的</span><br><span class="line">		//但是，它不能针对任何的数组都可以这样</span><br><span class="line">		//所以，我们应该想办法改进</span><br><span class="line">		//其实，外面的这个循环的长度就是二维数组的长度</span><br><span class="line">		</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;arr[x].length; y++) &#123;</span><br><span class="line">				System.out.print(arr[x][y]+&quot; &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//用方法改进</span><br><span class="line">		//调用方法</span><br><span class="line">		printArray2(arr);</span><br><span class="line">		System.out.println(&quot;--------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//我们再来一个列数是变化的</span><br><span class="line">		int[][] arr2 = &#123;&#123;1,2,3&#125;,&#123;4,5&#125;,&#123;6&#125;&#125;;</span><br><span class="line">		printArray2(arr2);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：遍历二维数组</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：void</span><br><span class="line">			参数列表：int[][] arr</span><br><span class="line">	*/</span><br><span class="line">	public static void printArray2(int[][] arr) &#123;</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;arr[x].length; y++) &#123;</span><br><span class="line">				System.out.print(arr[x][y]+&quot; &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="二维数组求和"><a href="#二维数组求和" class="headerlink" title="二维数组求和"></a>二维数组求和</h1><h2 id="公司年销售额求和"><a href="#公司年销售额求和" class="headerlink" title="公司年销售额求和"></a>公司年销售额求和</h2><ul>
+<li>某公司按照季度和月份统计的数据如下：单位(万元)</li>
+<li>第一季度：22,66,44</li>
+<li>第二季度：77,33,88</li>
+<li>第三季度：25,45,65</li>
+<li>第四季度：11,66,99</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	公司年销售额求和</span><br><span class="line">	某公司按照季度和月份统计的数据如下：单位(万元)</span><br><span class="line">	第一季度：22,66,44</span><br><span class="line">	第二季度：77,33,88</span><br><span class="line">	第三季度：25,45,65</span><br><span class="line">	第四季度：11,66,99</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		A:把题目的数据用二维数组来表示</span><br><span class="line">			int[][] arr = &#123;&#123;22,66,44&#125;,&#123;77,33,88&#125;,&#123;25,45,65&#125;,&#123;11,66,99&#125;&#125;;</span><br><span class="line">		B:如何求和呢?</span><br><span class="line">			求和其实就是获取到每一个元素，然后累加即可。</span><br><span class="line">		C:定义一个求和变量sum，初始化值是0。</span><br><span class="line">		D:通过遍历就可以得到每一个二维数组的元素。</span><br><span class="line">		E:把元素累加即可。</span><br><span class="line">		F:最后输出sum，就是结果。</span><br><span class="line">*/</span><br><span class="line">class Array2Test2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//把题目的数据用二维数组来表示</span><br><span class="line">		int[][] arr = &#123;&#123;22,66,44&#125;,&#123;77,33,88&#125;,&#123;25,45,65&#125;,&#123;11,66,99&#125;&#125;;</span><br><span class="line">		</span><br><span class="line">		//定义一个求和变量sum，初始化值是0。</span><br><span class="line">		int sum = 0;</span><br><span class="line">		</span><br><span class="line">		//通过遍历就可以得到每一个二维数组的元素。</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;arr[x].length; y++) &#123;</span><br><span class="line">				//把元素累加即可。</span><br><span class="line">				sum += arr[x][y];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//最后输出sum，就是结果。</span><br><span class="line">		System.out.println(&quot;一年的销售额为：&quot;+sum+&quot;万元&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="打印杨辉三角形-行数可以键盘录入"><a href="#打印杨辉三角形-行数可以键盘录入" class="headerlink" title="打印杨辉三角形(行数可以键盘录入)"></a>打印杨辉三角形(行数可以键盘录入)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"></span><br><span class="line">	需求：打印杨辉三角形(行数可以键盘录入)</span><br><span class="line">	</span><br><span class="line">	1</span><br><span class="line">	1 1	</span><br><span class="line">	1 2 1</span><br><span class="line">	1 3 3 1</span><br><span class="line">	1 4 6 4 1 </span><br><span class="line">	1 5 10 10 5 1</span><br><span class="line"></span><br><span class="line">	分析：看这种图像的规律</span><br><span class="line">		A:任何一行的第一列和最后一列都是1</span><br><span class="line">		B:从第三行开始，每一个数据是它上一行的前一列和它上一行的本列之和。</span><br><span class="line">	</span><br><span class="line">	步骤：</span><br><span class="line">		A:首先定义一个二维数组。行数如果是n，我们把列数也先定义为n。</span><br><span class="line">		  这个n的数据来自于键盘录入。</span><br><span class="line">		B:给这个二维数组任何一行的第一列和最后一列赋值为1</span><br><span class="line">		C:按照规律给其他元素赋值</span><br><span class="line">			从第三行开始，每一个数据是它上一行的前一列和它上一行的本列之和。</span><br><span class="line">		D:遍历这个二维数组。</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class Array2Test3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//这个n的数据来自于键盘录入。</span><br><span class="line">		System.out.println(&quot;请输入一个数据：&quot;);</span><br><span class="line">		int n = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		//定义二维数组</span><br><span class="line">		int[][] arr = new int[n][n];</span><br><span class="line">		</span><br><span class="line">		//给这个二维数组任何一行的第一列和最后一列赋值为1</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			arr[x][0] = 1; //任何一行第1列</span><br><span class="line">			arr[x][x] = 1; //任何一行的最后1列</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//按照规律给其他元素赋值</span><br><span class="line">		//从第三行开始，每一个数据是它上一行的前一列和它上一行的本列之和。</span><br><span class="line">		for(int x=2; x&lt;arr.length; x++) &#123;</span><br><span class="line">			//这里如果y&lt;=x是有个小问题的，就是最后一列的问题</span><br><span class="line">			//所以这里要减去1</span><br><span class="line">			//并且y也应该从1开始，因为第一列也是有值了</span><br><span class="line">			for(int y=1; y&lt;=x-1; y++) &#123;</span><br><span class="line">				//每一个数据是它上一行的前一列和它上一行的本列之和。</span><br><span class="line">				arr[x][y] = arr[x-1][y-1] + arr[x-1][y];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//遍历这个二维数组。</span><br><span class="line">		/*</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;arr[x].length; y++) &#123;</span><br><span class="line">				System.out.print(arr[x][y]+&quot;\t&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">		*/</span><br><span class="line">		//这个时候，要注意了，内循环的变化必须和曾经讲过的九九乘法表类似</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			for(int y=0; y&lt;=x; y++) &#123;</span><br><span class="line">				System.out.print(arr[x][y]+&quot;\t&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="思考题1"><a href="#思考题1" class="headerlink" title="思考题1"></a>思考题1</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	思考题1：看程序写结果，然后分析为什么是这个样子的。并画图讲解。最后总结Java中参数传递规律。</span><br><span class="line">	</span><br><span class="line">	Java中的参数传递问题：</span><br><span class="line">		基本类型：形式参数的改变对实际参数没有影响。</span><br><span class="line">		引用类型：形式参数的改变直接影响实际参数。</span><br><span class="line">*/</span><br><span class="line">class ArgsDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a = 10;</span><br><span class="line">		int b = 20;</span><br><span class="line">		System.out.println(&quot;a:&quot;+a+&quot;,b:&quot;+b); //a:10,b:20</span><br><span class="line">		change(a,b);</span><br><span class="line">		System.out.println(&quot;a:&quot;+a+&quot;,b:&quot;+b); //???	a:10,b:20</span><br><span class="line"></span><br><span class="line">		int[] arr = &#123;1,2,3,4,5&#125;; </span><br><span class="line">		change(arr);</span><br><span class="line">		System.out.println(arr[1]); //???	4</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void change(int a,int b) &#123; //a=10,b=20</span><br><span class="line">		System.out.println(&quot;a:&quot;+a+&quot;,b:&quot;+b); //a:10,b:20</span><br><span class="line">		a = b;	//a=20</span><br><span class="line">		b = a + b; //b=40</span><br><span class="line">		System.out.println(&quot;a:&quot;+a+&quot;,b:&quot;+b); //a:20,b:40</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public static void change(int[] arr) &#123; //arr=&#123;1,2,3,4,5&#125;;</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			if(arr[x]%2==0) &#123;</span><br><span class="line">				arr[x]*=2;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//arr=&#123;1,4,3,8,5&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内存图演示"><a href="#内存图演示" class="headerlink" title="内存图演示"></a>内存图演示</h3><p><img src="http://image.damienzhong.com/%E5%80%BC%E4%BC%A0%E9%80%92%E5%86%85%E5%AD%98%E5%9B%BE.JPG" alt="image"></p>
+<h1 id="思考题2"><a href="#思考题2" class="headerlink" title="思考题2"></a>思考题2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	某个公司采用公用电话传递数据信息，数据是小于8位的整数，为了确保安全，</span><br><span class="line">	在传递过程中需要加密，加密规则如下：</span><br><span class="line">		首先将数据倒序，然后将每位数字都加上5，再用和除以10的余数代替该数字，</span><br><span class="line">		最后将第一位和最后一位数字交换。 请任意给定一个小于8位的整数，</span><br><span class="line">		然后，把加密后的结果在控制台打印出来。 </span><br><span class="line">		</span><br><span class="line">	题目要求：</span><br><span class="line">		A:数据是小于8位的整数</span><br><span class="line">			定义一个int类型的数据</span><br><span class="line">			int number = 123456;</span><br><span class="line">		B:加密规则</span><br><span class="line">			a:首先将数据倒序</span><br><span class="line">				结果 654321</span><br><span class="line">			b:然后将每位数字都加上5，再用和除以10的余数代替该数字</span><br><span class="line">				结果 109876</span><br><span class="line">			c:最后将第一位和最后一位数字交换</span><br><span class="line">				结果 609871</span><br><span class="line">		C:把加密后的结果输出在控制台</span><br><span class="line">		</span><br><span class="line">		通过简单的分析，我们知道如果我们有办法把这个数据变成数组就好了。</span><br><span class="line">		不是直接写成这个样子的：</span><br><span class="line">			int[] arr = &#123;1,2,3,4,5,6&#125;;</span><br><span class="line">			</span><br><span class="line">		如何把数据转成数组呢?</span><br><span class="line">			A:定义一个数据</span><br><span class="line">				int number = 123456;</span><br><span class="line">			B:定义一个数组,这个时候问题就来了，数组的长度是多少呢?</span><br><span class="line">				int[] arr = new int[8]; //不可能超过8</span><br><span class="line">				在赋值的时候，我用一个变量记录索引的变化。</span><br><span class="line">				定义一个索引值是0</span><br><span class="line">				int index = 0;</span><br><span class="line">			C:获取每一个数据</span><br><span class="line">				int ge = number%10</span><br><span class="line">				int shi = number/10%10</span><br><span class="line">				int bai = number/10/10%10</span><br><span class="line">				</span><br><span class="line">				arr[index] = ge;</span><br><span class="line">				index++;</span><br><span class="line">				arr[index] = shi;</span><br><span class="line">				index++;</span><br><span class="line">				arr[index] = bai;</span><br><span class="line">				...</span><br><span class="line">*/</span><br><span class="line">class JiaMiDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义一个数据</span><br><span class="line">		int number = 123456;</span><br><span class="line">		</span><br><span class="line">		//定义一个数组</span><br><span class="line">		int[] arr = new int[8];</span><br><span class="line">		</span><br><span class="line">		//把数据中每一位上的数据获取到后存储到数组中</span><br><span class="line">		/*</span><br><span class="line">		int index = 0;</span><br><span class="line">		arr[index] = number%10; //arr[0]=6;</span><br><span class="line">		index++;</span><br><span class="line">		arr[index] = number/10%10; //arr[1]=5;</span><br><span class="line">		index++;</span><br><span class="line">		arr[index] = mumber/10/10%10; //arr[2]=4;</span><br><span class="line">		*/</span><br><span class="line">		</span><br><span class="line">		//通过观察这个代码，我们发现应该是可以通过循环改进的</span><br><span class="line">		int index = 0;</span><br><span class="line">		</span><br><span class="line">		while(number &gt; 0) &#123; //number=123456,number=12345,number=1234,number=123,number=12,number=1,number=0</span><br><span class="line">			arr[index] = number%10; //arr[0]=6,arr[1]=5,arr[2]=4,arr[3]=3,arr[4]=2,arr[5]=1</span><br><span class="line">			index++;//index=1,index=2,index=3,index=4,index=5,index=6</span><br><span class="line">			number/=10;//number=12345,number=1234,number=123,number=12,number=1,number=0</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//然后将每位数字都加上5，再用和除以10的余数代替该数字</span><br><span class="line">		for(int x=0; x&lt;index; x++) &#123;</span><br><span class="line">			arr[x] += 5;</span><br><span class="line">			arr[x] %= 10;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//最后将第一位和最后一位数字交换</span><br><span class="line">		int temp = arr[0];</span><br><span class="line">		arr[0] = arr[index-1];</span><br><span class="line">		arr[index-1] = temp;</span><br><span class="line">		</span><br><span class="line">		//输出数据</span><br><span class="line">		for(int x=0; x&lt;index; x++) &#123;</span><br><span class="line">			System.out.print(arr[x]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="改进版"><a href="#改进版" class="headerlink" title="改进版"></a>改进版</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	把刚才的代码改进一下：</span><br><span class="line">		A:把数据改进为键盘录入</span><br><span class="line">		B:把代码改进为方法实现</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		另一个数据的测试：</span><br><span class="line">		number:1234567</span><br><span class="line">		第一步：7654321</span><br><span class="line">		第二步：2109876</span><br><span class="line">		第三步：6109872</span><br><span class="line">		</span><br><span class="line">	知识点：</span><br><span class="line">		变量</span><br><span class="line">		数据类型</span><br><span class="line">		运算符</span><br><span class="line">		键盘录入</span><br><span class="line">		语句</span><br><span class="line">		方法</span><br><span class="line">		数组</span><br><span class="line">*/</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">class JiaMiDemo2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建键盘录入对象</span><br><span class="line">		Scanner sc = new Scanner(System.in);</span><br><span class="line">		</span><br><span class="line">		//请输入一个数据</span><br><span class="line">		System.out.println(&quot;请输入一个数据(小于8位)：&quot;);</span><br><span class="line">		int number = sc.nextInt();</span><br><span class="line">		</span><br><span class="line">		//写功能实现把number进行加密</span><br><span class="line">		//调用</span><br><span class="line">		String result = jiaMi(number);</span><br><span class="line">		System.out.println(&quot;加密后的结果是：&quot;+result);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：写一个功能，把数据number实现加密。</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：String 做一个字符串的拼接。</span><br><span class="line">			参数列表：int number</span><br><span class="line">	*/</span><br><span class="line">	public static String jiaMi(int number) &#123;</span><br><span class="line">		//定义数组</span><br><span class="line">		int[] arr = new int[8];</span><br><span class="line">		</span><br><span class="line">		//定义索引</span><br><span class="line">		int index = 0;</span><br><span class="line">		</span><br><span class="line">		//把number中的数据想办法放到数组中</span><br><span class="line">		while(number &gt; 0) &#123;</span><br><span class="line">			arr[index] = number%10;</span><br><span class="line">			index++;</span><br><span class="line">			number /= 10;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//把每个数据加5，然后对10取得余数</span><br><span class="line">		for(int x=0; x&lt;index; x++) &#123;</span><br><span class="line">			arr[x] += 5;</span><br><span class="line">			arr[x] %= 10;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//把第一位和最后一位交换</span><br><span class="line">		int temp = arr[0];</span><br><span class="line">		arr[0] = arr[index-1];</span><br><span class="line">		arr[index-1] = temp;</span><br><span class="line">		</span><br><span class="line">		//把数组的元素拼接成一个字符串返回</span><br><span class="line">		//定义一个空内容字符串</span><br><span class="line">		String s = &quot;&quot;;</span><br><span class="line">		</span><br><span class="line">		for(int x=0; x&lt;index; x++) &#123;</span><br><span class="line">			s += arr[x];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		return s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】29-匿名对象概述与应用/" class="pre-post btn btn-default" title="【JavaSe必知必会】29-匿名对象概述与应用">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】29-匿名对象概述与应用</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】27-二维数组定义详解/" class="next-post btn btn-default" title="【JavaSe必知必会】27-二维数组定义详解">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】27-二维数组定义详解</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二维数组遍历"><span class="toc-text">二维数组遍历</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二维数组求和"><span class="toc-text">二维数组求和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#公司年销售额求和"><span class="toc-text">公司年销售额求和</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打印杨辉三角形-行数可以键盘录入"><span class="toc-text">打印杨辉三角形(行数可以键盘录入)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思考题1"><span class="toc-text">思考题1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内存图演示"><span class="toc-text">内存图演示</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#思考题2"><span class="toc-text">思考题2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#改进版"><span class="toc-text">改进版</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

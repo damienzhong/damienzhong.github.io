@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】30-面向对象三大特性之封装 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】30-面向对象三大特性之封装">
+            
+	            【JavaSe必知必会】30-面向对象三大特性之封装
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="封装概述"><a href="#封装概述" class="headerlink" title="封装概述"></a>封装概述</h1><h2 id="封装概述-1"><a href="#封装概述-1" class="headerlink" title="封装概述"></a>封装概述</h2><ul>
+<li>是指隐藏对象的属性和实现细节，仅对外提供公共访问方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	定义一个女朋友：</span><br><span class="line">		成员变量：name,cup,age</span><br><span class="line">		成员方法：show()</span><br><span class="line">		</span><br><span class="line">	我们在使用这个案例的过程中，发现了一个问题</span><br><span class="line">		通过对象去给成员变量赋值，可以赋值一些非法的数据。</span><br><span class="line">		这是不合理的。</span><br><span class="line">		我们应该在赋值之前，先对数据进行判断</span><br><span class="line">		判断在哪里比较合适呢？</span><br><span class="line">		GirlFriendDemo是一个测试类，测试类一般只创建对象，调用方法。</span><br><span class="line">		所以，这个判断应该定义在GirlFriend类中</span><br><span class="line">		我们在成员变量的位置不可以进行数据判断，因为数据校验，必须要依靠逻辑语句。</span><br><span class="line">		有逻辑的这些语句我们应该定义在方法中。</span><br><span class="line">		所以，我们应该在GirlFriend类中提供一个方法来进行数据校验</span><br><span class="line">		</span><br><span class="line">	按照我们前面的分析，我们给出了一个方法进行校验。</span><br><span class="line">	但是呢，它偏偏不调用方法来赋值，还是直接赋值，这样我们的方法就没用起到作用。</span><br><span class="line">	我们就应该要求调用者必须使用我的方法，而不能直接通过调用成员变量赋值。</span><br><span class="line">	怎么去强制要求不能直接使用成员变量呢？</span><br><span class="line">		针对这种情况，Java就提供了一个关键字private</span><br><span class="line">		</span><br><span class="line">	private:私有的。它可以直接修饰成员变量和成员方法</span><br><span class="line">		注意：被private修饰的成员只能在本类中使用</span><br><span class="line">		</span><br><span class="line">	其实，我们描述的就是一个封装思想。</span><br><span class="line">	封装：是指隐藏对象的属性和实现细节，仅对外提供公共访问方式。</span><br><span class="line">*/</span><br><span class="line">class GirlFriend&#123;</span><br><span class="line">	//姓名</span><br><span class="line">	String name;</span><br><span class="line">	//年龄</span><br><span class="line">	private int age;</span><br><span class="line">	//胸围</span><br><span class="line">	String cup;</span><br><span class="line">	</span><br><span class="line">	//写一个方法对数据进行校验</span><br><span class="line">	/*</span><br><span class="line">		返回值类型：void</span><br><span class="line">		参数列表：int a</span><br><span class="line">	*/</span><br><span class="line">	public void setAge(int a)&#123;</span><br><span class="line">		if(a&lt;25&amp;&amp;a&gt;16)&#123;</span><br><span class="line">			age = a;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			System.out.println(&quot;该年龄不是我的菜！&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//成员方法</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(&quot;姓名：&quot;+name);</span><br><span class="line">		System.out.println(&quot;年龄：&quot;+age);</span><br><span class="line">		System.out.println(&quot;胸围：&quot;+cup);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class GirlFriendDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//制作一个女朋友</span><br><span class="line">		GirlFriend gf = new GirlFriend();</span><br><span class="line">		gf.name = &quot;迪丽热巴&quot;;</span><br><span class="line">		//gf.age = 18;</span><br><span class="line">		gf.cup = &quot;C&quot;;</span><br><span class="line">		gf.show();</span><br><span class="line">		System.out.println(&quot;----------------------&quot;);</span><br><span class="line">		gf.name = &quot;罗玉凤&quot;;</span><br><span class="line">		//gf.age = 38;</span><br><span class="line">		gf.cup = &quot;A&quot;;</span><br><span class="line">		gf.show();</span><br><span class="line">		System.out.println(&quot;----------------------&quot;);</span><br><span class="line">		gf.setAge(18);</span><br><span class="line">		gf.show();</span><br><span class="line">		System.out.println(&quot;----------------------&quot;);</span><br><span class="line">		//gf.age = 48;</span><br><span class="line">		gf.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><ul>
+<li>隐藏实现的细节，提供公共访问方式</li>
+<li>提供了代码的复用性</li>
+<li>提高安全性<h2 id="封装原则"><a href="#封装原则" class="headerlink" title="封装原则"></a>封装原则</h2></li>
+<li>将不需要对外提供的内容都隐藏起来</li>
+<li>把属性隐藏，提供公共方法对其访问</li>
+</ul>
+<h1 id="private关键字"><a href="#private关键字" class="headerlink" title="private关键字"></a>private关键字</h1><h2 id="private关键字-1"><a href="#private关键字-1" class="headerlink" title="private关键字"></a>private关键字</h2><ul>
+<li>是一个权限修饰符</li>
+<li>可以修饰成员（成员变量和成员方法）</li>
+<li>被private修饰的成员只能在本类中才能访问</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	private:</span><br><span class="line">		是一个权限修饰符</span><br><span class="line">		可以修饰成员变量和成员方法</span><br><span class="line">		其修饰的成员只能在本类中被访问</span><br><span class="line">*/</span><br><span class="line">class Demo&#123;</span><br><span class="line">	//int num = 10;</span><br><span class="line">	//用private修饰</span><br><span class="line">	private int num = 10;</span><br><span class="line">	</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(num);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	private void method()&#123;</span><br><span class="line">		System.out.println(&quot;method...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void function()&#123;</span><br><span class="line">		method();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class PrivateDemo&#123;</span><br><span class="line">	public static void main(String args)&#123;</span><br><span class="line">		Demo d = new Demo();</span><br><span class="line">		//不能访问方法私有的成员变量</span><br><span class="line">		//System.out.println(d.num);</span><br><span class="line">		d.show();</span><br><span class="line">		//不能访问私有的成员方法</span><br><span class="line">		//d.method();</span><br><span class="line">		d.function();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="private最常见的应用"><a href="#private最常见的应用" class="headerlink" title="private最常见的应用"></a>private最常见的应用</h2><ul>
+<li>把成员变量用private修饰</li>
+<li>提供对应的getXxx()/setXxx()方法</li>
+<li>一个标准的案例的使用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	private最常见的应用:</span><br><span class="line">		把成员变量用private修饰</span><br><span class="line">		提供对应的getXxx()/setXxx()方法</span><br><span class="line">*/</span><br><span class="line">//定义学生类</span><br><span class="line">class Student&#123;</span><br><span class="line">	//姓名</span><br><span class="line">	private String name;</span><br><span class="line">	//年龄</span><br><span class="line">	private int age;</span><br><span class="line">	</span><br><span class="line">	//获取姓名值</span><br><span class="line">	public String getName()&#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//设置姓名值</span><br><span class="line">	public void setName(String n)&#123;</span><br><span class="line">		name = n;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//获取年龄值</span><br><span class="line">	public int getAge()&#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//设置年龄值</span><br><span class="line">	public void setAge(int a)&#123;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class StudentTest&#123;</span><br><span class="line">	public static void main(String args)&#123;</span><br><span class="line">		//创建学生对象</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		</span><br><span class="line">		//使用成员变量</span><br><span class="line">		//错误：被私有修饰了，外界不能直接访问</span><br><span class="line">		//System.out.println(s.name + &quot;---&quot; + s.age);</span><br><span class="line">		System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">		</span><br><span class="line">		//给成员变量赋值</span><br><span class="line">		//s.name = &quot;范冰冰&quot;;</span><br><span class="line">		//s.age = 28;</span><br><span class="line">		//通过方法赋值</span><br><span class="line">		s.setName(&quot;范冰冰&quot;);</span><br><span class="line">		s.setAge(28);</span><br><span class="line">		System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><ul>
+<li>this：代表所在类的对象引用</li>
+<li>记住：<ul>
+<li>方法被哪个对象调用，this就代表那个对象</li>
+</ul>
+</li>
+<li>什么时候使用this呢？<ul>
+<li>局部变量隐藏成员变量</li>
+<li>其他用法后面和super一起讲解</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	我们曾经约定：起名字要做到见名知意</span><br><span class="line">	</span><br><span class="line">	this:是当前类的对象引用。简单来说，它就代表当前类的一个对象。</span><br><span class="line">		注意：谁调用这个方法，在该方法内部的this就代表谁</span><br><span class="line">	</span><br><span class="line">	this的场景：</span><br><span class="line">		解决局部变量隐藏成员变量</span><br><span class="line">*/</span><br><span class="line">//定义学生类</span><br><span class="line">class Student&#123;</span><br><span class="line">	//姓名</span><br><span class="line">	private String name;</span><br><span class="line">	//年龄</span><br><span class="line">	private int age;</span><br><span class="line">	</span><br><span class="line">	//获取姓名值</span><br><span class="line">	public String getName()&#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//设置姓名值</span><br><span class="line">	public void setName(String name)&#123;//name = &quot;范冰冰&quot;;</span><br><span class="line">		//name = name;	//变量的使用规则：就近原则</span><br><span class="line">		//这里是类名，目前还没有说过类似的用法，所以这个是有问题的</span><br><span class="line">		//这里的调用只能通过对象名</span><br><span class="line">		//这个对象如果存在，它应该代表的是Student的一个对象。</span><br><span class="line">		//那么，谁能够代表当前类的对象呢？java就提供了一个关键字 this</span><br><span class="line">		//Student.name = name;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//获取年龄值</span><br><span class="line">	public int getAge()&#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//设置年龄值</span><br><span class="line">	public void setAge(int a)&#123;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class StudentTest&#123;</span><br><span class="line">	public static void main(String args)&#123;</span><br><span class="line">		//创建学生对象</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		//给成员变量赋值</span><br><span class="line">		s.setName(&quot;范冰冰&quot;);</span><br><span class="line">		s.setAge(28);</span><br><span class="line">		System.out.println(s.getName() + &quot;---&quot; + s.getAge());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><h2 id="构造方法作用概述"><a href="#构造方法作用概述" class="headerlink" title="构造方法作用概述"></a>构造方法作用概述</h2><p>给对象的数据进行初始化</p>
+<h2 id="构造方法格式"><a href="#构造方法格式" class="headerlink" title="构造方法格式"></a>构造方法格式</h2><ul>
+<li>方法名与类名相同</li>
+<li>没用返回值类型，连void都没有</li>
+<li>没有具体返回值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	构造方法：</span><br><span class="line">		给对象的数据进行初始化</span><br><span class="line">	格式：</span><br><span class="line">		A:方法名与类名相同</span><br><span class="line">		B:没用返回值类型，连void都没有</span><br><span class="line">		C:没有具体返回值</span><br><span class="line">*/</span><br><span class="line">class Student&#123;</span><br><span class="line">	</span><br><span class="line">	private String name;//null</span><br><span class="line">	private int age;//0</span><br><span class="line">	</span><br><span class="line">	public Student()&#123;</span><br><span class="line">		System.out.println(&quot;这是一个构造方法。。。&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ConstructDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		System.out.println(s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="构造方法注意事项"><a href="#构造方法注意事项" class="headerlink" title="构造方法注意事项"></a>构造方法注意事项</h2><ul>
+<li>如果你不提供构造方法，系统会给出默认构造方法</li>
+<li>如果你提供了构造方法，系统将不再提供</li>
+<li>构造方法也是可以重载的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	我们一直在使用构造方法，但是，我们却没有定义构造方法，用的是哪里来的呢？</span><br><span class="line">	</span><br><span class="line">	构造方法的注意事项：</span><br><span class="line">		A：如果我们没有给出构造方法，系统将自动提供一个无参构造方法。</span><br><span class="line">		B：如果我们给出了构造方法，系统将不再提供默认的无参构造方法。</span><br><span class="line">			注意：如果我们还想使用无参构造方法，就必须自己给出，建议永远自己给出无参构造方法</span><br><span class="line">		</span><br><span class="line">	给成员变量赋值有两种方式：</span><br><span class="line">		A：setXxx();</span><br><span class="line">		B：构造方法</span><br><span class="line">*/</span><br><span class="line">class Student&#123;</span><br><span class="line">	</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	</span><br><span class="line">	public Studesnt()&#123;</span><br><span class="line">		System.out.println(&quot;这是无参构造方法&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//构造方法的重载</span><br><span class="line">	public Student(String name)&#123;</span><br><span class="line">		System.out.println(&quot;这是一个带String类型的构造方法&quot;);</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Student(int age)&#123;</span><br><span class="line">		System.out.println(&quot;这是一个带int类型的构造方法&quot;);</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public Student(String name,int age)&#123;</span><br><span class="line">		System.out.println(&quot;这是一个带两个参数的构造方法&quot;);</span><br><span class="line">		this.name = name;</span><br><span class="line">		this.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(this.name + &quot;----&quot;+this.age);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class ConstructDemo2&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//创建对象</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		s.show();</span><br><span class="line">		System.out.println(&quot;------------&quot;);</span><br><span class="line">		//创建对象2</span><br><span class="line">		Student s2 = new Student(&quot;呆萌钟&quot;);</span><br><span class="line">		s2.show();</span><br><span class="line">		System.out.println(&quot;------------&quot;);</span><br><span class="line">		//创建对象3</span><br><span class="line">		Student s3 = new Student(18);</span><br><span class="line">		s3.show();</span><br><span class="line">		System.out.println(&quot;------------&quot;);</span><br><span class="line">		//创建对象4</span><br><span class="line">		Student s4 = new Student(&quot;呆萌钟&quot;,18);</span><br><span class="line">		s4.show();</span><br><span class="line">		System.out.println(&quot;------------&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>注意：可以通过反编译对比</strong></p>
+<h1 id="类的成员方法"><a href="#类的成员方法" class="headerlink" title="类的成员方法"></a>类的成员方法</h1><p>成员方法其实就是我们前面讲过的方法</p>
+<h2 id="方法具体划分"><a href="#方法具体划分" class="headerlink" title="方法具体划分"></a>方法具体划分</h2><ul>
+<li>根据返回值<ul>
+<li>有明确返回值的方法</li>
+<li>返回void类型的方法</li>
+</ul>
+</li>
+<li>根据形式参数<ul>
+<li>无参方法</li>
+<li>带参方法<h1 id="一个基本类的标准代码写法"><a href="#一个基本类的标准代码写法" class="headerlink" title="一个基本类的标准代码写法"></a>一个基本类的标准代码写法</h1><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2></li>
+</ul>
+</li>
+<li>成员变量</li>
+<li>构造方法<ul>
+<li>无参构造方法</li>
+<li>带参构造方法</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>getXxx()</li>
+<li>setXxx<h2 id="给成员变量赋值的方法"><a href="#给成员变量赋值的方法" class="headerlink" title="给成员变量赋值的方法"></a>给成员变量赋值的方法</h2></li>
+</ul>
+</li>
+<li>无参构造方法+setXxx()</li>
+<li>带参构造方法<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2></li>
+<li>目前的代码是为了练习的一种标准格式</li>
+<li>给成员变量有两种方式，可以只写一种</li>
+<li>如果不单独获取数据，可以不写getXxx()方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	一个标准类的最终版</span><br><span class="line">	</span><br><span class="line">	学生类：</span><br><span class="line">		成员变量：</span><br><span class="line">			name,age</span><br><span class="line">		构造方法：</span><br><span class="line">			无参，带两个参</span><br><span class="line">		成员方法：</span><br><span class="line">			getXxx()/setXxx()</span><br><span class="line">			show();输出该类的所有成员变量值</span><br><span class="line">	给成员变量赋值：</span><br><span class="line">		A：setXxx();</span><br><span class="line">		B：构造方法</span><br><span class="line">	输出成员变量的方式“</span><br><span class="line">		A：通过getXxx分别获取然后拼接</span><br><span class="line">		B：通过调用show()方法</span><br><span class="line">*/</span><br><span class="line">class Student&#123;</span><br><span class="line">	//姓名</span><br><span class="line">	private String name;</span><br><span class="line">	//年龄</span><br><span class="line">	private int age;</span><br><span class="line">	</span><br><span class="line">	public Student()&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	public Student(String name,int age)&#123;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.age=age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public String getName()&#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void setName(String name)&#123;</span><br><span class="line">		this.name=name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int getAge()&#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void setAge(int age)&#123;</span><br><span class="line">		this.age=age;</span><br><span class="line">	&#125;</span><br><span class="line">	//输出所有的成员变量</span><br><span class="line">	public void show()&#123;</span><br><span class="line">		System.out.println(name+&quot;---&quot;+age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//测试类</span><br><span class="line">public class StudentTest3&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//方式1给成员变量赋值</span><br><span class="line">		Student s1 = new Student();</span><br><span class="line">		s1.setName(&quot;呆萌钟&quot;);</span><br><span class="line">		s1.setAge(24);</span><br><span class="line">		//输出值</span><br><span class="line">		System.out.println(s1.getName()+&quot;---&quot;+s1.getAge());</span><br><span class="line">		s1.show();</span><br><span class="line">		System.out.println();</span><br><span class="line">		</span><br><span class="line">		//方式2给成员变量赋值</span><br><span class="line">		Student s2 = new Student(&quot;呆萌钟2&quot;,18);</span><br><span class="line">		System.out.println(s2.getName()+&quot;---&quot;+s2.getAge());</span><br><span class="line">		s2.show();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="类的初始化过程"><a href="#类的初始化过程" class="headerlink" title="类的初始化过程"></a>类的初始化过程</h1><p>Student s = new Student();在内存中做了哪些事情？</p>
+<ul>
+<li>加载Student.class文件进内存</li>
+<li>在栈内存中为s开辟空间</li>
+<li>在堆内存中为学生对象开辟空间</li>
+<li>对学生对象的成员变量进行默认初始化</li>
+<li>对学生对象的成员变量进行显示初始化</li>
+<li>通过构造方法对学生对象的成员变量赋值</li>
+<li>学生对象初始化完毕，把对象地址赋值给s变量<br><img src="http://image.damienzhong.com/%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96.JPG" alt="image"></li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】29-匿名对象概述与应用/" class="next-post btn btn-default" title="【JavaSe必知必会】29-匿名对象概述与应用">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】29-匿名对象概述与应用</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#封装概述"><span class="toc-text">封装概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#封装概述-1"><span class="toc-text">封装概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#好处"><span class="toc-text">好处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装原则"><span class="toc-text">封装原则</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#private关键字"><span class="toc-text">private关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#private关键字-1"><span class="toc-text">private关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#private最常见的应用"><span class="toc-text">private最常见的应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#this关键字"><span class="toc-text">this关键字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构造方法"><span class="toc-text">构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#构造方法作用概述"><span class="toc-text">构造方法作用概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造方法格式"><span class="toc-text">构造方法格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造方法注意事项"><span class="toc-text">构造方法注意事项</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类的成员方法"><span class="toc-text">类的成员方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法具体划分"><span class="toc-text">方法具体划分</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一个基本类的标准代码写法"><span class="toc-text">一个基本类的标准代码写法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#类"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#给成员变量赋值的方法"><span class="toc-text">给成员变量赋值的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类的初始化过程"><span class="toc-text">类的初始化过程</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

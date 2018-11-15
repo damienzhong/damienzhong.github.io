@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】21-类与对象的定义与使用 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】21-类与对象的定义与使用">
+            
+	            【JavaSe必知必会】21-类与对象的定义与使用
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="类与对象关系"><a href="#类与对象关系" class="headerlink" title="类与对象关系"></a>类与对象关系</h1><ul>
+<li>我们学习编程语言，就是为了模拟现实世界的事物，实现信息化。<ul>
+<li>比如：去超市买东西的计费系统，去银行办业务的系统。</li>
+</ul>
+</li>
+<li>我们如何表示一个现实世界事物呢：<ul>
+<li>属性    就是该事物的描述信息</li>
+<li>行为    就是该事物能够做什么</li>
+<li>举例：学生事物</li>
+</ul>
+</li>
+<li>我们学习的Java语言最基本单位是类，所以，我们就应该把事物用一个类来体现。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">类：是一组相关的属性和行为的集合</span><br><span class="line"></span><br><span class="line">对象：是该类事物的具体体现</span><br><span class="line">举例：</span><br><span class="line"></span><br><span class="line">类	学生</span><br><span class="line">对象	班长就是一个对象</span><br></pre></td></tr></table></figure>
+<p>类：可以理解为构造对象的一个蓝图或者模版，是抽象的概念<br>对象：是以类为模型创建的具体实例，是对类的一种具体化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	案例：定义一个学生类</span><br><span class="line">	</span><br><span class="line">	学生事物：</span><br><span class="line">		属性：姓名，年龄，性别</span><br><span class="line">		行为：学习，吃饭，睡觉</span><br><span class="line">	</span><br><span class="line">	把事物要转化为对应的类：</span><br><span class="line">	</span><br><span class="line">	学生类：</span><br><span class="line">		成员变量：姓名，年龄，性别</span><br><span class="line">		成员方法：学习，吃饭，睡觉</span><br><span class="line">		</span><br><span class="line">	成员变量：和以前变量的定义是一样的格式，但是位置不同，在类中方法外。</span><br><span class="line">	成员方法：和以前的方法定义是一样的格式，但是我们今天先去掉static。</span><br><span class="line">	</span><br><span class="line">	首先我们应该定义一个类，然后完成类的成员。</span><br><span class="line"></span><br><span class="line">*/</span><br><span class="line">//这就是学生类</span><br><span class="line">class Student&#123;</span><br><span class="line">	//定义成员变量</span><br><span class="line">	//姓名</span><br><span class="line">	String name;</span><br><span class="line">	//年龄</span><br><span class="line">	int age;</span><br><span class="line">	//性别</span><br><span class="line">	String sex;</span><br><span class="line">	</span><br><span class="line">	//定义成员方法</span><br><span class="line">	//学习的方法</span><br><span class="line">	public void study()&#123;</span><br><span class="line">		System.out.println(&quot;我在看呆萌钟的Java视频学习中ing...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//吃饭的方法</span><br><span class="line">	public void eat()&#123;</span><br><span class="line">		System.out.println(&quot;大口吃饭中ing...&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//睡觉的方法</span><br><span class="line">	public void sleep()&#123;</span><br><span class="line">		System.out.println(&quot;天色好晚，我要睡觉啦~&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	手机事物：</span><br><span class="line">		属性：品牌，价格，颜色</span><br><span class="line">		行为：打电话，发短信，玩游戏</span><br><span class="line">	</span><br><span class="line">	手机类：</span><br><span class="line">		成员变量：品牌，价格，颜色</span><br><span class="line">		成员方法：打电话，发短信，玩游戏</span><br><span class="line">*/</span><br><span class="line">class Phone&#123;</span><br><span class="line">	//品牌</span><br><span class="line">	String brand;</span><br><span class="line">	//价格</span><br><span class="line">	int price;</span><br><span class="line">	//颜色</span><br><span class="line">	String color;</span><br><span class="line">	</span><br><span class="line">	//打电话</span><br><span class="line">	public void call(String name)&#123;</span><br><span class="line">		System.out.println(&quot;给&quot;+name+&quot;打电话&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//发短信</span><br><span class="line">	public void sendMessage()&#123;</span><br><span class="line">		System.out.println(&quot;发短信。。。);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//玩游戏</span><br><span class="line">	public void playGame()&#123;</span><br><span class="line">		System.out.println(&quot;王者荣耀carry中。。。&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h1><ul>
+<li>创建对象：<ul>
+<li>类名 对象名 = new 类名();</li>
+</ul>
+</li>
+<li>对象名.成员变量</li>
+<li>对象名.成员方法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	在一个java文件中写两个类：一个基本的类，一个测试类。</span><br><span class="line">	注意：文件名称和测试类名称一致。</span><br><span class="line">	</span><br><span class="line">	如何使用呢?</span><br><span class="line">		创建对象使用。</span><br><span class="line">		</span><br><span class="line">	如何创建对象呢?</span><br><span class="line">		格式：类名 对象名 = new 类名();</span><br><span class="line">		</span><br><span class="line">	如何使用成员变量呢?</span><br><span class="line">		对象名.变量名</span><br><span class="line">	如何使用成员方法呢?</span><br><span class="line">		对象名.方法名(...)</span><br><span class="line">*/</span><br><span class="line">//这是学生类</span><br><span class="line">class Student &#123;</span><br><span class="line">	//姓名</span><br><span class="line">	String name; //null</span><br><span class="line">	//年龄</span><br><span class="line">	int age; //0</span><br><span class="line">	//地址</span><br><span class="line">	String address; //null</span><br><span class="line">	</span><br><span class="line">	//学习</span><br><span class="line">	public void study() &#123;</span><br><span class="line">		System.out.println(&quot;学生爱学习&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//吃饭</span><br><span class="line">	public void eat() &#123;</span><br><span class="line">		System.out.println(&quot;学习饿了，要吃饭&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//睡觉</span><br><span class="line">	public void sleep() &#123;</span><br><span class="line">		System.out.println(&quot;学习累了，要睡觉&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//这是学生测试类</span><br><span class="line">class StudentDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//类名 对象名 = new 类名();</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		</span><br><span class="line">		//输出成员变量值</span><br><span class="line">		//System.out.println(s.name);</span><br><span class="line">		//System.out.println(s.age);</span><br><span class="line">		//System.out.println(s.address);</span><br><span class="line">		//改进写法</span><br><span class="line">		System.out.println(s.name+&quot;---&quot;+s.age+&quot;---&quot;+s.address);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		//给成员变量赋值</span><br><span class="line">		s.name = &quot;林青霞&quot;;</span><br><span class="line">		s.age = 27;</span><br><span class="line">		s.address = &quot;北京&quot;;</span><br><span class="line">		//赋值后的输出</span><br><span class="line">		System.out.println(s.name+&quot;---&quot;+s.age+&quot;---&quot;+s.address);</span><br><span class="line">		</span><br><span class="line">		//调用方法</span><br><span class="line">		s.study();</span><br><span class="line">		s.eat();</span><br><span class="line">		s.sleep();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	手机类的测试</span><br><span class="line">*/</span><br><span class="line">class Phone &#123;</span><br><span class="line">	//品牌</span><br><span class="line">	String brand;</span><br><span class="line">	//价格</span><br><span class="line">	int price;</span><br><span class="line">	//颜色</span><br><span class="line">	String color;</span><br><span class="line">	</span><br><span class="line">	//打电话的方法</span><br><span class="line">	public void call(String name) &#123;</span><br><span class="line">		System.out.println(&quot;给&quot;+name+&quot;打电话&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//发短信的方法</span><br><span class="line">	public void sendMessage() &#123;</span><br><span class="line">		System.out.println(&quot;群发短信&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//玩游戏的方法</span><br><span class="line">	public void playGame() &#123;</span><br><span class="line">		System.out.println(&quot;玩游戏&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class PhoneDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//创建手机对象</span><br><span class="line">		//类名 对象名 = new 类名();</span><br><span class="line">		Phone p = new Phone();</span><br><span class="line">		</span><br><span class="line">		//直接输出成员变量值</span><br><span class="line">		System.out.println(p.brand+&quot;---&quot;+p.price+&quot;---&quot;+p.color);</span><br><span class="line">		</span><br><span class="line">		//给成员变量赋值</span><br><span class="line">		p.brand = &quot;诺基亚&quot;;</span><br><span class="line">		p.price = 100;</span><br><span class="line">		p.color = &quot;灰色&quot;;</span><br><span class="line">		//再次输出</span><br><span class="line">		System.out.println(p.brand+&quot;---&quot;+p.price+&quot;---&quot;+p.color);</span><br><span class="line">		</span><br><span class="line">		//调用方法</span><br><span class="line">		p.call(&quot;林青霞&quot;);</span><br><span class="line">		p.sendMessage();</span><br><span class="line">		p.playGame();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】22-Java对象内存分析/" class="pre-post btn btn-default" title="【JavaSe必知必会】22-Java对象内存分析">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】22-Java对象内存分析</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】20-面向对象简介/" class="next-post btn btn-default" title="【JavaSe必知必会】20-面向对象简介">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】20-面向对象简介</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类与对象关系"><span class="toc-text">类与对象关系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对象的使用"><span class="toc-text">对象的使用</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

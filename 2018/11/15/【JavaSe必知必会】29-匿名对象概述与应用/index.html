@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>【JavaSe必知必会】20-面向对象简介 | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>【JavaSe必知必会】29-匿名对象概述与应用 | 呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -120,9 +120,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【JavaSe必知必会】20-面向对象简介">
+        <h1 id="【JavaSe必知必会】29-匿名对象概述与应用">
             
-	            【JavaSe必知必会】20-面向对象简介
+	            【JavaSe必知必会】29-匿名对象概述与应用
             
         </h1>
         <div class="post-meta">
@@ -171,133 +171,18 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="面向对象思想引入"><a href="#面向对象思想引入" class="headerlink" title="面向对象思想引入"></a>面向对象思想引入</h1><p>前面我们讲过数组，当有多个数组都需要遍历时，我们可以将遍历的代码封装到方法中，需要遍历时，就调用相应的方法即可，提高代码的复用性。在对数组遍历的基础上继续增加需求，比如获取最值，数值逆序等，同样需要将这些功能封装到相应的方法中。这样继续封装会发现方法越来越多，于是就想能不能将这些方法继续进行封装呢？通过前面的讲解我们知道类是可以存放方法的，所以，我们就考虑使用类封装来这多个方法，将来再做数组的操作时，不用去找具体的方法，先找到这个类，然后使用这个类中的方法。这就是面向对象思想的编程方式。</p>
-<h1 id="面向过程思想概述"><a href="#面向过程思想概述" class="headerlink" title="面向过程思想概述"></a>面向过程思想概述</h1><ul>
-<li>我们来回想一下，这几天我们完成一个需求的步骤：首先是搞清楚我们要做什么，然后在分析怎么做，最后我们再代码体现。一步一步去实现，而具体的每一步都需要我们去实现和操作。这些步骤相互调用和协作，完成我们的需求。</li>
-<li>在上面的每一个具体步骤中我们都是参与者，并且需要面对具体的每一个步骤和过程，这就是面向过程最直接的体现。</li>
-<li>那么什么是面向过程开发呢? 面向过程开发，其实就是面向着具体的每一个步骤和过程，把每一个步骤和过程完成，然后由这些功能方法相互调用，完成需求。</li>
-<li>面向过程的代表语言：C语言</li>
-</ul>
-<h1 id="面向对象思想概述"><a href="#面向对象思想概述" class="headerlink" title="面向对象思想概述"></a>面向对象思想概述</h1><p>当需求单一，或者简单时，我们一步一步去操作没问题，并且效率也挺高。可随着需求的更改，功能的增多，发现需要面对每一个步骤很麻烦了，这时就开始思索，能不能把这些步骤和功能在进行封装，封装时根据不同的功能，进行不同的封装，功能类似的封装在一起。这样结构就清晰了很多。用的时候，找到对应的类就可以了。这就是面向对象的思想。接下来我们看看面向对象到底是什么?</p>
-<p>1:面向对象思想<br>    面向对象是基于面向过程的编程思想。</p>
-<pre><code>面向过程：强调的是每一个功能的步骤
-面向对象：强调的是对象，然后由对象去调用功能
-</code></pre><p>2:面向对象的思想特点<br>    A:是一种更符合我们思想习惯的思想<br>    B:可以将复杂的事情简单化<br>    C:将我们从执行者变成了指挥者</p>
-<pre><code>举例：
-    买电脑：
-        面向过程：我的了解电脑--了解我自己的需求--找对应的参数信息--去中关村买电脑--讨价还价--买回电脑
-        面向对象：我知道我要买电脑 -- 班长去给我买 -- 班长就买回来了
-    洗衣服：
-        面向过程：把衣服脱下--找一个盆--放点洗衣粉--加点水--把衣服扔进去--搓一搓--清洗衣服--拧干--晾起来
-        面向对象：把衣服脱下--打开全自动洗衣机--扔进去--一键即可--晾起来
-    吃饭：
-        面向过程：去超市买菜--摘菜--洗菜--切菜--炒菜--盛起来--吃
-        面向对象：上饭店吃饭，你--服务员(点菜)--厨师(做菜)--服务员(端菜)--吃
-
-        家常事物，买洗衣机和去饭店太不划算了，所以，找个对象。
-        但是，你不跟我好好学习，你将来4000，你对象8000。
-</code></pre><p>3:把大象装进冰箱<br>    面向过程：<br>        动作有哪些呢?<br>            A:打开冰箱门<br>            B:装进大象<br>            C:关闭冰箱门</p>
-<pre><code>    代码体现；
-        class Demo {
-            public static void main(String[] args) {
-                /*
-                System.out.println(&quot;打开冰箱门&quot;);
-                //打开冰箱门的东西，我现在仅仅是为了演示，就写了一个输出语句
-                //其实，它可能需要做很多操作。
-                //这个时候代码就比较多一些了
-                //假设我要多次打开冰箱门，
-                //代码一多，每次都写一遍，麻烦不
-                //我们就应该用方法改进
-
-                System.out.println(&quot;装进大象&quot;);
-                System.out.println(&quot;关闭冰箱门&quot;);
-                */
-
-                //写了方法以后，调用就改变了
-                open();
-                in();
-                close();
-            }
-
-            public static void open() {
-                System.out.println(&quot;打开冰箱门&quot;);
-            }
-
-            public static void in() {
-                System.out.println(&quot;装进大象&quot;);
-            }
-
-            public static void close() {
-                System.out.println(&quot;关闭冰箱门&quot;);
-            }
-        }
-
-面向对象：
-    我们怎么才能更符合面向对象思想呢?
-        A:有哪些类呢?
-        B:每个类有哪些东西呢?
-        C:类与类直接的关系是什么呢?
-
-    把大象装进冰箱的分析? (如何分析有哪些类呢?UML。名词提取法。)
-        A:有哪些类呢?
-            大象
-            冰箱
-            Demo
-        B:每个类有哪些东西呢?
-            大象：
-                进去
-            冰箱：
-                开门
-                关门
-            Demo:
-                main方法
-        C:类与类直接的关系是什么呢?
-            Demo中使用大象和冰箱类的功能。
-
-    代码体现：
-        class 大象 {
-            public static void in() {
-                System.out.println(&quot;装进大象&quot;);
-            }
-        }
-
-        class 冰箱 {
-            public static void open() {
-                System.out.println(&quot;打开冰箱门&quot;);
-            }
-
-            public static void close() {
-                System.out.println(&quot;关闭冰箱门&quot;);
-            }
-        }
-
-        class Demo {
-            public static void main(String[] args) {
-                冰箱调用开门
-                大象调用进去
-                冰箱调用关门
-            }
-        }
-</code></pre><p>4:开发，设计，特征</p>
-<ul>
-<li><p>面向对象开发</p>
-<ul>
-<li>就是不断的创建对象，使用对象，指挥对象做事情。</li>
+        <h1 id="匿名对象"><a href="#匿名对象" class="headerlink" title="匿名对象"></a>匿名对象</h1><ul>
+<li>匿名对象：就是没有名字的对象<ul>
+<li>是对象的一种简化表示形式</li>
 </ul>
 </li>
-<li><p>面向对象设计</p>
-<ul>
-<li>其实就是在管理和维护对象之间的关系。</li>
-</ul>
-</li>
-<li><p>面向对象特征</p>
-<ul>
-<li>封装(encapsulation)</li>
-<li>继承(inheritance)</li>
-<li>多态(polymorphism)</li>
+<li>匿名对象的两种使用情况<ul>
+<li>对象调用方法仅仅一次的时候</li>
+<li>作为实际参数传递<h2 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h2></li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	注意：一个类文件中可以写多个类，但是只有一个类能带public，而且该类名必须与文件名相同</span><br><span class="line">	</span><br><span class="line">	匿名对象：就是没有名字的对象</span><br><span class="line">	</span><br><span class="line">	匿名对象的应用场景：</span><br><span class="line">		A：调用方法，仅仅只调用一次的时候</span><br><span class="line">			注意：调用多次的时候，不适合</span><br><span class="line">				那么，这种匿名对象有什么好处呢？</span><br><span class="line">				有，匿名对象调用完毕就是垃圾。可以被垃圾回收器回收</span><br><span class="line">		B：匿名对象可以作为实际参数进行传递</span><br><span class="line">*/</span><br><span class="line">class Student&#123;</span><br><span class="line">	public void study()&#123;</span><br><span class="line">		System.out.println(&quot;我最爱看呆萌钟的视频学习编程了~&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class StudentDemo&#123;</span><br><span class="line">	public void method(Student s)&#123;</span><br><span class="line">		s.study();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class AnonymousDemo&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		//带名字的调用</span><br><span class="line">		Student s = new Student();</span><br><span class="line">		System.out.println(s);</span><br><span class="line">		System.out.println(s);</span><br><span class="line">		s.study();</span><br><span class="line">		s.study();</span><br><span class="line">		System.out.println(&quot;----------------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//匿名对象</span><br><span class="line">		//new Student();</span><br><span class="line">		System.out.println(new Student());</span><br><span class="line">		System.out.println(new Student());//这里其实是重新创建了一个对象</span><br><span class="line">		//匿名对象调用方法</span><br><span class="line">		new Student().study();</span><br><span class="line">		new Student().study();</span><br><span class="line">		System.out.println(&quot;----------------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//匿名对象作为实际参数传递</span><br><span class="line">		StudentDemo sd = new StudentDemo();</span><br><span class="line">		//Student ss = new Student();</span><br><span class="line">		//sd.method(ss);</span><br><span class="line">		//匿名对象</span><br><span class="line">		sd.method(new Student());</span><br><span class="line">		</span><br><span class="line">		//全用匿名对象</span><br><span class="line">		new StudentDemo().method(new Student());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
     
@@ -331,15 +216,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/15/【JavaSe必知必会】21-类与对象的定义与使用/" class="pre-post btn btn-default" title="【JavaSe必知必会】21-类与对象的定义与使用">
+        <a href="/2018/11/15/【JavaSe必知必会】30-面向对象三大特性之封装/" class="pre-post btn btn-default" title="【JavaSe必知必会】30-面向对象三大特性之封装">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【JavaSe必知必会】21-类与对象的定义与使用</span>
+            <span class="hidden-xs">【JavaSe必知必会】30-面向对象三大特性之封装</span>
         </a>
     
     
-        <a href="/2018/11/15/【JavaSe必知必会】19-方法的定义与使用/" class="next-post btn btn-default" title="【JavaSe必知必会】19-方法的定义与使用">
+        <a href="/2018/11/15/【JavaSe必知必会】28-二维数组经典练习题目/" class="next-post btn btn-default" title="【JavaSe必知必会】28-二维数组经典练习题目">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【JavaSe必知必会】19-方法的定义与使用</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">【JavaSe必知必会】28-二维数组经典练习题目</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -374,7 +259,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象思想引入"><span class="toc-text">面向对象思想引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向过程思想概述"><span class="toc-text">面向过程思想概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象思想概述"><span class="toc-text">面向对象思想概述</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#匿名对象"><span class="toc-text">匿名对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#代码演示"><span class="toc-text">代码演示</span></a></li></ol></li></ol>
         
     </div>
 </aside>

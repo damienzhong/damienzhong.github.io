@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【JavaSe必知必会】26-数组常见问题与操作 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【JavaSe必知必会】26-数组常见问题与操作">
+            
+	            【JavaSe必知必会】26-数组常见问题与操作
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/javase">
+            javase
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/javase" title="javase">
+                        javase
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/15</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="数组操作常见的两个小问题"><a href="#数组操作常见的两个小问题" class="headerlink" title="数组操作常见的两个小问题"></a>数组操作常见的两个小问题</h1><ul>
+<li>数组索引越界<ul>
+<li>ArrayIndexOutOfBoundsException</li>
+<li>访问到了数组中的不存在的索引时发生。</li>
+</ul>
+</li>
+<li>空指针异常<ul>
+<li>NullPointerException</li>
+<li>数组引用没有指向实体，却在操作实体中的元素时。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	数组操作的两个常见小问题：</span><br><span class="line">		ArrayIndexOutOfBoundsException:数组索引越界异常</span><br><span class="line">			原因：你访问了不存在的索引。</span><br><span class="line">		</span><br><span class="line">		NullPointerException:空指针异常</span><br><span class="line">			原因：数组已经不在指向堆内存了。而你还用数组名去访问元素。</span><br><span class="line">			</span><br><span class="line">		作用：请自己把所有的场景Exception结尾的问题总结一下。以后遇到就记录下来。</span><br><span class="line">			  现象，原因，解决方案。</span><br><span class="line">*/</span><br><span class="line">class ArrayDemo6 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义数组</span><br><span class="line">		int[] arr = &#123;1,2,3&#125;;</span><br><span class="line">		</span><br><span class="line">		//System.out.println(arr[3]);</span><br><span class="line">	</span><br><span class="line">		//引用类型的常量：空常量 null</span><br><span class="line">		arr = null;</span><br><span class="line">		System.out.println(arr[0]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数组练习-常见操作"><a href="#数组练习-常见操作" class="headerlink" title="数组练习(常见操作)"></a>数组练习(常见操作)</h1><h2 id="数组遍历-依次输出数组中的每一个元素"><a href="#数组遍历-依次输出数组中的每一个元素" class="headerlink" title="数组遍历(依次输出数组中的每一个元素)"></a>数组遍历(依次输出数组中的每一个元素)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	数组遍历：就是依次输出数组中的每一个元素。</span><br><span class="line">	</span><br><span class="line">	注意：数组提供了一个属性length，用于获取数组的长度。</span><br><span class="line">		  格式：数组名.length</span><br><span class="line">*/</span><br><span class="line">class ArrayTest &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义数组</span><br><span class="line">		int[] arr = &#123;11,22,33,44,55&#125;;</span><br><span class="line">		</span><br><span class="line">		//获取每一个元素</span><br><span class="line">		//如何获取呢?我们知道数组名结合编号(索引)就可以找到数据</span><br><span class="line">		System.out.println(arr[0]);</span><br><span class="line">		System.out.println(arr[1]);</span><br><span class="line">		System.out.println(arr[2]);</span><br><span class="line">		System.out.println(arr[3]);</span><br><span class="line">		System.out.println(arr[4]);</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//虽然这种做法可以，但是不是我想要的</span><br><span class="line">		//我们发现，代码的重复度很高</span><br><span class="line">		//输出语句，数组名都是相同的，仅仅是索引是变化的</span><br><span class="line">		//我们就可以使用循环搞定索引值</span><br><span class="line">		for(int x=0; x&lt;5; x++) &#123;</span><br><span class="line">			//x=0,1,2,3,4</span><br><span class="line">			System.out.println(arr[x]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//从0开始我们是明确的，但是为什么到5呢，我们是数了一下数组的个数</span><br><span class="line">		//继续看下个数组如何遍历</span><br><span class="line">		int[] arr2 = &#123;1,2,3,4,5,6,7,8,9,10,11,2,2,3,4,5,7,8,5,3,5,6,8,7,8,5,3,5,6,8,7,8,5,3,5,6,8,7,8,5,3,5,6,8,7,8,5,3,5,6,8&#125;;</span><br><span class="line">		//而我们在很多时候，数组的元素不能靠数</span><br><span class="line">		//这个时候，数组就给我们提供了一个属性：length专门用于获取数组的长度</span><br><span class="line">		//格式：数组名.length 返回数组的长度</span><br><span class="line">		System.out.println(arr.length);</span><br><span class="line">		System.out.println(arr2.length);</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//改进第一个程序</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			System.out.println(arr[x]);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		</span><br><span class="line">		//我们如果想要对多个数组进行遍历，每个数组的遍历我们都把代码写一遍，麻烦不</span><br><span class="line">		//麻烦，所以，我们准备用方法改进。</span><br><span class="line">		//用方法改进后，请调用</span><br><span class="line">		printArray(arr);</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		printArray(arr2);</span><br><span class="line">		System.out.println(&quot;--------------------&quot;);</span><br><span class="line">		printArray2(arr);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		遍历数组的方法</span><br><span class="line">		</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：void</span><br><span class="line">			参数列表：int[] arr</span><br><span class="line">	*/</span><br><span class="line">	public static void printArray(int[] arr) &#123;</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			System.out.println(arr[x]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//请看改进版本</span><br><span class="line">	public static void printArray2(int[] arr) &#123;</span><br><span class="line">		System.out.print(&quot;[&quot;);</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			if(x == arr.length-1) &#123; //这是最后一个元素</span><br><span class="line">				System.out.println(arr[x]+&quot;]&quot;);</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				System.out.print(arr[x]+&quot;, &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组获取最值-获取数组中的最大值最小值"><a href="#数组获取最值-获取数组中的最大值最小值" class="headerlink" title="数组获取最值(获取数组中的最大值最小值)"></a>数组获取最值(获取数组中的最大值最小值)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	数组获取最值(获取数组中的最大值最小值)</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		A:定义一个数组，并对数组的元素进行静态初始化。</span><br><span class="line">		B:从数组中任意的找一个元素作为参照物(一般取第一个),默认它就是最大值。</span><br><span class="line">		C:然后遍历其他的元素，依次获取和参照物进行比较，如果大就留下来，如果小，就离开。</span><br><span class="line">		D:最后参照物里面保存的就是最大值。</span><br><span class="line">*/</span><br><span class="line">class ArrayTest2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义一个数组</span><br><span class="line">		int[] arr = &#123;34,98,10,25,67&#125;;</span><br><span class="line">		</span><br><span class="line">		//请获取数组中的最大值</span><br><span class="line">		/*</span><br><span class="line">		//从数组中任意的找一个元素作为参照物</span><br><span class="line">		int max = arr[0];</span><br><span class="line">		//然后遍历其他的元素</span><br><span class="line">		for(int x=1; x&lt;arr.length; x++) &#123;</span><br><span class="line">			//依次获取和参照物进行比较，如果大就留下来，如果小，就离开。</span><br><span class="line">			if(arr[x] &gt; max) &#123;</span><br><span class="line">				max = arr[x];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//最后参照物里面保存的就是最大值。</span><br><span class="line">		System.out.println(&quot;max:&quot;+max);</span><br><span class="line">		*/</span><br><span class="line">	</span><br><span class="line">		//把这个代码用方法改进</span><br><span class="line">		//调用方法</span><br><span class="line">		int max = getMax(arr);</span><br><span class="line">		System.out.println(&quot;max:&quot;+max);</span><br><span class="line">			</span><br><span class="line">		//请获取数组中的最小值</span><br><span class="line">		int min = getMin(arr);</span><br><span class="line">		System.out.println(&quot;min:&quot;+min);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：获取数组中的最大值</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：int</span><br><span class="line">			参数列表：int[] arr</span><br><span class="line">	*/</span><br><span class="line">	public static int getMax(int[] arr) &#123;</span><br><span class="line">		//从数组中任意的找一个元素作为参照物</span><br><span class="line">		int max = arr[0];</span><br><span class="line">		//然后遍历其他的元素</span><br><span class="line">		for(int x=1; x&lt;arr.length; x++) &#123;</span><br><span class="line">			//依次获取和参照物进行比较，如果大就留下来，如果小，就离开。</span><br><span class="line">			if(arr[x] &gt; max) &#123;</span><br><span class="line">				max = arr[x];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//最后参照物里面保存的就是最大值。</span><br><span class="line">		return max;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static int getMin(int[] arr) &#123;</span><br><span class="line">		//从数组中任意的找一个元素作为参照物</span><br><span class="line">		int min = arr[0];</span><br><span class="line">		//然后遍历其他的元素</span><br><span class="line">		for(int x=1; x&lt;arr.length; x++) &#123;</span><br><span class="line">			//依次获取和参照物进行比较，如果小就留下来，如果大，就离开。</span><br><span class="line">			if(arr[x] &lt; min) &#123;</span><br><span class="line">				min = arr[x];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//最后参照物里面保存的就是最小值。</span><br><span class="line">		return min;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组元素逆序-就是把元素对调"><a href="#数组元素逆序-就是把元素对调" class="headerlink" title="数组元素逆序 (就是把元素对调)"></a>数组元素逆序 (就是把元素对调)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	数组元素逆序 (就是把元素对调)</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		A:定义一个数组，并进行静态初始化。</span><br><span class="line">		B:思路</span><br><span class="line">			把0索引和arr.length-1的数据交换</span><br><span class="line">			把1索引和arr.length-2的数据交换</span><br><span class="line">			...</span><br><span class="line">			只要做到arr.length/2的时候即可。</span><br><span class="line">*/</span><br><span class="line">class ArrayTest3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义一个数组，并进行静态初始化。</span><br><span class="line">		int[] arr = &#123;12,98,50,34,76&#125;;</span><br><span class="line">		</span><br><span class="line">		//逆序前</span><br><span class="line">		System.out.println(&quot;逆序前：&quot;);</span><br><span class="line">		printArray(arr);</span><br><span class="line">		</span><br><span class="line">		//逆序后</span><br><span class="line">		System.out.println(&quot;逆序后：&quot;);</span><br><span class="line">		//reverse(arr);</span><br><span class="line">		reverse2(arr);</span><br><span class="line">		printArray(arr);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：数组逆序</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：void (有人会想到应该返回的是逆序后的数组，但是没必要，因为这两个数组其实是同一个数组)</span><br><span class="line">			参数列表：int[] arr</span><br><span class="line">	*/</span><br><span class="line">	public static void reverse(int[] arr) &#123;</span><br><span class="line">		/*</span><br><span class="line">		//第一次交换</span><br><span class="line">		int temp = arr[0];</span><br><span class="line">		arr[0] = arr[arr.length-1-0];</span><br><span class="line">		arr[arr.length-1-0] = temp;</span><br><span class="line">		</span><br><span class="line">		//第二次交换</span><br><span class="line">		int temp = arr[1];</span><br><span class="line">		arr[1] = arr[arr.length-1-1];</span><br><span class="line">		arr[arr.length-1-1] = temp;</span><br><span class="line">		</span><br><span class="line">		//第三次交换</span><br><span class="line">		int temp = arr[2];</span><br><span class="line">		arr[2] = arr[arr.length-1-2];</span><br><span class="line">		arr[arr.length-1-2] = temp;</span><br><span class="line">		*/</span><br><span class="line">		//用循环改进</span><br><span class="line">		for(int x=0; x&lt;arr.length/2; x++) &#123;</span><br><span class="line">			int temp = arr[x];</span><br><span class="line">			arr[x] = arr[arr.length-1-x];</span><br><span class="line">			arr[arr.length-1-x] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void reverse2(int[] arr) &#123;</span><br><span class="line">		for(int start=0,end=arr.length-1; start&lt;=end; start++,end--) &#123;</span><br><span class="line">			int temp = arr[start];</span><br><span class="line">			arr[start] = arr[end];</span><br><span class="line">			arr[end] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	//遍历数组</span><br><span class="line">	public static void printArray(int[] arr) &#123;</span><br><span class="line">		System.out.print(&quot;[&quot;);</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			if(x == arr.length-1) &#123; //这是最后一个元素</span><br><span class="line">				System.out.println(arr[x]+&quot;]&quot;);</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				System.out.print(arr[x]+&quot;, &quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组元素查找-查找指定元素第一次在数组中出现的索引"><a href="#数组元素查找-查找指定元素第一次在数组中出现的索引" class="headerlink" title="数组元素查找(查找指定元素第一次在数组中出现的索引)"></a>数组元素查找(查找指定元素第一次在数组中出现的索引)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">	需求：数组元素查找(查找指定元素第一次在数组中出现的索引)</span><br><span class="line">	</span><br><span class="line">	分析：</span><br><span class="line">		A:定义一个数组，并静态初始化。</span><br><span class="line">		B:写一个功能实现</span><br><span class="line">			遍历数组，依次获取数组中的每一个元素，和已知的数据进行比较</span><br><span class="line">			如果相等，就返回当前的索引值。</span><br><span class="line">*/</span><br><span class="line">class ArrayTest5 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		//定义一个数组，并静态初始化</span><br><span class="line">		int[] arr = &#123;200,250,38,888,444&#125;;</span><br><span class="line">		</span><br><span class="line">		//需求：我要查找250在这个数组中第一次出现的索引</span><br><span class="line">		int index = getIndex(arr,250);</span><br><span class="line">		System.out.println(&quot;250在数组中第一次出现的索引是：&quot;+index);</span><br><span class="line">		</span><br><span class="line">		int index2 = getIndex2(arr,250);</span><br><span class="line">		System.out.println(&quot;250在数组中第一次出现的索引是：&quot;+index2);</span><br><span class="line">		</span><br><span class="line">		int index3 = getIndex2(arr,2500);</span><br><span class="line">		System.out.println(&quot;2500在数组中第一次出现的索引是：&quot;+index3);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	/*</span><br><span class="line">		需求：查找指定数据在数组中第一次出现的索引</span><br><span class="line">		两个明确：</span><br><span class="line">			返回值类型：int</span><br><span class="line">			参数列表：int[] arr,int value</span><br><span class="line">	*/</span><br><span class="line">	public static int getIndex(int[] arr,int value) &#123;</span><br><span class="line">		//遍历数组，依次获取数组中的每一个元素，和已知的数据进行比较</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			if(arr[x] == value) &#123;</span><br><span class="line">				//如果相等，就返回当前的索引值。</span><br><span class="line">				return x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//目前的代码有一个小问题</span><br><span class="line">		//就是假如我要查找的数据在数组中不存在，那就找不到，找不到，你就对应的返回吗?</span><br><span class="line">		//所以报错。</span><br><span class="line">		</span><br><span class="line">		//只要是判断，就可能是false，所以大家要细心。</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		//如果找不到数据，我们一般返回一个负数即可，而且是返回-1</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static int getIndex2(int[] arr,int value) &#123;</span><br><span class="line">		//定义一个索引</span><br><span class="line">		int index = -1;</span><br><span class="line">		</span><br><span class="line">		//有就修改索引值</span><br><span class="line">		for(int x=0; x&lt;arr.length; x++) &#123;</span><br><span class="line">			if(arr[x] == value) &#123;</span><br><span class="line">				index = x;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//返回index</span><br><span class="line">		return index;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/15/【JavaSe必知必会】27-二维数组定义详解/" class="pre-post btn btn-default" title="【JavaSe必知必会】27-二维数组定义详解">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】27-二维数组定义详解</span>
+        </a>
+    
+    
+        <a href="/2018/11/15/【JavaSe必知必会】25-数组定义与初始化/" class="next-post btn btn-default" title="【JavaSe必知必会】25-数组定义与初始化">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【JavaSe必知必会】25-数组定义与初始化</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数组操作常见的两个小问题"><span class="toc-text">数组操作常见的两个小问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组练习-常见操作"><span class="toc-text">数组练习(常见操作)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组遍历-依次输出数组中的每一个元素"><span class="toc-text">数组遍历(依次输出数组中的每一个元素)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组获取最值-获取数组中的最大值最小值"><span class="toc-text">数组获取最值(获取数组中的最大值最小值)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组元素逆序-就是把元素对调"><span class="toc-text">数组元素逆序 (就是把元素对调)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组元素查找-查找指定元素第一次在数组中出现的索引"><span class="toc-text">数组元素查找(查找指定元素第一次在数组中出现的索引)</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
