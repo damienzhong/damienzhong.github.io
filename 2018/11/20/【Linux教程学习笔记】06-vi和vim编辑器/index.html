@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Tag: javase | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>【Linux教程学习笔记】06.vi和vim编辑器 | 呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -132,43 +132,137 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <h3>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【Linux教程学习笔记】06.vi和vim编辑器">
+            
+	            【Linux教程学习笔记】06.vi和vim编辑器
+            
+        </h1>
+        <div class="post-meta">
     
-        javase
     
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/操作系统">
+            操作系统
+        </a>
+    </span>
     
-</h3>
 
-    <article class="post">
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/linux" title="linux">
+                        linux
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
         
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2018/11/14/【JavaSe必知必会】01-计算机基础/">【JavaSe必知必会】01.计算机基础</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2018年11月14日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    前言我想，来到这的朋友肯定是想学习JAVA或者想要进入IT这个行业的。考虑到大家的基础可能不一样，有些人可能还是用着新买的电脑，为了让大家在后续的学习中更加顺畅。在学习一门全新的计算机语言之前，我需要先给大家普及了解一些计算机基础知识...
-                
-            </p>
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="vi和vim的基本介绍"><a href="#vi和vim的基本介绍" class="headerlink" title="vi和vim的基本介绍"></a>vi和vim的基本介绍</h1><ul>
+<li>所有的Linux 系统都会内建vi 文本编辑器。</li>
+<li>Vim 具有程序编辑的能力，可以看做是Vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。<h1 id="vi和vim常用的三种模式"><a href="#vi和vim常用的三种模式" class="headerlink" title="vi和vim常用的三种模式"></a>vi和vim常用的三种模式</h1></li>
+<li>正常模式<ul>
+<li>以vim 打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，你可以使用『上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容，也可以使用『复制、贴上』来处理你的文件数据.</li>
+</ul>
+</li>
+<li>插入模式<ul>
+<li>按下i, I, o, O, a, A, r, R等任何一个字母之后才会进入编辑模式, 一般来说按i即可.</li>
+</ul>
+</li>
+<li>命令行模式<ul>
+<li>在这个模式当中，可以提供你相关指令，完成读取、存盘、替换、离开vim 、显示行号等的动作则是在此模式中达成的.<h1 id="vi和vim三种模式的相互转化图"><a href="#vi和vim三种模式的相互转化图" class="headerlink" title="vi和vim三种模式的相互转化图"></a>vi和vim三种模式的相互转化图</h1><img src="http://image.damienzhong.com/vi%E5%92%8Cvim%E6%A8%A1%E5%BC%8F%E7%9A%84%E7%9B%B8%E4%BA%92%E5%88%87%E6%8D%A2.png" alt="image"><h1 id="快捷键基本使用"><a href="#快捷键基本使用" class="headerlink" title="快捷键基本使用"></a>快捷键基本使用</h1>1) 拷贝当前行yy , 拷贝当前行向下的5行5yy，并粘贴。<br>2) 删除当前行dd , 删除当前行向下的5行5dd<br>3) 在文件中查找某个单词[命令行下/关键字，回车查找, 输入n 就是查找下一个]<br>4) 设置文件的行号，取消文件的行号.[命令行下: set nu 和:set nonu]<br>5) 编辑/etc/profile 文件，使用快捷键到底文档的最末行[G]和最首行[gg]<br>6) 在一个文件中输入”hello” ,然后又撤销这个动作u<br>7) 编辑/etc/profile 文件，并将光标移动到20行shift+g<br>8) 更多命令请查看<a href="https://blog.csdn.net/damienzhong/article/details/82985528" target="_blank" rel="noopener">vi与vim命令大全</a><h1 id="vi与vim的快捷键键盘一览图"><a href="#vi与vim的快捷键键盘一览图" class="headerlink" title="vi与vim的快捷键键盘一览图"></a>vi与vim的快捷键键盘一览图</h1><img src="http://image.damienzhong.com/vi%E4%B8%8Evim%E9%94%AE%E7%9B%98%E5%9B%BE.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
         </div>
-    </article>
- 
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
 
 
-    <nav class="pagination" role="navigation">
-        <div id="page-nav">
-            <a class="extend prev" rel="prev" href="/tags/javase/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/tags/javase/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tags/javase/page/3/">3</a><a class="page-number" href="/tags/javase/page/4/">4</a><span class="page-number current">5</span>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
         </div>
-    </nav>
+        <div>
+            
+        </div>
+    </div>
+</article>
 
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/20/【Linux教程学习笔记】05-远程登录到Linux服务器/" class="next-post btn btn-default" title="【Linux教程学习笔记】05.远程登录到Linux服务器">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【Linux教程学习笔记】05.远程登录到Linux服务器</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
 
 
 
@@ -176,125 +270,14 @@
 
                 </main>
                 
-                    
-    <aside class="col-md-4 sidebar">
-        
-        
+                    <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">Search</h3>
-        <div id="search-form">
-            <div id="result-mask" class="hide"></div>
-            <div class="search-area">
-                
-                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
-                
-                
-            </div>
-            <div id="result-wrap" class="hide">
-                <div id="search-result"></div>
-            </div>
-            <div class="hide">
-                <template id="search-tpl">
-                    <div class="item">
-                        <a href="/{path}" title="{title}">
-                            <div class="title">{title}</div>
-                            <div class="content">{content}</div>
-                        </a>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-
+        <h3 class="title">Table of Contents</h3>
         
-        
-    <div class="widget">
-        <h3 class="title">Notification</h3>
-        <div class="notification">
-            <p>
-    支持本博客：<a href="https://github.com/damienzhong/damienzhong.github.io/stargazers" title="star me" target="_blank">Star一下</a> <br>
-    优酷播单：<a href="https://i.youku.com/i/UNDE3MDU5OTg3Mg==/playlists">优酷播单</a><br>
-    淘宝男装店：<a href="https://shop72495432.taobao.com/search.htm?spm=a1z10.1-c.0.0.25343b46cBwhQs&search=y">DM潮人社区</a><br>
-    QQ交流群：<a href="https://jq.qq.com/?_wv=1027&k=5xgZ7E0" title="" target="_blank">点击加入群聊【呆萌钟技术交流群】</a> 
-</p>
-        </div>
-    </div>
-
-        
-        
-    <div class="widget">
-      <h3 class="title">Social</h3> 
-        <div class="content social">
-            
-	            <a href="//github.com/damienzhong" rel="external nofollow" title="Github" target="_blank">
-			    	<i class="git fa fa-git"></i>
-			    </a>
-            
-	            <a href="//blog.csdn.net/damienzhong" rel="external nofollow" title="CSDN" target="_blank">
-			    	<i class="bold fa fa-bold"></i>
-			    </a>
-            
-	            <a href="mailto:damienzhong@foxmail.com" rel="external nofollow" title="邮箱" target="_blank">
-			    	<i class="envelope-o fa fa-envelope-o"></i>
-			    </a>
-            
-	            <a href="//weibo.com/u/5945841934?is_all=1" rel="external nofollow" title="微博" target="_blank">
-			    	<i class="weibo fa fa-weibo"></i>
-			    </a>
-            
-	            <a href="//i.youku.com/i/UNDE3MDU5OTg3Mg==/playlists" rel="external nofollow" title="优酷" target="_blank">
-			    	<i class="youtube-play fa fa-youtube-play"></i>
-			    </a>
-            
-        </div>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Categories</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/"><i class="fa" aria-hidden="true">JVM</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/"><i class="fa" aria-hidden="true">blog</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javase/"><i class="fa" aria-hidden="true">javase</i></a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/"><i class="fa" aria-hidden="true">操作系统</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/"><i class="fa" aria-hidden="true">虚拟化</i></a><span class="category-list-count">2</span></li></ul>
-    </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">2018年11月</i></a><span class="archive-list-count">56</span></li></ul>
-    </div>
-
-
-        
-        
-  <div class="widget">
-    <h3 class="title">Tag Cloud</h3>
-    <div class="content tag-cloud">
-        
-            <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/VMware/" style="font-size: 12px;">VMware</a> <a href="/tags/javase/" style="font-size: 20px;">javase</a> <a href="/tags/jvm/" style="font-size: 12px;">jvm</a> <a href="/tags/linux/" style="font-size: 18px;">linux</a> <a href="/tags/vmtools/" style="font-size: 10px;">vmtools</a> <a href="/tags/博客搭建/" style="font-size: 16px;">博客搭建</a> <a href="/tags/虚拟化/" style="font-size: 12px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12px;">虚拟机</a>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vi和vim的基本介绍"><span class="toc-text">vi和vim的基本介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vi和vim常用的三种模式"><span class="toc-text">vi和vim常用的三种模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vi和vim三种模式的相互转化图"><span class="toc-text">vi和vim三种模式的相互转化图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#快捷键基本使用"><span class="toc-text">快捷键基本使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vi与vim的快捷键键盘一览图"><span class="toc-text">vi与vim的快捷键键盘一览图</span></a></li></ol>
         
     </div>
-  </div>
-
-
-        
-        
-    <div class="widget">
-        <h3 class="title">Friends</h3>
-        <div class="content friends-link">
-        
-            <a href="https://blog.csdn.net/damienzhong" class="fa" target="_blank">CSDN博客</a>
-        
-            <a href="http://damienzhong.com" class="fa" target="_blank">呆萌钟独立站点</a>
-        
-        </div>
-    </div>
-
-
-        
-    </aside>
+</aside>
 
                 
             </div>
@@ -347,8 +330,6 @@
     </div>
 </div>
 
-
-	<script src="/js/search.js?rev=@@hash"></script>
 
 
 
