@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>【Linux教程学习笔记】04.Linux目录结构 | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>【Linux教程学习笔记】05.远程登录到Linux服务器 | 呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -136,9 +136,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="【Linux教程学习笔记】04.Linux目录结构">
+        <h1 id="【Linux教程学习笔记】05.远程登录到Linux服务器">
             
-	            【Linux教程学习笔记】04.Linux目录结构
+	            【Linux教程学习笔记】05.远程登录到Linux服务器
             
         </h1>
         <div class="post-meta">
@@ -187,90 +187,31 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h1><p>linux的文件系统是采用级层式的树状目录结构，在此结构中的最上层是根目录“/”，然后在此目录下再创建其他的目录。</p>
-<blockquote>
-<p>记住一句经典的话：==在Linux世界里，一切皆文件==。</p>
-</blockquote>
-<h1 id="具体的目录结构"><a href="#具体的目录结构" class="headerlink" title="具体的目录结构"></a>具体的目录结构</h1><p><img src="http://image.damienzhong.com/Linux%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="image"></p>
+        <h1 id="为什么需要远程登录Linux"><a href="#为什么需要远程登录Linux" class="headerlink" title="为什么需要远程登录Linux"></a>为什么需要远程登录Linux</h1><blockquote>
+<p>说明: 公司开发时候，具体的情况是这样的</p>
 <ul>
-<li>/bin [重点] (/usr/bin、/usr/local/bin)<ul>
-<li>是Binary的缩写, 这个目录存放着最经常使用的命令</li>
+<li>linux服务器是开发小组共享的.</li>
+<li>正式上线的项目是运行在公网的.</li>
+<li>因此程序员需要远程登录到centos进行项目管理或者开发.</li>
+<li>网络拓扑示意图</li>
 </ul>
-</li>
-<li>/home [重点]<ul>
-<li>存放普通用户的主目录，在Linux中每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。</li>
+</blockquote>
+<p><img src="https://note.youdao.com/yws/public/resource/f5c450ab492ccef08e40958c2a6586ae/7E86F9212B9447D4862A3610C1D17D4C?ynotemdtimestamp=1542704939956" alt="image"></p>
+<ul>
+<li>远程登录客户端有Xshell5，Xftp5 ,其它的远程工具大同小异.<h1 id="远程登录Linux-Xshell5"><a href="#远程登录Linux-Xshell5" class="headerlink" title="远程登录Linux-Xshell5"></a>远程登录Linux-Xshell5</h1></li>
+<li>Xshell 是目前最好的远程登录到Linux操作的软件，流畅的速度并且完美解决了中文乱码的问题，是目前程序员首选的软件。</li>
+<li>Xshell[1]是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。</li>
+<li>Xshell可以在Windows界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。</li>
 </ul>
-</li>
-<li>/root [重点]<ul>
-<li>该目录为系统管理员，也称作超级权限者的用户主目录。</li>
-</ul>
-</li>
-<li>/lib<ul>
-<li>系统开机所需要最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。</li>
-</ul>
-</li>
-<li>/lost+found<ul>
-<li>这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</li>
-</ul>
-</li>
-<li>/etc [重点]<ul>
-<li>所有的系统管理所需要的配置文件和子目录my.conf</li>
-</ul>
-</li>
-<li>/usr [重点]<ul>
-<li>这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似与windows下的program files目录。</li>
-</ul>
-</li>
-<li>/boot [重点]<ul>
-<li>存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件</li>
-</ul>
-</li>
-<li>/srv<ul>
-<li>service缩写，该目录存放一些服务启动之后需要提取的数据。</li>
-</ul>
-</li>
-<li>/sys<ul>
-<li>这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统sysfs</li>
-</ul>
-</li>
-<li>/tmp<ul>
-<li>这个目录是用来存放一些临时文件的。</li>
-</ul>
-</li>
-<li>/dev<ul>
-<li>类似于windows的设备管理器，把所有的硬件用文件的形式存储。</li>
-</ul>
-</li>
-<li>/media [重点]<ul>
-<li>linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</li>
-</ul>
-</li>
-<li>/mnt [重点]<ul>
-<li>系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将外部的存储挂载在/mnt/上，然后进入该目录就可以查看里的内容了。d:/myshare</li>
-</ul>
-</li>
-<li>/opt<ul>
-<li>这是给主机额外安装软件所摆放的目录。如安装ORACLE数据库就可放到该目录下。默认为空。</li>
-</ul>
-</li>
-<li>/usr/local [重点]<ul>
-<li>这是另一个给主机额外安装软件所安装的目录。一般是通过编译源码方式安装的程序。</li>
-</ul>
-</li>
-<li>/var [重点]<ul>
-<li>这个目录中存放着在不断扩充着的东西，习惯将经常被修改的目录放在这个目录下。包括各种日志文件。</li>
-</ul>
-</li>
-<li>/selinux [security-enhanced linux] 360<ul>
-<li>SELinux是一种安全子系统,它能控制程序只能访问特定文件。<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1></li>
-</ul>
-</li>
-<li>Linux的目录中有且只有一个根目录/</li>
-<li>Linux的各个目录存放的内容是规划好的，不要乱放文件</li>
-<li>Linux是以文件的形式管理我们的设备，因此Linux系统，一切皆为文件</li>
-<li>Linux的各个文件目录下存放什么内容，必须有一个认识</li>
-<li>学习后，脑海中应该有一颗Linux目录树</li>
-</ul>
+<blockquote>
+<p>特别说明：如果希望安装好XShell5就可以远程访问Linux系统的话，需要有一个前提，就是Linux启用了SSHD服务，该服务会监听22号端口。</p>
+</blockquote>
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><p>基本上是下一步，不再讲述。</p>
+<h2 id="XShell5的关键配置"><a href="#XShell5的关键配置" class="headerlink" title="XShell5的关键配置"></a>XShell5的关键配置</h2><p><img src="https://note.youdao.com/yws/public/resource/f5c450ab492ccef08e40958c2a6586ae/ED88A2A4AC8E4388B6BAEA15F62DE947?ynotemdtimestamp=1542704939956" alt="image"></p>
+<h1 id="远程上传下载文件Xftp5"><a href="#远程上传下载文件Xftp5" class="headerlink" title="远程上传下载文件Xftp5"></a>远程上传下载文件Xftp5</h1><p>是一个基于windows平台的功能强大的SFTP、FTP文件传输软件。使用了Xftp 以后，windows 用户能安全地在UNIX/Linux和Windows PC 之间传输文件。</p>
+<h2 id="Xftp5的配置和使用"><a href="#Xftp5的配置和使用" class="headerlink" title="Xftp5的配置和使用"></a>Xftp5的配置和使用</h2><p><img src="https://note.youdao.com/yws/public/resource/f5c450ab492ccef08e40958c2a6586ae/86B78DBFDEB54A8BA3B3B9E056EF3691?ynotemdtimestamp=1542704939956" alt="image"><br>连接成功的界面如下：<br><img src="https://note.youdao.com/yws/public/resource/f5c450ab492ccef08e40958c2a6586ae/FAFEFC9FFCEE40A592C4ABD7F8421C23?ynotemdtimestamp=1542704939956" alt="image"></p>
+<h2 id="Xftp5中文乱码问题解决方案"><a href="#Xftp5中文乱码问题解决方案" class="headerlink" title="Xftp5中文乱码问题解决方案"></a>Xftp5中文乱码问题解决方案</h2><p><img src="https://note.youdao.com/yws/public/resource/f5c450ab492ccef08e40958c2a6586ae/21F15468272F4B64895B6D7E967D41B7?ynotemdtimestamp=1542704939956" alt="image"></p>
+<p>按照上图配置之后，只要刷新一下即可解决</p>
 
     </div>
     
@@ -304,15 +245,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/20/【Linux教程学习笔记】05-远程登录到Linux服务器/" class="pre-post btn btn-default" title="【Linux教程学习笔记】05.远程登录到Linux服务器">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【Linux教程学习笔记】05.远程登录到Linux服务器</span>
-        </a>
     
-    
-        <a href="/2018/11/20/【Linux教程学习笔记】03-VMware和Linux系统-CentOS-安装/" class="next-post btn btn-default" title="【Linux教程学习笔记】03.VMware和Linux系统(CentOS)安装">
+        <a href="/2018/11/20/【Linux教程学习笔记】04-Linux目录结构/" class="next-post btn btn-default" title="【Linux教程学习笔记】04.Linux目录结构">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">【Linux教程学习笔记】03.VMware和Linux系统(CentOS)安装</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">【Linux教程学习笔记】04.Linux目录结构</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -347,7 +283,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本介绍"><span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体的目录结构"><span class="toc-text">具体的目录结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#为什么需要远程登录Linux"><span class="toc-text">为什么需要远程登录Linux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程登录Linux-Xshell5"><span class="toc-text">远程登录Linux-Xshell5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装过程"><span class="toc-text">安装过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XShell5的关键配置"><span class="toc-text">XShell5的关键配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程上传下载文件Xftp5"><span class="toc-text">远程上传下载文件Xftp5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Xftp5的配置和使用"><span class="toc-text">Xftp5的配置和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xftp5中文乱码问题解决方案"><span class="toc-text">Xftp5中文乱码问题解决方案</span></a></li></ol></li></ol>
         
     </div>
 </aside>
