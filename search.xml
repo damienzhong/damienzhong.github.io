@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[VMware安装vmtools实现共享文件与复制]]></title>
+    <url>%2F2018%2F11%2F20%2FVMware%E5%AE%89%E8%A3%85vmtools%E5%AE%9E%E7%8E%B0%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E4%B8%8E%E5%A4%8D%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[vmtools介绍vmtools 安装后，可以让我们在windows下更好的管理vm虚拟机 可以直接粘贴命令在windows 和centos系统之间 可以设置windows和centos的共享文件夹示意图安装vmtools的步骤 进入centos 点击vm菜单的-&gt;install vmware tools centos会出现一个vm的安装包 点击右键解压, 得到一个安装文件 进入该vm解压的目录，该文件在/root/桌面/vmware-tools-distrib/下 安装./vmware-install.pl 全部使用默认设置即可 需要reboot重新启动即可生效设置共享文件夹 为了方便，可以设置一个共享文件夹，比如d:/share windows 和contos 就可以共享文件了，但是在实际公司开发中，文件的上传下载是需要使用远程方式完成的， 远程方式登录，我们后面会具体讲解具体步骤 菜单-&gt;vm-&gt;setting, 如图设置即可 注意:设置选项为always enable , 这样可以读写了 windows和centos可共享d:/share目录 可以读写文件了 在centos的/mnt/hgfs/ 下]]></content>
+      <categories>
+        <category>虚拟化</category>
+      </categories>
+      <tags>
+        <tag>VMware</tag>
+        <tag>虚拟化</tag>
+        <tag>vmtools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VMware Workstation 12安装教程（附下载地址与激活码）]]></title>
+    <url>%2F2018%2F11%2F20%2FVMware-Workstation-12%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%EF%BC%88%E9%99%84%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80%E4%B8%8E%E6%BF%80%E6%B4%BB%E7%A0%81%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[==文章末尾有下载地址和激活码== 下载地址链接: https://pan.baidu.com/s/1mHlcYM44co77ejjFweUuFA 提取码: iua8 激活码5A02H-AU243-TZJ49-GTC7K-3C61N]]></content>
+      <categories>
+        <category>虚拟化</category>
+      </categories>
+      <tags>
+        <tag>VMware</tag>
+        <tag>虚拟化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Hexo搭建GitPage博客系列】05.新建菜单写文章]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Hexo%E6%90%AD%E5%BB%BAGitPage%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97%E3%80%9105-%E6%96%B0%E5%BB%BA%E8%8F%9C%E5%8D%95%E5%86%99%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[在Hexo博客系统中, 可以创建菜单、文章、分类、标签。在我们的主题中,菜单和文章需要手动创建,而分类和标签不用手动创建, 创建菜单在博客根目录下打开Git Bash执行如下命令创建一个新的菜单：hexo new page “菜单名”12345$ hexo new page &quot;虚拟化&quot;INFO =========================================INFO Welcome to use Snippet theme for hexoINFO =========================================INFO Created: D:\DamienGit\hexo-blog-template\source\虚拟化\index.md 这个指令会在source目录创建一个名为“虚拟化”的文件夹,并在文件夹中创建一个index.md的文件 修改index.md文件，指定type12345---title: 虚拟化date: 2018-11-20 14:18:39type: 虚拟化--- 然后在进入theme文件夹下的主题文件夹里面的_config.yml配置文件，在里面的menu配置选项中新增一个虚拟化菜单选项1234567891011121314## menumenu:- page: home url: / icon: fa-home- page: Java基础 url: /categories/javase/ icon: - page: 博客教程 url: /categories/blog/ icon: - page: 虚拟化 url: /categories/虚拟化/ icon: 本地部署查看效果执行如下命令1$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s 当你点击新增的菜单的时候可能会报404找不到页面的提示，是因为该目录下没有文章，后续我们指定文章到该菜单下就可以了，往下看即可解决 写文章在博客根目录下打开Git Bash执行如下命令创建文章：hexo new “文章名”12345$ hexo new &quot;【Hexo搭建GitPage博客系列】04.主题更换&quot;INFO =========================================INFO Welcome to use Snippet theme for hexoINFO =========================================INFO Created: D:\DamienGit\hexo-blog-template\source\_posts\【Hexo搭建GitPage博客系列】04-主题更换.md 命令执行完毕后可以看到source/_posts/目录下生产了一个刚才我们创建的同名md文件。 打开该文件进行编辑博文123456---title: 【Hexo搭建GitPage博客系列】04.主题更换date: 2018-11-20 14:43:33tags:---博文内容写这里 本地部署查看效果执行如下命令1$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo s 文章指定分类与标签123456title: 【Hexo搭建GitPage博客系列】04.主题更换date: 2018-11-20 14:43:33tags: //标签名 - Hexo - 博客搭建categories: 虚拟化 //分类名]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Hexo搭建GitPage博客系列】04.主题更换]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Hexo%E6%90%AD%E5%BB%BAGitPage%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97%E3%80%9104-%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[前言前面我们介绍了如何从零开始搭建Hexo博客，并且已经部署到Github上去了。每个人的审美观不一样，所以肯定会有人不喜欢当前的博客主题。接下来，我就为大家介绍如何更换博客主题，让博客变得更加炫酷。 主题切换Hexo的默认主题是landscape，就是刚刚搭建好以后大家看到的样子。 估计很多小伙伴都不太喜欢这样的风格，其实我们可以很容易做一些主题的切换和配置。在Hexo官网提供了很多主题（theme）风格，大家可以挑选自己喜欢的主题进行配置和调整。 在Hexo选择一款你喜欢的主题，点击图片预览demo，点击下面的名字进入该主题的github项目或者官方网站。 这里我们以Next主题为例子，因为这个主题比较成熟，而且有详细的官方文档可以帮助你快速地安装和配置。关于主题的安装和配置很简单，在这里就不演示了，大家可以根据官方文档的指示完成。 安装主题在博客themes目录下右键点击Git Bash，输入以下命令。其他的主题也类似操作。1git clone https://github.com/主题git路径 启用主题修改博客根目录下的_config.yml中的theme属性，将其设置为你下载下来的主题名。1theme: zhutiming 配置主题如果你需要定制主题相关配置显得更加个性化，修改主题目录下的_config.yml配置文件 主题发布分别在Git Bash中执行如下指令发布博客到Github 1hexo clean 1hexo g 1hexo d 部署成功后访问你的地址：http://用户名.github.io，查看效果，有时候有缓存，需要多刷新几次。]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Hexo搭建GitPage博客系列】03.Hexo博客搭建]]></title>
+    <url>%2F2018%2F11%2F19%2F%E3%80%90Hexo%E6%90%AD%E5%BB%BAGitPage%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97%E3%80%9103-Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[前言前面我们已经把环境准备好了，接下来我们就可以正式开始我们的博客搭建之路了！ 搭建步骤创建Github仓库 点击创建仓库 项目必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。并且需要勾选Initialize this repository with a README 在建好的项目右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到那边有个网址，访问它，你将会惊奇的发现该项目已经被部署到网络上，能够通过外网来访问它。如果没有，你可以直接在浏览器输入自己仓库名，在浏览器进行访问，能访问成功说明也OK。初始化博客 安装Hexo，在自己认为合适的地方创个文件夹，然后通过命令行进入到该文件夹里面 输入npm install hexo -g，开始安装Hexo 输入hexo -v，检查hexo是否安装成功 输入hexo init，初始化该文件夹（有点漫长的等待。。。） 输入npm install，安装所需要的组件 输入hexo g，生成博客所需文件 输入hexo s，本地开启服务器，访问该网址，正式体验Hexo 出现如下图就成功了发布博客到Github 配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾） repo值的获取位置，需要把Clone方式切换成SSH形式，然后复制地址就可以了 在生成以及部署文章之前，需要安装一个扩展：npm install hexo-deployer-git –save 使用命令：hexo d -g就可以进行生成部署到Github上了 部署成功后访问你的地址：http://用户名.github.io。那么将看到我们之前在本地部署一样的页面，说明我们就部署成功啦！]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Hexo搭建GitPage博客系列】02.环境搭建]]></title>
+    <url>%2F2018%2F11%2F19%2F%E3%80%90Hexo%E6%90%AD%E5%BB%BAGitPage%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97%E3%80%9102-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
+    <content type="text"><![CDATA[前言Hexo搭建博客需要基于Node.js环境，而且依赖于Git，本篇文章就给大家详细介绍如何搭建环境。 Node环境搭建Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的使用包管理器 npm来管理所有模块的安装、配置、删除等操作，使用起来非常方便，但是想要配置好npm的使用环境还是稍微有点复杂，下面跟着我一起来学习在windows系统上配置NodeJS和NPM吧。 安装NodeJS打开NodeJS的官网，默认的情况主页就提供了Windows版本的下载链接，我们下载LTS版，LTS代表长期支持版本，一般新手建议使用这个版本，因为这个版本使用的人最多，出问题能找到解决方案的概率较大。如下图所示： 下载之后直接打开执行安装操作，直接NEXT 这一步是选择安装哪些模块，默认是全部安装，对于新手来说建议全部安装。点开那个add path选项前面的+号，我们看到，会主动把NodeJS和NPM这两个模块的命令路径添加到系统路径里，对于我们来说就非常方便了。点击next继续下一步，然后确认信息，点击Install开始安装，然后程序就开始复制文件等一系列步骤。一直到安装完毕。 安装完毕后点击finish结束安装进程，然后在桌面图标上点右键，点运行。输入cmd后敲回车，在打开的命令行界面，依次输入命令： node -v npm -v安装Git 访问Git官网下载地址：https://git-scm.com/downloads 选择对应自己操作系统的Git客户端进行下载。 打开下载好的文件，执行安装步骤，一路NEXT 安装Git和配置好Git环境，安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择 设置本地Git与Github远程SSH后面的操作需要你已经注册了Github账号，如果没有，请先去注册。 输入cd ~/.ssh，检查是否有.ssh的文件夹 如果没有，提示如下图，如果有，删除该文件 然后切换到主用户目录下cd ~，并生成.ssh文件ssh-keygen -t rsa -C “xxxx@xxx.xxx“，执行命令之后连续回车三次 打开.ssh文件中的id_rsa.pub，复制其中的信息 之后进入GitHub，右上角头像下拉选择Settings，弹出界面中左侧栏选择SSH and GPG keys，然后选择New SSH key，将之前复制的id_rsa.pub粘贴到key栏中，title随便取，之后点击Add SSH key就完事儿啦 之后在本地配置好config信息 输入ssh -T git@github.com，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Hexo搭建GitPage博客系列】01.博客搭建须知]]></title>
+    <url>%2F2018%2F11%2F19%2F%E3%80%90Hexo%E6%90%AD%E5%BB%BAGitPage%E5%8D%9A%E5%AE%A2%E7%B3%BB%E5%88%97%E3%80%9101-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%A1%BB%E7%9F%A5%2F</url>
+    <content type="text"><![CDATA[背景我想很多接触互联网的人，都想拥有一个自己的个人博客，可以在上面分享工作、学习、生活等等。可能在网上搜到别人的博客的时候，心里也渴望着自己也能在网络上拥有着这样一块小天地。当你点进这篇文章的时候，我可以很肯定的告诉你，你的梦想即将实现！ 博客种类第三方平台依托于第三方平台，比如CSDN、博客园、简书等等用户只要直接在平台注册即可使用。 优点 免费 无技术门槛 傻瓜式操作 平台用户数量大 稳定缺点 对于充满极客精神的人来说，这一点都不酷 受限于平台，不能做二次扩展 发布作品需要遵循平台规则服务器搭建的个人站购买云服务器或者物理机，在服务器中搭建博客环境，搭建对于小白来说比较麻烦。优点 服务器与数据可以自由管理 可以自由开发，想做成什么样就做成什么样 可以拥有独立域名 可以在网站打广告赚取零花钱缺点 收费 有一丁点技术门槛，小白可能会遇到一些波折 服务器没有专门的运维，有被攻击的风险Hexo+GitPage搭建优点 免费 依托于Github，大平台，靠得住 稳定 博客样式可以自由选择，支持二次开发 可以绑定独立域名 无需担心被攻击 数据备份能力极强缺点 Github是国外的，所以国内访问网速不是太稳定 需要掌握Git常用命令总结以上三种方式，我都尝试过了。 第一种第三方平台的方式，我觉得他一点都不酷，所以我只是单纯的把他当成我的备用博客，用于往我的主站引流（可以参考我的CSDN博客）。 第二种方式，起初我是蛮喜欢的。我是在阿里云购买的云虚拟主机，搭建完成之后，刚开始还好，但是后面被人恶意种了挖矿程序，导致服务器的CPU经常处于百分之一百，让网站无法访问，联系了阿里云技术支持，各种叫我升级配置。我知道你们肯定想问，为什么我不自己SSH上去把这挖矿程序干掉。因为云虚拟主机不支持SSH方式连接，要ECS才支持，所以我也很无奈。最终，弃坑，放弃了！ 第三种方式，现在用的就是这种方式，用了段时间感觉还不错，因为自己用github也比较多，所以还是蛮顺手，而且还不花钱，美滋滋。总的来说就是这种方式是第一种和第二种的这种版本，中国人都比较中庸，所以我选了第三种。 那接下来，我就给大家详细的说一说Hexo搭建博客的步骤，希望能帮到大家！]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【JavaSe必知必会】41-Java内部类]]></title>
     <url>%2F2018%2F11%2F15%2F%E3%80%90JavaSe%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%9141-Java%E5%86%85%E9%83%A8%E7%B1%BB%2F</url>
-    <content type="text"><![CDATA[内部类概述把类定义在其他类的内部，这个类就被称为内部类。 举例在类A中定义了一个类B，类B就是内部类。 内部类的访问特点 内部类可以直接访问外部类的成员，包括私有。 外部类要访问内部类的成员，必须创建对象内部类位置按照内部类在类中定义的位置不同，可以分为如下两种格式： 成员位置（成员内部类） 局部位置（局部内部类）成员内部类外界如何创建对象外部类名.内部类名 对象名 = 外部类对象.内部类对象;成员内部类的常见修饰符 private 为了保证数据的安全性 static 为了让数据访问更方便 被静态修饰的成员内部类只能访问外部类的静态成员 内部类方法被静态修饰后的方法 静态方法 非静态方法局部内部类 可以直接访问外部类的成员 可以创建内部类对象，通过对象调用内部类方法，来使用局部内部类功能 局部内部类访问局部变量的注意事项： 必须被final修饰 为什么呢？ 因为局部变量会随着方法的调用完毕而消失，这个时候，局部对象并没有立马从对内存中消失，还要使用那个变量。为了让数据还能继续被使用，就用final修饰，这样，在堆内存里面存储的其实是一个常量值。通过反编译工具可以看一下。匿名内部类 就是内部类的简化写法 前提：存在一个类或者接口 这里的类可以是具体类也可以是抽象类 格式： new 类名或者接口名(){重写方法} 本质： 是一个继承了类或者实现了接口的子类匿名对象]]></content>
+    <content type="text"><![CDATA[内部类概述把类定义在其他类的内部，这个类就被称为内部类。 举例在类A中定义了一个类B，类B就是内部类。 内部类的访问特点 内部类可以直接访问外部类的成员，包括私有。 外部类要访问内部类的成员，必须创建对象 1234567891011121314151617181920212223242526272829303132/* 内部类： 把类定义在其他类的内部，这个类就被称为内部类。 举例：在类A中定义一个类B，类B就是内部类 内部类的访问特点： A：内部类可以直接访问外部类的成员，包括私有的 B：外部类要访问内部类的成员，必须创建对象*/class Outer&#123; private int num = 10; class Inner&#123; public void show()&#123; System.out.println(num); &#125; &#125; public void method()&#123; //找不到符号 //show(); Inner i = new Inner(); i.show(); &#125;&#125;public class InnerDemo&#123; public static void main(String[] args)&#123; Outer o = new Outer(); &#125;&#125; 内部类位置按照内部类在类中定义的位置不同，可以分为如下两种格式： 成员位置（成员内部类） 局部位置（局部内部类） 12345678910111213141516171819202122232425/* 内部类位置 成员位置：在成员位置定义的类，被称为成员内部类 局部位置：在局部位置定义的类，被称为局部内部类*/class Outer&#123; private int num = 10; //成员位置 /*class Inner&#123; &#125;*/ public void method()&#123; class Inner&#123; &#125; &#125;&#125;public class InnerClassDemo&#123; public static void main(String[] args)&#123; &#125;&#125; 成员内部类外界如何创建对象外部类名.内部类名 对象名 = 外部类对象.内部类对象; 成员内部类的常见修饰符 private 为了保证数据的安全性 static 为了让数据访问更方便 被静态修饰的成员内部类只能访问外部类的静态成员 内部类方法被静态修饰后的方法 静态方法 非静态方法 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162/* 成员内部类的修饰符： private:为了保证数据的安全性 static:为了方便访问数据 注意：静态内部类访问的外部类数据必须用静态修饰。 案例：我是一个人（人有身体，身体内有心脏） class Body&#123; private class Heart&#123; public void operator()&#123; System.out.println(&quot;心脏支架手术&quot;); &#125; &#125; public void method()&#123; if(如果你是外科医生)&#123; Heart h = new Heart(); h.operator(); &#125; &#125; &#125; 按照我们刚才的讲解，来使用一下。 Body.Heart bh = new Body().new Heart(); bh.operator(); //加了private之后，就不能被访问了，那么，怎么玩呢？ Body b = new Body(); b.method();*/class Outer&#123; private int num = 10; private static int num2 = 100; public static class Inner&#123; public void show()&#123; //System.out.println(num); System.out.println(num2); &#125; public static void show2()&#123; //System.out.println(num); System.out.println(num2); &#125; &#125;&#125;public class InnerClassDemo3&#123; public static void main(String[] args)&#123; //Outer.Inner oi = new Outer().new Inner(); //oi.show(); //oi.show2(); //成员内部类被静态修饰后的访问方式： //格式：外部类名.内部类名 对象名 = new 外部类名.内部类名 Outer.Inner oi = new Outer.Inner(); oi.show(); oi.show2(); Outer.Inner.show2(); &#125;&#125; 局部内部类 可以直接访问外部类的成员 可以创建内部类对象，通过对象调用内部类方法，来使用局部内部类功能 局部内部类访问局部变量的注意事项： 必须被final修饰 为什么呢？ 因为局部变量会随着方法的调用完毕而消失，这个时候，局部对象并没有立马从对内存中消失，还要使用那个变量。为了让数据还能继续被使用，就用final修饰，这样，在堆内存里面存储的其实是一个常量值。通过反编译工具可以看一下。 123456789101112131415161718192021222324252627282930313233343536/* 局部内部类： A:可以直接访问外部类的成员 B:在局部位置，可以创建内部类对象，通过对象调用内部类方法，来使用局部内部类功能 局部内部类访问局部变量的注意事项？ A：局部内部类访问局部变量必须用final修饰 B：为什么呢？ 局部变量是随着方法的调用而调用，随着调用完毕而消失。 而对内存的内容并不会立即消失。所以，我们加final修饰。 加如final修饰后，这个变量就成了常量，既然是常量，你消失了， 我在内存中存储的是数据20，所以，我还是有数据在使用的。*/class Outer&#123; private int num = 10; public void method()&#123; int num2 = 20; class Inner&#123; public void show()&#123; System.out.println(num); System.out.println(num2); &#125; &#125; Inner i = new Inner(); i.show(); &#125;&#125;public class InnerClassDemo4&#123; public static void main(String[] args)&#123; Outer o = new Outer(); o.method(); &#125;&#125; 匿名内部类 就是内部类的简化写法 前提：存在一个类或者接口 这里的类可以是具体类也可以是抽象类 格式： new 类名或者接口名(){重写方法} 本质： 是一个继承了类或者实现了接口的子类匿名对象 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071/* 匿名内部类： 就是内部类的简化写法。 前提：存在一个类或者接口 这里的类可以是具体的类也可以是抽象类。 格式： new 类名或者接口名()&#123; 重写方法; &#125; 本质是什么呢？ 是一个继承了该类或者实现了该接口的子类匿名对象*/interface Inter&#123; public abstract void show(); public abstract void show2();&#125;class Outer&#123; public void method()&#123; //一个方法的时候 /*new Inter()&#123; public void show()&#123; System.out.println(&quot;show&quot;); &#125; public void show()2&#123; System.out.println(&quot;show&quot;); &#125; &#125;.show(); */ //两个方法的时候 /*new Inter()&#123; public void show()&#123; System.out.println(&quot;show&quot;); &#125; public void show2()&#123; System.out.println(&quot;show&quot;); &#125; &#125;.show(); new Inter()&#123; public void show()&#123; System.out.println(&quot;show&quot;); &#125; public void show2()&#123; System.out.println(&quot;show&quot;); &#125; &#125;.show2(); */ //如果接口或类有很多个方法，就很麻烦 //那么，如何改进呢？ Inter i = new Inter()&#123;//多态 public void show()&#123; System.out.println(&quot;show&quot;); &#125; public void show2()&#123; System.out.println(&quot;show&quot;); &#125; &#125;; i.show(); i.show2(); &#125;&#125;public class InnerClassDemo5&#123; public static void main(String[] args)&#123; Outer o = new Outer(); o.method(); &#125;&#125;]]></content>
       <categories>
         <category>javase</category>
       </categories>

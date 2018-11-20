@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【Hexo搭建GitPage博客系列】02.环境搭建 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【Hexo搭建GitPage博客系列】02.环境搭建">
+            
+	            【Hexo搭建GitPage博客系列】02.环境搭建
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/blog">
+            blog
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/博客搭建" title="博客搭建">
+                        博客搭建
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/19</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Hexo搭建博客需要基于Node.js环境，而且依赖于Git，本篇文章就给大家详细介绍如何搭建环境。</p>
+<h1 id="Node环境搭建"><a href="#Node环境搭建" class="headerlink" title="Node环境搭建"></a>Node环境搭建</h1><p>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。 Node.js 的使用包管理器 npm来管理所有模块的安装、配置、删除等操作，使用起来非常方便，但是想要配置好npm的使用环境还是稍微有点复杂，下面跟着我一起来学习在windows系统上配置NodeJS和NPM吧。</p>
+<h2 id="安装NodeJS"><a href="#安装NodeJS" class="headerlink" title="安装NodeJS"></a>安装NodeJS</h2><p>打开NodeJS的官网，默认的情况主页就提供了Windows版本的下载链接，我们下载LTS版，LTS代表长期支持版本，一般新手建议使用这个版本，因为这个版本使用的人最多，出问题能找到解决方案的概率较大。如下图所示：<br><img src="http://image.damienzhong.com/nodejs%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9.png" alt="image"></p>
+<ul>
+<li>下载之后直接打开执行安装操作，直接NEXT</li>
+<li>这一步是选择安装哪些模块，默认是全部安装，对于新手来说建议全部安装。点开那个add path选项前面的+号，我们看到，会主动把NodeJS和NPM这两个模块的命令路径添加到系统路径里，对于我们来说就非常方便了。点击next继续下一步，然后确认信息，点击Install开始安装，然后程序就开始复制文件等一系列步骤。一直到安装完毕。<br><img src="http://image.damienzhong.com/nodejs%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E9%80%89%E6%8B%A9.png" alt="image"></li>
+<li>安装完毕后点击finish结束安装进程，然后在桌面图标上点右键，点运行。输入cmd后敲回车，在打开的命令行界面，依次输入命令：<ul>
+<li>node -v</li>
+<li>npm -v<br><img src="http://image.damienzhong.com/nodejs%E9%AA%8C%E8%AF%81.png" alt="image"><h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h1></li>
+</ul>
+</li>
+<li>访问Git官网下载地址：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></li>
+<li>选择对应自己操作系统的Git客户端进行下载。</li>
+<li>打开下载好的文件，执行安装步骤，一路NEXT</li>
+<li>安装Git和配置好Git环境，安装成功的象征就是在电脑上任何位置鼠标右键能够出现如下两个选择</li>
+</ul>
+<p><img src="http://image.damienzhong.com/git%E5%AE%89%E8%A3%85%E9%AA%8C%E8%AF%81.png" alt="image"></p>
+<h2 id="设置本地Git与Github远程SSH"><a href="#设置本地Git与Github远程SSH" class="headerlink" title="设置本地Git与Github远程SSH"></a>设置本地Git与Github远程SSH</h2><p>后面的操作需要你已经注册了Github账号，如果没有，请先去注册。</p>
+<ul>
+<li><p>输入cd ~/.ssh，检查是否有.ssh的文件夹</p>
+<ul>
+<li>如果没有，提示如下图，如果有，删除该文件<br><img src="http://image.damienzhong.com/%E6%B2%A1%E6%9C%89ssh%E6%96%87%E4%BB%B6.png" alt="image"></li>
+<li>然后切换到主用户目录下cd ~，并生成.ssh文件ssh-keygen -t rsa -C “<a href="mailto:xxxx@xxx.xxx" target="_blank" rel="noopener">xxxx@xxx.xxx</a>“，执行命令之后连续回车三次<br><img src="http://image.damienzhong.com/%E7%94%9F%E6%88%90ssh%E6%96%87%E4%BB%B6.png" alt="image"></li>
+<li>打开.ssh文件中的id_rsa.pub，复制其中的信息 </li>
+<li>之后进入GitHub，右上角头像下拉选择Settings，弹出界面中左侧栏选择SSH and GPG keys，然后选择New SSH key，将之前复制的id_rsa.pub粘贴到key栏中，title随便取，之后点击Add SSH key就完事儿啦<br><img src="http://image.damienzhong.com/addsshkey.png" alt="image"></li>
+<li>之后在本地配置好config信息</li>
+</ul>
+<p><img src="http://image.damienzhong.com/git%E8%AE%BE%E7%BD%AEssh01.png" alt="image"></p>
+<ul>
+<li>输入ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br><img src="http://image.damienzhong.com/%E6%B5%8B%E8%AF%95ssh.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/19/【Hexo搭建GitPage博客系列】03-Hexo博客搭建/" class="pre-post btn btn-default" title="【Hexo搭建GitPage博客系列】03.Hexo博客搭建">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【Hexo搭建GitPage博客系列】03.Hexo博客搭建</span>
+        </a>
+    
+    
+        <a href="/2018/11/19/【Hexo搭建GitPage博客系列】01-博客搭建须知/" class="next-post btn btn-default" title="【Hexo搭建GitPage博客系列】01.博客搭建须知">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【Hexo搭建GitPage博客系列】01.博客搭建须知</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node环境搭建"><span class="toc-text">Node环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装NodeJS"><span class="toc-text">安装NodeJS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装Git"><span class="toc-text">安装Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置本地Git与Github远程SSH"><span class="toc-text">设置本地Git与Github远程SSH</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
