@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[【Linux教程学习笔记】06.vi和vim编辑器]]></title>
-    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9106-vi%E5%92%8Cvim%E7%BC%96%E8%BE%91%E5%99%A8%2F</url>
-    <content type="text"><![CDATA[vi和vim的基本介绍 所有的Linux 系统都会内建vi 文本编辑器。 Vim 具有程序编辑的能力，可以看做是Vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。vi和vim常用的三种模式 正常模式 以vim 打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，你可以使用『上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容，也可以使用『复制、贴上』来处理你的文件数据. 插入模式 按下i, I, o, O, a, A, r, R等任何一个字母之后才会进入编辑模式, 一般来说按i即可. 命令行模式 在这个模式当中，可以提供你相关指令，完成读取、存盘、替换、离开vim 、显示行号等的动作则是在此模式中达成的.vi和vim三种模式的相互转化图快捷键基本使用1) 拷贝当前行yy , 拷贝当前行向下的5行5yy，并粘贴。2) 删除当前行dd , 删除当前行向下的5行5dd3) 在文件中查找某个单词[命令行下/关键字，回车查找, 输入n 就是查找下一个]4) 设置文件的行号，取消文件的行号.[命令行下: set nu 和:set nonu]5) 编辑/etc/profile 文件，使用快捷键到底文档的最末行[G]和最首行[gg]6) 在一个文件中输入”hello” ,然后又撤销这个动作u7) 编辑/etc/profile 文件，并将光标移动到20行shift+g8) 更多命令请查看vi与vim命令大全vi与vim的快捷键键盘一览图]]></content>
-      <categories>
-        <category>操作系统</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[【Linux教程学习笔记】05.远程登录到Linux服务器]]></title>
     <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9105-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%88%B0Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
     <content type="text"><![CDATA[为什么需要远程登录Linux 说明: 公司开发时候，具体的情况是这样的 linux服务器是开发小组共享的. 正式上线的项目是运行在公网的. 因此程序员需要远程登录到centos进行项目管理或者开发. 网络拓扑示意图 远程登录客户端有Xshell5，Xftp5 ,其它的远程工具大同小异.远程登录Linux-Xshell5 Xshell 是目前最好的远程登录到Linux操作的软件，流畅的速度并且完美解决了中文乱码的问题，是目前程序员首选的软件。 Xshell[1]是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。 Xshell可以在Windows界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。 特别说明：如果希望安装好XShell5就可以远程访问Linux系统的话，需要有一个前提，就是Linux启用了SSHD服务，该服务会监听22号端口。 安装过程基本上是下一步，不再讲述。XShell5的关键配置远程上传下载文件Xftp5是一个基于windows平台的功能强大的SFTP、FTP文件传输软件。使用了Xftp 以后，windows 用户能安全地在UNIX/Linux和Windows PC 之间传输文件。Xftp5的配置和使用连接成功的界面如下：Xftp5中文乱码问题解决方案 按照上图配置之后，只要刷新一下即可解决]]></content>
