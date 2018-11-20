@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【Linux教程学习笔记】02.Linux入门知识]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9102-Linux%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[Linux的介绍 linux怎么读？ 里牛克斯、里尼克斯 ==linux是一个开源、免费的操作系统，其稳定性、安全性==、处理多并发已经得到业界的认可，目前很多企业级的项目都会部署到Linux/unix系统上。 常见的操作系统(win7、IOS、Android、Mac)Linux 吉祥物Linux的创始人Linux主要的发行版Ubuntu(乌班图)、RedHat(红帽)、CentOS、Debain[蝶变]、Fedora、SuSE、OpenSUSELinux和Unix的关系Unix是怎么来的Linux是怎么来的Linux和Unix的关系Linux和Windows比较]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【Linux教程学习笔记】01.Linux学习方法路线]]></title>
     <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9101-Linux%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E8%B7%AF%E7%BA%BF%2F</url>
     <content type="text"><![CDATA[Linux课程内容介绍 Linux学习方向 Linux运维工程师 Linux嵌入式开发工程师 在Linux做各种程序开发Linux的应用领域 个人桌面应用领域 此领域是传统Linux应用最薄弱的环节，传统Linux由于界面简单、操作复杂、应用软件少的缺点，一直被windows所压制，但这些年来随着Ubuntu、Fedora等优秀桌面环境的兴起，同时各大硬件厂商对其支持的加大，Linux在个人桌面领域的占有率在逐渐的提供。 服务器领域 linux在服务器领域的应用是最强的。 linux免费、稳定、高效等特点在这里得到了很好的体现，近些年来linux服务器市场得到了飞速的提升，尤其在一些高端领域尤为广泛。 嵌入式领域 近些年来linux在嵌入式领域的应用得到了飞速的提高 linux运行稳定、对网络的良好支持性、低成本，且可以根据需要进行软件裁剪，内核最小可以达到几百KB等特点，使其近些年来在嵌入式领域的应用得到非常大的提高 主要应用：机顶盒、数字电视、网络电话、程控交换机、手机、PDA、智能家居、智能硬件等都是其应用领域。以后再物联网中应用会更加广泛。Linux进阶学习路线linux是一个开源、免费的操作系统，其稳定性、安全性、处理多并发已经得到业界的认可，目前很多中型，大型甚至是集群项目都在使用linux,很多软件公司考虑到开发成本都首选linux,在中国软件公司得到广泛的使用。 我个人认为学习linux流程为: 第1阶段：linux环境下的基本操作命令，包括文件操作命令(rm mkdir chmod, chown) 编辑工具使用（vi vim）linux用户管理(useradd userdel usermod)等 第2阶段：linux的各种配置（环境变量配置，网络配置，服务配置） 第3阶段：linux下如何搭建对应语言的开发环境（大数据，JavaEE, Python等） 第4阶段：能编写shell脚本，对Linux服务器进行维护。 第5阶段：能进行安全设置，防止攻击，保障服务器正常运行，能对系统调优。 第6阶段：深入理解Linux系统（对内核有研究），熟练掌握大型网站应用架构组成、并熟悉各个环节的部署和维护方法。Linux的学习方法 高效而愉快的学习 先建立一个整体框架，然后细节 不需要掌握所有的Linux指令，要学会查询手册和百度 先know how ,再know why 计算机是一门”做中学”的学科,不是会了再做，而是做了才会. 适当的囫囵吞枣 Linux不是编程，重点是实际操作，各种常用指令要玩的溜]]></content>
