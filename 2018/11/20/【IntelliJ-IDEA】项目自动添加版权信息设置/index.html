@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【IntelliJ IDEA】项目自动添加版权信息设置 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具教程/"><i class="fa "></i>工具教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【IntelliJ IDEA】项目自动添加版权信息设置">
+            
+	            【IntelliJ IDEA】项目自动添加版权信息设置
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/工具教程">
+            工具教程
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/idea" title="idea">
+                        idea
+                    </a>
+                
+                    <a href="/tags/IntelliJ IDEA" title="IntelliJ IDEA">
+                        IntelliJ IDEA
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="自动添加项目版权信息设置"><a href="#自动添加项目版权信息设置" class="headerlink" title="自动添加项目版权信息设置"></a>自动添加项目版权信息设置</h1><p><img src="http://image.damienzhong.com/idea%E4%B8%BB%E9%A2%98%E5%AD%97%E4%BD%93%E4%BF%AE%E6%94%B901.png" alt="image"></p>
+<ul>
+<li>标注1：点击工具栏最上方==的File==选项</li>
+<li>标注2：选择==Setting==选项 <h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE01.png" alt="image"></li>
+<li>标注1：新增版权按钮</li>
+</ul>
+<p>如上图所示，我们定位到==Editor &gt; Copyright &gt; Copyright Profiles==，如果确定要新增版权信息的话，点击<strong>标注1</strong> 所示的新型按钮，点击之后弹出版权名输入框，效果图如下：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE02.png" alt="image"></p>
+<ul>
+<li>标注1：版权名输入框（输入自己的版权名）</li>
+<li>标注2：确认按钮（确认新增则点击）</li>
+</ul>
+<p>如上图所示，我们这里新增一个名为==damienzhong==的版权名，点击OK之后出现如下效果图：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE03.png" alt="image"></p>
+<ul>
+<li>标注1：版权名输入框（在此可以更改版权名）</li>
+<li>标注2：版权声明信息文本框（在此输入版权声明信息）</li>
+<li>标注3：版权验证按钮</li>
+<li>标注4：应用按钮（设置完必须点击，否则设置不生效）</li>
+</ul>
+<p>如上图所示，我们按标注的顺序挨个进行操作，然后定位到上一级==Editor &gt; Copyright==<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE04.png" alt="image"></p>
+<ul>
+<li>标注1：菜单选项（定位到此）</li>
+<li>标注2：默认项目版权（点击下拉框选择你的的版权名）</li>
+</ul>
+<p>如上图所示，我们直接点击默认版权的下拉框，在这里我们选择damienzhong这个版权名，选择完之后我们看下图：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE05.png" alt="image"></p>
+<ul>
+<li>标注1：新增版权使用按钮（点击此按钮）</li>
+<li>标注2：版权生效域（选择你需要添加版权的区域）</li>
+<li>标注3：应用按钮</li>
+</ul>
+<p>如上图所示，我们这边先点击+号按钮，然后选择==All==，代表所有区域，然后点击==Apply==按钮，即可生效。生效之后我们新建一个类文件，效果图如下：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE06.png" alt="image"><br>如上图所示，红框部分就是我们刚才所设置的版权信息。</p>
+<h2 id="方案二（方案一不生效用此方法）"><a href="#方案二（方案一不生效用此方法）" class="headerlink" title="方案二（方案一不生效用此方法）"></a>方案二（方案一不生效用此方法）</h2><p>打开==Setting==选项，定位到==Plugins==,如下图所示：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE07.png" alt="image"></p>
+<ul>
+<li>标注1：选项路径</li>
+<li>标注2：浏览器插件仓库查询按钮（点击此按钮）</li>
+</ul>
+<p>我们点击<strong>标注2</strong>的按钮，出现弹框，如下图所示：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE08.png" alt="image"></p>
+<ul>
+<li>标注1：搜索输入框（输入Copyright）</li>
+<li>标注2：Copyright插件（选择此插件）</li>
+<li>标注3：安装按钮（点击安装）</li>
+</ul>
+<p>如上图所示，我们按标注的顺序进行操作，出现如下效果图：<br><img src="http://image.damienzhong.com/idea%E7%89%88%E6%9D%83%E8%AE%BE%E7%BD%AE09.png" alt="image"></p>
+<p>我们点击重启按钮，重启IDEA，重启之后按<strong>方案一</strong>的操作方式操作一遍即可生效，这边就不再重复演示了。</p>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/20/【IntelliJ-IDEA】自动生成序列化serialVersionUID设置/" class="pre-post btn btn-default" title="【IntelliJ IDEA】自动生成序列化serialVersionUID设置">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【IntelliJ IDEA】自动生成序列化serialVersionUID设置</span>
+        </a>
+    
+    
+        <a href="/2018/11/20/【IntelliJ-IDEA】设置修改字体大小与样式/" class="next-post btn btn-default" title="【IntelliJ IDEA】设置修改字体大小与样式">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【IntelliJ IDEA】设置修改字体大小与样式</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#自动添加项目版权信息设置"><span class="toc-text">自动添加项目版权信息设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方案一"><span class="toc-text">方案一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方案二（方案一不生效用此方法）"><span class="toc-text">方案二（方案一不生效用此方法）</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
