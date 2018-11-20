@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>VMware安装vmtools实现共享文件与复制 | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>【玩转jvm系列】02.对象探秘 | 呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -128,9 +128,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="VMware安装vmtools实现共享文件与复制">
+        <h1 id="【玩转jvm系列】02.对象探秘">
             
-	            VMware安装vmtools实现共享文件与复制
+	            【玩转jvm系列】02.对象探秘
             
         </h1>
         <div class="post-meta">
@@ -138,8 +138,8 @@
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/虚拟化">
-            虚拟化
+        <a href="/categories/JVM">
+            JVM
         </a>
     </span>
     
@@ -150,16 +150,12 @@
         <span class="tags-meta">
             
                 
-                    <a href="/tags/VMware" title="VMware">
-                        VMware
+                    <a href="/tags/jvm" title="jvm">
+                        jvm
                     </a>
                 
-                    <a href="/tags/虚拟化" title="虚拟化">
-                        虚拟化
-                    </a>
-                
-                    <a href="/tags/vmtools" title="vmtools">
-                        vmtools
+                    <a href="/tags/虚拟机" title="虚拟机">
+                        虚拟机
                     </a>
                 
             
@@ -187,33 +183,47 @@
     </div>
     
     <div class="post-body post-content">
-        <h1 id="vmtools介绍"><a href="#vmtools介绍" class="headerlink" title="vmtools介绍"></a>vmtools介绍</h1><p>vmtools 安装后，可以让我们在windows下更好的管理vm虚拟机</p>
-<ul>
-<li>可以直接粘贴命令在windows 和centos系统之间</li>
-<li>可以设置windows和centos的共享文件夹<h2 id="示意图"><a href="#示意图" class="headerlink" title="示意图"></a>示意图</h2><img src="http://image.damienzhong.com/vmtools%E5%8A%9F%E8%83%BD.png" alt="image"><h1 id="安装vmtools的步骤"><a href="#安装vmtools的步骤" class="headerlink" title="安装vmtools的步骤"></a>安装vmtools的步骤</h1></li>
-</ul>
-<ol>
-<li>进入centos</li>
-<li>点击vm菜单的-&gt;install vmware tools</li>
-<li>centos会出现一个vm的安装包</li>
-<li>点击右键解压, 得到一个安装文件</li>
-<li>进入该vm解压的目录，该文件在/root/桌面/vmware-tools-distrib/下</li>
-<li>安装./vmware-install.pl</li>
-<li>全部使用默认设置即可</li>
-<li>需要reboot重新启动即可生效<h1 id="设置共享文件夹"><a href="#设置共享文件夹" class="headerlink" title="设置共享文件夹"></a>设置共享文件夹</h1></li>
+        <blockquote>
+<p> 注意：本文描述的内容是基于HotSpot虚拟机。</p>
+</blockquote>
+<h1 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h1><h2 id="对象创建流程图"><a href="#对象创建流程图" class="headerlink" title="对象创建流程图"></a>对象创建流程图</h2><p><img src="http://image.damienzhong.com/jvm%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E6%B5%81%E7%A8%8B%E5%9B%BE.JPG" alt="image"></p>
+<h2 id="对象创建流程"><a href="#对象创建流程" class="headerlink" title="对象创建流程"></a>对象创建流程</h2><ol>
+<li>虚拟机遇到一条new指令</li>
+<li>检查该指令参数在常量池中能否定位到对应类的符号引用</li>
+<li>检查该类是否被加载、解析和初始化，如果没有必须先执行加载过程</li>
+<li>虚拟机为新生对象分配内存</li>
+<li>虚拟机将分配到的内存空间都初始化为零值</li>
+<li>虚拟机对对象进行必要的设置（设置对象头）</li>
+<li>执行<init>方法，把对象按照程序员的意愿进行初始化<h1 id="对象的内存布局"><a href="#对象的内存布局" class="headerlink" title="对象的内存布局"></a>对象的内存布局</h1><blockquote>
+<p>在HotSpot虚拟机中，对象在内存中存储的布局可以分为三个区域：对象头(Header)、实例数据(Instance Data)和对齐填充(Padding)。</p>
+</blockquote>
+</init></li>
 </ol>
+<p><img src="http://image.damienzhong.com/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80%E5%9B%BE.JPG" alt="image"></p>
 <ul>
-<li>为了方便，可以设置一个共享文件夹，比如d:/share</li>
-<li>windows 和contos 就可以共享文件了，但是在实际公司开发中，文件的上传下载是需要使用远程方式完成的，</li>
-<li>远程方式登录，我们后面会具体讲解<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2></li>
-<li>菜单-&gt;vm-&gt;setting, 如图设置即可</li>
-<li>注意:设置选项为always enable ,</li>
-<li>这样可以读写了</li>
-<li>windows和centos可共享d:/share目录</li>
-<li>可以读写文件了</li>
-<li>在centos的/mnt/hgfs/ 下</li>
+<li>对象头包含两部分<ul>
+<li>第一部分存储对象自身的运行时数据，如HashCode、GC分代年龄、线程持有的锁等。</li>
+<li>第二部分是类型指针，即对象指向它的类元数据的指针。如果对象是数组，对象头必须又一块用于记录数组长度的数据。</li>
 </ul>
-<p><img src="http://image.damienzhong.com/vmtools%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt="image"></p>
+</li>
+<li>实例数部分（对象Body部分）<ul>
+<li>存储代码中所定义的各种类型的字段内容。</li>
+<li>无论子父类，都需要记录下路。</li>
+</ul>
+</li>
+<li>对齐填充<ul>
+<li>对齐填充不是必然存在的，也没有特别含义，仅仅起占位符的作用。</li>
+<li>对象的大小必须是8字节的整数倍，不足就通过对齐填充补充。<h1 id="对象的访问定位"><a href="#对象的访问定位" class="headerlink" title="对象的访问定位"></a>对象的访问定位</h1><blockquote>
+<p>目前主流的访问方式有<strong>使用句柄</strong>和<strong>直接指针</strong>两种。</p>
+</blockquote>
+<h2 id="使用句柄方式"><a href="#使用句柄方式" class="headerlink" title="使用句柄方式"></a>使用句柄方式</h2><img src="http://image.damienzhong.com/%E9%80%9A%E8%BF%87%E5%8F%A5%E6%9F%84%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%9B%BE.JPG" alt="image"></li>
+</ul>
+</li>
+</ul>
+<p>使用句柄访问的最大好处就是reference中存储的是稳定的句柄地址，在对象被移动时只会改变句柄中的实例数据指针，而reference本身不需要修改。</p>
+<h2 id="直接指针访问方式"><a href="#直接指针访问方式" class="headerlink" title="直接指针访问方式"></a>直接指针访问方式</h2><p><img src="http://image.damienzhong.com/%E9%80%9A%E8%BF%87%E7%9B%B4%E6%8E%A5%E6%8C%87%E9%92%88%E8%AE%BF%E9%97%AE%E5%AF%B9%E8%B1%A1%E5%9B%BE.JPG" alt="image"></p>
+<p>直接指针访问的方式的最大好处就是速度更快，它节省了一次指针定位的时间开销，由于对象的访问在Java中非常频繁，因此这类开销积少成多后也是一项非常可观的执行成本。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>虚拟机Sun HotSpot，它使用的是第二种方式进行对象访问的，但从整个软件开发的范围看，各种语言和框架使用句柄来访问的情况也十分常见。</p>
 
     </div>
     
@@ -247,15 +257,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/20/【玩转jvm系列】01-Java虚拟机的基本结构/" class="pre-post btn btn-default" title="【玩转jvm系列】01.Java虚拟机的基本结构">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">【玩转jvm系列】01.Java虚拟机的基本结构</span>
-        </a>
     
-    
-        <a href="/2018/11/20/VMware-Workstation-12安装教程（附下载地址与激活码）/" class="next-post btn btn-default" title="VMware Workstation 12安装教程（附下载地址与激活码）">
+        <a href="/2018/11/20/【玩转jvm系列】01-Java虚拟机的基本结构/" class="next-post btn btn-default" title="【玩转jvm系列】01.Java虚拟机的基本结构">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">VMware Workstation 12安装教程（附下载地址与激活码）</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">【玩转jvm系列】01.Java虚拟机的基本结构</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -290,7 +295,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vmtools介绍"><span class="toc-text">vmtools介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示意图"><span class="toc-text">示意图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装vmtools的步骤"><span class="toc-text">安装vmtools的步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置共享文件夹"><span class="toc-text">设置共享文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体步骤"><span class="toc-text">具体步骤</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#对象的创建"><span class="toc-text">对象的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对象创建流程图"><span class="toc-text">对象创建流程图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象创建流程"><span class="toc-text">对象创建流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对象的内存布局"><span class="toc-text">对象的内存布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#对象的访问定位"><span class="toc-text">对象的访问定位</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用句柄方式"><span class="toc-text">使用句柄方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接指针访问方式"><span class="toc-text">直接指针访问方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-text">小结</span></a></li></ol></li></ol>
         
     </div>
 </aside>
