@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【Linux教程学习笔记】03.VMware和Linux系统(CentOS)安装]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9103-VMware%E5%92%8CLinux%E7%B3%BB%E7%BB%9F-CentOS-%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[前言学习Linux需要一个环境，我们需要创建一个虚拟机，然后在虚拟机上安装一个Centos系统来学习 先安装virtual machine ,vm12 再安装Linux (CentOS 6.8) 原理示意图（VM和CentOS的关系）安装VMware 去BIOS里修改设置开启虚拟化设备支持（f2, f10） 安装虚拟机软件（vm12） 参考文章：VMware Workstation 12安装教程（附下载地址与激活码） CentOS安装下载地址 网易镜像：http://mirrors.163.com/centos/6/isos/ 搜狐镜像：http://mirrors.sohu.com/centos/6/isos创建虚拟机 新建虚拟机 新建虚拟机向导 创建虚拟空白光盘 安装Linux系统对应的CentOS版 虚拟机命名和定位磁盘位置 处理器配置，看自己是否是双核、多核 虚拟机处理器数量可以根据自己的机器配置来定，查看电脑的属性即可 设置内存为2GB 内存的大小要根据自己机器的内存来定，建议2G 网络设置NAT ==虚拟机的网络连接三种形式的说明==：123桥接网络：Linux可以和其它的系统通信。但是可能造成ip冲突NAT(网络地址转换方式): linux可以访问外网，不会造成ip冲突。主机模式：你的linux是一个独立的主机，不能访问外网 选择IO控制器类型 选择磁盘类型 123IDE: 老的磁盘类型SCSI: 服务器上推荐使用的磁盘类型，串口。SATA: 也是串口，也是新的磁盘类型。 新建虚拟磁盘 设置磁盘容量 设置磁盘文件存储位置 新建虚拟机向导配置完成 VM设置 加载ISO CentOS配置安装 启动虚拟机 初始化欢迎进入页面 回车选择第一个开始安装配置，此外，在Ctrl+Alt可以实现Windows主机和VM之间窗口的切换 是否对CD媒体进行测试，直接跳过Skip CentOS欢迎页面，直接点击Next 选择简体中文进行安装 选择语言键盘 选择存储设备 给计算机起名 选择时区 设置root密码 （一定记住） 硬盘分区-1 根分区新建 Boot swap分区设置 分区完成 程序引导，直接下一步 现在定制系统软件 Web环境 可扩展文件系统支持 基本系统（不要去勾选java平台，因为后面我们自己需要安装） 应用程序 开发、弹性存储、数据库、服务器可以都不勾，有需要，以后使用中有需要再手动安装 桌面,除了KDE，其他都选就可以了。 语言支持 系统管理、虚拟化、负载平衡器、高可用性可以都不选 完成配置，开始安装CentOS 等待安装完成，等待等待等待等待……20分钟左右 安装完成，重新引导 欢迎引导页面 许可证 创建用户，可以先不创建，用root账户登录就行 时间和日期 Kdump,去掉 重启后用root登录 配置可以上网 使用火狐连接网络，看看是否可以连通]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【Linux教程学习笔记】02.Linux入门知识]]></title>
     <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9102-Linux%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86%2F</url>
     <content type="text"><![CDATA[Linux的介绍 linux怎么读？ 里牛克斯、里尼克斯 ==linux是一个开源、免费的操作系统，其稳定性、安全性==、处理多并发已经得到业界的认可，目前很多企业级的项目都会部署到Linux/unix系统上。 常见的操作系统(win7、IOS、Android、Mac)Linux 吉祥物Linux的创始人Linux主要的发行版Ubuntu(乌班图)、RedHat(红帽)、CentOS、Debain[蝶变]、Fedora、SuSE、OpenSUSELinux和Unix的关系Unix是怎么来的Linux是怎么来的Linux和Unix的关系Linux和Windows比较]]></content>
