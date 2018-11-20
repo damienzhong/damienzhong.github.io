@@ -1,6 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【Linux教程学习笔记】21.RPM与YUM]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9121-RPM%E4%B8%8EYUM%2F</url>
+    <content type="text"><![CDATA[rpm包的管理介绍一种用于互联网下载包的打包及安装工具，它包含在某些Linux分发版中。它生成具有.RPM扩展名的文件。RPM是RedHat Package Manager（RedHat软件包管理工具）的缩写，类似windows的setup.exe，这一文件格式名称虽然打上了RedHat的标志，但理念是通用的。 Linux的分发版本都有采用（suse,redhat, centos 等等），可以算是公认的行业标准了。 rpm包的简单查询指令查询已安装的rpm列表rpm –qa|grep xx rpm包名基本格式 一个rpm包名：firefox-45.0.1-1.el6.centos.x86_64.rpm 名称:firefox 版本号：45.0.1-1 适用操作系统: el6.centos.x86_64 表示centos6.x的64位系统 如果是i686、i386表示32位系统，noarch表示通用。rpm包的其它查询指令 rpm -qa :查询所安装的所有rpm软件包 rpm -qa | more rpm -qa | grep X [rpm -qa | grep firefox ] rpm -q 软件包名:查询软件包是否安装 rpm -q firefox rpm -qi 软件包名：查询软件包信息 rpm -qi file rpm -ql 软件包名:查询软件包中的文件 rpm -ql firefox rpm -qf 文件全路径名查询文件所属的软件包 rpm -qf /etc/passwd rpm -qf /root/install.log卸载rpm包基本语法rpm -e RPM包的名称安装rpm包基本语法rpm -ivh RPM包全路径名称参数说明 i=install 安装 v=verbose 提示 h=hash 进度条yumYum 是一个Shell前端软件包管理器。基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包。yum的基本指令 查询yum服务器是否有需要安装的软件 yum list|grep xx软件列表 安装指定的yum包 yum install xxx 下载安装]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】20.Linux进程管理]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9120-Linux%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[进程管理基本介绍 在LINUX中，每个执行的程序（代码）都称为一个进程。每一个进程都分配一个ID号。 每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程。例如www服务器。 每个进程都可能以两种方式存在的。前台与后台，所谓前台进程就是用户目前的屏幕上可以进行操作的。后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行。 一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才才结束。显示系统执行的进程基本介绍ps命令是用来查看目前系统中，有哪些正在执行，以及它们执行的状况。可以不加任何参数. ps详解 指令：ps –aux|grep xxx ，比如我看看有没有sshd服务 指令说明 System V展示风格 USER：用户名称 PID：进程号 %CPU：进程占用CPU的百分比 %MEM：进程占用物理内存的百分比 VSZ：进程占用的虚拟内存大小（单位：KB） RSS：进程占用的物理内存大小（单位：KB） TT：终端名称,缩写. STAT：进程状态，其中S-睡眠，s-表示该进程是会话的先导进程，N-表示进程拥有比普通优先级更低的优先级，R-正在运行，D-短期等待，Z-僵死进程，T-被跟踪或者被停止等等 STARTED：进程的启动时间 TIME：CPU时间，即进程使用CPU的总时间 COMMAND：启动进程所用的命令和参数，如果过长会被截断显示应用实例要求：以全格式显示当前所有的进程，查看进程的父进程。 ps -ef是以全格式显示当前所有的进程 -e 显示所有进程。-f 全格式。 ps -ef|grep xxx 是BSD风格 UID：用户ID PID：进程ID PPID：父进程ID C：CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低；数值越小，表明进程是I/O密集型运算，执行优先级会提高 STIME：进程启动的时间 TTY：完整的终端名称 TIME：CPU时间 CMD：启动进程所用的命令和参数终止进程kill和killall介绍若是某个进程执行一半需要停止时，或是已消了很大的系统资源时，此时可以考虑停止该进程。使用kill命令来完成此项任务。基本语法 kill [选项] 进程号（功能描述：通过进程号杀死进程） killall 进程名称（功能描述：通过进程名称杀死进程，也支持通配符，这在系统因负载过大而变得很慢时很有用）常用选项-9 :表示强迫进程立即停止查看进程树pstree基本语法pstree [选项] ,可以更加直观的来看进程信息常用选项 -p :显示进程的PID -u :显示进程的所属用户服务(service)管理服务(service) 本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其它程序的请求，比如(mysql , sshd 防火墙等)，因此我们又称为守护进程，是Linux中非常重要的知识点。service管理指令 service 服务名[start | stop | restart | reload | status] 在CentOS7.0后不再使用service ,而是systemctl查看服务名 方式1：使用setup -&gt; 系统服务就可以看到。 方式2: /etc/init.d/服务名称服务的运行级别(runlevel)查看或者修改默认级别：vi /etc/inittab Linux系统有7种运行级别(runlevel)：常用的是级别3和5 运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动 运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆 运行级别2：多用户状态(没有NFS)，不支持网络 运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式 运行级别4：系统未使用，保留 运行级别5：X11控制台，登陆后进入图形GUI模式 运行级别6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动开机的流程说明chkconfig指令通过chkconfig 命令可以给每个服务的各个运行级别设置自启动/关闭基本语法1) 查看服务chkconfig –list|grep xxx2) chkconfig 服务名–list3) chkconfig –level 5 服务名on/off使用细节chkconfig重新设置服务后自启动或关闭，需要重启机器reboot才能生效.动态监控进程top与ps命令很相似。它们都用来显示正在执行的进程。Top与ps最大的不同之处，在于top在执行一段时间可以更新正在运行的的进程。基本语法top [选项]选项说明交互操作说明应用实例案例1.监视特定用户 top：输入此命令，按回车键，查看执行的进程。 u：然后输入“u”回车，再输入用户名，即可案例2：终止指定的进程。 top：输入此命令，按回车键，查看执行的进程。 k：然后输入“k”回车，再输入要结束的进程ID号查看系统网络情况netstat基本语法netstat [选项]选项说明 -an 按一定顺序排列输出 -p 显示哪个进程在调用检测主机连接命令ping是一种网络检测检测工具，它主要是用检测远程主机是否正常，或是两部主机间的介质是否为断、网线是否脱落或网卡故障。 如: ping 对方ip地址]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】19.Linux网络配置]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9119-Linux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[查看网络IP和网关查看虚拟网络编辑器 修改ip地址 查看网关 查看windows环境的中VMnet8网络配置(ipconfig指令) ping 测试主机之间网络连通性基本语法ping 目的主机（功能描述：测试当前服务器是否可以连接目的主机） 应用实例 测试当前服务器是否可以连接百度 ping www.baidu.comlinux网络环境配置第一种方法(自动获取)说明：登陆后，通过界面的来设置自动获取ip 特点：linux启动后会自动获取IP,缺点是每次自动获取的ip地址可能不一样。 第二种方法(指定固定的ip) 说明 直接修改配置文件来指定IP,并可以连接到外网(程序员推荐)，编辑vi /etc/sysconfig/network-scripts/ifcfg-eth0 要求：将ip地址配置的静态的，ip地址为192.168.184.130 ifcfg-eth0文件说明 DEVICE=eth0 #接口名（设备,网卡） HWADDR=00:0C:2x:6x:0x:xx #MAC地址 TYPE=Ethernet #网络类型（通常是Ethemet） UUID=926a57ba-92c6-4231-bacb-f27e5e6a9f44 #随机id #系统启动的时候网络接口是否有效（yes/no） ONBOOT=yes IP的配置方法[none|static|bootp|dhcp]（引导时不使用协议|静态分配IP|BOOTP协议|DHCP协议） BOOTPROTO=static #IP地址 IPADDR=192.168.184.130 #网关 GATEWAY=192.168.184.2 #域名解析器 DNS1=192.168.184.2 重启网络服务或者重启系统生效 service network restart 、reboot]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】18.Linux网络配置]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9118-Linux%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E3%80%81%E6%8C%82%E8%BD%BD%2F</url>
+    <content type="text"><![CDATA[分区基础知识mbr分区 最多支持四个主分区 系统只能安装在主分区 扩展分区要占一个主分区 MBR最大只支持2TB，但拥有最好的兼容性gtp分区 支持无限多个主分区（但操作系统可能限制，比如windows下最多128个分区） 最大支持18EB的大容量（1EB=1024 PB，1PB=1024 TB ） windows7 64位以后支持gtpwindows下的磁盘分区Linux分区原理介绍 Linux来说无论有几个分区，分给哪一目录使用，它归根结底就只有一个根目录，一个独立且唯一的文件结构, Linux中每个分区都是用来组成整个文件系统的一部分。 Linux采用了一种叫“载入”的处理方法，它的整个文件系统中包含了一整套的文件和目录，且将一个分区和一个目录联系起来。这时要载入的一个分区将使它的存储空间在一个目录下获得。硬盘说明 Linux硬盘分IDE硬盘和SCSI硬盘，目前基本上是SCSI硬盘 对于IDE硬盘，驱动器标识符为“hdx~”,其中“hd”表明分区所在设备的类型，这里是指IDE硬盘了。“x”为盘号（a为基本盘，b为基本从属盘，c为辅助主盘，d为辅助从属盘）,“~”代表分区，前四个分区用数字1到4表示，它们是主分区或扩展分区，从5开始就是逻辑分区。例，hda3表示为第一个IDE硬盘上的第三个主分区或扩展分区,hdb2表示为第二个IDE硬盘上的第二个主分区或扩展分区。 对于SCSI硬盘则标识为“sdx~”，SCSI硬盘是用“sd”来表示分区所在设备的类型的，其余则和IDE硬盘的表示方法一样。查看所有设备挂载情况命令：lsblk 或者lsblk -f 挂载的经典案例说明下面我们以增加一块硬盘为例来熟悉下磁盘的相关指令和深入理解磁盘分区、挂载、卸载的概念。 如何增加一块硬盘 虚拟机添加硬盘 分区 格式化 挂载 设置可以自动挂载。虚拟机增加硬盘步骤1在【虚拟机】菜单中，选择【设置】，然后设备列表里添加硬盘，然后一路【下一步】，中间只有选择磁盘大小的地方需要修改，至到完成。然后重启系统（才能识别）！ 虚拟机增加硬盘步骤2 分区命令fdisk /dev/sdb 开始对/sdb分区 m 显示命令列表 p 显示磁盘分区同fdisk –l n 新增分区 d 删除分区 w 写入并退出 说明：开始分区后输入n，新增分区，然后选择p ，分区类型为主分区。两次回车默认剩余全部空间。最后输入w写入分区并退出，若不保存退出输入q。 虚拟机增加硬盘步骤3 格式化磁盘 分区命令:mkfs -t ext4 /dev/sdb1 其中ext4是分区类型虚拟机增加硬盘步骤4挂载: 将一个分区与一个目录联系起来 mount 设备名称挂载目录 例如：mount /dev/sdb1 /newdisk umount设备名称或者挂载目录 例如：umount/dev/sdb1 或者umount/newdisk ==用命令行挂载重启后会失效==虚拟机增加硬盘步骤5 永久挂载: 通过修改/etc/fstab实现挂载 添加完成后执行mount –a 即刻生效磁盘情况查询基本语法df -h查询指定目录的磁盘占用情况基本语法du -h /目录 查询指定目录的磁盘占用情况，默认为当前目录 -s指定目录占用大小汇总 -h 带计量单位 -a 含文件 –max-depth=1 子目录深度 -c 列出明细的同时，增加汇总值]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】17.Linux定时任务调度]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9117-Linux%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[crond 任务调度crontab 进行定时任务的设置。 概述任务调度是指系统在某个时间执行的特定的命令或程序。 任务调度分类 系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等 个别用户工作：个别用户可能希望执行某些程序，比如对mysql数据库的备份。基本语法crontab [选项]常用选项快速入门 设置任务调度文件：/etc/crontab 设置个人任务调度。执行crontab –e命令。 接着输入任务到调度文件如：/1 * ls –l /etc/ &gt; /tmp/to.txt 意思说每小时的每分钟执行ls –l /etc/ &gt; /tmp/to.txt命令参数细节说明5个占位符的说明特殊符号的说明特定时间执行任务案例crond 相关指令 crontab –r：终止任务调度。 crontab –l：列出当前有那些任务调度 service crond restart [重启任务调度]]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】16.Linux权限管理]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9116-Linux%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[权限的基本介绍ls -l 中显示的内容如下：-rwxrw-r–1 root root 1213 Feb 2 09:39 abc 0-9位说明1) 第0位确定文件类型(d, -, l , c , b)2) 第1-3位确定所有者（该文件的所有者）拥有该文件的权限。—User3) 第4-6位确定所属组（同用户组的）拥有该文件的权限，—Group4) 第7-9位确定其他用户拥有该文件的权限—Other rwx权限详解rwx作用到文件1) [ r ]代表可读(read): 可以读取,查看2) [ w ]代表可写(write): 可以修改,但是不代表可以删除该文件,删除一个文件的前提条件是对该文件所在的目录有写权限，才能删除该文件.3) [ x ]代表可执行(execute):可以被执行 rwx作用到目录1) [ r ]代表可读(read): 可以读取，ls查看目录内容2) [ w ]代表可写(write): 可以修改,目录内创建+删除+重命名目录3) [ x ]代表可执行(execute):可以进入该目录 文件及目录权限实际案例ls -l 中显示的内容如下：-rwxrw-r–1 root root 1213 Feb 2 09:39 abc 10个字符确定不同用户能对文件干什么 第一个字符代表文件类型：文件(-),目录(d),链接(l) 其余字符每3个一组(rwx) 读(r) 写(w) 执行(x) 第一组rwx : 文件拥有者的权限是读、写和执行 第二组rw-: 与文件拥有者同一组的用户的权限是读、写但不能执行 第三组r–: 不与文件拥有者同组的其他用户的权限是读不能写和执行可用数字表示为: r=4,w=2,x=1 因此rwx=4+2+1=7 1 文件：硬连接数或目录：子目录数 root 用户 root 组 1213 文件大小(字节)，如果是文件夹，显示4096字节 Feb 2 09:39 最后修改日期 abc 文件名修改权限-chmod基本说明通过chmod指令，可以修改文件或者目录的权限。 第一种方式：+ 、-、= 变更权限u:所有者g:所有组o:其他人a:所有人(u、g、o的总和)1) chmod u=rwx,g=rx,o=x 文件目录名2) chmod o+w 文件目录名3) chmod a-x 文件目录名 第二种方式：通过数字变更权限 r=4 w=2 x=1 rwx=4+2+1=7 chmod u=rwx,g=rx,o=x 文件目录名 相当于chmod 751 文件目录名修改文件所有者-chown基本介绍 chown newowner file 改变文件的所有者 chown newowner:newgroup file 改变用户的所有者和所有组 -R 如果是目录则使其下所有子文件或目录递归生效修改文件所在组-chgrp基本介绍chgrp newgroup file 改变文件的所有组]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】15.Linux组管理]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9115-Linux%E7%BB%84%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[基本介绍在linux中的每个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其它组的概念。1) 所有者2) 所在组3) 其它组4) 改变用户所在的组 文件/目录所有者一般为文件的创建者,谁创建了该文件，就自然的成为该文件的所有者。 查看文件的所有者指令：ls –ahl 修改文件所有者指令：chown 用户名文件名 组的创建基本指令groupadd 组名 文件/目录所在组当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组。 查看文件/目录所在组基本指令ls –ahl 修改文件所在的组基本指令chgrp 组名文件名 其它组除文件的所有者和所在组的用户外，系统的其它用户都是文件的其它组。 改变用户所在组在添加用户时，可以指定将该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在的组。 改变用户所在组1) usermod –g 组名用户名2) usermod –d 目录名用户名改变该用户登陆的初始目录。]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】14.Linux压缩与解压指令]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9114-Linux%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[gzip/gunzip 指令gzip 用于压缩文件，gunzip 用于解压的 基本语法 gzip 文件（功能描述：压缩文件，只能将文件压缩为*.gz文件） gunzip 文件.gz（功能描述：解压缩文件命令）细节说明当我们使用gzip对文件进行压缩后，不会保留原来的文件。zip/unzip 指令zip 用于压缩文件，unzip 用于解压的，这个在项目打包发布中很有用的基本语法 zip [选项] XXX.zip 将要压缩的内容（功能描述：压缩文件和目录的命令） unzip [选项] XXX.zip（功能描述：解压缩文件）zip常用选项-r：递归压缩，即压缩目录unzip的常用选项-d&lt;目录&gt; ：指定解压后文件的存放目录tar 指令tar 指令是打包指令，最后打包后的文件是.tar.gz 的文件。基本语法tar [选项] XXX.tar.gz 打包的内容(功能描述：打包目录，压缩后的文件格式.tar.gz)选项说明]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】13.Linux实用搜索查找类指令]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9113-Linux%E5%AE%9E%E7%94%A8%E6%90%9C%E7%B4%A2%E6%9F%A5%E6%89%BE%E7%B1%BB%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[find指令find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或者目录显示在终端。 基本语法find [搜索范围] [选项] 选项说明 locate指令locaate指令可以快速定位文件路径。locate指令利用事先建立的系统中所有文件名称及路径的locate数据库实现快速定位给定的文件。Locate指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须定期更新locate时刻。 基本语法locate 搜索文件 特别说明由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库。 grep指令和管道符号|grep 过滤查找，管道符，“|”，表示将前一个命令的处理结果输出传递给后面的命令处理。 基本语法grep [选项]查找内容源文件 常用选项]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】12.Linux实用时间日期类指令]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9112-Linux%E5%AE%9E%E7%94%A8%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[date指令-显示当前日期基本语法 date（功能描述：显示当前时间） date +%Y（功能描述：显示当前年份） date +%m（功能描述：显示当前月份） date +%d（功能描述：显示当前是哪一天） date “+%Y-%m-%d %H:%M:%S”（功能描述：显示年月日时分秒）date指令-设置日期基本语法date -s 字符串时间cal指令查看日历指令基本语法cal [选项]（功能描述：不加选项，显示本月日历）]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】11.Linux实用文件目录类指令]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9111-Linux%E5%AE%9E%E7%94%A8%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[pwd 指令基本语法pwd(功能描述：显示当前工作目录的绝对路径) ls指令基本语法ls [选项] [目录或是文件] 常用选项 -a ：显示当前目录所有的文件和目录，包括隐藏的。 -l ：以列表的方式显示信息cd 指令基本语法cd [参数] (功能描述：切换到指定目录)常用参数 绝对路径和相对路径 cd ~ 或者cd ：回到自己的家目录 cd .. 回到当前目录的上一级目录mkdir指令mkdir指令用于创建目录基本语法mkdir [选项] 要创建的目录常用选项-p 创建多级目录rmdir指令rmdir指令删除空目录基本语法rmdir [选项] 要删除的空目录使用细节 rmdir 删除的是空目录，如果目录下有内容时无法删除的。 提示：如果需要删除非空目录，需要使用rm -rf 要删除的目录touch指令touch指令创建空文件基本语法touch 文件名称cp指令cp 指令拷贝文件到指定目录基本语法cp [选项] 源文件路径 目标路径常用选项-r ：递归复制整个文件夹使用细节强制覆盖不提示的方法：\cprm指令rm 指令移除文件或目录基本语法rm [选项] 要删除的文件或目录常用选项-r ：递归删除整个文件夹-f ：强制删除不提示使用细节强制删除不提示的方法：带上-f 参数即可mv指令mv 移动文件与目录或重命名基本语法 mv oldNameFile newNameFile (功能描述：重命名) mv /temp/movefile /targetFolder (功能描述：移动文件)cat指令cat 查看文件内容基本语法cat [选项] 要查看的文件常用选项-n ：显示行号使用细节cat 只能浏览文件，而不能修改文件，为了浏览方便，一般会带上管道命令| moremore指令more指令是一个基于VI编辑器的文本过滤器，它以全屏幕的方式按页显示文本文件的内容。more指令中内置了若干快捷键，详见操作说明基本语法more 要查看的文件操作说明less指令less指令用来分屏查看文件内容，它的功能与more指令类似，但是比more指令更加强大，支持各种显示终端。less指令在显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，对于显示大型文件具有较高的效率。基本语法less 要查看的文件操作说明echo指令echo输出内容到控制台。基本语法echo [选项] [输出内容]head指令head用于显示文件的开头部分内容，默认情况下head指令显示文件的前10行内容基本语法 head 文件(功能描述：查看文件头10行内容) head -n 5 文件(功能描述：查看文件头5行内容，5可以是任意行数)tail指令tail用于输出文件中尾部的内容，默认情况下tail指令显示文件的前10行内容。基本语法 tail 文件（功能描述：查看文件头10行内容） tail -n 5 文件（功能描述：查看文件头5行内容，5可以是任意行数） tail -f 文件（功能描述：实时追踪该文档的所有更新）&gt; 指令和&gt;&gt; 指令 输出重定向和&gt;&gt; 追加 基本语法 ls -l &gt;文件（功能描述：列表的内容写入文件a.txt中（覆盖写）） ls -al &gt;&gt;文件（功能描述：列表的内容追加到文件aa.txt的末尾） cat 文件1 &gt; 文件2（功能描述：将文件1的内容覆盖到文件2） echo “内容”&gt;&gt; 文件ln 指令软链接也成为符号链接，类似于windows里的快捷方式，主要存放了链接其他文件的路径基本语法ln -s [原文件或目录] [软链接名] （功能描述：给原文件创建一个软链接）细节说明当我们使用pwd指令查看目录时，仍然看到的是软链接所在目录。history指令查看已经执行过历史命令,也可以执行历史指令基本语法history（功能描述：查看已经执行过历史命令）]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】10.Linux帮助指令]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9110-Linux%E5%B8%AE%E5%8A%A9%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[帮助指令介绍当我们对某个指令不熟悉时，我们可以使用Linux提供的帮助指令来了解这个指令的使用方法。 man 获得帮助信息基本语法man [命令或配置文件]（功能描述：获得帮助信息） 应用实例man ls help指令基本语法help命令（功能描述：获得shell内置命令的帮助信息） 应用实例help cd 总结虽然上面两个都可以来获取指令帮助，但是需要英语功底，如果英语不太好的，我还是推荐大家直接百度靠谱。]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】09.Linux指定运行级别和找回root密码]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9109-Linux%E6%8C%87%E5%AE%9A%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%E5%92%8C%E6%89%BE%E5%9B%9Eroot%E5%AF%86%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[指定运行级别基本介绍运行级别说明： 0 ：关机 1 ：单用户【找回丢失密码】 2：多用户状态没有网络服务 3：多用户状态有网络服务 4：系统未使用保留给用户 5：图形界面 6：系统重启 常用运行级别是3和5 ，要修改默认的运行级别可改文件 /etc/inittab的id:5:initdefault:这一行中的数字 运行级别示意图 切换到指定运行级别基本语法init [012356] 应用实例 案例1：通过init 来切换不同的运行级别，比如5-3 ，然后关机。 init 3 –&gt; init 0找回root密码假设我们的root密码忘记了，请问如何找回密码？思路直接进入到单用户模式，然后修改root密码。因为进入单用户模式，root不需要密码就可以登录。操作步骤开机-&gt;在引导时输入 回车键-&gt;看到一个界面输入 e-&gt;看到一个新的界面，选中第二行（编辑内核），再输入e-&gt;在这行最后输入 1，在输入回车键-&gt;再次输入b，这时候就会进入单用户模式。使用passwd指令来修改root密码。]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】08.Linux用户管理]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9108-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%2F</url>
+    <content type="text"><![CDATA[基本介绍用户管理示意图 说明 Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。 Linux的用户需要至少要属于一个组添加用户基本语法useradd [选项] 用户名实际案例添加一个用户xm。 特别说明cd 表示change directory，切换目录 细节说明 当创建用户成功后，会自动的创建和用户同名的家目录 也可以通过useradd -d 指定目录新的用户名，给新创建的用户指定家目录 给用户指定或修改密码基本语法passwd 用户名 应用案例给xm指定密码 删除用户基本语法userdel 用户名 应用案例 删除用户xm，但是要保留家目录 userdel 用户名 删除用户以及用户主目录 userdel -r 用户名注意事项在删除用户时，我们一般不会将家目录删除查询用户信息基本语法id 用户名应用实例请查询root 信息 细节说明当用户不存在时，返回无此用户 切换用户介绍在操作Linux中，如果当前用户的权限不够，可以通过su -指令，切换到高权限用户，比如root 基本语法su –切换用户名 应用实例创建一个用户zf, ，指定密码，然后切换到zf. 细节说明 从权限高的用户切换到权限低的用户，不需要输入密码，反之需要。 当需要返回到原来用户时，使用exit指令查看当前用户/登录用户基本语法 whoami who am I用户组介绍类似于角色，系统可以对有共性的多个用户进行统一的管理。新增组groupadd 组名删除组groupdel 组名增加用户时直接加上组useradd –g 用户组 用户名操作演示增加一个用户zwj, 直接将他指定到wudang 修改用户的组usermod –g 用户组 用户名 案例演示 用户和组的相关文件/etc/passwd 文件 用户（user）的配置文件，记录用户的各种信息 每行的含义：用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell /etc/shadow 文件 口令的配置文件 每行的含义：登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志/etc/group 文件 组(group)的配置文件，记录Linux包含的组的信息 每行含义：组名:口令:组标识号:组内用户列表]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】07.Linux开机、重启和用户登录注销]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9107-Linux%E5%BC%80%E6%9C%BA%E3%80%81%E9%87%8D%E5%90%AF%E5%92%8C%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%B3%A8%E9%94%80%2F</url>
+    <content type="text"><![CDATA[关机&amp;重启命令基本介绍 shutdown –h now 立该进行关机 shudown -h 1 “hello, 1 分钟后会关机了” shutdown –r now 现在重新启动计算机 halt关机，作用和上面一样. reboot 现在重新启动计算机 sync 把内存的数据同步到磁盘.注意细节不管是重启系统还是关闭系统，首先要运行sync命令，把内存中的数据写到磁盘中用户登录和注销基本介绍 登录时尽量少用root帐号登录，因为它是系统管理员，最大的权限，避免操作失误。可以利用普通用户登录，登录后再用”su -用户名’命令来切换成系统管理员身份. 在提示符下输入logout即可注销用户使用细节 logout 注销指令在图形运行级别无效，在运行级别3下有效. 运行级别这个概念，后面给大家介绍]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【Linux教程学习笔记】06.vi和vim编辑器]]></title>
+    <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9106-vi%E5%92%8Cvim%E7%BC%96%E8%BE%91%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[vi和vim的基本介绍 所有的Linux 系统都会内建vi 文本编辑器。 Vim 具有程序编辑的能力，可以看做是Vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。vi和vim常用的三种模式 正常模式 以vim 打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，你可以使用『上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容，也可以使用『复制、贴上』来处理你的文件数据. 插入模式 按下i, I, o, O, a, A, r, R等任何一个字母之后才会进入编辑模式, 一般来说按i即可. 命令行模式 在这个模式当中，可以提供你相关指令，完成读取、存盘、替换、离开vim 、显示行号等的动作则是在此模式中达成的.vi和vim三种模式的相互转化图快捷键基本使用1) 拷贝当前行yy , 拷贝当前行向下的5行5yy，并粘贴。2) 删除当前行dd , 删除当前行向下的5行5dd3) 在文件中查找某个单词[命令行下/关键字，回车查找, 输入n 就是查找下一个]4) 设置文件的行号，取消文件的行号.[命令行下: set nu 和:set nonu]5) 编辑/etc/profile 文件，使用快捷键到底文档的最末行[G]和最首行[gg]6) 在一个文件中输入”hello” ,然后又撤销这个动作u7) 编辑/etc/profile 文件，并将光标移动到20行shift+g8) 更多命令请查看vi与vim命令大全vi与vim的快捷键键盘一览图]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[【Linux教程学习笔记】05.远程登录到Linux服务器]]></title>
     <url>%2F2018%2F11%2F20%2F%E3%80%90Linux%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%9105-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E5%88%B0Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
     <content type="text"><![CDATA[为什么需要远程登录Linux 说明: 公司开发时候，具体的情况是这样的 linux服务器是开发小组共享的. 正式上线的项目是运行在公网的. 因此程序员需要远程登录到centos进行项目管理或者开发. 网络拓扑示意图 远程登录客户端有Xshell5，Xftp5 ,其它的远程工具大同小异.远程登录Linux-Xshell5 Xshell 是目前最好的远程登录到Linux操作的软件，流畅的速度并且完美解决了中文乱码的问题，是目前程序员首选的软件。 Xshell[1]是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。 Xshell可以在Windows界面下用来访问远端不同系统下的服务器，从而比较好的达到远程控制终端的目的。 特别说明：如果希望安装好XShell5就可以远程访问Linux系统的话，需要有一个前提，就是Linux启用了SSHD服务，该服务会监听22号端口。 安装过程基本上是下一步，不再讲述。 XShell5的关键配置 远程上传下载文件Xftp5是一个基于windows平台的功能强大的SFTP、FTP文件传输软件。使用了Xftp 以后，windows 用户能安全地在UNIX/Linux和Windows PC 之间传输文件。 Xftp5的配置和使用连接成功的界面如下： Xftp5中文乱码问题解决方案 按照上图配置之后，只要刷新一下即可解决]]></content>

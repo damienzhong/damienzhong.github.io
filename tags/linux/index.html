@@ -145,7 +145,7 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【Linux教程学习笔记】05-远程登录到Linux服务器/">【Linux教程学习笔记】05.远程登录到Linux服务器</a>
+                    <a href="/2018/11/20/【Linux教程学习笔记】21-RPM与YUM/">【Linux教程学习笔记】21.RPM与YUM</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -155,18 +155,7 @@
             </div>
             <p class="brief">
                 
-                    为什么需要远程登录Linux
-说明: 公司开发时候，具体的情况是这样的
-
-linux服务器是开发小组共享的.
-正式上线的项目是运行在公网的.
-因此程序员需要远程登录到centos进行项目管理或者开发.
-网络拓扑示意图
-
-
-
-
-远程登录...
+                    rpm包的管理介绍一种用于互联网下载包的打包及安装工具，它包含在某些Linux分发版中。它生成具有.RPM扩展名的文件。RPM是RedHat Package Manager（RedHat软件包管理工具）的缩写，类似windows的se...
                 
             </p>
         </div>
@@ -177,7 +166,7 @@ linux服务器是开发小组共享的.
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【Linux教程学习笔记】04-Linux目录结构/">【Linux教程学习笔记】04.Linux目录结构</a>
+                    <a href="/2018/11/20/【Linux教程学习笔记】20-Linux进程管理/">【Linux教程学习笔记】20.Linux进程管理</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -187,13 +176,10 @@ linux服务器是开发小组共享的.
             </div>
             <p class="brief">
                 
-                    基本介绍linux的文件系统是采用级层式的树状目录结构，在此结构中的最上层是根目录“/”，然后在此目录下再创建其他的目录。
-
-记住一句经典的话：==在Linux世界里，一切皆文件==。
-
-具体的目录结构
-
-/bin [重点] (/us...
+                    进程管理基本介绍
+在LINUX中，每个执行的程序（代码）都称为一个进程。每一个进程都分配一个ID号。
+每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程。例如www服务器。
+每个进程都可能以两种方式存在的。前台与后台，所谓...
                 
             </p>
         </div>
@@ -204,7 +190,7 @@ linux服务器是开发小组共享的.
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【Linux教程学习笔记】03-VMware和Linux系统-CentOS-安装/">【Linux教程学习笔记】03.VMware和Linux系统(CentOS)安装</a>
+                    <a href="/2018/11/20/【Linux教程学习笔记】19-Linux网络配置/">【Linux教程学习笔记】19.Linux网络配置</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -214,11 +200,11 @@ linux服务器是开发小组共享的.
             </div>
             <p class="brief">
                 
-                    前言学习Linux需要一个环境，我们需要创建一个虚拟机，然后在虚拟机上安装一个Centos系统来学习
-
-先安装virtual machine ,vm12
-再安装Linux (CentOS 6.8)
-原理示意图（VM和CentOS的关系...
+                    查看网络IP和网关查看虚拟网络编辑器
+修改ip地址
+查看网关
+查看windows环境的中VMnet8网络配置(ipconfig指令)
+ping 测试主机之间网络连通性基本语法ping 目的主机（功能描述：测试当前服务器是否可以连接目的...
                 
             </p>
         </div>
@@ -229,7 +215,7 @@ linux服务器是开发小组共享的.
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【Linux教程学习笔记】02-Linux入门知识/">【Linux教程学习笔记】02.Linux入门知识</a>
+                    <a href="/2018/11/20/【Linux教程学习笔记】18-Linux磁盘分区、挂载/">【Linux教程学习笔记】18.Linux网络配置</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -239,13 +225,13 @@ linux服务器是开发小组共享的.
             </div>
             <p class="brief">
                 
-                    Linux的介绍
-linux怎么读？
-里牛克斯、里尼克斯
-
-
-==linux是一个开源、免费的操作系统，其稳定性、安全性==、处理多并发已经得到业界的认可，目前很多企业级的项目都会部署到Linux/unix系统上。
-常见的操作系统(w...
+                    分区基础知识mbr分区
+最多支持四个主分区
+系统只能安装在主分区
+扩展分区要占一个主分区
+MBR最大只支持2TB，但拥有最好的兼容性gtp分区
+支持无限多个主分区（但操作系统可能限制，比如windows下最多128个分区）
+最大支持1...
                 
             </p>
         </div>
@@ -256,7 +242,7 @@ linux怎么读？
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【Linux教程学习笔记】01-Linux学习方法路线/">【Linux教程学习笔记】01.Linux学习方法路线</a>
+                    <a href="/2018/11/20/【Linux教程学习笔记】17-Linux定时任务调度/">【Linux教程学习笔记】17.Linux定时任务调度</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -266,19 +252,141 @@ linux怎么读？
             </div>
             <p class="brief">
                 
-                    Linux课程内容介绍
-Linux学习方向
-Linux运维工程师
-Linux嵌入式开发工程师
-在Linux做各种程序开发Linux的应用领域
-个人桌面应用领域
-此领域是传统Linux应用最薄弱的环节，传统Linux由于界面简单、操作复...
+                    crond 任务调度crontab 进行定时任务的设置。
+概述任务调度是指系统在某个时间执行的特定的命令或程序。
+任务调度分类
+系统工作：有些重要的工作必须周而复始地执行。如病毒扫描等
+个别用户工作：个别用户可能希望执行某些程序，比如...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【Linux教程学习笔记】16-Linux权限管理/">【Linux教程学习笔记】16.Linux权限管理</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    权限的基本介绍ls -l 中显示的内容如下：-rwxrw-r–1 root root 1213 Feb 2 09:39 abc
+0-9位说明1) 第0位确定文件类型(d, -, l , c , b)2) 第1-3位确定所有者（该文件的...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【Linux教程学习笔记】15-Linux组管理/">【Linux教程学习笔记】15.Linux组管理</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    基本介绍在linux中的每个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其它组的概念。1) 所有者2) 所在组3) 其它组4) 改变用户所在的组
+文件/目录所有者一般为文件的创建者,谁创建了该文件，就自...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【Linux教程学习笔记】14-Linux压缩与解压指令/">【Linux教程学习笔记】14.Linux压缩与解压指令</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    gzip/gunzip 指令gzip 用于压缩文件，gunzip 用于解压的
+基本语法
+gzip 文件（功能描述：压缩文件，只能将文件压缩为*.gz文件）
+gunzip 文件.gz（功能描述：解压缩文件命令）细节说明当我们使用gzip...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【Linux教程学习笔记】13-Linux实用搜索查找类指令/">【Linux教程学习笔记】13.Linux实用搜索查找类指令</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    find指令find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或者目录显示在终端。
+基本语法find [搜索范围] [选项]
+选项说明
+locate指令locaate指令可以快速定位文件路径。locate指令利用事先...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【Linux教程学习笔记】12-Linux实用时间日期类指令/">【Linux教程学习笔记】12.Linux实用时间日期类指令</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    date指令-显示当前日期基本语法
+date（功能描述：显示当前时间）
+date +%Y（功能描述：显示当前年份）
+date +%m（功能描述：显示当前月份）
+date +%d（功能描述：显示当前是哪一天）
+date “+%Y-%m-...
                 
             </p>
         </div>
     </article>
  
 
+
+    <nav class="pagination" role="navigation">
+        <div id="page-nav">
+            <span class="page-number current">1</span><a class="page-number" href="/tags/linux/page/2/">2</a><a class="page-number" href="/tags/linux/page/3/">3</a><a class="extend next" rel="next" href="/tags/linux/page/2/"><i class="fa fa-angle-right"></i></a>
+        </div>
+    </nav>
 
 
 
@@ -366,7 +474,7 @@ Linux嵌入式开发工程师
         
     <div class="widget">
         <h3 class="title">Categories</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/"><i class="fa" aria-hidden="true">JVM</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/"><i class="fa" aria-hidden="true">blog</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javase/"><i class="fa" aria-hidden="true">javase</i></a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/"><i class="fa" aria-hidden="true">操作系统</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/"><i class="fa" aria-hidden="true">虚拟化</i></a><span class="category-list-count">2</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/"><i class="fa" aria-hidden="true">JVM</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/"><i class="fa" aria-hidden="true">blog</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javase/"><i class="fa" aria-hidden="true">javase</i></a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/"><i class="fa" aria-hidden="true">操作系统</i></a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/"><i class="fa" aria-hidden="true">虚拟化</i></a><span class="category-list-count">2</span></li></ul>
     </div>
 
 
@@ -374,7 +482,7 @@ Linux嵌入式开发工程师
         
     <div class="widget">
         <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">2018年11月</i></a><span class="archive-list-count">55</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">2018年11月</i></a><span class="archive-list-count">71</span></li></ul>
     </div>
 
 
@@ -384,7 +492,7 @@ Linux嵌入式开发工程师
     <h3 class="title">Tag Cloud</h3>
     <div class="content tag-cloud">
         
-            <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/VMware/" style="font-size: 12.5px;">VMware</a> <a href="/tags/javase/" style="font-size: 20px;">javase</a> <a href="/tags/jvm/" style="font-size: 12.5px;">jvm</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/vmtools/" style="font-size: 10px;">vmtools</a> <a href="/tags/博客搭建/" style="font-size: 17.5px;">博客搭建</a> <a href="/tags/虚拟化/" style="font-size: 12.5px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12.5px;">虚拟机</a>
+            <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/VMware/" style="font-size: 12px;">VMware</a> <a href="/tags/javase/" style="font-size: 20px;">javase</a> <a href="/tags/jvm/" style="font-size: 12px;">jvm</a> <a href="/tags/linux/" style="font-size: 18px;">linux</a> <a href="/tags/vmtools/" style="font-size: 10px;">vmtools</a> <a href="/tags/博客搭建/" style="font-size: 16px;">博客搭建</a> <a href="/tags/虚拟化/" style="font-size: 12px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12px;">虚拟机</a>
         
     </div>
   </div>

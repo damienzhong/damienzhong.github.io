@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【Linux教程学习笔记】16.Linux权限管理 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【Linux教程学习笔记】16.Linux权限管理">
+            
+	            【Linux教程学习笔记】16.Linux权限管理
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/操作系统">
+            操作系统
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/linux" title="linux">
+                        linux
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="权限的基本介绍"><a href="#权限的基本介绍" class="headerlink" title="权限的基本介绍"></a>权限的基本介绍</h1><p>ls -l 中显示的内容如下：<br>-rwxrw-r–1 root root 1213 Feb 2 09:39 abc</p>
+<h3 id="0-9位说明"><a href="#0-9位说明" class="headerlink" title="0-9位说明"></a>0-9位说明</h3><p>1) 第0位确定文件类型(d, -, l , c , b)<br>2) 第1-3位确定所有者（该文件的所有者）拥有该文件的权限。—User<br>3) 第4-6位确定所属组（同用户组的）拥有该文件的权限，—Group<br>4) 第7-9位确定其他用户拥有该文件的权限—Other</p>
+<h2 id="rwx权限详解"><a href="#rwx权限详解" class="headerlink" title="rwx权限详解"></a>rwx权限详解</h2><h3 id="rwx作用到文件"><a href="#rwx作用到文件" class="headerlink" title="rwx作用到文件"></a>rwx作用到文件</h3><p>1) [ r ]代表可读(read): 可以读取,查看<br>2) [ w ]代表可写(write): 可以修改,但是不代表可以删除该文件,删除一个文件的前提条件是对该文件所在的目录有写权限，才能删除该文件.<br>3) [ x ]代表可执行(execute):可以被执行</p>
+<h3 id="rwx作用到目录"><a href="#rwx作用到目录" class="headerlink" title="rwx作用到目录"></a>rwx作用到目录</h3><p>1) [ r ]代表可读(read): 可以读取，ls查看目录内容<br>2) [ w ]代表可写(write): 可以修改,目录内创建+删除+重命名目录<br>3) [ x ]代表可执行(execute):可以进入该目录</p>
+<h2 id="文件及目录权限实际案例"><a href="#文件及目录权限实际案例" class="headerlink" title="文件及目录权限实际案例"></a>文件及目录权限实际案例</h2><p>ls -l 中显示的内容如下：<br>-rwxrw-r–1 root root 1213 Feb 2 09:39 abc</p>
+<h4 id="10个字符确定不同用户能对文件干什么"><a href="#10个字符确定不同用户能对文件干什么" class="headerlink" title="10个字符确定不同用户能对文件干什么"></a>10个字符确定不同用户能对文件干什么</h4><ul>
+<li>第一个字符代表文件类型：文件(-),目录(d),链接(l)</li>
+<li>其余字符每3个一组(rwx) 读(r) 写(w) 执行(x)</li>
+<li>第一组rwx : 文件拥有者的权限是读、写和执行</li>
+<li>第二组rw-: 与文件拥有者同一组的用户的权限是读、写但不能执行</li>
+<li>第三组r–: 不与文件拥有者同组的其他用户的权限是读不能写和执行<h5 id="可用数字表示为-r-4-w-2-x-1-因此rwx-4-2-1-7"><a href="#可用数字表示为-r-4-w-2-x-1-因此rwx-4-2-1-7" class="headerlink" title="可用数字表示为: r=4,w=2,x=1 因此rwx=4+2+1=7"></a>可用数字表示为: r=4,w=2,x=1 因此rwx=4+2+1=7</h5></li>
+<li>1 文件：硬连接数或目录：子目录数</li>
+<li>root 用户</li>
+<li>root 组</li>
+<li>1213 文件大小(字节)，如果是文件夹，显示4096字节</li>
+<li>Feb 2 09:39 最后修改日期</li>
+<li>abc 文件名<h1 id="修改权限-chmod"><a href="#修改权限-chmod" class="headerlink" title="修改权限-chmod"></a>修改权限-chmod</h1><h3 id="基本说明"><a href="#基本说明" class="headerlink" title="基本说明"></a>基本说明</h3>通过chmod指令，可以修改文件或者目录的权限。</li>
+</ul>
+<p><img src="http://image.damienzhong.com/linux%E6%9D%83%E9%99%90.png" alt="image"></p>
+<h3 id="第一种方式：-、-、-变更权限"><a href="#第一种方式：-、-、-变更权限" class="headerlink" title="第一种方式：+ 、-、= 变更权限"></a>第一种方式：+ 、-、= 变更权限</h3><p>u:所有者g:所有组o:其他人a:所有人(u、g、o的总和)<br>1) chmod u=rwx,g=rx,o=x 文件目录名<br>2) chmod o+w 文件目录名<br>3) chmod a-x 文件目录名</p>
+<h3 id="第二种方式：通过数字变更权限"><a href="#第二种方式：通过数字变更权限" class="headerlink" title="第二种方式：通过数字变更权限"></a>第二种方式：通过数字变更权限</h3><ul>
+<li>r=4 w=2 x=1 rwx=4+2+1=7</li>
+<li>chmod u=rwx,g=rx,o=x 文件目录名</li>
+<li>相当于chmod 751 文件目录名<h2 id="修改文件所有者-chown"><a href="#修改文件所有者-chown" class="headerlink" title="修改文件所有者-chown"></a>修改文件所有者-chown</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3></li>
+<li>chown newowner file 改变文件的所有者</li>
+<li>chown newowner:newgroup file 改变用户的所有者和所有组</li>
+<li>-R 如果是目录则使其下所有子文件或目录递归生效<h2 id="修改文件所在组-chgrp"><a href="#修改文件所在组-chgrp" class="headerlink" title="修改文件所在组-chgrp"></a>修改文件所在组-chgrp</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3>chgrp newgroup file 改变文件的所有组</li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/20/【Linux教程学习笔记】17-Linux定时任务调度/" class="pre-post btn btn-default" title="【Linux教程学习笔记】17.Linux定时任务调度">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【Linux教程学习笔记】17.Linux定时任务调度</span>
+        </a>
+    
+    
+        <a href="/2018/11/20/【Linux教程学习笔记】15-Linux组管理/" class="next-post btn btn-default" title="【Linux教程学习笔记】15.Linux组管理">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【Linux教程学习笔记】15.Linux组管理</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#权限的基本介绍"><span class="toc-text">权限的基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-9位说明"><span class="toc-text">0-9位说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rwx权限详解"><span class="toc-text">rwx权限详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rwx作用到文件"><span class="toc-text">rwx作用到文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rwx作用到目录"><span class="toc-text">rwx作用到目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件及目录权限实际案例"><span class="toc-text">文件及目录权限实际案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10个字符确定不同用户能对文件干什么"><span class="toc-text">10个字符确定不同用户能对文件干什么</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#可用数字表示为-r-4-w-2-x-1-因此rwx-4-2-1-7"><span class="toc-text">可用数字表示为: r=4,w=2,x=1 因此rwx=4+2+1=7</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#修改权限-chmod"><span class="toc-text">修改权限-chmod</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本说明"><span class="toc-text">基本说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种方式：-、-、-变更权限"><span class="toc-text">第一种方式：+ 、-、= 变更权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种方式：通过数字变更权限"><span class="toc-text">第二种方式：通过数字变更权限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改文件所有者-chown"><span class="toc-text">修改文件所有者-chown</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本介绍"><span class="toc-text">基本介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改文件所在组-chgrp"><span class="toc-text">修改文件所在组-chgrp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本介绍-1"><span class="toc-text">基本介绍</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

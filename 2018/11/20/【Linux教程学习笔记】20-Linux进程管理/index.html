@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【Linux教程学习笔记】20.Linux进程管理 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【Linux教程学习笔记】20.Linux进程管理">
+            
+	            【Linux教程学习笔记】20.Linux进程管理
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/操作系统">
+            操作系统
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/linux" title="linux">
+                        linux
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ul>
+<li>在LINUX中，每个执行的程序（代码）都称为一个进程。每一个进程都分配一个ID号。</li>
+<li>每一个进程，都会对应一个父进程，而这个父进程可以复制多个子进程。例如www服务器。</li>
+<li>每个进程都可能以两种方式存在的。前台与后台，所谓前台进程就是用户目前的屏幕上可以进行操作的。后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行。</li>
+<li>一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才才结束。<h2 id="显示系统执行的进程"><a href="#显示系统执行的进程" class="headerlink" title="显示系统执行的进程"></a>显示系统执行的进程</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3>ps命令是用来查看目前系统中，有哪些正在执行，以及它们执行的状况。<br>可以不加任何参数.</li>
+</ul>
+<p><img src="http://image.damienzhong.com/ps%E4%BF%A1%E6%81%AF%E9%80%89%E9%A1%B9.png" alt="image"></p>
+<h3 id="ps详解"><a href="#ps详解" class="headerlink" title="ps详解"></a>ps详解</h3><ul>
+<li>指令：ps –aux|grep xxx ，比如我看看有没有sshd服务</li>
+<li>指令说明<ul>
+<li>System V展示风格</li>
+<li>USER：用户名称</li>
+<li>PID：进程号</li>
+<li>%CPU：进程占用CPU的百分比</li>
+<li>%MEM：进程占用物理内存的百分比</li>
+<li>VSZ：进程占用的虚拟内存大小（单位：KB）</li>
+<li>RSS：进程占用的物理内存大小（单位：KB）</li>
+<li>TT：终端名称,缩写.</li>
+<li>STAT：进程状态，其中S-睡眠，s-表示该进程是会话的先导进程，N-表示进程拥有比普通优先级更低的优先级，R-正在运行，D-短期等待，Z-僵死进程，T-被跟踪或者被停止等等</li>
+<li>STARTED：进程的启动时间</li>
+<li>TIME：CPU时间，即进程使用CPU的总时间</li>
+<li>COMMAND：启动进程所用的命令和参数，如果过长会被截断显示<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3>要求：以全格式显示当前所有的进程，查看进程的父进程。</li>
+</ul>
+</li>
+<li>ps -ef是以全格式显示当前所有的进程</li>
+<li>-e 显示所有进程。-f 全格式。</li>
+<li>ps -ef|grep xxx<ul>
+<li>是BSD风格</li>
+<li>UID：用户ID</li>
+<li>PID：进程ID</li>
+<li>PPID：父进程ID</li>
+<li>C：CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低；数值越小，表明进程是I/O密集型运算，执行优先级会提高</li>
+<li>STIME：进程启动的时间</li>
+<li>TTY：完整的终端名称</li>
+<li>TIME：CPU时间</li>
+<li>CMD：启动进程所用的命令和参数<h2 id="终止进程kill和killall"><a href="#终止进程kill和killall" class="headerlink" title="终止进程kill和killall"></a>终止进程kill和killall</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3>若是某个进程执行一半需要停止时，或是已消了很大的系统资源时，此时可以考虑停止该进程。使用kill命令来完成此项任务。<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3></li>
+</ul>
+</li>
+<li>kill [选项] 进程号（功能描述：通过进程号杀死进程）</li>
+<li>killall 进程名称（功能描述：通过进程名称杀死进程，也支持通配符，这在系统因负载过大而变得很慢时很有用）<h4 id="常用选项"><a href="#常用选项" class="headerlink" title="常用选项"></a>常用选项</h4>-9 :表示强迫进程立即停止<h2 id="查看进程树pstree"><a href="#查看进程树pstree" class="headerlink" title="查看进程树pstree"></a>查看进程树pstree</h2><h3 id="基本语法-1"><a href="#基本语法-1" class="headerlink" title="基本语法"></a>基本语法</h3>pstree [选项] ,可以更加直观的来看进程信息<h4 id="常用选项-1"><a href="#常用选项-1" class="headerlink" title="常用选项"></a>常用选项</h4></li>
+<li>-p :显示进程的PID</li>
+<li>-u :显示进程的所属用户<h2 id="服务-service-管理"><a href="#服务-service-管理" class="headerlink" title="服务(service)管理"></a>服务(service)管理</h2>服务(service) 本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其它程序的请求，比如(mysql , sshd 防火墙等)，因此我们又称为守护进程，是Linux中非常重要的知识点。<h3 id="service管理指令"><a href="#service管理指令" class="headerlink" title="service管理指令"></a>service管理指令</h3></li>
+<li>service 服务名[start | stop | restart | reload | status]</li>
+<li>在CentOS7.0后不再使用service ,而是systemctl<h3 id="查看服务名"><a href="#查看服务名" class="headerlink" title="查看服务名"></a>查看服务名</h3></li>
+<li>方式1：使用setup -&gt; 系统服务就可以看到。</li>
+<li>方式2: /etc/init.d/服务名称<h2 id="服务的运行级别-runlevel"><a href="#服务的运行级别-runlevel" class="headerlink" title="服务的运行级别(runlevel)"></a>服务的运行级别(runlevel)</h2>查看或者修改默认级别：vi /etc/inittab</li>
+</ul>
+<p>Linux系统有7种运行级别(runlevel)：常用的是级别3和5</p>
+<ul>
+<li>运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动</li>
+<li>运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登陆</li>
+<li>运行级别2：多用户状态(没有NFS)，不支持网络</li>
+<li>运行级别3：完全的多用户状态(有NFS)，登陆后进入控制台命令行模式</li>
+<li>运行级别4：系统未使用，保留</li>
+<li>运行级别5：X11控制台，登陆后进入图形GUI模式</li>
+<li>运行级别6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动<h4 id="开机的流程说明"><a href="#开机的流程说明" class="headerlink" title="开机的流程说明"></a>开机的流程说明</h4><img src="http://image.damienzhong.com/linux%E5%BC%80%E6%9C%BA%E7%9A%84%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E.png" alt="image"><h2 id="chkconfig指令"><a href="#chkconfig指令" class="headerlink" title="chkconfig指令"></a>chkconfig指令</h2>通过chkconfig 命令可以给每个服务的各个运行级别设置自启动/关闭<h3 id="基本语法-2"><a href="#基本语法-2" class="headerlink" title="基本语法"></a>基本语法</h3>1) 查看服务chkconfig –list|grep xxx<br>2) chkconfig 服务名–list<br>3) chkconfig –level 5 服务名on/off<h3 id="使用细节"><a href="#使用细节" class="headerlink" title="使用细节"></a>使用细节</h3>chkconfig重新设置服务后自启动或关闭，需要重启机器reboot才能生效.<h2 id="动态监控进程"><a href="#动态监控进程" class="headerlink" title="动态监控进程"></a>动态监控进程</h2>top与ps命令很相似。它们都用来显示正在执行的进程。Top与ps最大的不同之处，在于top在执行一段时间可以更新正在运行的的进程。<h3 id="基本语法-3"><a href="#基本语法-3" class="headerlink" title="基本语法"></a>基本语法</h3>top [选项]<h3 id="选项说明"><a href="#选项说明" class="headerlink" title="选项说明"></a>选项说明</h3><img src="http://image.damienzhong.com/top%E9%80%89%E9%A1%B9%E8%AF%B4%E6%98%8E.png" alt="image"><h3 id="交互操作说明"><a href="#交互操作说明" class="headerlink" title="交互操作说明"></a>交互操作说明</h3><img src="http://image.damienzhong.com/top%E4%BA%A4%E4%BA%92%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E.png" alt="image"><h3 id="应用实例-1"><a href="#应用实例-1" class="headerlink" title="应用实例"></a>应用实例</h3>案例1.监视特定用户</li>
+<li>top：输入此命令，按回车键，查看执行的进程。</li>
+<li>u：然后输入“u”回车，再输入用户名，即可<br>案例2：终止指定的进程。</li>
+<li>top：输入此命令，按回车键，查看执行的进程。</li>
+<li>k：然后输入“k”回车，再输入要结束的进程ID号<h2 id="查看系统网络情况netstat"><a href="#查看系统网络情况netstat" class="headerlink" title="查看系统网络情况netstat"></a>查看系统网络情况netstat</h2><h3 id="基本语法-4"><a href="#基本语法-4" class="headerlink" title="基本语法"></a>基本语法</h3>netstat [选项]<h3 id="选项说明-1"><a href="#选项说明-1" class="headerlink" title="选项说明"></a>选项说明</h3></li>
+<li>-an 按一定顺序排列输出</li>
+<li>-p 显示哪个进程在调用<h2 id="检测主机连接命令ping"><a href="#检测主机连接命令ping" class="headerlink" title="检测主机连接命令ping"></a>检测主机连接命令ping</h2>是一种网络检测检测工具，它主要是用检测远程主机是否正常，或是两部主机间的介质是否为断、网线是否脱落或网卡故障。</li>
+</ul>
+<p>如: ping 对方ip地址</p>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/20/【Linux教程学习笔记】21-RPM与YUM/" class="pre-post btn btn-default" title="【Linux教程学习笔记】21.RPM与YUM">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【Linux教程学习笔记】21.RPM与YUM</span>
+        </a>
+    
+    
+        <a href="/2018/11/20/【Linux教程学习笔记】19-Linux网络配置/" class="next-post btn btn-default" title="【Linux教程学习笔记】19.Linux网络配置">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【Linux教程学习笔记】19.Linux网络配置</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#进程管理"><span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本介绍"><span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示系统执行的进程"><span class="toc-text">显示系统执行的进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本介绍-1"><span class="toc-text">基本介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps详解"><span class="toc-text">ps详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用实例"><span class="toc-text">应用实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#终止进程kill和killall"><span class="toc-text">终止进程kill和killall</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-text">基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用选项"><span class="toc-text">常用选项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看进程树pstree"><span class="toc-text">查看进程树pstree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法-1"><span class="toc-text">基本语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用选项-1"><span class="toc-text">常用选项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务-service-管理"><span class="toc-text">服务(service)管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#service管理指令"><span class="toc-text">service管理指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看服务名"><span class="toc-text">查看服务名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务的运行级别-runlevel"><span class="toc-text">服务的运行级别(runlevel)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#开机的流程说明"><span class="toc-text">开机的流程说明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chkconfig指令"><span class="toc-text">chkconfig指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法-2"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用细节"><span class="toc-text">使用细节</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态监控进程"><span class="toc-text">动态监控进程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法-3"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选项说明"><span class="toc-text">选项说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交互操作说明"><span class="toc-text">交互操作说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用实例-1"><span class="toc-text">应用实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看系统网络情况netstat"><span class="toc-text">查看系统网络情况netstat</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法-4"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选项说明-1"><span class="toc-text">选项说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检测主机连接命令ping"><span class="toc-text">检测主机连接命令ping</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
