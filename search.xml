@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【SpringBoot学习之路】14.国际化]]></title>
+    <url>%2F2018%2F11%2F21%2F%E3%80%90SpringBoot%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%9114-%E5%9B%BD%E9%99%85%E5%8C%96%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[【SpringBoot学习之路】13.设置默认访问首页]]></title>
     <url>%2F2018%2F11%2F21%2F%E3%80%90SpringBoot%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E3%80%9113-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E8%AE%BF%E9%97%AE%E9%A6%96%E9%A1%B5%2F</url>
     <content type="text"><![CDATA[1234567891011121314151617181920212223242526//使用WebMvcConfigurerAdapter可以来扩展SpringMVC的功能//@EnableWebMvc@Configurationpublic class MyMvcConfig extends WebMvcConfigurerAdapter &#123; //方式一 @Override public void addViewControllers(ViewControllerRegistry registry) &#123;// super.addViewControllers(registry); //浏览器发送 /damienzhong 请求来到 success registry.addViewController(&quot;damienzhong&quot;).setViewName(&quot;success&quot;); &#125; //方式二 @Bean public WebMvcConfigurerAdapter webMvcConfigurerAdapter()&#123; WebMvcConfigurerAdapter webMvcConfigurerAdapter = new WebMvcConfigurerAdapter() &#123; @Override public void addViewControllers(ViewControllerRegistry registry) &#123; registry.addViewController(&quot;/&quot;).setViewName(&quot;login&quot;); registry.addViewController(&quot;/index&quot;).setViewName(&quot;login&quot;); registry.addViewController(&quot;/login&quot;).setViewName(&quot;login&quot;); &#125; &#125;; return webMvcConfigurerAdapter; &#125;&#125;]]></content>
