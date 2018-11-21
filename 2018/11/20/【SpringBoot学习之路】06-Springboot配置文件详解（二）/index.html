@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【SpringBoot学习之路】06.Springboot配置文件详解（二） | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/常用框架/"><i class="fa "></i>常用框架</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具教程/"><i class="fa "></i>工具教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【SpringBoot学习之路】06.Springboot配置文件详解（二）">
+            
+	            【SpringBoot学习之路】06.Springboot配置文件详解（二）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/常用框架">
+            常用框架
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/springboot" title="springboot">
+                        springboot
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="配置文件值注入"><a href="#配置文件值注入" class="headerlink" title="配置文件值注入"></a>配置文件值注入</h1><h2 id="Value获取值和-ConfigurationProperties获取值比较"><a href="#Value获取值和-ConfigurationProperties获取值比较" class="headerlink" title="@Value获取值和@ConfigurationProperties获取值比较"></a>@Value获取值和@ConfigurationProperties获取值比较</h2><p><img src="http://image.damienzhong.com/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%96%E5%80%BC%E6%AF%94%E8%BE%83.png" alt="image"></p>
+<blockquote>
+<p>配置文件yml还是properties他们都能获取到值</p>
+<ul>
+<li>如果说，我们只是在某个业务逻辑中需要获取一下配置文件中的某项值，使用@Value；</li>
+<li>如果说，我们专门编写了一个javaBean来和配置文件进行映射，我们就直接使用@ConfigurationProperties；</li>
+</ul>
+</blockquote>
+<h2 id="配置文件注入值数据校验"><a href="#配置文件注入值数据校验" class="headerlink" title="配置文件注入值数据校验"></a>配置文件注入值数据校验</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">@Validated</span><br><span class="line">@ConfigurationProperties(prefix = &quot;person&quot;)</span><br><span class="line">public class Person &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &lt;bean class=&quot;Person&quot;&gt;</span><br><span class="line">     * &lt;property name=&quot;lastName&quot; value=&quot;字面量/$&#123;key&#125;从环境变量、配置文件中获取值/#</span><br><span class="line">     &#123;SpEL&#125;&quot;&gt;&lt;/property&gt;</span><br><span class="line">     * &lt;bean/&gt;</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    //@Value(&quot;$&#123;person.last-name&#125;&quot;)</span><br><span class="line">    @Email</span><br><span class="line">    private String lastName;</span><br><span class="line">    //@Value(&quot;#&#123;11*2&#125;&quot;)</span><br><span class="line">    private Integer age;</span><br><span class="line">   // @Value(&quot;true&quot;)</span><br><span class="line">    private Boolean boss;</span><br><span class="line">    private Date birth;</span><br><span class="line">    private Map&lt;String,Object&gt; maps;</span><br><span class="line">    private List&lt;Object&gt; lists;</span><br><span class="line">    private Dog dog;</span><br></pre></td></tr></table></figure>
+<h2 id="PropertySource-amp-ImportResource-amp-Bean"><a href="#PropertySource-amp-ImportResource-amp-Bean" class="headerlink" title="@PropertySource&amp;@ImportResource&amp;@Bean"></a>@PropertySource&amp;@ImportResource&amp;@Bean</h2><p>@<strong>PropertySource</strong>：加载指定的配置文件；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@PropertySource(&quot;classpath:person.properties&quot;)</span><br><span class="line">@Component</span><br><span class="line">//@Validated</span><br><span class="line">@ConfigurationProperties(prefix = &quot;person&quot;)</span><br><span class="line">public class Person &#123;</span><br></pre></td></tr></table></figure></p>
+<p>@<strong>ImportResource</strong>：导入Spring的配置文件，让配置文件里面的内容生效；</p>
+<p>Spring Boot里面没有Spring的配置文件，我们自己编写的配置文件，也不能自动识别；<br>想让Spring的配置文件生效，加载进来，用@ImportResource标注在一个配置类上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@ImportResource(locations = &#123;&quot;classpath:beans.xml&quot;&#125;)</span><br><span class="line">//导入Spring的配置文件让其生效</span><br></pre></td></tr></table></figure>
+<p>xml配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;bean id=&quot;helloService&quot; class=&quot;com.damienzhong.springboot02config.service.HelloService&quot;&gt;&lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure></p>
+<p>SpringBoot推荐给容器中添加组件的方式；推荐使用全注解的方式</p>
+<ul>
+<li>配置类@Configuration——&gt;Spring配置文件</li>
+<li>使用@Bean给容器中添加组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Configuration:指明当前类是配置类；就是替代之前的Spring配置文件</span><br><span class="line"> * 在配置文件中用&lt;bean&gt;&lt;/bean&gt;标签要添加</span><br><span class="line"> */</span><br><span class="line">@Configuration</span><br><span class="line">public class MyAppConfig &#123;</span><br><span class="line"></span><br><span class="line">    //将方法的返回值添加到容器中；容器中这个组件默认的id就是方法名</span><br><span class="line">    @Bean</span><br><span class="line">    public HelloService helloService()&#123;</span><br><span class="line">        System.out.println(&quot;配置类@Bean给容器中添加组件了&quot;);</span><br><span class="line">        return  new HelloService();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="配置文件占位符"><a href="#配置文件占位符" class="headerlink" title="配置文件占位符"></a>配置文件占位符</h1><h2 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;random.value&#125;、$&#123;random.int&#125;、$&#123;random.long&#125;</span><br><span class="line">$&#123;random.int(10)&#125;、$&#123;random.int[1024,65536]&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="占位符获取之前配置的值，如果没有可以是用-指定默认值"><a href="#占位符获取之前配置的值，如果没有可以是用-指定默认值" class="headerlink" title="占位符获取之前配置的值，如果没有可以是用:指定默认值"></a>占位符获取之前配置的值，如果没有可以是用:指定默认值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">person.last-name=呆萌钟$&#123;random.uuid&#125;</span><br><span class="line">person.age=$&#123;random.int&#125;</span><br><span class="line">person.boss=true</span><br><span class="line">person.birth=2018/10/30</span><br><span class="line">person.maps.k1=v1</span><br><span class="line">person.maps.k2=v2</span><br><span class="line">person.lists=zhangsan,lisi</span><br><span class="line">person.dog.name=$&#123;person.hello:哈士奇&#125;_dog</span><br><span class="line">person.dog.age=2</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/20/【SpringBoot学习之路】07-Springboot配置文件详解（三）/" class="pre-post btn btn-default" title="【SpringBoot学习之路】07.Springboot配置文件详解（三）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【SpringBoot学习之路】07.Springboot配置文件详解（三）</span>
+        </a>
+    
+    
+        <a href="/2018/11/20/【SpringBoot学习之路】05-Springboot配置文件详解（一）/" class="next-post btn btn-default" title="【SpringBoot学习之路】05.Springboot配置文件详解（一）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【SpringBoot学习之路】05.Springboot配置文件详解（一）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置文件值注入"><span class="toc-text">配置文件值注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Value获取值和-ConfigurationProperties获取值比较"><span class="toc-text">@Value获取值和@ConfigurationProperties获取值比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置文件注入值数据校验"><span class="toc-text">配置文件注入值数据校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PropertySource-amp-ImportResource-amp-Bean"><span class="toc-text">@PropertySource&amp;@ImportResource&amp;@Bean</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置文件占位符"><span class="toc-text">配置文件占位符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#随机数"><span class="toc-text">随机数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#占位符获取之前配置的值，如果没有可以是用-指定默认值"><span class="toc-text">占位符获取之前配置的值，如果没有可以是用:指定默认值</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

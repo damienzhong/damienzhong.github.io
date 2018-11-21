@@ -152,18 +152,17 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【SpringBoot学习之路】02-Hello-World/">【SpringBoot学习之路】02.Hello World</a>
+                    <a href="/2018/11/21/【SpringBoot学习之路】12-SpringMVC自动配置详解/">【SpringBoot学习之路】12.SpringMVC自动配置详解</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
-                        2018年11月20日
+                        2018年11月21日
                     </time>
                 </div>
             </div>
             <p class="brief">
                 
-                    功能浏览器发送hello请求，服务器接受请求并处理，响应Hello World字符串
-创建一个maven工程导入spring boot相关的依赖123456789101112&amp;lt;parent&amp;gt;     &amp;lt;groupId...
+                    SpringMVC自动配置Spring MVC auto-configurationSpring Boot 自动配置好了SpringMVC以下是SpringBoot对SpringMVC的默认配置:（WebMvcAutoConfigur...
                 
             </p>
         </div>
@@ -174,7 +173,31 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2018/11/20/【SpringBoot学习之路】01-Spring-Boot简介/">【SpringBoot学习之路】01.Spring Boot简介</a>
+                    <a href="/2018/11/21/【SpringBoot学习之路】11-Thymeleaf模板引擎/">【SpringBoot学习之路】11.Thymeleaf模板引擎</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月21日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    模板引擎简介JSP、Velocity、Freemarker、Thymeleaf
+
+==SpringBoot推荐的Thymeleaf==：语法更简单，功能更强大
+引入thymeleaf1234&amp;lt;dependency&amp;gt;    ...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】10-Web开发之静态资源的映射规则/">【SpringBoot学习之路】10.Web开发之静态资源的映射规则</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
@@ -184,17 +207,200 @@
             </div>
             <p class="brief">
                 
-                    Spring Boot用来简化Spring应用开发，约定大于配置，去繁从简，just run就能创建一个独立的，产品级别的应用。
-背景J2EE笨重的开发、繁多的配置、低下的开发效率、复杂的部署流程、第三方技术集成难度大。
-解决
+                    简介使用SpringBoot
 
-“S...
+创建SpringBoot应用，选中我们需要的模块；
+SpringBoot已经默认将这些场景配置好了，只需要在配置文件中指定少量配置就可以运行起来
+自己编写业务代码；自动配置原理？这个场景SpringBo...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】09-Spring-Boot与日志/">【SpringBoot学习之路】09.Spring Boot与日志</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    日志框架市场上存在非常多的日志框架。JUL（java.util.logging），JCL（Apache Commons Logging），Log4j，Log4j2，Logback、SLF4j、jboss-logging等。Spring...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】08-Springboot配置文件详解（四）/">【SpringBoot学习之路】08.Springboot配置文件详解（四）</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    自动配置原理配置文件到底能写什么？怎么写？自动配置原理；
+配置文件能配置的属性参照
+自动配置原理
+SpringBoot启动的时候加载主配置类，开启了自动配置功能 @EnableAutoConfiguration
+@EnableAuto...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】07-Springboot配置文件详解（三）/">【SpringBoot学习之路】07.Springboot配置文件详解（三）</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    Profile多环境支持Profile是Spring对不同环境提供不同配置功能的支持，可以通过激活、指定参数等方式快速切换环境
+多Profile文件
+我们在主配置文件编写的时候，文件名可以是 application-{profile}...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】06-Springboot配置文件详解（二）/">【SpringBoot学习之路】06.Springboot配置文件详解（二）</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    配置文件值注入@Value获取值和@ConfigurationProperties获取值比较
+
+配置文件yml还是properties他们都能获取到值
+
+如果说，我们只是在某个业务逻辑中需要获取一下配置文件中的某项值，使用@Value...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】05-Springboot配置文件详解（一）/">【SpringBoot学习之路】05.Springboot配置文件详解（一）</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    配置文件
+Spring Boot使用一个全局的配置文件
+application.properties
+application.yml
+
+
+配置文件放在src/main/resources目录或者类路径/config下
+全局配置文件的可...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】04-Springboot项目快速搭建/">【SpringBoot学习之路】04.Springboot项目快速搭建</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    方式一IDEA：使用 Spring Initializer快速创建项目
+选择Spring Initializer选项，然后Next
+
+
+
+编辑Group与Artifact，然后直接下一步
+
+
+
+选择所需的依赖，然后下一步
+
+
+
+直接点...
+                
+            </p>
+        </div>
+    </article>
+ 
+    <article class="post">
+        
+        <div class="post-content">
+            <div class="post-head home-post-head">
+                <h1 class="post-title">
+                    <a href="/2018/11/20/【SpringBoot学习之路】03-Hello-World解析/">【SpringBoot学习之路】03.Hello World解析</a>
+                </h1>
+                <div class="post-meta">  &bull;
+                    <time class="post-date" datetime="" title="">
+                        2018年11月20日
+                    </time>
+                </div>
+            </div>
+            <p class="brief">
+                
+                    POM文件父项目1234567891011121314    &amp;lt;parent&amp;gt;        &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;        &amp;...
                 
             </p>
         </div>
     </article>
  
 
+
+    <nav class="pagination" role="navigation">
+        <div id="page-nav">
+            <span class="page-number current">1</span><a class="page-number" href="/categories/常用框架/page/2/">2</a><a class="extend next" rel="next" href="/categories/常用框架/page/2/"><i class="fa fa-angle-right"></i></a>
+        </div>
+    </nav>
 
 
 
@@ -284,7 +490,7 @@
         
     <div class="widget">
         <h3 class="title">Categories</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/"><i class="fa" aria-hidden="true">JVM</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/"><i class="fa" aria-hidden="true">blog</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javase/"><i class="fa" aria-hidden="true">javase</i></a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具教程/"><i class="fa" aria-hidden="true">工具教程</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用框架/"><i class="fa" aria-hidden="true">常用框架</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/"><i class="fa" aria-hidden="true">操作系统</i></a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/"><i class="fa" aria-hidden="true">虚拟化</i></a><span class="category-list-count">2</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/"><i class="fa" aria-hidden="true">JVM</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/"><i class="fa" aria-hidden="true">blog</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javase/"><i class="fa" aria-hidden="true">javase</i></a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具教程/"><i class="fa" aria-hidden="true">工具教程</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用框架/"><i class="fa" aria-hidden="true">常用框架</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/"><i class="fa" aria-hidden="true">操作系统</i></a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/"><i class="fa" aria-hidden="true">虚拟化</i></a><span class="category-list-count">2</span></li></ul>
     </div>
 
 
@@ -292,7 +498,7 @@
         
     <div class="widget">
         <h3 class="title">Archives</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">2018年11月</i></a><span class="archive-list-count">76</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">2018年11月</i></a><span class="archive-list-count">86</span></li></ul>
     </div>
 
 
@@ -302,7 +508,7 @@
     <h3 class="title">Tag Cloud</h3>
     <div class="content tag-cloud">
         
-            <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 14px;">IntelliJ IDEA</a> <a href="/tags/VMware/" style="font-size: 12px;">VMware</a> <a href="/tags/idea/" style="font-size: 14px;">idea</a> <a href="/tags/javase/" style="font-size: 20px;">javase</a> <a href="/tags/jvm/" style="font-size: 12px;">jvm</a> <a href="/tags/linux/" style="font-size: 18px;">linux</a> <a href="/tags/springboot/" style="font-size: 12px;">springboot</a> <a href="/tags/vmtools/" style="font-size: 10px;">vmtools</a> <a href="/tags/博客搭建/" style="font-size: 16px;">博客搭建</a> <a href="/tags/虚拟化/" style="font-size: 12px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 12px;">虚拟机</a>
+            <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13.33px;">IntelliJ IDEA</a> <a href="/tags/VMware/" style="font-size: 11.67px;">VMware</a> <a href="/tags/idea/" style="font-size: 13.33px;">idea</a> <a href="/tags/javase/" style="font-size: 20px;">javase</a> <a href="/tags/jvm/" style="font-size: 11.67px;">jvm</a> <a href="/tags/linux/" style="font-size: 18.33px;">linux</a> <a href="/tags/springboot/" style="font-size: 16.67px;">springboot</a> <a href="/tags/vmtools/" style="font-size: 10px;">vmtools</a> <a href="/tags/博客搭建/" style="font-size: 15px;">博客搭建</a> <a href="/tags/虚拟化/" style="font-size: 11.67px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 11.67px;">虚拟机</a>
         
     </div>
   </div>

@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【SpringBoot学习之路】07.Springboot配置文件详解（三） | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/常用框架/"><i class="fa "></i>常用框架</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具教程/"><i class="fa "></i>工具教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【SpringBoot学习之路】07.Springboot配置文件详解（三）">
+            
+	            【SpringBoot学习之路】07.Springboot配置文件详解（三）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/常用框架">
+            常用框架
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/springboot" title="springboot">
+                        springboot
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/20</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="Profile多环境支持"><a href="#Profile多环境支持" class="headerlink" title="Profile多环境支持"></a>Profile多环境支持</h1><p>Profile是Spring对不同环境提供不同配置功能的支持，可以通过激活、指定参数等方式快速切换环境</p>
+<h2 id="多Profile文件"><a href="#多Profile文件" class="headerlink" title="多Profile文件"></a>多Profile文件</h2><ul>
+<li>我们在主配置文件编写的时候，文件名可以是 application-{profile}.properties/yml</li>
+<li>默认使用application.properties的配置；<h2 id="yml支持多文档块方式"><a href="#yml支持多文档块方式" class="headerlink" title="yml支持多文档块方式"></a>yml支持多文档块方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8081</span><br><span class="line">spring:</span><br><span class="line">  profiles:</span><br><span class="line">    active: dev #激活指定配置</span><br><span class="line">--- #三个短横线分隔多个profiles区</span><br><span class="line">server:</span><br><span class="line">  port: 8091</span><br><span class="line">spring:</span><br><span class="line">  profiles: dev</span><br><span class="line">---</span><br><span class="line">server:</span><br><span class="line">  port: 8092</span><br><span class="line">spring:</span><br><span class="line">  profiles: prod #指定属于哪个环境</span><br><span class="line">---</span><br><span class="line">server:</span><br><span class="line">  port: 8080</span><br><span class="line">spring:</span><br><span class="line">  profiles: default #表示未指定默认配置</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="激活指定profile"><a href="#激活指定profile" class="headerlink" title="激活指定profile"></a>激活指定profile</h2><ul>
+<li>在配置文件中指定 spring.profiles.active=dev</li>
+<li>命令行：<ul>
+<li>java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar –spring.profiles.active=dev</li>
+<li>可以直接在测试的时候，配置传入命令行参数</li>
+</ul>
+</li>
+<li>虚拟机参数；<ul>
+<li>-Dspring.profiles.active=dev<h1 id="配置文件加载位置"><a href="#配置文件加载位置" class="headerlink" title="配置文件加载位置"></a>配置文件加载位置</h1>springboot 启动会扫描以下位置的application.properties或者application.yml文件作为Spring boot的默认配置文件</li>
+</ul>
+</li>
+<li>–file:./config/</li>
+<li>–file:./</li>
+<li>–classpath:/config/</li>
+<li>–classpath:/<blockquote>
+<p>以上是按照优先级从高到低的顺序，所有位置的文件都会被加载，高优先级配置内容会覆盖低优先级配置内容。</p>
+</blockquote>
+</li>
+</ul>
+<p>SpringBoot会从这四个位置全部加载主配置文件；互补配置；</p>
+<p>我们还可以通过spring.config.location来改变默认的配置文件位置。</p>
+<p><strong>项目打包好以后，我们可以使用命令行参数的形式，启动项目的时候来指定配置文件的新位置；指定配置文件和默<br>认加载的这些配置文件共同起作用形成互补配置；</strong></p>
+<p>java -jar spring-boot-02-config-02-0.0.1-SNAPSHOT.jar –spring.config.location=配置文件路径</p>
+<h1 id="外部配置加载顺序"><a href="#外部配置加载顺序" class="headerlink" title="外部配置加载顺序"></a>外部配置加载顺序</h1><p>==<strong>Spring Boot 支持多种外部配置方式<br>SpringBoot也可以从以下位置加载配置； 优先级从高到低；高优先级的配置覆盖低优先级的配置，所有的配置会<br>形成互补配置</strong>==</p>
+<h4 id="1-命令行参数"><a href="#1-命令行参数" class="headerlink" title="1.命令行参数"></a>1.命令行参数</h4><ul>
+<li>所有的配置都可以在命令行上进行指定</li>
+<li>java -jar spring-boot-02-config-02-0.0.1-SNAPSHOT.jar –server.port=8087 –server.context-path=/abc</li>
+<li>多个配置用空格分开； –配置项=值<h4 id="2-来自java-comp-env的JNDI属性"><a href="#2-来自java-comp-env的JNDI属性" class="headerlink" title="2.来自java:comp/env的JNDI属性"></a>2.来自java:comp/env的JNDI属性</h4><h4 id="3-Java系统属性（System-getProperties-）"><a href="#3-Java系统属性（System-getProperties-）" class="headerlink" title="3.Java系统属性（System.getProperties()）"></a>3.Java系统属性（System.getProperties()）</h4><h4 id="4-操作系统环境变量"><a href="#4-操作系统环境变量" class="headerlink" title="4.操作系统环境变量"></a>4.操作系统环境变量</h4><h4 id="5-RandomValuePropertySource配置的random-属性值"><a href="#5-RandomValuePropertySource配置的random-属性值" class="headerlink" title="5.RandomValuePropertySource配置的random.*属性值"></a>5.RandomValuePropertySource配置的random.*属性值</h4><h3 id="由jar包外向jar包内进行寻找；"><a href="#由jar包外向jar包内进行寻找；" class="headerlink" title="由jar包外向jar包内进行寻找；"></a>由jar包外向jar包内进行寻找；</h3><h3 id="优先加载带profile"><a href="#优先加载带profile" class="headerlink" title="优先加载带profile"></a>优先加载带profile</h3><h4 id="6-jar包外部的application-profile-properties或application-yml-带spring-profile-配置文件"><a href="#6-jar包外部的application-profile-properties或application-yml-带spring-profile-配置文件" class="headerlink" title="6.jar包外部的application-{profile}.properties或application.yml(带spring.profile)配置文件"></a>6.jar包外部的application-{profile}.properties或application.yml(带spring.profile)配置文件</h4><h4 id="7-jar包内部的application-profile-properties或application-yml-带spring-profile-配置文件"><a href="#7-jar包内部的application-profile-properties或application-yml-带spring-profile-配置文件" class="headerlink" title="7.jar包内部的application-{profile}.properties或application.yml(带spring.profile)配置文件"></a>7.jar包内部的application-{profile}.properties或application.yml(带spring.profile)配置文件</h4><h3 id="再来加载不带profile"><a href="#再来加载不带profile" class="headerlink" title="再来加载不带profile"></a>再来加载不带profile</h3><h4 id="8-jar包外部的application-properties或application-yml-不带spring-profile-配置文件"><a href="#8-jar包外部的application-properties或application-yml-不带spring-profile-配置文件" class="headerlink" title="8.jar包外部的application.properties或application.yml(不带spring.profile)配置文件"></a>8.jar包外部的application.properties或application.yml(不带spring.profile)配置文件</h4><h4 id="9-jar包内部的application-properties或application-yml-不带spring-profile-配置文件"><a href="#9-jar包内部的application-properties或application-yml-不带spring-profile-配置文件" class="headerlink" title="9.jar包内部的application.properties或application.yml(不带spring.profile)配置文件"></a>9.jar包内部的application.properties或application.yml(不带spring.profile)配置文件</h4><h4 id="10-Configuration注解类上的-PropertySource"><a href="#10-Configuration注解类上的-PropertySource" class="headerlink" title="10.@Configuration注解类上的@PropertySource"></a>10.@Configuration注解类上的@PropertySource</h4><h4 id="11-通过SpringApplication-setDefaultProperties指定的默认属性"><a href="#11-通过SpringApplication-setDefaultProperties指定的默认属性" class="headerlink" title="11.通过SpringApplication.setDefaultProperties指定的默认属性"></a>11.通过SpringApplication.setDefaultProperties指定的默认属性</h4></li>
+</ul>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/11/20/【SpringBoot学习之路】08-Springboot配置文件详解（四）/" class="pre-post btn btn-default" title="【SpringBoot学习之路】08.Springboot配置文件详解（四）">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">【SpringBoot学习之路】08.Springboot配置文件详解（四）</span>
+        </a>
+    
+    
+        <a href="/2018/11/20/【SpringBoot学习之路】06-Springboot配置文件详解（二）/" class="next-post btn btn-default" title="【SpringBoot学习之路】06.Springboot配置文件详解（二）">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【SpringBoot学习之路】06.Springboot配置文件详解（二）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Profile多环境支持"><span class="toc-text">Profile多环境支持</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多Profile文件"><span class="toc-text">多Profile文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yml支持多文档块方式"><span class="toc-text">yml支持多文档块方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#激活指定profile"><span class="toc-text">激活指定profile</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置文件加载位置"><span class="toc-text">配置文件加载位置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#外部配置加载顺序"><span class="toc-text">外部配置加载顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-命令行参数"><span class="toc-text">1.命令行参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-来自java-comp-env的JNDI属性"><span class="toc-text">2.来自java:comp/env的JNDI属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Java系统属性（System-getProperties-）"><span class="toc-text">3.Java系统属性（System.getProperties()）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-操作系统环境变量"><span class="toc-text">4.操作系统环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-RandomValuePropertySource配置的random-属性值"><span class="toc-text">5.RandomValuePropertySource配置的random.*属性值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#由jar包外向jar包内进行寻找；"><span class="toc-text">由jar包外向jar包内进行寻找；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优先加载带profile"><span class="toc-text">优先加载带profile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-jar包外部的application-profile-properties或application-yml-带spring-profile-配置文件"><span class="toc-text">6.jar包外部的application-{profile}.properties或application.yml(带spring.profile)配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-jar包内部的application-profile-properties或application-yml-带spring-profile-配置文件"><span class="toc-text">7.jar包内部的application-{profile}.properties或application.yml(带spring.profile)配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再来加载不带profile"><span class="toc-text">再来加载不带profile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-jar包外部的application-properties或application-yml-不带spring-profile-配置文件"><span class="toc-text">8.jar包外部的application.properties或application.yml(不带spring.profile)配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-jar包内部的application-properties或application-yml-不带spring-profile-配置文件"><span class="toc-text">9.jar包内部的application.properties或application.yml(不带spring.profile)配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-Configuration注解类上的-PropertySource"><span class="toc-text">10.@Configuration注解类上的@PropertySource</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-通过SpringApplication-setDefaultProperties指定的默认属性"><span class="toc-text">11.通过SpringApplication.setDefaultProperties指定的默认属性</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        Total:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        Visitors:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
