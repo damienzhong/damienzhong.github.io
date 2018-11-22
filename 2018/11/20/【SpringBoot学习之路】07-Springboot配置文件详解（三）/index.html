@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="">
+<html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
     <!--Setting-->
     <meta charset="UTF-8">
@@ -121,7 +121,7 @@
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                                <a href="/"><i class="fa fa-home"></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -329,7 +329,7 @@
                 
                     <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+        <h3 class="title">文章目录</h3>
         
             <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Profile多环境支持"><span class="toc-text">Profile多环境支持</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多Profile文件"><span class="toc-text">多Profile文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yml支持多文档块方式"><span class="toc-text">yml支持多文档块方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#激活指定profile"><span class="toc-text">激活指定profile</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置文件加载位置"><span class="toc-text">配置文件加载位置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#外部配置加载顺序"><span class="toc-text">外部配置加载顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-命令行参数"><span class="toc-text">1.命令行参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-来自java-comp-env的JNDI属性"><span class="toc-text">2.来自java:comp/env的JNDI属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Java系统属性（System-getProperties-）"><span class="toc-text">3.Java系统属性（System.getProperties()）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-操作系统环境变量"><span class="toc-text">4.操作系统环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-RandomValuePropertySource配置的random-属性值"><span class="toc-text">5.RandomValuePropertySource配置的random.*属性值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#由jar包外向jar包内进行寻找；"><span class="toc-text">由jar包外向jar包内进行寻找；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优先加载带profile"><span class="toc-text">优先加载带profile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-jar包外部的application-profile-properties或application-yml-带spring-profile-配置文件"><span class="toc-text">6.jar包外部的application-{profile}.properties或application.yml(带spring.profile)配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-jar包内部的application-profile-properties或application-yml-带spring-profile-配置文件"><span class="toc-text">7.jar包内部的application-{profile}.properties或application.yml(带spring.profile)配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#再来加载不带profile"><span class="toc-text">再来加载不带profile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-jar包外部的application-properties或application-yml-不带spring-profile-配置文件"><span class="toc-text">8.jar包外部的application.properties或application.yml(不带spring.profile)配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-jar包内部的application-properties或application-yml-不带spring-profile-配置文件"><span class="toc-text">9.jar包内部的application.properties或application.yml(不带spring.profile)配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-Configuration注解类上的-PropertySource"><span class="toc-text">10.@Configuration注解类上的@PropertySource</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-通过SpringApplication-setDefaultProperties指定的默认属性"><span class="toc-text">11.通过SpringApplication.setDefaultProperties指定的默认属性</span></a></li></ol></li></ol>
         
@@ -360,12 +360,12 @@
             <div class="col-sm-12">
                 <div class="busuanzi">
     
-        Total:
+        访问量:
         <strong id="busuanzi_value_site_pv">
             <i class="fa fa-spinner fa-spin"></i>
         </strong>
         &nbsp; | &nbsp;
-        Visitors:
+        访客数:
         <strong id="busuanzi_value_site_uv">
             <i class="fa fa-spinner fa-spin"></i>
         </strong>
@@ -374,7 +374,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2018
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>

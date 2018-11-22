@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="">
+<html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
     <!--Setting-->
     <meta charset="UTF-8">
@@ -121,7 +121,7 @@
                     <ul class="menu">
                         
                             <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa fa-home"></i>Home</a>
+                                <a href="/"><i class="fa fa-home"></i>首页</a>
                             </li>
                         
                             <li role="presentation" class="text-center">
@@ -430,7 +430,7 @@
                 
                     <aside id="article-toc" role="navigation" class="col-md-4">
     <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+        <h3 class="title">文章目录</h3>
         
             <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#那什么是分布式调用链呢？"><span class="toc-text">那什么是分布式调用链呢？</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#链路追踪系统应该具备的功能"><span class="toc-text">链路追踪系统应该具备的功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#故障快速定位"><span class="toc-text">故障快速定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各个调用环节的性能分析"><span class="toc-text">各个调用环节的性能分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据分析"><span class="toc-text">数据分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成服务调用拓扑图"><span class="toc-text">生成服务调用拓扑图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分布式调用跟踪系统的设计"><span class="toc-text">分布式调用跟踪系统的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#（1）分布式调用跟踪系统的设计目标"><span class="toc-text">（1）分布式调用跟踪系统的设计目标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（2）埋点和生成日志"><span class="toc-text">（2）埋点和生成日志</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（3）抓取和存储日志"><span class="toc-text">（3）抓取和存储日志</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（4）分析和统计调用链数据"><span class="toc-text">（4）分析和统计调用链数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#（5）计算和展示"><span class="toc-text">（5）计算和展示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链路追踪Trace模型分析"><span class="toc-text">链路追踪Trace模型分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Trace调用模型，主要有以下概念："><span class="toc-text">Trace调用模型，主要有以下概念：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调用跟踪系统对比"><span class="toc-text">调用跟踪系统对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Google的Dapper（闭源）"><span class="toc-text">Google的Dapper（闭源）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#大众点评——CAT"><span class="toc-text">大众点评——CAT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#跟踪模型"><span class="toc-text">跟踪模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端接入方式"><span class="toc-text">客户端接入方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志收集方式"><span class="toc-text">日志收集方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阿里-鹰眼（闭源）"><span class="toc-text">阿里-鹰眼（闭源）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#京东-hydra"><span class="toc-text">京东-hydra</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hydra中跟踪数据模型"><span class="toc-text">Hydra中跟踪数据模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志收集方式-1"><span class="toc-text">日志收集方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Twitter—Zipkin"><span class="toc-text">Twitter—Zipkin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Zipkin与其他Trace系统的不同之处"><span class="toc-text">Zipkin与其他Trace系统的不同之处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志收集"><span class="toc-text">日志收集</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Trace系统现状分析"><span class="toc-text">Trace系统现状分析</span></a></li></ol></li>
         
@@ -461,12 +461,12 @@
             <div class="col-sm-12">
                 <div class="busuanzi">
     
-        Total:
+        访问量:
         <strong id="busuanzi_value_site_pv">
             <i class="fa fa-spinner fa-spin"></i>
         </strong>
         &nbsp; | &nbsp;
-        Visitors:
+        访客数:
         <strong id="busuanzi_value_site_uv">
             <i class="fa fa-spinner fa-spin"></i>
         </strong>
@@ -475,7 +475,7 @@
 
             </div>
             <div class="col-sm-12">
-                <span>Copyright &copy; 2017
+                <span>Copyright &copy; 2018
                 </span> |
                 <span>
                     Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
