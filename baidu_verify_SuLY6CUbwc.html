@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>【Hexo搭建GitPage博客系列】06.绑定独立域名 | 呆萌钟，做一个不“纯粹”的技术人</title>
+<title>呆萌钟，做一个不“纯粹”的技术人</title>
 
 
     <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
@@ -163,148 +163,134 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="【Hexo搭建GitPage博客系列】06.绑定独立域名">
-            
-	            【Hexo搭建GitPage博客系列】06.绑定独立域名
-            
-        </h1>
-        <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/blog">
-            blog
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/博客搭建" title="博客搭建">
-                        博客搭建
-                    </a>
-                
-                    <a href="/tags/Hexo" title="Hexo">
-                        Hexo
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/11/21</span>
-        </span>
-        
-            <span class="fa-wrap">
-                <i class="fa fa-eye"></i>
-                <span id="busuanzi_value_page_pv"></span>
-            </span>
-        
-    
-</div>
-
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>因为Hexo个人博客是托管在github之上，每次访问都要使用githubname.github.io这么一个长串的域名来访问，会显得非常繁琐。这个时候我们可以购买一个域名，设置DNS跳转，以达到通过域名即可访问我们的个人博客。通过查阅文档发现，github pages是支持域名绑定的。</p>
-<h1 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h1><p>国内的域名服务商有新网，腾讯云，还有阿里云的万网等。下面以阿里云的万网为例：</p>
-<p>在万网购买了自己心仪的域名后，进入阿里云的管理控制台-域名与网站-域名就可以看到购买的域名此时的域名状态是未实名认证的，然后就是实名认证（一般需要2小时左右）。</p>
-<h1 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h1><p>先获取自己 github 的二级域名的 IP地址，windows 下直接在 cmd 里 ping 一下自己的博客就会得到 IP 地址<br><img src="http://image.damienzhong.com/ping%E5%9F%9F%E5%90%8D.png" alt="image"></p>
-<p>下面通过 DNS域名解析将购买的域名指向 github 的二级域名：username.github.io，进入阿里云的管理控制台-域名与网站-云解析 DNS，进入域名的解析设置，点击新手指导，将得到的 IP 地址填到记录值一栏，点击确定就 OK 了。填完以后的解析列表会出现：<br><img src="http://image.damienzhong.com/DNS%E8%AE%BE%E7%BD%AE.png" alt="image"><br>记录值就是自己 github 的二级域名的 IP地址。</p>
-<h1 id="设置CNAME"><a href="#设置CNAME" class="headerlink" title="设置CNAME"></a>设置CNAME</h1><p>在 hexo 项目下，source 文件夹下面创建 CNAME 文件（没有后缀名的），在里面写上购买的域名。比如：</p>
-<p><img src="http://image.damienzhong.com/%E8%AE%BE%E7%BD%AECNAME.png" alt="image"><br>在 github 上面，打开 username.github.io 项目的（Settings）设置，然后在 GitHub Pages的 Custom domain设置里填上购买的域名。比如：<br><img src="http://image.damienzhong.com/gitpage%E5%9F%9F%E5%90%8D%E8%AE%BE%E7%BD%AE.png" alt="image"></p>
-<p>好了，新域名配置完成，可以访问了。</p>
-
-    </div>
-    
-        <div class="reward">
-    <div class="reward-wrap">赏
-        <div class="reward-box">
-            
-            
-                <span class="reward-type">
-                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
-                </span>
-            
-        </div>
-    </div>
-    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
-</div>
-
-
-    
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">呆萌钟</a>
-            
-        </div>
-        <div>
-            
-        </div>
+                <main class="col-md-8 main-content ">
+                    <article class="post">
+    <h1 class="post-head"></h1>
+    <div class="post-body">
+        SuLY6CUbwc
     </div>
 </article>
-
-<div class="article-nav prev-next-wrap clearfix">
-    
-    
-        <a href="/2018/11/21/分布式链路监控追踪系统调研分析/" class="next-post btn btn-default" title="分布式链路监控追踪系统调研分析">
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">分布式链路监控追踪系统调研分析</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
-</div>
-
-
-    <div id="comments">
-        
-	
-<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
-  <script type="text/javascript">
-     (function(d, s) {
-         var j, e = d.getElementsByTagName(s)[0];
-         if (typeof LivereTower === 'function') { return; }
-         j = d.createElement(s);
-         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-         j.async = true;
-         e.parentNode.insertBefore(j, e);
-     })(document, 'script');
-  </script>
-</div>
-
-
-    </div>
-
-
-
-
-
                 </main>
                 
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+                    
+    <aside class="col-md-4 sidebar">
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#购买域名"><span class="toc-text">购买域名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#域名解析"><span class="toc-text">域名解析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置CNAME"><span class="toc-text">设置CNAME</span></a></li></ol>
+        
+    <div class="widget">
+        <h3 class="title">Search</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
+                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Notification</h3>
+        <div class="notification">
+            <p>
+    支持本博客：<a href="https://github.com/damienzhong/damienzhong.github.io/stargazers" title="star me" target="_blank">Star一下</a> <br>
+    优酷播单：<a href="https://i.youku.com/i/UNDE3MDU5OTg3Mg==/playlists">优酷播单</a><br>
+    淘宝男装店：<a href="https://shop72495432.taobao.com/search.htm?spm=a1z10.1-c.0.0.25343b46cBwhQs&search=y">DM潮人社区</a><br>
+    QQ交流群：<a href="https://jq.qq.com/?_wv=1027&k=5xgZ7E0" title="" target="_blank">点击加入群聊【呆萌钟技术交流群】</a> 
+</p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Social</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/damienzhong" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="//blog.csdn.net/damienzhong" rel="external nofollow" title="CSDN" target="_blank">
+			    	<i class="bold fa fa-bold"></i>
+			    </a>
+            
+	            <a href="mailto:damienzhong@foxmail.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="//weibo.com/u/5945841934?is_all=1" rel="external nofollow" title="微博" target="_blank">
+			    	<i class="weibo fa fa-weibo"></i>
+			    </a>
+            
+	            <a href="//i.youku.com/i/UNDE3MDU5OTg3Mg==/playlists" rel="external nofollow" title="优酷" target="_blank">
+			    	<i class="youtube-play fa fa-youtube-play"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Categories</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JVM/"><i class="fa" aria-hidden="true">JVM</i></a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/"><i class="fa" aria-hidden="true">blog</i></a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javase/"><i class="fa" aria-hidden="true">javase</i></a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/"><i class="fa" aria-hidden="true">分布式</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具教程/"><i class="fa" aria-hidden="true">工具教程</i></a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用框架/"><i class="fa" aria-hidden="true">常用框架</i></a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/"><i class="fa" aria-hidden="true">操作系统</i></a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/虚拟化/"><i class="fa" aria-hidden="true">虚拟化</i></a><span class="category-list-count">2</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Archives</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">2018年11月</i></a><span class="archive-list-count">91</span></li></ul>
+    </div>
+
+
+        
+        
+  <div class="widget">
+    <h3 class="title">Tag Cloud</h3>
+    <div class="content tag-cloud">
+        
+            <a href="/tags/Hexo/" style="font-size: 14.29px;">Hexo</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 12.86px;">IntelliJ IDEA</a> <a href="/tags/VMware/" style="font-size: 11.43px;">VMware</a> <a href="/tags/idea/" style="font-size: 12.86px;">idea</a> <a href="/tags/javase/" style="font-size: 20px;">javase</a> <a href="/tags/jvm/" style="font-size: 11.43px;">jvm</a> <a href="/tags/linux/" style="font-size: 18.57px;">linux</a> <a href="/tags/springboot/" style="font-size: 17.14px;">springboot</a> <a href="/tags/vmtools/" style="font-size: 10px;">vmtools</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/博客搭建/" style="font-size: 15.71px;">博客搭建</a> <a href="/tags/微服务/" style="font-size: 10px;">微服务</a> <a href="/tags/虚拟化/" style="font-size: 11.43px;">虚拟化</a> <a href="/tags/虚拟机/" style="font-size: 11.43px;">虚拟机</a>
         
     </div>
-</aside>
+  </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Friends</h3>
+        <div class="content friends-link">
+        
+            <a href="https://blog.csdn.net/damienzhong" class="fa" target="_blank">CSDN博客</a>
+        
+            <a href="http://damienzhong.com" class="fa" target="_blank">呆萌钟独立站点</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
 
                 
             </div>
@@ -357,6 +343,8 @@
     </div>
 </div>
 
+
+	<script src="/js/search.js?rev=@@hash"></script>
 
 
 
