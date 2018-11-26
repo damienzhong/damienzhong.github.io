@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>vue+springboot前后端分离实现单点登录跨域问题处理 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e6848c26facd32e9d4d71de417b24de0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+    <meta name="baidu-site-verification" content="SuLY6CUbwc">
+
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/常用框架/"><i class="fa "></i>常用框架</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/分布式/"><i class="fa "></i>分布式</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具教程/"><i class="fa "></i>工具教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="vue+springboot前后端分离实现单点登录跨域问题处理">
+            
+	            vue+springboot前后端分离实现单点登录跨域问题处理
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/常用框架">
+            常用框架
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/vue" title="vue">
+                        vue
+                    </a>
+                
+                    <a href="/tags/Springboot" title="Springboot">
+                        Springboot
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/26</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>最近在做一个后台管理系统，前端是用时下火热的vue.js，后台是基于springboot的。因为后台系统没有登录功能，但是公司要求统一登录，登录认证统一使用.net项目组的认证系统。那就意味着做单点登录咯，至于不知道什么是单点登录的同学，建议去找一下万能的度娘。</p>
+<p>刚接到这个需求的时候，老夫心里便不屑的认为：区区登录何足挂齿，但是，开发的过程狠狠的打了我一巴掌（火辣辣的一巴掌）。。。，所以这次必须得好好记录一下这次教训，以免以后再踩这样的坑。</p>
+<p>我面临的第一个问题是跨域，浏览器控制台直接报CORS,以我多年开发经验，我果断在后台配置了跨域配置，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class CorsConfiguration &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public WebMvcConfigurer corsConfigurer() &#123;</span><br><span class="line">        return new WebMvcConfigurerAdapter() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void addCorsMappings(CorsRegistry registry) &#123;</span><br><span class="line">                registry.addMapping(&quot;/**&quot;)</span><br><span class="line">                        .allowedHeaders(&quot;*&quot;)</span><br><span class="line">                        .allowedMethods(&quot;*&quot;)</span><br><span class="line">                        .allowedOrigins(&quot;*&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个配置就是允许所有mapping，所有请求头，所有请求方法，所有源。改好配置之后我果断重启项目，看效果，结果发现根本没法重定向跳转到单点登录页面，看浏览器报错是跨域导致的，我先上我登录拦截器的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception &#123;</span><br><span class="line">    //用户已经登录</span><br><span class="line">    if (request.getSession().getAttribute(&quot;user&quot;) != null) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    //从单点登录返回之后的状态，本系统还不处于登录状态</span><br><span class="line">    //根据code值去获取access_token，然后再根据access_token去获取用户信息，并将用户信息存到session中</span><br><span class="line">    String state = request.getParameter(&quot;state&quot;);</span><br><span class="line">    String uri = getUri(request);</span><br><span class="line">    if (isLoginFromSSO(state)) &#123;</span><br><span class="line">        String code = request.getParameter(&quot;code&quot;);</span><br><span class="line">        Object cacheUrl = request.getSession().getAttribute(state);</span><br><span class="line">        if (cacheUrl == null) &#123;</span><br><span class="line">            response.sendRedirect(uri);</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        HttpUtil client = new HttpUtil();</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        sb.append(&quot;code=&quot;).append(code)</span><br><span class="line">                .append(&quot;&amp;grant_type=&quot;).append(&quot;authorization_code&quot;)</span><br><span class="line">                .append(&quot;&amp;client_id=&quot;).append(SSOAuth.ClientID)</span><br><span class="line">                .append(&quot;&amp;client_secret=&quot;).append(SSOAuth.ClientSecret)</span><br><span class="line">                .append(&quot;&amp;redirect_uri=&quot;).append(URLEncoder.encode((String) cacheUrl));</span><br><span class="line">        String resp = client.post(SSOAuth.AccessTokenUrl, sb.toString());</span><br><span class="line">        Map&lt;String, String&gt; map = new Gson().fromJson(resp, Map.class);</span><br><span class="line">        //根据access_token去获取用户信息</span><br><span class="line">        String accessToken = map.get(&quot;access_token&quot;);</span><br><span class="line">        HttpUtil http = new HttpUtil();</span><br><span class="line">        http.addHeader(&quot;Authorization&quot;, &quot;Bearer &quot; + accessToken);</span><br><span class="line">        String encrypt = http.get(SSOAuth.UserUrl);</span><br><span class="line">        String userinfo = decryptUserInfo(encrypt);</span><br><span class="line">        //封装成user对象</span><br><span class="line">        User user = new Gson().fromJson(userinfo, User.class);</span><br><span class="line">        request.getSession().setAttribute(&quot;user&quot;, user);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    //跳转到单点登录界面</span><br><span class="line">    state = Const._SSO_LOGIN + Const.UNDERLINE + RandomUtil.getUUID();</span><br><span class="line">    request.getSession().setAttribute(state, uri);</span><br><span class="line">    String redirectUrl = buildAuthCodeUrl(uri, state);</span><br><span class="line">    response.sendRedirect(redirectUrl);</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>后面把前端vue请求后台的登录接口方式直接用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.location.href=this.$api.config.baseUrl+&quot;/system/user/login&quot;</span><br></pre></td></tr></table></figure>
+<p>之后前端访问系统，可以直接跳转到单点登录页面。但是当我输完账号和密码点击登录后回跳到系统，发现所有的请求数据接口都无法正常访问，debug发现所有的请求都没带用户信息，被拦截器识别为未登录，所有请求无法通过。</p>
+<p>为什么我明明登录了呀，拦截器也设置了用户信息到session啊，怎么cookies那就没了呢？再次发起请求，发现每次请求的JsessionId都不一样，查了很多资料，发现是需要在前端加一个允许带认证信息的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials=true;</span><br></pre></td></tr></table></figure>
+<p>后台也需要做一个相应的配置allowCredentials(true);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">public WebMvcConfigurer corsConfigurer() &#123;</span><br><span class="line">    return new WebMvcConfigurerAdapter() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void addCorsMappings(CorsRegistry registry) &#123;</span><br><span class="line">            registry.addMapping(&quot;/**&quot;)</span><br><span class="line">                    .allowedHeaders(&quot;*&quot;)</span><br><span class="line">                    .allowedMethods(&quot;*&quot;)</span><br><span class="line">                    .allowedOrigins(&quot;*&quot;).allowCredentials(true);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>加完这个配置之后，重新执行一遍操作流程，发现登录之后能正常跳转到系统，页面数据也展示正常。</p>
+<p>正当我以为大功告成的时候，突然点到一个页面又无法正常显示数据，好纳闷啊，赶紧F12，发现一个之前没见过的请求方式，OPTIONS请求，原来这个请求方式明明是POST呀，怎么就变成了OPTIONS了呢？于是我有点了其他几个POST的请求，发现都变成了OPTIONS请求，一脸懵逼的我赶紧查了一下OPTIONS请求的资料，网上说OPTIONS请求叫做“预检查请求”，就是在你的正式请求执行之前，浏览器会先发起预检查请求，预检查请求通过了，才能执行正式请求。看完恍然大悟，原来OPTIONS被拦截了，所以没法再执行我的POST的请求啊，那我直接让预检查请求通过就好了。只要在拦截器中加一个这个判断就好了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//option预检查，直接通过请求</span><br><span class="line">if (&quot;OPTIONS&quot;.equals(request.getMethod()))&#123;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样拦截器发现请求是预检查请求就直接通过，就可以执行接下来的POST的请求了。</p>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处.原文来自 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/11/21/【Hexo搭建GitPage博客系列】06-绑定独立域名/" class="next-post btn btn-default" title="【Hexo搭建GitPage博客系列】06.绑定独立域名">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【Hexo搭建GitPage博客系列】06.绑定独立域名</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
