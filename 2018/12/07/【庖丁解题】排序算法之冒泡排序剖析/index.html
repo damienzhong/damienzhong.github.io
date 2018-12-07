@@ -234,12 +234,18 @@
     <div class="post-body post-content">
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>排序算法一直是面试的高频考点，但是如果没有真正理解不同算法的原理，光靠硬背，很容易到需要用的时候就忘记了。要想灵活运用并熟记各种算法，前提是必须去理解它们。那接下来，我就带大家抽丝剥茧，剖析那些经典算法！</p>
 <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序是所有排序中最常出现的，所以这篇文章我先为大家讲解冒泡排序。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<h2 id="概述（百度百科）"><a href="#概述（百度百科）" class="headerlink" title="概述（百度百科）"></a>概述（<a href="https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/4602306?fr=aladdin" target="_blank" rel="noopener">百度百科</a>）</h2><blockquote>
 <p>它重复地走访过要排序的元素列，依次比较两个相邻的元素，如果他们的顺序（如从大到小、首字母从A到Z）错误就把他们交换过来。走访元素的工作是重复地进行直到没有相邻元素需要交换，也就是说该元素已经排序完成。</p>
 </blockquote>
 <blockquote>
-<p>这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。<br>–<a href="https://baike.baidu.com/item/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/4602306?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
+<p>这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端（升序或降序排列），就如同碳酸饮料中二氧化碳的气泡最终会上浮到顶端一样，故名“冒泡排序”。</p>
 </blockquote>
+<h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元- 素应该会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2>光看百度百科的解释还是比较难以理解吧，那我们用图形的形式来表述这个原理，相信你立马会恍然大悟。</li>
+</ol>
 
     </div>
     
@@ -311,7 +317,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#冒泡排序"><span class="toc-text">冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#冒泡排序"><span class="toc-text">冒泡排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述（百度百科）"><span class="toc-text">概述（百度百科）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#算法原理"><span class="toc-text">算法原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图解"><span class="toc-text">图解</span></a></li></ol></li></ol>
         
     </div>
 </aside>
