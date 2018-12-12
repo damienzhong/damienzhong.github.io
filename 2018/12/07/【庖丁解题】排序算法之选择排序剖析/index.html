@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="呆萌钟，做一个不“纯粹”的技术人">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>【庖丁解题】排序算法之选择排序剖析 | 呆萌钟，做一个不“纯粹”的技术人</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="呆萌钟，做一个不“纯粹”的技术人" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e6848c26facd32e9d4d71de417b24de0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    
+    <meta name="baidu-site-verification" content="SuLY6CUbwc">
+
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://image.damienzhong.com/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="Damien Zhong">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">呆萌钟，做一个不“纯粹”的技术人</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa fa-home"></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/javase/"><i class="fa "></i>Java基础</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/常用框架/"><i class="fa "></i>常用框架</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/分布式/"><i class="fa "></i>分布式</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/blog/"><i class="fa "></i>博客教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具教程/"><i class="fa "></i>工具教程</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/JVM/"><i class="fa "></i>JVM</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/操作系统/"><i class="fa "></i>操作系统</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/虚拟化/"><i class="fa "></i>虚拟化</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/求职面试/"><i class="fa "></i>求职面试</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="【庖丁解题】排序算法之选择排序剖析">
+            
+	            【庖丁解题】排序算法之选择排序剖析
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/求职面试">
+            求职面试
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/排序算法" title="排序算法">
+                        排序算法
+                    </a>
+                
+                    <a href="/tags/算法" title="算法">
+                        算法
+                    </a>
+                
+                    <a href="/tags/面试题" title="面试题">
+                        面试题
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/12/07</span>
+        </span>
+        
+            <span class="fa-wrap">
+                <i class="fa fa-eye"></i>
+                <span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>从0索引开始，依次和后面元素比较，小的往前放，第一次完毕，最小值出现在了最小索引处。其它的同理，即可得到一个排好序的数组。</p>
+<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p>第一轮：索引为0的元素按照顺序分别与其他索引元素进行比较，如果arr[0]&gt;arr[i]，交换他们之间的元素值，如下图</p>
+<p><img src="http://image.damienzhong.com/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AC%AC%E4%B8%80%E8%BD%AE.png" alt=""></p>
+<p>第二轮：索引为1的元素按照顺序分别与其他索引元素进行比较，如果arr[1]&gt;arr[i]，交换他们之间的元素值，如下图</p>
+<p><img src="http://image.damienzhong.com/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AC%AC%E4%BA%8C%E8%BD%AE.png" alt=""></p>
+<p>第三轮：索引为2的元素按照顺序分别与其他索引元素进行比较，如果arr[2]&gt;arr[i]，交换他们之间的元素值，如下图</p>
+<p><img src="http://image.damienzhong.com/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AC%AC%E4%B8%89%E8%BD%AE.png" alt=""></p>
+<p>第四轮：索引为3的元素按照顺序分别与其他索引元素进行比较，如果arr[3]&gt;arr[i]，交换他们之间的元素值，如下图</p>
+<p><img src="http://image.damienzhong.com/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AC%AC%E5%9B%9B%E8%BD%AE.png" alt=""></p>
+<p>经过四轮排序，可以发现我们的数组已经按照升序排好序了。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>根据上述图片，可以先把每轮的有代码实现</p>
+<h3 id="第一轮"><a href="#第一轮" class="headerlink" title="第一轮"></a>第一轮</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x=<span class="number">0</span>;<span class="comment">//标记用于比较的起始索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> y=x+<span class="number">1</span>;y&lt;arr.length;y++) &#123;<span class="comment">//y表示用于和x比较的索引值</span></span><br><span class="line">	<span class="keyword">if</span> (arr[x] &gt; arr[y]) &#123;<span class="comment">//比较大小</span></span><br><span class="line">			<span class="comment">//交换元素</span></span><br><span class="line">			<span class="keyword">int</span> temp = arr[x];</span><br><span class="line">			arr[x] = arr[y];</span><br><span class="line">			arr[y] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二轮"><a href="#第二轮" class="headerlink" title="第二轮"></a>第二轮</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x=<span class="number">1</span>;<span class="comment">//标记用于比较的起始索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> y=x+<span class="number">1</span>;y&lt;arr.length;y++) &#123;<span class="comment">//y表示用于和x比较的索引值</span></span><br><span class="line">	<span class="keyword">if</span> (arr[x] &gt; arr[y]) &#123;<span class="comment">//比较大小</span></span><br><span class="line">			<span class="comment">//交换元素</span></span><br><span class="line">			<span class="keyword">int</span> temp = arr[x];</span><br><span class="line">			arr[x] = arr[y];</span><br><span class="line">			arr[y] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第三轮"><a href="#第三轮" class="headerlink" title="第三轮"></a>第三轮</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x=<span class="number">2</span>;<span class="comment">//标记用于比较的起始索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> y=x+<span class="number">1</span>;y&lt;arr.length;y++) &#123;<span class="comment">//y表示用于和x比较的索引值</span></span><br><span class="line">	<span class="keyword">if</span> (arr[x] &gt; arr[y]) &#123;<span class="comment">//比较大小</span></span><br><span class="line">			<span class="comment">//交换元素</span></span><br><span class="line">			<span class="keyword">int</span> temp = arr[x];</span><br><span class="line">			arr[x] = arr[y];</span><br><span class="line">			arr[y] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第四轮"><a href="#第四轮" class="headerlink" title="第四轮"></a>第四轮</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x=<span class="number">3</span>;<span class="comment">//标记用于比较的起始索引</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> y=x+<span class="number">1</span>;y&lt;arr.length;y++) &#123;<span class="comment">//y表示用于和x比较的索引值</span></span><br><span class="line">	<span class="keyword">if</span> (arr[x] &gt; arr[y]) &#123;<span class="comment">//比较大小</span></span><br><span class="line">			<span class="comment">//交换元素</span></span><br><span class="line">			<span class="keyword">int</span> temp = arr[x];</span><br><span class="line">			arr[x] = arr[y];</span><br><span class="line">			arr[y] = temp;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最终版"><a href="#最终版" class="headerlink" title="最终版"></a>最终版</h3><p>转化成循环表示如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 选择排序</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] selectSort(<span class="keyword">int</span>[] arr)&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; arr.length - <span class="number">1</span>; x++) &#123;<span class="comment">//控制的是排序的轮数</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> y = x + <span class="number">1</span>; y &lt; arr.length; y++) &#123;<span class="comment">//控制每轮比较的次数</span></span><br><span class="line">              <span class="keyword">if</span> (arr[x] &gt; arr[y]) &#123;<span class="comment">//比较大小</span></span><br><span class="line">								<span class="comment">//交换元素</span></span><br><span class="line">                  <span class="keyword">int</span> temp = arr[x];</span><br><span class="line">                  arr[x] = arr[y];</span><br><span class="line">                  arr[y] = temp;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> arr;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+        <div class="reward">
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            
+                <span class="reward-type">
+                    <img class="wechat" src="http://damienzhong.com/wp-content/uploads/2018/10/微信图片_20181025142923.jpg"><b>微信打赏</b>
+                </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">赞赏是不耍流氓的鼓励</p>
+</div>
+
+
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处.原文来自 © <a href="" target="_blank">呆萌钟</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/12/07/【庖丁解题】排序算法之冒泡排序剖析/" class="next-post btn btn-default" title="【庖丁解题】排序算法之冒泡排序剖析">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">【庖丁解题】排序算法之冒泡排序剖析</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MTAwNS8xNzUzMA==">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#选择排序"><span class="toc-text">选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图解"><span class="toc-text">图解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一轮"><span class="toc-text">第一轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二轮"><span class="toc-text">第二轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三轮"><span class="toc-text">第三轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四轮"><span class="toc-text">第四轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最终版"><span class="toc-text">最终版</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+        访问量:
+        <strong id="busuanzi_value_site_pv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+        &nbsp; | &nbsp;
+        访客数:
+        <strong id="busuanzi_value_site_uv">
+            <i class="fa fa-spinner fa-spin"></i>
+        </strong>
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2018
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
